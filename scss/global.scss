@@ -1,0 +1,38 @@
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Extra-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Regular.otf);
+  font-weight: normal;
+}
+
+$font: "SpartanMB";
+$fontSizes: (
+  mobile-1: 20px,
+  mobile-2: 18px,
+  mobile-3: 15px,
+  tablet-1: 20px,
+  tablet-2: 18px,
+  tablet-3: 15px,
+  desk-1: 20px,
+  desk-2: 18px,
+  desk-3: 15px
+);
+$colors: (
+  lighestGray: #f8f8fa,
+  lightGray: #a5acba,
+  light: #ffffff,
+  dark: #000000,
+  link: #428bca,
+  linkHover: #555,
+  navBlue: #7ac243,
+  navGreen: #009cdc
+);
+
+h1 {
+  font-family: $font;
+}

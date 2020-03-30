@@ -1,0 +1,12 @@
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Extra-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Regular.otf);
+  font-weight: normal; }
+
+h1 {
+  font-family: "SpartanMB"; }
