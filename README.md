@@ -14,4 +14,6 @@ Committed to writing clean, testable code. Proficient in mobile-first responsive
 
 ## Tech Used
 
-_Html5, SCSS, JS (Custom Web Components)_
+- HTML5
+- SCSS
+- JS (Custom Web Components)

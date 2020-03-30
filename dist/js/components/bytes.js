@@ -1,7 +1,6 @@
 const bytesTemplate = document.createElement("template");
 bytesTemplate.innerHTML = `
 <style>
-@import url("css/global.css");
 </style>
 <h1>Bytes</h1>
 `;

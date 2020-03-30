@@ -10,3 +10,11 @@
 
 h1 {
   font-family: "SpartanMB"; }
+
+#container {
+  text-align: center; }
+
+.logo-main {
+  margin-top: 8rem;
+  max-width: 90%;
+  max-height: 250px; }
