@@ -49,6 +49,7 @@ const runCarousel = () => {
       new TextCarousel(elements[i], JSON.parse(toRotate), duration);
     }
   }
+  console.log(elements);
   // INJECT CSS
   var css = document.createElement("style");
   css.type = "text/css";
@@ -56,54 +57,23 @@ const runCarousel = () => {
   document.body.appendChild(css);
 };
 
-class IndexView {
-  constructor() {
-    window.addEventListener("load", e => {
-      if (!window.location.hash) {
-        fetch("routes/home.html")
-          // to-do: event is also firing as a hashchange, make sure to account for this
-          .then(r => r.text())
-          .then(content => {
-            const slot = document.getElementById("container");
-            slot.innerHTML = content;
-            runCarousel();
-          });
-      }
-      this.onRouteChange(e);
-    });
-    window.addEventListener("hashchange", e => {
-      this.onRouteChange(e);
-    });
+window.addEventListener("hashchange", async e => {});
+
+window.addEventListener("load", async e => {
+  let ready = false;
+  if (!window.location.hash || window.location.hash.includes("home")) {
+    ready = true;
   }
 
-  onRouteChange(e) {
-    const hashLocation = window.location.hash.substr(1);
-    this.loadContent(hashLocation);
-  }
+  try {
+    const homeMounted = await (document.querySelector(".home-pg") !== null);
+    const onHome = await ready;
 
-  loadContent(uri) {
-    const contentURI = `routes/${uri}.html`;
-
-    if (contentURI === "routes/.html") {
-      fetch("routes/home.html")
-        // to-do: event is also firing as a hashchange, make sure to account for this
-        .then(r => r.text())
-        .then(content => {
-          const slot = document.getElementById("container");
-          slot.innerHTML = content;
-        });
-    } else {
-      fetch(contentURI)
-        .then(r => r.text())
-        .then(content => this.updateSlot(content));
+    console.log(homeMounted);
+    if (onHome === true) {
+      runCarousel();
     }
+  } catch (err) {
+    console.log(err);
   }
-
-  updateSlot(content) {
-    const slot = document.getElementById("container");
-    slot.innerHTML = content;
-    runCarousel();
-  }
-}
-
-new IndexView();
+});

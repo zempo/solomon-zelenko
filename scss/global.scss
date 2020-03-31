@@ -33,12 +33,20 @@ $colors: (
   navGreen: #009cdc
 );
 
+html,
+body,
+main {
+  height: 100%;
+  min-height: 100%;
+}
+
 h1 {
   font-family: $font;
 }
 
 #container {
   text-align: center;
+  min-height: 100vh;
 }
 
 .logo-main {

@@ -8,11 +8,18 @@
   src: url(../font/SpartanMB-Regular.otf);
   font-weight: normal; }
 
+html,
+body,
+main {
+  height: 100%;
+  min-height: 100%; }
+
 h1 {
   font-family: "SpartanMB"; }
 
 #container {
-  text-align: center; }
+  text-align: center;
+  min-height: 100vh; }
 
 .logo-main {
   margin-top: 8rem;
