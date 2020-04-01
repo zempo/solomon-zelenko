@@ -8,6 +8,9 @@
   src: url(../font/SpartanMB-Regular.otf);
   font-weight: normal; }
 
+* {
+  box-sizing: border-box; }
+
 html,
 body,
 main {
@@ -25,3 +28,14 @@ h1 {
   margin-top: 8rem;
   max-width: 90%;
   max-height: 250px; }
+
+.btn-fwd,
+.btn-back {
+  position: fixed;
+  top: 50vh; }
+
+.btn-fwd {
+  right: 20px; }
+
+.btn-back {
+  left: 20px; }

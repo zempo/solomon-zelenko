@@ -23,6 +23,7 @@ $fontSizes: (
   desk-3: 15px
 );
 $colors: (
+  main-bg: rgb(250, 250, 250),
   lighestGray: #f8f8fa,
   lightGray: #a5acba,
   light: #ffffff,
@@ -32,6 +33,10 @@ $colors: (
   navBlue: #7ac243,
   navGreen: #009cdc
 );
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body,
@@ -53,4 +58,18 @@ h1 {
   margin-top: 8rem;
   max-width: 90%;
   max-height: 250px;
+}
+
+.btn-fwd,
+.btn-back {
+  position: fixed;
+  top: 50vh;
+}
+
+.btn-fwd {
+  right: 20px;
+}
+
+.btn-back {
+  left: 20px;
 }
