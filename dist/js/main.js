@@ -66,7 +66,9 @@ class IndexView {
           .then(content => {
             const slot = document.getElementById("container");
             slot.innerHTML = content;
-            runCarousel();
+            setTimeout(() => {
+              runCarousel();
+            }, 200);
           });
       }
       this.onRouteChange(e);
