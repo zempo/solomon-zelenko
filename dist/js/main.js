@@ -174,6 +174,7 @@ class ArrowNav {
     switch (window.location.hash.substr(1)) {
       case "":
         window.location.hash = "about";
+        return;
       case "home":
       case "about":
       case "works":
