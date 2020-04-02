@@ -10,3 +10,15 @@ $homeFonts: (
   desk-2: 18px,
   desk-3: 15px
 );
+
+// contact
+.icons-list {
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 35px;
+    text-decoration: none;
+  }
+}

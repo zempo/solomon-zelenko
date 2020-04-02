@@ -1,0 +1,8 @@
+.icons-list {
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center; }
+  .icons-list img {
+    width: 35px;
+    text-decoration: none; }

@@ -1,3 +1,9 @@
+"use strict";
+
+// REFS
+const backBtn = document.querySelector(".btn-back");
+const frontBtn = document.querySelector(".btn-fwd");
+// Hero Animation
 const TextCarousel = function(el, toRotate, duration) {
   this.toRotate = toRotate;
   this.el = el;
@@ -50,32 +56,63 @@ const runCarousel = () => {
     }
   }
   // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-carousel > .wrap { border-right: 0.08em solid #000 }";
-  document.body.appendChild(css);
+  if (document.getElementsByTagName("style").length === 0) {
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-carousel > .wrap { border-right: 0.08em solid #000 }";
+    document.body.appendChild(css);
+  }
 };
 
-class IndexView {
+class Router {
   constructor() {
     window.addEventListener("load", e => {
       if (!window.location.hash) {
-        fetch("routes/home.html")
-          // to-do: event is also firing as a hashchange, make sure to account for this
-          .then(r => r.text())
-          .then(content => {
-            const slot = document.getElementById("container");
-            slot.innerHTML = content;
-            setTimeout(() => {
-              runCarousel();
-            }, 200);
-          });
+        backBtn.disabled = true;
+        this.handleNoHash(e);
       }
+      this.navBtns(e);
       this.onRouteChange(e);
     });
     window.addEventListener("hashchange", e => {
+      this.navBtns(e);
       this.onRouteChange(e);
     });
+  }
+
+  navBtns(e) {
+    switch (window.location.hash.substr(1)) {
+      case "":
+      case "home":
+        backBtn.disabled = true;
+        frontBtn.disabled = false;
+        return;
+      case "about":
+      case "works":
+      case "bytes":
+        backBtn.disabled = false;
+        frontBtn.disabled = false;
+        return;
+      case "contact":
+        backBtn.disabled = false;
+        frontBtn.disabled = true;
+        return;
+      default:
+        return;
+    }
+  }
+
+  handleNoHash(e) {
+    fetch("routes/home.html")
+      // to-do: event is also firing as a hashchange, make sure to account for this
+      .then(r => r.text())
+      .then(content => {
+        const slot = document.getElementById("container");
+        slot.innerHTML = content;
+        setTimeout(() => {
+          runCarousel();
+        }, 200);
+      });
   }
 
   onRouteChange(e) {
@@ -108,4 +145,58 @@ class IndexView {
   }
 }
 
-new IndexView();
+class ArrowNav {
+  constructor() {
+    this.hashIdx = ["home", "about", "works", "bytes", "contact"];
+  }
+  goBack(e) {
+    switch (window.location.hash.substr(1)) {
+      case "":
+      case "home":
+        return;
+      case "about":
+        window.location.hash = this.hashIdx[0];
+        return;
+      case "works":
+      case "bytes":
+      case "contact":
+        window.location.hash = this.hashIdx[
+          this.hashIdx.findIndex(el => el === window.location.hash.substr(1)) -
+            1
+        ];
+        return;
+      default:
+        return;
+    }
+  }
+
+  goFwd(e) {
+    switch (window.location.hash.substr(1)) {
+      case "":
+      case "home":
+      case "about":
+      case "works":
+      case "bytes":
+        window.location.hash = this.hashIdx[
+          this.hashIdx.findIndex(el => el === window.location.hash.substr(1)) +
+            1
+        ];
+        return;
+      case "contact":
+        return;
+      default:
+        return;
+    }
+  }
+}
+
+let router = new Router();
+let arrowNav = new ArrowNav();
+
+backBtn.addEventListener("click", e => {
+  arrowNav.goBack(e);
+});
+
+frontBtn.addEventListener("click", e => {
+  arrowNav.goFwd(e);
+});

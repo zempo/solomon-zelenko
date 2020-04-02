@@ -15,10 +15,14 @@ html,
 body,
 main {
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  font-family: "SpartanMB";
+  margin: 0;
+  padding: 0; }
 
-h1 {
-  font-family: "SpartanMB"; }
+a {
+  text-decoration: none;
+  color: #000000; }
 
 #container {
   text-align: center;

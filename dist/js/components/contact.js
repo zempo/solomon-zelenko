@@ -6,6 +6,7 @@ contactTemplate.innerHTML = `
 <h1>Contact</h1>
 `;
 
+// make email form tab components and manage state
 class ContactPage extends HTMLElement {
   constructor() {
     super();

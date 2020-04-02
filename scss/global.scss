@@ -11,23 +11,12 @@
 }
 
 $font: "SpartanMB";
-$fontSizes: (
-  mobile-1: 20px,
-  mobile-2: 18px,
-  mobile-3: 15px,
-  tablet-1: 20px,
-  tablet-2: 18px,
-  tablet-3: 15px,
-  desk-1: 20px,
-  desk-2: 18px,
-  desk-3: 15px
-);
 $colors: (
   main-bg: rgb(250, 250, 250),
   lighestGray: #f8f8fa,
   lightGray: #a5acba,
   light: #ffffff,
-  dark: #000000,
+  "dark": #000000,
   link: #428bca,
   linkHover: #555,
   navBlue: #7ac243,
@@ -43,10 +32,14 @@ body,
 main {
   height: 100%;
   min-height: 100%;
+  font-family: $font;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-family: $font;
+a {
+  text-decoration: none;
+  color: map-get($colors, "dark");
 }
 
 #container {
