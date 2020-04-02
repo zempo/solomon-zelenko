@@ -173,6 +173,7 @@ class ArrowNav {
   goFwd(e) {
     switch (window.location.hash.substr(1)) {
       case "":
+        window.location.hash = this.hashIdx[1];
       case "home":
       case "about":
       case "works":
