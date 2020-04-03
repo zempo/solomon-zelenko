@@ -3,6 +3,12 @@
 // REFS
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
+
+// ROUTE EVENT LISTENERS
+const toggleTab = e => {
+  let panel = e.target.nextElementSibling;
+  console.log(panel);
+};
 // Hero Animation
 const TextCarousel = function(el, toRotate, duration) {
   this.toRotate = toRotate;
@@ -70,14 +76,31 @@ class Router {
       if (!window.location.hash) {
         backBtn.disabled = true;
         this.handleNoHash(e);
+      } else {
+        this.onRouteChange(e);
+        this.navBtns(e);
       }
-      this.navBtns(e);
-      this.onRouteChange(e);
     });
     window.addEventListener("hashchange", e => {
       this.navBtns(e);
       this.onRouteChange(e);
     });
+    this.routeRefs = {
+      aboutTabs: []
+    };
+  }
+
+  getRefs(pg) {
+    switch (pg) {
+      case "about":
+        const aboutTabs = document.querySelectorAll(".btn-a");
+        aboutTabs.forEach(el => {
+          el.addEventListener("click", e => toggleTab(e));
+        });
+        return;
+      default:
+        return;
+    }
   }
 
   navBtns(e) {
@@ -102,17 +125,19 @@ class Router {
     }
   }
 
-  handleNoHash(e) {
-    fetch("routes/home.html")
-      // to-do: event is also firing as a hashchange, make sure to account for this
-      .then(r => r.text())
-      .then(content => {
-        const slot = document.getElementById("container");
+  async handleNoHash(e) {
+    const slot = document.getElementById("container");
+    try {
+      const res = await fetch("routes/home.html");
+      const text = await res.text();
+      const content = await text;
+      if (content !== "") {
         slot.innerHTML = content;
-        setTimeout(() => {
-          runCarousel();
-        }, 200);
-      });
+      }
+      runCarousel();
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   onRouteChange(e) {
@@ -130,11 +155,13 @@ class Router {
         .then(content => {
           const slot = document.getElementById("container");
           slot.innerHTML = content;
-        });
+        })
+        .then(() => this.getRefs("home"));
     } else {
       fetch(contentURI)
         .then(r => r.text())
-        .then(content => this.updateSlot(content));
+        .then(content => this.updateSlot(content))
+        .then(() => this.getRefs(uri));
     }
   }
 
