@@ -6,8 +6,22 @@ const frontBtn = document.querySelector(".btn-fwd");
 
 // ROUTE EVENT LISTENERS
 const toggleTab = e => {
+  let sign = e.target.classList;
   let panel = e.target.nextElementSibling;
-  console.log(panel);
+
+  sign[1] === "open" ? sign.remove("open") : sign.add("open");
+
+  if (panel.classList[2] === "open-content") {
+    panel.classList.remove("open-content");
+    panel.classList.add("close-content");
+    setTimeout(() => {
+      panel.style.display = "none";
+    }, 300);
+  } else {
+    panel.classList.remove("close-content");
+    panel.classList.add("open-content");
+    panel.style.display = "block";
+  }
 };
 // Hero Animation
 const TextCarousel = function(el, toRotate, duration) {
