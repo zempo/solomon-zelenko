@@ -1,7 +1,7 @@
 const worksTemplate = document.createElement("template");
 worksTemplate.innerHTML = `
 <style>
-@import url("css/global.css");
+@import url("css/routes.css");
 </style>
 <h1>Works</h1>
 `;
