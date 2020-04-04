@@ -7,6 +7,11 @@
     width: 35px;
     text-decoration: none; }
 
+.about-pg img {
+  max-width: 80%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 50%; }
+
 .accordion {
   display: -webkit-box;
   display: -ms-flexbox;

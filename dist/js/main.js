@@ -1,6 +1,7 @@
 "use strict";
 
 // REFS
+const navImgs = document.querySelectorAll("a img");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 
@@ -118,13 +119,26 @@ class Router {
   }
 
   navBtns(e) {
+    const svgSrc = "img/svgs/n-";
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
+        navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
+        navImgs[1].setAttribute("src", `${svgSrc}about.svg`);
+        navImgs[2].setAttribute("src", `${svgSrc}works.svg`);
+        navImgs[3].setAttribute("src", `${svgSrc}bytes.svg`);
+        navImgs[4].setAttribute("src", `${svgSrc}contact.svg`);
         backBtn.disabled = true;
         frontBtn.disabled = false;
         return;
       case "about":
+        navImgs[0].setAttribute("src", `${svgSrc}home.svg`);
+        navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
+        navImgs[2].setAttribute("src", `${svgSrc}works.svg`);
+        navImgs[3].setAttribute("src", `${svgSrc}bytes.svg`);
+        navImgs[4].setAttribute("src", `${svgSrc}contact.svg`);
+        backBtn.disabled = false;
+        frontBtn.disabled = false;
       case "works":
       case "bytes":
         backBtn.disabled = false;
