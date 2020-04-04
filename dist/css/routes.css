@@ -1,4 +1,5 @@
 .route {
+  overflow-x: hidden;
   -o-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;

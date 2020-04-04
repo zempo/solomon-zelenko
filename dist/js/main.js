@@ -262,94 +262,8 @@ class ArrowNav {
   }
 }
 
-class Swipe {
-  constructor(element) {
-    this.xDown = null;
-    this.yDown = null;
-    this.element =
-      typeof element === "string" ? document.querySelector(element) : element;
-
-    this.element.addEventListener(
-      "touchstart",
-      function (evt) {
-        this.xDown = evt.touches[0].clientX;
-        this.yDown = evt.touches[0].clientY;
-      },
-      false
-    );
-  }
-
-  onLeft(callback) {
-    this.onLeft = callback;
-
-    return this;
-  }
-
-  onRight(callback) {
-    this.onRight = callback;
-
-    return this;
-  }
-
-  onUp(callback) {
-    this.onUp = callback;
-
-    return this;
-  }
-
-  onDown(callback) {
-    this.onDown = callback;
-
-    return this;
-  }
-
-  handleTouchMove(evt) {
-    if (!this.xDown || !this.yDown) {
-      return;
-    }
-
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
-
-    this.xDiff = this.xDown - xUp;
-    this.yDiff = this.yDown - yUp;
-
-    if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
-      // Most significant.
-      if (this.xDiff > 0) {
-        this.onLeft();
-      } else {
-        this.onRight();
-      }
-    } else {
-      if (this.yDiff > 0) {
-        this.onUp();
-      } else {
-        this.onDown();
-      }
-    }
-
-    // Reset values.
-    this.xDown = null;
-    this.yDown = null;
-  }
-
-  run() {
-    this.element.addEventListener(
-      "touchmove",
-      function (evt) {
-        this.handleTouchMove(evt);
-      },
-      false
-    );
-  }
-}
-
 let router = new Router();
 let arrowNav = new ArrowNav();
-let swiper = new Swipe("#container");
-
-swiper.onLeft(() => alert("swiped left"));
 
 backBtn.addEventListener("click", async (e) => {
   const slot = document.getElementById("container");
@@ -382,3 +296,75 @@ frontBtn.addEventListener("click", async (e) => {
     console.log(err);
   }
 });
+
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
+var xDown = null;
+var yDown = null;
+function handleTouchStart(evt) {
+  xDown = evt.touches[0].clientX;
+  yDown = evt.touches[0].clientY;
+}
+function handleTouchMove(evt) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  var xUp = evt.touches[0].clientX;
+  var yUp = evt.touches[0].clientY;
+
+  var xDiff = xDown - xUp;
+  var yDiff = yDown - yUp;
+  if (Math.abs(xDiff) + Math.abs(yDiff) > 150) {
+    //to deal with to short swipes
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      /*most significant*/
+      if (xDiff > 0) {
+        /* left swipe */
+        const toLeft = async (e) => {
+          const slot = document.getElementById("container");
+          slot.firstChild.classList.remove("r");
+          try {
+            const ready = arrowNav.goFwd(e);
+
+            if (ready) {
+              setTimeout(() => {
+                slot.firstChild.classList.add("r");
+              }, 50);
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        toLeft();
+      } else {
+        const toRight = async (e) => {
+          const slot = document.getElementById("container");
+          slot.firstChild.classList.remove("l");
+          try {
+            const ready = arrowNav.goBack(e);
+
+            if (ready) {
+              setTimeout(() => {
+                slot.firstChild.classList.add("l");
+              }, 50);
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        toRight();
+      }
+    } else {
+      if (yDiff > 0) {
+        /* up swipe */
+      } else {
+        /* down swipe */
+      }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+  }
+}
