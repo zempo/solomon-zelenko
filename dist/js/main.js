@@ -274,7 +274,7 @@ backBtn.addEventListener("click", async (e) => {
     if (ready) {
       setTimeout(() => {
         slot.firstChild.classList.add("l");
-      }, 50);
+      }, 70);
     }
   } catch (err) {
     console.log(err);
@@ -290,7 +290,7 @@ frontBtn.addEventListener("click", async (e) => {
     if (ready) {
       setTimeout(() => {
         slot.firstChild.classList.add("r");
-      }, 50);
+      }, 70);
     }
   } catch (err) {
     console.log(err);
@@ -331,7 +331,7 @@ function handleTouchMove(evt) {
             if (ready) {
               setTimeout(() => {
                 slot.firstChild.classList.add("r");
-              }, 50);
+              }, 70);
             }
           } catch (err) {
             console.log(err);
@@ -348,7 +348,7 @@ function handleTouchMove(evt) {
             if (ready) {
               setTimeout(() => {
                 slot.firstChild.classList.add("l");
-              }, 50);
+              }, 70);
             }
           } catch (err) {
             console.log(err);
