@@ -39,8 +39,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="-498.52407"
-     inkscape:cy="590.5261"
+     inkscape:cx="714.87234"
+     inkscape:cy="580.8121"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -102,7 +102,7 @@
            x="62.629459"
            y="121.58573"
            style="-inkscape-font-specification:Ubuntu;font-family:Ubuntu;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:53.33333333px;" /></flowRegion><flowPara
-         id="flowPara849"></flowPara></flowRoot>    <text
+         id="flowPara849" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="43.127083"
@@ -112,31 +112,31 @@
          id="tspan851"
          x="43.127083"
          y="23.092937"
-         style="stroke-width:0.26458332"></tspan></text>
+         style="stroke-width:0.26458332" /></text>
     <ellipse
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#787878;stroke-width:13.30319023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#787878;stroke-width:16.03002739;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
        id="path863"
-       cx="172.74646"
-       cy="-26.928364"
-       rx="28.926079"
-       ry="43.020317"
+       cx="172.81662"
+       cy="-26.601002"
+       rx="28.993402"
+       ry="41.484985"
        transform="scale(1,-1)" />
     <path
-       style="fill:none;stroke:#787878;stroke-width:13.64601803;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 83.195208,-13.902726 0.462993,83.345061"
+       style="fill:none;stroke:#787878;stroke-width:16.03002739;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 83.056944,-12.772881 0.464074,80.370602"
        id="path884"
        inkscape:connector-curvature="0" />
     <ellipse
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#787878;stroke-width:13.30319023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#787878;stroke-width:16.03002739;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
        id="path863-8"
-       cx="-82.890671"
-       cy="-136.47928"
-       rx="28.926079"
-       ry="43.020317"
+       cx="-82.820503"
+       cy="-138.1521"
+       rx="28.993399"
+       ry="41.484985"
        transform="scale(-1)" />
     <path
-       style="fill:none;stroke:#787878;stroke-width:13.64601803;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 172.4419,95.647917 -0.46302,83.345273"
+       style="fill:none;stroke:#787878;stroke-width:16.03002739;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 172.58015,98.777944 -0.4641,80.370806"
        id="path884-7"
        inkscape:connector-curvature="0" />
   </g>

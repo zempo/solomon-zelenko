@@ -158,7 +158,6 @@ class Router {
       case "contact":
         navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
         navImgs[4].nextElementSibling.style.color = "#000000";
-
         backBtn.disabled = false;
         frontBtn.disabled = true;
         return;
