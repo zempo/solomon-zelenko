@@ -89,7 +89,7 @@ class Router {
   constructor() {
     window.addEventListener("load", (e) => {
       navImgs[0].setAttribute("src", `img/svgs/n-home-on.svg`);
-      navImgs[0].nextElementSibling.style.color = "	#000000";
+      navImgs[0].nextElementSibling.style.color = "#000000";
       if (!window.location.hash) {
         backBtn.disabled = true;
         this.handleNoHash(e);
@@ -130,31 +130,35 @@ class Router {
       case "":
       case "home":
         navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
-        navImgs[0].nextElementSibling.style.color = "	#000000";
+        navImgs[0].nextElementSibling.style.color = "#000000";
         backBtn.disabled = true;
         frontBtn.disabled = false;
         return;
       case "about":
         navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
-        navImgs[1].nextElementSibling.style.color = "	#000000";
+        navImgs[1].nextElementSibling.style.color = "#000000";
+
         backBtn.disabled = false;
         frontBtn.disabled = false;
         return;
       case "works":
         navImgs[2].setAttribute("src", `${svgSrc}works-on.svg`);
-        navImgs[2].nextElementSibling.style.color = "	#000000";
+        navImgs[2].nextElementSibling.style.color = "#000000";
+
         backBtn.disabled = false;
         frontBtn.disabled = false;
         return;
       case "bytes":
         navImgs[3].setAttribute("src", `${svgSrc}bytes-on.svg`);
-        navImgs[3].nextElementSibling.style.color = "	#000000";
+        navImgs[3].nextElementSibling.style.color = "#000000";
+
         backBtn.disabled = false;
         frontBtn.disabled = false;
         return;
       case "contact":
         navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
-        navImgs[4].nextElementSibling.style.color = "	#000000";
+        navImgs[4].nextElementSibling.style.color = "#000000";
+
         backBtn.disabled = false;
         frontBtn.disabled = true;
         return;
