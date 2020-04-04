@@ -35,8 +35,9 @@ nav {
     justify-content: space-evenly; }
   nav a {
     width: 25%;
+    color: #828282;
     width: 38px;
-    font-size: 15px;
+    font-size: 13.5px;
     text-align: center; }
     nav a figure {
       margin: 0; }

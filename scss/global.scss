@@ -21,7 +21,7 @@ $colors: (
   link: #428bca,
   linkHover: #555,
   navBlue: #7ac243,
-  navGreen: #009cdc
+  navGreen: #009cdc,
 );
 
 * {
@@ -54,8 +54,9 @@ nav {
   }
   a {
     width: 25%;
+    color: rgb(130, 130, 130);
     width: 38px;
-    font-size: 15px;
+    font-size: 13.5px;
     text-align: center;
     figure {
       margin: 0;

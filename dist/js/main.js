@@ -6,7 +6,7 @@ const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 
 // ROUTE EVENT LISTENERS
-const toggleTab = e => {
+const toggleTab = (e) => {
   let sign = e.target.classList;
   let panel = e.target.nextElementSibling;
 
@@ -25,7 +25,7 @@ const toggleTab = e => {
   }
 };
 // Hero Animation
-const TextCarousel = function(el, toRotate, duration) {
+const TextCarousel = function (el, toRotate, duration) {
   this.toRotate = toRotate;
   this.el = el;
   this.loopNum = 0;
@@ -35,7 +35,7 @@ const TextCarousel = function(el, toRotate, duration) {
   this.isDeleting = false;
 };
 
-TextCarousel.prototype.tick = function() {
+TextCarousel.prototype.tick = function () {
   var i = this.loopNum % this.toRotate.length;
   var fullTxt = this.toRotate[i];
 
@@ -62,7 +62,7 @@ TextCarousel.prototype.tick = function() {
     delta = 500;
   }
 
-  setTimeout(function() {
+  setTimeout(function () {
     that.tick();
   }, delta);
 };
@@ -87,7 +87,9 @@ const runCarousel = () => {
 
 class Router {
   constructor() {
-    window.addEventListener("load", e => {
+    window.addEventListener("load", (e) => {
+      navImgs[0].setAttribute("src", `img/svgs/n-home-on.svg`);
+      navImgs[0].nextElementSibling.style.color = "	#000000";
       if (!window.location.hash) {
         backBtn.disabled = true;
         this.handleNoHash(e);
@@ -96,12 +98,12 @@ class Router {
         this.navBtns(e);
       }
     });
-    window.addEventListener("hashchange", e => {
+    window.addEventListener("hashchange", (e) => {
       this.navBtns(e);
       this.onRouteChange(e);
     });
     this.routeRefs = {
-      aboutTabs: []
+      aboutTabs: [],
     };
   }
 
@@ -109,8 +111,8 @@ class Router {
     switch (pg) {
       case "about":
         const aboutTabs = document.querySelectorAll(".btn-a");
-        aboutTabs.forEach(el => {
-          el.addEventListener("click", e => toggleTab(e));
+        aboutTabs.forEach((el) => {
+          el.addEventListener("click", (e) => toggleTab(e));
         });
         return;
       default:
@@ -120,31 +122,39 @@ class Router {
 
   navBtns(e) {
     const svgSrc = "img/svgs/n-";
+    navImgs.forEach((img) => {
+      img.nextElementSibling.style.color = "#828282";
+      img.setAttribute("src", `${svgSrc}${img.getAttribute("alt")}.svg`);
+    });
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
         navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
-        navImgs[1].setAttribute("src", `${svgSrc}about.svg`);
-        navImgs[2].setAttribute("src", `${svgSrc}works.svg`);
-        navImgs[3].setAttribute("src", `${svgSrc}bytes.svg`);
-        navImgs[4].setAttribute("src", `${svgSrc}contact.svg`);
+        navImgs[0].nextElementSibling.style.color = "	#000000";
         backBtn.disabled = true;
         frontBtn.disabled = false;
         return;
       case "about":
-        navImgs[0].setAttribute("src", `${svgSrc}home.svg`);
         navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
-        navImgs[2].setAttribute("src", `${svgSrc}works.svg`);
-        navImgs[3].setAttribute("src", `${svgSrc}bytes.svg`);
-        navImgs[4].setAttribute("src", `${svgSrc}contact.svg`);
+        navImgs[1].nextElementSibling.style.color = "	#000000";
         backBtn.disabled = false;
         frontBtn.disabled = false;
+        return;
       case "works":
+        navImgs[2].setAttribute("src", `${svgSrc}works-on.svg`);
+        navImgs[2].nextElementSibling.style.color = "	#000000";
+        backBtn.disabled = false;
+        frontBtn.disabled = false;
+        return;
       case "bytes":
+        navImgs[3].setAttribute("src", `${svgSrc}bytes-on.svg`);
+        navImgs[3].nextElementSibling.style.color = "	#000000";
         backBtn.disabled = false;
         frontBtn.disabled = false;
         return;
       case "contact":
+        navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
+        navImgs[4].nextElementSibling.style.color = "	#000000";
         backBtn.disabled = false;
         frontBtn.disabled = true;
         return;
@@ -179,16 +189,16 @@ class Router {
     if (contentURI === "routes/.html") {
       fetch("routes/home.html")
         // to-do: event is also firing as a hashchange, make sure to account for this
-        .then(r => r.text())
-        .then(content => {
+        .then((r) => r.text())
+        .then((content) => {
           const slot = document.getElementById("container");
           slot.innerHTML = content;
         })
         .then(() => this.getRefs("home"));
     } else {
       fetch(contentURI)
-        .then(r => r.text())
-        .then(content => this.updateSlot(content))
+        .then((r) => r.text())
+        .then((content) => this.updateSlot(content))
         .then(() => this.getRefs(uri));
     }
   }
@@ -216,8 +226,9 @@ class ArrowNav {
       case "bytes":
       case "contact":
         window.location.hash = this.hashIdx[
-          this.hashIdx.findIndex(el => el === window.location.hash.substr(1)) -
-            1
+          this.hashIdx.findIndex(
+            (el) => el === window.location.hash.substr(1)
+          ) - 1
         ];
         return;
       default:
@@ -235,8 +246,9 @@ class ArrowNav {
       case "works":
       case "bytes":
         window.location.hash = this.hashIdx[
-          this.hashIdx.findIndex(el => el === window.location.hash.substr(1)) +
-            1
+          this.hashIdx.findIndex(
+            (el) => el === window.location.hash.substr(1)
+          ) + 1
         ];
         return;
       case "contact":
@@ -250,10 +262,10 @@ class ArrowNav {
 let router = new Router();
 let arrowNav = new ArrowNav();
 
-backBtn.addEventListener("click", e => {
+backBtn.addEventListener("click", (e) => {
   arrowNav.goBack(e);
 });
 
-frontBtn.addEventListener("click", e => {
+frontBtn.addEventListener("click", (e) => {
   arrowNav.goFwd(e);
 });
