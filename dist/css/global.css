@@ -36,14 +36,14 @@ nav {
   nav a {
     width: 25%;
     color: #828282;
-    width: 38px;
-    font-size: 13.5px;
+    font-size: 12px;
+    letter-spacing: 1px;
     text-align: center; }
     nav a figure {
       margin: 0; }
     nav a img {
       text-align: center;
-      width: 38px; }
+      width: 35px; }
 
 a {
   text-decoration: none;
