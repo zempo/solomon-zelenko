@@ -28,6 +28,10 @@ $colors: (
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html,
 body,
 main {
@@ -55,10 +59,14 @@ nav {
   a {
     width: 25%;
     color: rgb(130, 130, 130);
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    &:active {
+      background: rgba(0, 0, 0, 0.3);
+    }
     figure {
       margin: 0;
     }
@@ -76,7 +84,7 @@ a {
 
 #container {
   text-align: center;
-  min-height: 100vh;
+  min-height: 101vh;
 }
 
 .logo-main {

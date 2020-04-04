@@ -11,6 +11,9 @@
 * {
   box-sizing: border-box; }
 
+body {
+  overflow-x: hidden; }
+
 html,
 body,
 main {
@@ -36,10 +39,13 @@ nav {
   nav a {
     width: 25%;
     color: #828282;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
-    text-align: center; }
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); }
+    nav a:active {
+      background: rgba(0, 0, 0, 0.3); }
     nav a figure {
       margin: 0; }
     nav a img {
@@ -52,7 +58,7 @@ a {
 
 #container {
   text-align: center;
-  min-height: 100vh; }
+  min-height: 101vh; }
 
 .logo-main {
   margin-top: 8rem;

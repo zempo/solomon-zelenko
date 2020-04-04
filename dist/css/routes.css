@@ -1,3 +1,21 @@
+.route {
+  -o-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s; }
+
+.l {
+  -moz-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -o-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.r {
+  -o-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -moz-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
 .icons-list {
   padding-left: 0;
   list-style-type: none;
@@ -8,7 +26,7 @@
     text-decoration: none; }
 
 .about-pg img {
-  max-width: 80%;
+  max-width: 300px;
   border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 50%; }
 

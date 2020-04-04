@@ -1,6 +1,6 @@
 "use strict";
 
-// REFS
+// GLOBAL REFS
 const navImgs = document.querySelectorAll("a img");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
@@ -221,10 +221,10 @@ class ArrowNav {
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
-        return;
+        return true;
       case "about":
         window.location.hash = this.hashIdx[0];
-        return;
+        return true;
       case "works":
       case "bytes":
       case "contact":
@@ -233,9 +233,9 @@ class ArrowNav {
             (el) => el === window.location.hash.substr(1)
           ) - 1
         ];
-        return;
+        return true;
       default:
-        return;
+        return true;
     }
   }
 
@@ -243,7 +243,7 @@ class ArrowNav {
     switch (window.location.hash.substr(1)) {
       case "":
         window.location.hash = "about";
-        return;
+        return true;
       case "home":
       case "about":
       case "works":
@@ -253,11 +253,11 @@ class ArrowNav {
             (el) => el === window.location.hash.substr(1)
           ) + 1
         ];
-        return;
+        return true;
       case "contact":
-        return;
+        return true;
       default:
-        return;
+        return true;
     }
   }
 }
@@ -265,10 +265,34 @@ class ArrowNav {
 let router = new Router();
 let arrowNav = new ArrowNav();
 
-backBtn.addEventListener("click", (e) => {
-  arrowNav.goBack(e);
+backBtn.addEventListener("click", async (e) => {
+  const slot = document.getElementById("container");
+  slot.firstChild.classList.remove("l");
+  try {
+    const ready = arrowNav.goBack(e);
+
+    if (ready) {
+      setTimeout(() => {
+        slot.firstChild.classList.add("l");
+      }, 50);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 });
 
-frontBtn.addEventListener("click", (e) => {
-  arrowNav.goFwd(e);
+frontBtn.addEventListener("click", async (e) => {
+  const slot = document.getElementById("container");
+  slot.firstChild.classList.remove("r");
+  try {
+    const ready = arrowNav.goFwd(e);
+
+    if (ready) {
+      setTimeout(() => {
+        slot.firstChild.classList.add("r");
+      }, 50);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 });
