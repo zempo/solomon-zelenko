@@ -177,7 +177,9 @@ class Router {
       const text = await res.text();
       const content = await text;
       if (content !== "") {
-        loader.style.display = "none";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 800);
         slot.innerHTML = content;
       }
       runCarousel();
@@ -214,7 +216,9 @@ class Router {
   updateSlot(content) {
     const slot = document.getElementById("container");
     slot.innerHTML = content;
-    loader.style.display = "none";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 700);
     runCarousel();
   }
 }
@@ -265,6 +269,7 @@ class ArrowNav {
   }
   refRoute(direction) {
     let routePg = document.querySelector(".route");
+    App.style.visibility = "visible";
     routePg.classList.add(direction);
   }
 
@@ -279,7 +284,7 @@ class ArrowNav {
     };
     setTimeout(() => {
       updateCheck(hash);
-    }, 10);
+    }, 20);
   }
 }
 
@@ -293,6 +298,8 @@ const handleSwipe = async (e, navFxn, direction) => {
     const ready = await navFxn(e);
 
     if (ready) {
+      App.style.visibility = "hidden";
+      loader.style.display = "block";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);
     }
   } catch (err) {

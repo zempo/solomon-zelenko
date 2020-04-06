@@ -77,9 +77,10 @@ a {
 
 #loading {
   display: block;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   background-color: #fafafa; }
@@ -93,35 +94,5 @@ a {
     background-repeat: no-repeat;
     background-size: 80px 80px;
     background-position: center;
-    -webkit-animation: ping 0.8s ease-in-out infinite forwards;
-    animation: ping 0.8s ease-in-out infinite forwards;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s; }
-
-@-webkit-keyframes ping {
-  0% {
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    opacity: 0.8; }
-  80% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    opacity: 0; }
-  100% {
-    -webkit-transform: scale(2.2);
-    transform: scale(2.2);
-    opacity: 0; } }
-
-@keyframes ping {
-  0% {
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    opacity: 0.8; }
-  80% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    opacity: 0; }
-  100% {
-    -webkit-transform: scale(2.2);
-    transform: scale(2.2);
-    opacity: 0; } }
+    -webkit-animation: ping 0.8s ease-in-out infinite both;
+    animation: ping 0.8s ease-in-out infinite both; }
