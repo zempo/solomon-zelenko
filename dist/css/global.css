@@ -11,7 +11,6 @@
 * {
   box-sizing: border-box; }
 
-html,
 body,
 main {
   overflow-x: hidden;
@@ -20,18 +19,35 @@ main {
   font-family: "SpartanMB";
   margin: 0;
   padding: 0; }
+  body .btn-fwd,
+  body .btn-back,
+  main .btn-fwd,
+  main .btn-back {
+    position: fixed;
+    top: 50vh; }
+  body .btn-fwd,
+  main .btn-fwd {
+    right: 20px; }
+  body .btn-back,
+  main .btn-back {
+    left: 20px; }
+  body #container,
+  main #container {
+    text-align: center;
+    background: #fafafa;
+    min-height: 101vh;
+    padding: 0px 15px; }
 
 nav {
   position: fixed;
   bottom: 0;
-  background: #fafafa;
   z-index: 1;
-  border-top: 1px solid black;
-  width: 100%; }
+  width: 100%;
+  background: #fafafa;
+  box-shadow: 0px -3px 6px -5px rgba(51, 51, 51, 0.4); }
   nav ul {
     list-style-type: none;
     padding: 0;
-    width: 100%;
     display: flex;
     justify-content: space-evenly; }
   nav a {
@@ -54,35 +70,58 @@ a {
   text-decoration: none;
   color: #000000; }
 
-#container {
-  text-align: center;
-  min-height: 101vh; }
-
 .logo-main {
   margin-top: 8rem;
   max-width: 90%;
   max-height: 250px; }
 
-.btn-fwd,
-.btn-back {
-  position: fixed;
-  top: 50vh; }
-
-.btn-fwd {
-  right: 20px; }
-
-.btn-back {
-  left: 20px; }
-
 #loading {
   display: block;
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(192, 192, 192, 0.5);
-  background-image: url("https://i.stack.imgur.com/MnyxU.gif");
-  background-repeat: no-repeat;
-  background-position: center; }
+  background-color: #fafafa; }
+  #loading .load-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: calc(50vh - 40px);
+    left: calc(50vw - 40px);
+    background-image: url("../img/svgs/n-home-on.svg");
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position: center;
+    -webkit-animation: ping 0.8s ease-in-out infinite forwards;
+    animation: ping 0.8s ease-in-out infinite forwards;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; }
+
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8; }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0; } }
+
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8; }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0; } }

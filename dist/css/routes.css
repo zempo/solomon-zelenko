@@ -27,8 +27,8 @@
     text-decoration: none; }
 
 .about-pg img {
-  max-width: 300px;
-  border: 2px solid rgba(0, 0, 0, 0);
+  max-width: 250px;
+  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 50%; }
 
 .accordion {
