@@ -214,25 +214,22 @@ class Router {
 }
 
 class ArrowNav {
-  constructor() {
-    this.hashIdx = ["home", "about", "works", "bytes", "contact"];
-  }
   goBack(e) {
+    const hashIdx = ["home", "about", "works", "bytes", "contact"];
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
         return true;
       case "about":
-        window.location.hash = this.hashIdx[0];
+        window.location.hash = hashIdx[0];
         return true;
       case "works":
       case "bytes":
       case "contact":
-        window.location.hash = this.hashIdx[
-          this.hashIdx.findIndex(
-            (el) => el === window.location.hash.substr(1)
-          ) - 1
-        ];
+        window.location.hash =
+          hashIdx[
+            hashIdx.findIndex((el) => el === window.location.hash.substr(1)) - 1
+          ];
         return true;
       default:
         return true;
@@ -240,6 +237,7 @@ class ArrowNav {
   }
 
   goFwd(e) {
+    const hashIdx = ["home", "about", "works", "bytes", "contact"];
     switch (window.location.hash.substr(1)) {
       case "":
         window.location.hash = "about";
@@ -248,11 +246,10 @@ class ArrowNav {
       case "about":
       case "works":
       case "bytes":
-        window.location.hash = this.hashIdx[
-          this.hashIdx.findIndex(
-            (el) => el === window.location.hash.substr(1)
-          ) + 1
-        ];
+        window.location.hash =
+          hashIdx[
+            hashIdx.findIndex((el) => el === window.location.hash.substr(1)) + 1
+          ];
         return true;
       case "contact":
         return true;
@@ -265,103 +262,61 @@ class ArrowNav {
 let router = new Router();
 let arrowNav = new ArrowNav();
 
-backBtn.addEventListener("click", async (e) => {
+const handleSwipe = async (e, navFxn, direction) => {
   const slot = document.getElementById("container");
-  slot.firstChild.classList.remove("l");
+  slot.firstChild.classList.remove(direction);
   try {
-    const ready = arrowNav.goBack(e);
+    const ready = await navFxn(e);
 
     if (ready) {
       setTimeout(() => {
-        slot.firstChild.classList.add("l");
-      }, 70);
+        slot.firstChild.classList.add(direction);
+      }, 50);
     }
   } catch (err) {
     console.log(err);
   }
-});
+};
 
-frontBtn.addEventListener("click", async (e) => {
-  const slot = document.getElementById("container");
-  slot.firstChild.classList.remove("r");
-  try {
-    const ready = arrowNav.goFwd(e);
+backBtn.addEventListener("click", (e) => handleSwipe(e, arrowNav.goBack, "l"));
 
-    if (ready) {
-      setTimeout(() => {
-        slot.firstChild.classList.add("r");
-      }, 70);
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
+frontBtn.addEventListener("click", (e) => handleSwipe(e, arrowNav.goFwd, "r"));
 
 document.addEventListener("touchstart", handleTouchStart, false);
 document.addEventListener("touchmove", handleTouchMove, false);
 var xDown = null;
 var yDown = null;
-function handleTouchStart(evt) {
-  xDown = evt.touches[0].clientX;
-  yDown = evt.touches[0].clientY;
+function handleTouchStart(e) {
+  xDown = e.touches[0].clientX;
+  yDown = e.touches[0].clientY;
 }
-function handleTouchMove(evt) {
+function handleTouchMove(e) {
   if (!xDown || !yDown) {
     return;
   }
 
-  var xUp = evt.touches[0].clientX;
-  var yUp = evt.touches[0].clientY;
+  var xUp = e.touches[0].clientX;
+  var yUp = e.touches[0].clientY;
 
   var xDiff = xDown - xUp;
   var yDiff = yDown - yUp;
-  if (Math.abs(xDiff) + Math.abs(yDiff) > 150) {
+  if (Math.abs(xDiff) + Math.abs(yDiff) > 130) {
     //to deal with to short swipes
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       /*most significant*/
       if (xDiff > 0) {
         /* left swipe */
-        const toLeft = async (e) => {
-          const slot = document.getElementById("container");
-          slot.firstChild.classList.remove("r");
-          try {
-            const ready = arrowNav.goFwd(e);
-
-            if (ready) {
-              setTimeout(() => {
-                slot.firstChild.classList.add("r");
-              }, 70);
-            }
-          } catch (err) {
-            console.log(err);
-          }
-        };
-        toLeft();
+        handleSwipe(e, arrowNav.goFwd, "r");
       } else {
-        const toRight = async (e) => {
-          const slot = document.getElementById("container");
-          slot.firstChild.classList.remove("l");
-          try {
-            const ready = arrowNav.goBack(e);
-
-            if (ready) {
-              setTimeout(() => {
-                slot.firstChild.classList.add("l");
-              }, 70);
-            }
-          } catch (err) {
-            console.log(err);
-          }
-        };
-        toRight();
+        handleSwipe(e, arrowNav.goBack, "l");
       }
     } else {
-      if (yDiff > 0) {
-        /* up swipe */
-      } else {
-        /* down swipe */
-      }
+      // if (yDiff > 0) {
+      //   /* up swipe */
+      // } else {
+      //   /* down swipe */
+      // }
     }
     /* reset values */
     xDown = null;

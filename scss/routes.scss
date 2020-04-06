@@ -21,17 +21,17 @@ $colors: (
 }
 
 .l {
-  -moz-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -o-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .r {
-  -o-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -moz-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -o-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -moz-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 //  HOME
