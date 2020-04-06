@@ -257,6 +257,24 @@ class ArrowNav {
         return true;
     }
   }
+  refRoute(direction) {
+    let routePg = document.querySelector(".route");
+    routePg.classList.add(direction);
+  }
+
+  hasUpdated(hash, direction) {
+    const updateCheck = () => {
+      fetch(`routes/${hash}.html`)
+        .then((r) => r.text())
+        .then((content) => {
+          return true;
+        })
+        .then(() => this.refRoute(direction));
+    };
+    setTimeout(() => {
+      updateCheck(hash);
+    }, 10);
+  }
 }
 
 let router = new Router();
@@ -269,9 +287,7 @@ const handleSwipe = async (e, navFxn, direction) => {
     const ready = await navFxn(e);
 
     if (ready) {
-      setTimeout(() => {
-        slot.firstChild.classList.add(direction);
-      }, 50);
+      arrowNav.hasUpdated(window.location.hash.substr(1), direction);
     }
   } catch (err) {
     console.log(err);
@@ -323,3 +339,21 @@ function handleTouchMove(e) {
     yDown = null;
   }
 }
+
+function onReady(callback) {
+  var intervalId = window.setInterval(function () {
+    if (document.getElementsByTagName("body")[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1000);
+}
+
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? "block" : "none";
+}
+
+onReady(function () {
+  setVisible("#container", true);
+  setVisible("#loading", false);
+});
