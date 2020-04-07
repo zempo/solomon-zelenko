@@ -3,7 +3,6 @@ worksTemplate.innerHTML = `
 <style>
 @import url("css/routes.css");
 </style>
-<h1>Works</h1>
 `;
 
 class WorksPage extends HTMLElement {

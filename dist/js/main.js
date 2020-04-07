@@ -285,12 +285,14 @@ class ArrowNav {
           r.text();
         })
         .then((content) => {
+          setTimeout(() => {
+            loader.style.display = "none";
+          }, 0.4);
           return true;
         })
         .then(() => this.refRoute(direction));
     };
     setTimeout(() => {
-      loader.style.display = "none";
       updateCheck(hash);
     }, 30);
   }
@@ -298,13 +300,14 @@ class ArrowNav {
 
 let router = new Router();
 let arrowNav = new ArrowNav();
+console.log(navigator.connection.downlink);
 const handleSwipe = async (e, navFxn, direction) => {
   try {
     const ready = await navFxn(e);
-    if (ready && navigator.connection.downlink >= 4) {
+    if (ready && navigator.connection.downlink >= 1.5) {
       App.style.visibility = "hidden";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);
-    } else if (ready && navigator.connection.downlink < 4) {
+    } else if (ready && navigator.connection.downlink < 1.5) {
       App.style.visibility = "hidden";
       loader.style.display = "block";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);
