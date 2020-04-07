@@ -10,6 +10,8 @@
   font-weight: normal;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 $font: "SpartanMB";
 $colors: (
   main-bg: rgb(250, 250, 250),
@@ -26,6 +28,16 @@ $colors: (
 
 * {
   box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+  font: $font;
+}
+
+.min-txt {
+  font-family: "Indie Flower", cursive;
 }
 
 body,
@@ -56,34 +68,20 @@ main {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
     svg {
-      background: rgba(160, 160, 160, 0.4);
+      background: rgba(160, 160, 160, 0.3);
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
     }
     path {
-      fill: rgba(250, 250, 250, 0.7);
+      fill: rgba(250, 250, 250, 0.9);
     }
-    &:disabled {
-      background: rgb(128, 128, 128);
-      border: 1px solid rgba(160, 160, 160, 0.4);
-      svg {
-        background: rgba(160, 160, 160, 0.4);
-      }
-      path {
-        fill: rgba(250, 250, 250, 0.3);
-      }
-    }
-    &:active:not([disabled]) {
+    &:active:not([disabled]),
+    &:hover:not([disabled]) {
       svg {
         background: rgba(160, 160, 160, 0.3);
       }
       path {
-        fill: rgba(250, 250, 250, 0.9);
-      }
-    }
-    &:hover:not([disabled]) {
-      path {
-        fill: rgba(250, 250, 250, 0.9);
+        fill: rgba(250, 250, 250, 1);
       }
     }
   }

@@ -17,6 +17,54 @@
   -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
 
+.home-pg .min-txt {
+  margin-top: 16vw; }
+
+.home-pg .resume-btn,
+.home-pg .contact-btn {
+  background: none;
+  font-size: 20px;
+  margin: 0.5rem;
+  width: 120px;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid black; }
+  .home-pg .resume-btn::before,
+  .home-pg .contact-btn::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    color: #fafafa;
+    height: 100%;
+    width: 100%; }
+  .home-pg .resume-btn::before,
+  .home-pg .resume-btn > span,
+  .home-pg .contact-btn::before,
+  .home-pg .contact-btn > span {
+    padding: 10.5px 0;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
+  .home-pg .resume-btn:hover::before,
+  .home-pg .contact-btn:hover::before {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .home-pg .resume-btn:hover > span,
+  .home-pg .contact-btn:hover > span {
+    transition: transform 0.3s; }
+
+.home-pg .resume-btn::before {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.home-pg .contact-btn::before {
+  -webkit-transform: translate3d(200%, 0, 0);
+  transform: translate3d(200%, 0, 0); }
+
 .icons-list {
   padding-left: 0;
   list-style-type: none;
