@@ -7,7 +7,14 @@ const navImgs = document.querySelectorAll("a img");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 
-// ROUTE EVENT LISTENERS
+// MAIN EVENT LISTENERS
+// home pg
+const handleResume = (e) => {
+  e.preventDefault(e);
+  window.open("img/Resume.pdf");
+};
+
+// About pg
 const toggleTab = (e) => {
   let sign = e.target.classList;
   let panel = e.target.nextElementSibling;
@@ -93,7 +100,6 @@ class Router {
       navImgs[0].setAttribute("src", `img/svgs/n-home-on.svg`);
       navImgs[0].nextElementSibling.style.color = "#000000";
       if (!window.location.hash) {
-        backBtn.disabled = true;
         window.scrollTo(0, 0);
         this.handleNoHash(e);
       } else {
@@ -113,6 +119,15 @@ class Router {
 
   getRefs(pg) {
     switch (pg) {
+      case "home":
+        const cBtn = document.querySelector(".contact-btn");
+        const rBtn = document.querySelector(".resume-btn");
+        cBtn.addEventListener(
+          "click",
+          (e) => (window.location.hash = "#contact")
+        );
+        rBtn.addEventListener("click", (e) => handleResume(e));
+        return;
       case "about":
         const aboutTabs = document.querySelectorAll(".btn-a");
         aboutTabs.forEach((el) => {
@@ -135,35 +150,22 @@ class Router {
       case "home":
         navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
         navImgs[0].nextElementSibling.style.color = "#000000";
-        backBtn.disabled = true;
-        frontBtn.disabled = false;
         return;
       case "about":
         navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
         navImgs[1].nextElementSibling.style.color = "#000000";
-
-        backBtn.disabled = false;
-        frontBtn.disabled = false;
         return;
       case "works":
         navImgs[2].setAttribute("src", `${svgSrc}works-on.svg`);
         navImgs[2].nextElementSibling.style.color = "#000000";
-
-        backBtn.disabled = false;
-        frontBtn.disabled = false;
         return;
       case "bytes":
         navImgs[3].setAttribute("src", `${svgSrc}bytes-on.svg`);
         navImgs[3].nextElementSibling.style.color = "#000000";
-
-        backBtn.disabled = false;
-        frontBtn.disabled = false;
         return;
       case "contact":
         navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
         navImgs[4].nextElementSibling.style.color = "#000000";
-        backBtn.disabled = false;
-        frontBtn.disabled = true;
         return;
       default:
         return;
@@ -181,6 +183,7 @@ class Router {
           loader.style.display = "none";
         }, 800);
         slot.innerHTML = content;
+        this.getRefs("home");
       }
       runCarousel();
     } catch (err) {
@@ -229,6 +232,7 @@ class ArrowNav {
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
+        window.location.hash = hashIdx[4];
         return true;
       case "about":
         window.location.hash = hashIdx[0];
@@ -250,7 +254,7 @@ class ArrowNav {
     const hashIdx = ["home", "about", "works", "bytes", "contact"];
     switch (window.location.hash.substr(1)) {
       case "":
-        window.location.hash = "about";
+        window.location.hash = hashIdx[1];
         return true;
       case "home":
       case "about":
@@ -262,6 +266,7 @@ class ArrowNav {
           ];
         return true;
       case "contact":
+        window.location.hash = hashIdx[0];
         return true;
       default:
         return true;
@@ -269,35 +274,37 @@ class ArrowNav {
   }
   refRoute(direction) {
     let routePg = document.querySelector(".route");
-    App.style.visibility = "visible";
     routePg.classList.add(direction);
   }
 
   hasUpdated(hash, direction) {
     const updateCheck = () => {
       fetch(`routes/${hash}.html`)
-        .then((r) => r.text())
+        .then((r) => {
+          App.style.visibility = "visible";
+          r.text();
+        })
         .then((content) => {
           return true;
         })
         .then(() => this.refRoute(direction));
     };
     setTimeout(() => {
+      loader.style.display = "none";
       updateCheck(hash);
-    }, 20);
+    }, 30);
   }
 }
 
 let router = new Router();
 let arrowNav = new ArrowNav();
-
 const handleSwipe = async (e, navFxn, direction) => {
-  const slot = document.getElementById("container");
-  slot.firstChild.classList.remove(direction);
   try {
     const ready = await navFxn(e);
-
-    if (ready) {
+    if (ready && navigator.connection.downlink >= 4) {
+      App.style.visibility = "hidden";
+      arrowNav.hasUpdated(window.location.hash.substr(1), direction);
+    } else if (ready && navigator.connection.downlink < 4) {
       App.style.visibility = "hidden";
       loader.style.display = "block";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);

@@ -70,13 +70,29 @@
       </nav>
     </header>
     <main>
+      <button class="btn-back" title="prev">
+        back<svg viewBox="-15 -15 130 130">
+          <path
+            d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+            class="arrow"
+            transform="translate(15,0)"
+          ></path>
+        </svg>
+      </button>
+      <button class="btn-fwd" title="next">
+        forward<svg viewBox="-15 -15 130 130">
+          <path
+            d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+            class="arrow"
+            transform="translate(85,100) rotate(180)"
+          ></path>
+        </svg>
+      </button>
       <section id="container"></section>
       <div id="loading">
         <div class="load-icon"></div>
       </div>
     </main>
-    <button class="btn-back">back</button>
-    <button class="btn-fwd">forward</button>
     <script src="js/components/bytes.js"></script>
     <script src="js/components/contact.js"></script>
     <script src="js/components/works.js"></script>

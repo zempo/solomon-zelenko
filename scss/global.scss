@@ -36,23 +36,61 @@ main {
   font-family: $font;
   margin: 0;
   padding: 0;
-  .btn-fwd,
-  .btn-back {
-    position: fixed;
-    top: 50vh;
-  }
-
   .btn-fwd {
     right: 20px;
   }
-
   .btn-back {
     left: 20px;
   }
+  .btn-fwd,
+  .btn-back {
+    position: fixed;
+    font-size: 0;
+    padding: 0;
+    top: 50vh;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    outline: none;
+    background: rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    svg {
+      background: rgba(160, 160, 160, 0.4);
+      border: 0px solid rgba(150, 150, 150, 0);
+      border-radius: 50%;
+    }
+    path {
+      fill: rgba(250, 250, 250, 0.7);
+    }
+    &:disabled {
+      background: rgb(128, 128, 128);
+      border: 1px solid rgba(160, 160, 160, 0.4);
+      svg {
+        background: rgba(160, 160, 160, 0.4);
+      }
+      path {
+        fill: rgba(250, 250, 250, 0.3);
+      }
+    }
+    &:active:not([disabled]) {
+      svg {
+        background: rgba(160, 160, 160, 0.3);
+      }
+      path {
+        fill: rgba(250, 250, 250, 0.9);
+      }
+    }
+    &:hover:not([disabled]) {
+      path {
+        fill: rgba(250, 250, 250, 0.9);
+      }
+    }
+  }
+
   #container {
     text-align: center;
     background: rgb(250, 250, 250);
-
     min-height: 101vh;
     padding: 0px 15px;
   }

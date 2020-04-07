@@ -20,17 +20,69 @@ main {
   margin: 0;
   padding: 0; }
   body .btn-fwd,
-  body .btn-back,
-  main .btn-fwd,
-  main .btn-back {
-    position: fixed;
-    top: 50vh; }
-  body .btn-fwd,
   main .btn-fwd {
     right: 20px; }
   body .btn-back,
   main .btn-back {
     left: 20px; }
+  body .btn-fwd,
+  body .btn-back,
+  main .btn-fwd,
+  main .btn-back {
+    position: fixed;
+    font-size: 0;
+    padding: 0;
+    top: 50vh;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    outline: none;
+    background: black;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 50%; }
+    body .btn-fwd svg,
+    body .btn-back svg,
+    main .btn-fwd svg,
+    main .btn-back svg {
+      background: rgba(160, 160, 160, 0.4);
+      border: 0px solid rgba(150, 150, 150, 0);
+      border-radius: 50%; }
+    body .btn-fwd path,
+    body .btn-back path,
+    main .btn-fwd path,
+    main .btn-back path {
+      fill: rgba(250, 250, 250, 0.7); }
+    body .btn-fwd:disabled,
+    body .btn-back:disabled,
+    main .btn-fwd:disabled,
+    main .btn-back:disabled {
+      background: gray;
+      border: 1px solid rgba(160, 160, 160, 0.4); }
+      body .btn-fwd:disabled svg,
+      body .btn-back:disabled svg,
+      main .btn-fwd:disabled svg,
+      main .btn-back:disabled svg {
+        background: rgba(160, 160, 160, 0.4); }
+      body .btn-fwd:disabled path,
+      body .btn-back:disabled path,
+      main .btn-fwd:disabled path,
+      main .btn-back:disabled path {
+        fill: rgba(250, 250, 250, 0.3); }
+    body .btn-fwd:active:not([disabled]) svg,
+    body .btn-back:active:not([disabled]) svg,
+    main .btn-fwd:active:not([disabled]) svg,
+    main .btn-back:active:not([disabled]) svg {
+      background: rgba(160, 160, 160, 0.3); }
+    body .btn-fwd:active:not([disabled]) path,
+    body .btn-back:active:not([disabled]) path,
+    main .btn-fwd:active:not([disabled]) path,
+    main .btn-back:active:not([disabled]) path {
+      fill: rgba(250, 250, 250, 0.9); }
+    body .btn-fwd:hover:not([disabled]) path,
+    body .btn-back:hover:not([disabled]) path,
+    main .btn-fwd:hover:not([disabled]) path,
+    main .btn-back:hover:not([disabled]) path {
+      fill: rgba(250, 250, 250, 0.9); }
   body #container,
   main #container {
     text-align: center;

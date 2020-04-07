@@ -24,8 +24,8 @@
 
 @-o-keyframes fromRight {
   0% {
-    -o-transform: translateX(50px);
-    transform: translateX(50px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
     opacity: 0.1; }
   100% {
     -o-transform: translateX(0);
@@ -34,8 +34,8 @@
 
 @-moz-keyframes fromRight {
   0% {
-    -moz-transform: translateX(50px);
-    transform: translateX(50px);
+    -moz-transform: translateX(100px);
+    transform: translateX(100px);
     opacity: 0.1; }
   100% {
     -moz-transform: translateX(0);
@@ -44,8 +44,8 @@
 
 @-webkit-keyframes fromRight {
   0% {
-    -webkit-transform: translateX(50px);
-    transform: translateX(50px);
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -54,8 +54,8 @@
 
 @keyframes fromRight {
   0% {
-    -webkit-transform: translateX(50px);
-    transform: translateX(50px);
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -64,8 +64,8 @@
 
 @-o-keyframes fromLeft {
   0% {
-    -o-transform: translateX(-50px);
-    transform: translateX(-50px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px);
     opacity: 0.1; }
   100% {
     -o-transform: translateX(0);
@@ -74,8 +74,8 @@
 
 @-moz-keyframes fromLeft {
   0% {
-    -moz-transform: translateX(-50px);
-    transform: translateX(-50px);
+    -moz-transform: translateX(-100px);
+    transform: translateX(-100px);
     opacity: 0.1; }
   100% {
     -moz-transform: translateX(0);
@@ -84,8 +84,8 @@
 
 @-webkit-keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-50px);
-    transform: translateX(-50px);
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -94,8 +94,8 @@
 
 @keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-50px);
-    transform: translateX(-50px);
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
