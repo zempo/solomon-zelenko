@@ -1,11 +1,9 @@
-"use strict";
-
 // GLOBAL REFS
-const loader = document.getElementById("loading");
 const App = document.getElementById("container");
-const navImgs = document.querySelectorAll("a img");
+const loader = document.getElementById("loading");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
+const navImgs = document.querySelectorAll("a img");
 
 // MAIN EVENT LISTENERS
 // home pg
@@ -133,6 +131,10 @@ class Router {
         aboutTabs.forEach((el) => {
           el.addEventListener("click", (e) => toggleTab(e));
         });
+        return;
+      case "works":
+        const worksTarget = document.querySelector(".works-list");
+        loadWorks(worksTarget);
         return;
       default:
         return;
@@ -300,7 +302,6 @@ class ArrowNav {
 
 let router = new Router();
 let arrowNav = new ArrowNav();
-console.log(navigator.connection.downlink);
 const handleSwipe = async (e, navFxn, direction) => {
   try {
     const ready = await navFxn(e);
