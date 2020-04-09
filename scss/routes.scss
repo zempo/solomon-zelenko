@@ -18,6 +18,7 @@ $colors: (
   -moz-animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
+  padding-bottom: 100px;
 }
 
 .l {
@@ -157,6 +158,19 @@ $homeFonts: (
   .a-content {
     display: none;
     transition: all 0.3s;
+    ul {
+      list-style-type: none;
+      text-align: left;
+      // padding-left: 0;
+    }
+  }
+  .values {
+    width: 100%;
+    text-align: left;
+    ol {
+      // padding-left: 0;
+      list-style-position: inside;
+    }
   }
   .open-content {
     display: block;
@@ -174,7 +188,40 @@ $homeFonts: (
 
 // works 
 
-.works-list, .work-info {
-  list-style-type: none; 
+.works-list {
+  list-style-type: none;
   padding-left: 0;
+      .filter-btn  {
+        -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
+        visibility: visible;
+        user-select: none;
+        list-style: none;
+        box-sizing: border-box;
+        display: inline-block;
+        color: rgb(250, 250, 250);
+        background-color: rgb(120, 120, 120);
+        border: 1px solid rgb(100, 100, 100);
+        border-width: 1px 1px 2px 1px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-family: MontSerrat,Tahoma,Arial,sans-serif;
+        font-weight: 700;
+        font-size: .75em;
+        line-height: 1em;
+        box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+        margin: 3px;
+        opacity: 1;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        padding: 6px 5px;
+       }
+    .selected {
+    background-color: rgb(65, 65, 65);
+    border-color: rgb(34, 34, 34);
+    }
+  .work-info {
+    list-style-type: none; 
+    padding-left: 0;   
+  }
 }

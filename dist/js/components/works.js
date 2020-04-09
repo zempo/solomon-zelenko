@@ -56,10 +56,43 @@ const portfolioProjects = [
 
 const worksTemplate = document.createElement('template')
 worksTemplate.innerHTML = `<style>
-@import url("css/routes.css");
+@import url("css/global.css"); 
+ .filter-btn {
+  -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
+  visibility: visible;
+  user-select: none;
+  list-style: none;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #fafafa;
+  background-color: #787878;
+  border: 1px solid #646464;
+  border-width: 1px 1px 2px 1px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: MontSerrat,Tahoma,Arial,sans-serif;
+  font-weight: 700;
+  font-size: .75em;
+  line-height: 1em;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  margin: 3px;
+  opacity: 1;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 6px 5px; }
+ .selected {
+  background-color: #414141;
+  border-color: #222222; }
+ .work-info {
+  list-style-type: none;
+  padding-left: 0; }
 </style><form>
-<button class="work-btn all">Show All</button>
-<button class="work-btn new">New</button>
+<button class="filter-btn all">Show All</button>
+<button class="filter-btn front">Front-End</button>
+<button class="filter-btn pern">PERN Stack</button>
+<button class="filter-btn mern">MERN Stack</button>
+<button class="filter-btn net">.NET Stack</button>
 </form>`
 
 class WorksList extends HTMLElement {
@@ -69,12 +102,16 @@ class WorksList extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(worksTemplate.content.cloneNode(true));
   this.refs = {
-    all: this.shadowRoot.querySelector('.all'),
-    new: this.shadowRoot.querySelector('.new')
+    all: null,
+    front: null,
+    pern: null,
+    mern: null,
+    net: null
   }
   this.state = {
     static: '',
-    projects: []
+    projects: [],
+    selected: 'all'
   }
   }
 
@@ -97,9 +134,21 @@ class WorksList extends HTMLElement {
   }
 
   sortBy(e) {
-    e.preventDefault()
     const query = e.target.classList[1]
-    console.log('s')
+    this.refs[query].classList.add('selected')
+    for (const [_, ref] of Object.entries(this.refs)) {
+      if(ref.classList[1] !== query) {
+        ref.classList.remove('selected')
+      }
+    }
+    switch (query) {
+      case 'all':
+        console.log('all')
+        return;
+      case 'new':
+      default:
+        return;
+    }
   }
 
   connectedCallback() {
@@ -113,16 +162,19 @@ class WorksList extends HTMLElement {
 
         shadow.innerHTML = this.state.static
         shadow.innerHTML += getWorks
+        return shadow
       } catch (err) {
         console.log(err)
       }
     }
-
-    fetchWorks(portfolioProjects)
-
-    for (let [_, el] of Object.entries(this.refs)) {
-      // el.addEventListener('click',)
-    } 
+    
+    fetchWorks(portfolioProjects).then(res => {
+     let searchButtons = res.querySelectorAll('form button')
+     searchButtons.forEach(el => {
+       this.refs[el.classList[1]] = el
+       el.addEventListener('click', e => this.sortBy(e))
+     })
+    })
   }
 }
 
