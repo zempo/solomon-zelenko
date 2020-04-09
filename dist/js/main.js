@@ -31,6 +31,7 @@ const toggleTab = (e) => {
     panel.style.display = "block";
   }
 };
+
 // Hero Animation
 const TextCarousel = function (el, toRotate, duration) {
   this.toRotate = toRotate;
@@ -134,7 +135,7 @@ class Router {
         return;
       case "works":
         const worksTarget = document.querySelector(".works-list");
-        loadWorks(worksTarget);
+        // loadWorks(worksTarget);
         return;
       default:
         return;

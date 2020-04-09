@@ -1,5 +1,5 @@
 const portfolioProjects = [
-  {
+  { 
     title: "Above the Line",
     pics: ["atl-1.png", "atl-2.png"],
     description:
@@ -16,6 +16,7 @@ const portfolioProjects = [
     libs: ["Axois", "ReactPDF ", "React Resizeable", "JWT"],
     repo: "https://github.com/zempo/jto-client",
     live: "https://above-the-line.now.sh/",
+    tags: ['fullstack', 'PERN']
   },
   {
     title: "Just the Occasion",
@@ -39,7 +40,7 @@ const portfolioProjects = [
       "JWT",
     ],
     repo: "https://github.com/zempo/jto-client",
-    live: "https://just-the-occasion.com/",
+    live: "https://just-the-occasion.com/"
   },
   {
     title: "Aeropolis",
@@ -49,25 +50,80 @@ const portfolioProjects = [
     tech: ["HTML / CSS, ", "jQuery, ", "and github pages"],
     libs: ["AirVisual, ", "Leaflet.js, ", "News API, and ", "Wikipedia API"],
     repo: "https://github.com/zempo/aeropolis",
-    live: "https://zempo.github.io/Aeropolis/",
+    live: "https://zempo.github.io/Aeropolis/"
   },
 ];
 
-// class WorksPage extends HTMLElement {
-//   constructor() {
-//     super();
+const worksTemplate = document.createElement('template')
+worksTemplate.innerHTML = `<style>
+@import url("css/routes.css");
+</style><form>
+<button class="work-btn all">Show All</button>
+<button class="work-btn new">New</button>
+</form>`
 
-//     this.attachShadow({ mode: "open" });
-//     this.shadowRoot.appendChild(worksTemplate.content.cloneNode(true));
-//   }
-// }
+class WorksList extends HTMLElement {
+  constructor() {
+    super();
 
-// window.customElements.define("works-route", WorksPage);
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(worksTemplate.content.cloneNode(true));
+  this.refs = {
+    all: this.shadowRoot.querySelector('.all'),
+    new: this.shadowRoot.querySelector('.new')
+  }
+  this.state = {
+    static: '',
+    projects: []
+  }
+  }
 
-window.loadWorks = (target) => {
-  portfolioProjects.forEach((proj) => {
-    const workEl = document.createElement("work-item");
-    workEl.proj = proj;
-    target.appendChild(workEl);
-  });
-};
+  updateWorks(updatedWorks) {
+    let updatedTemplate = ''
+    updatedWorks.forEach((work, i) => {
+      updatedTemplate += `<li class="works-list-item">
+      <div class="work-preview-1">
+      </div>
+      <ul id="w-info-${i+1}" class="work-info">
+      <li>
+      ${work.title}
+      </li>
+      <li>Repo: <a href="${work.repo}">here</a></li>
+      <li>Live: <a href="${work.live}">here</a></li>
+      </ul>
+      </li>`
+    })
+    return updatedTemplate
+  }
+
+  sortBy(e) {
+    e.preventDefault()
+    const query = e.target.classList[1]
+    console.log('s')
+  }
+
+  connectedCallback() {
+    const fetchWorks = async (works) => {
+      let shadow = this.shadowRoot
+      shadow.innerHTML = ''
+      this.state.static = worksTemplate.innerHTML
+      this.state.projects = [...this.state.projects, works]
+      try {
+        const getWorks = await this.updateWorks(works)
+
+        shadow.innerHTML = this.state.static
+        shadow.innerHTML += getWorks
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    fetchWorks(portfolioProjects)
+
+    for (let [_, el] of Object.entries(this.refs)) {
+      // el.addEventListener('click',)
+    } 
+  }
+}
+
+window.customElements.define("works-list", WorksList);
