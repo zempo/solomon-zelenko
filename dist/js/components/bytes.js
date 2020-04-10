@@ -1,67 +1,78 @@
 const currentBytes = [
   {
-    type: "concept",
+    type: "demo",
+    img: 'bytes/pen-1.png',
     title: "Cloudy Landing Page",
     link: "https://codepen.io/zemposPen/pen/bGNQmgX",
     info: ''
   },
   {
+    type: "demo",
+    img: 'bytes/pen-2.png',
+    title: "Interactive Greeting Cards",
+    link: "https://codepen.io/zemposPen/pen/PowLbBd",
+    info: ''
+  },
+  {
+    type: "demo",
+    img: 'bytes/pen-3.png',
+    title: "Above the Line Concept",
+    link: "https://stackblitz.com/edit/above-the-line-concept",
+    info: ''
+  },
+  {
     type: "article",
+    img: 'svgs/article.svg',
     title: "Expedite your Eurekas",
     link:
       "https://medium.com/@solomonzelenko/expedite-your-eurekas-704d35c7892a",
     info: ''
     },
   {
-    type: "concept",
-    title: "Just the Occasion Concept",
-    link: "https://codepen.io/zemposPen/pen/PowLbBd",
-    info: ''
-  },
-  {
     type: "component",
-    title: "Above the Line Concept",
-    link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: ''
-  },
-  {
-    type: "component",
+    img: 'svgs/component.svg',
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
     info: ''
   },
   {
     type: "algo",
+    img: 'svgs/algo.svg',
     title: "Maze Matrices",
     link: "https://repl.it/@zempo1/Mad-Mazes",
     info: ''
   },
   {
-    type: "boilerplate",
-    title: "React Boilerplate",
-    link: "https://github.com/zempo/react-boilerplate",
-    info: ''
-  },
-  {
     type: "algo",
+    img: 'svgs/algo.svg',
     title: "Memo-ize Fibonacci",
     link: "https://repl.it/@zempo1/memo",
     info: ''
   },
   {
     type: "boilerplate",
+    img: 'svgs/ghub.svg',
+    title: "React Boilerplate",
+    link: "https://github.com/zempo/react-boilerplate",
+    info: ''
+  },
+  {
+    type: "boilerplate",
+    img: 'svgs/ghub.svg',
     title: "Node Boilerplate (PERN)",
     link: "https://github.com/zempo/node-boiler-postgres",
     info: ''
   },
   {
     type: "boilerplate",
+    img: 'svgs/ghub.svg',
     title: "Node Boilerplate (MERN)",
     link: "https://github.com/zempo/node-boiler-mongo",
     info: ''
   },
   {
     type: "boilerplate",
+    img: 'svgs/ghub.svg',
     title: "Svelte with Router",
     link: "https://github.com/zempo/svelte-boiler",
     info: ''
@@ -101,16 +112,101 @@ bytesTemplate.innerHTML = `
 .selected {
   background-color: #414141;
   border-color: #222222; }
-  .byte-info {
-    list-style-type: none;
-    padding-left: 0; }
+    .bytes-list-item {
+      -o-animation: fadeIn 1s;
+      -moz-animation: fadeIn 1s;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+    .byte-preview-1, .byte-preview-2, img {
+      position: relative;
+      width: 100%; }
+    .byte-preview-1:after {
+      content: "X";
+      background: #eb6637;
+      color: #f7f7f7;
+      display: inline-block;
+      vertical-align: center;
+      position: absolute;
+      top: 5px;
+      right: 6px;
+      height: 14px;
+      width: 14px;
+      font-size: 9.5px;
+      text-align: center;
+      border: 0px solid rgba(0, 0, 0, 0);
+      border-radius: 50%;
+    }
+    .byte-preview-1:before {
+      content: "";
+      background: rgba(255, 255, 255, 0);
+      color: #f7f7f7;
+      display: inline-block;
+      vertical-align: center;
+      position: absolute;
+      top: 7px;
+      right: 26px;
+      height: 9px;
+      width: 9px;
+      text-align: center;
+      z-index: 1;
+      border: 1px solid #f7f7f7;
+    }
+    .byte-preview-2:before {
+      content: "";
+      background: rgba(255, 255, 255, 0);
+      color: #f7f7f7;
+      display: inline-block;
+      vertical-align: center;
+      position: absolute;
+      top: 7px;
+      right: 46px;
+      height: 9px;
+      width: 9px;
+      text-align: center;
+      z-index: 1;
+      border-bottom: 1px solid #f7f7f7;
+    }
+    img {
+      border: 5px solid #3d3a3a;
+      border-top: 24px solid #3d3a3a;
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-top-right-radius: 4px;
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-topright: 4px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @-moz-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @-o-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
 </style><div class="filter-bytes">
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn article">Articles</button>
 <button class="filter-btn algo">Algorithms</button>
 <button class="filter-btn boilerplate">Boilerplates</button>
 <button class="filter-btn component">Components</button>
-<button class="filter-btn concept">Concepts</button>
+<button class="filter-btn demo">Demos</button>
 </div>`;
 
 class BytesList extends HTMLElement {
@@ -125,7 +221,7 @@ class BytesList extends HTMLElement {
       algo: null,
       boilerplate: null,
       component: null,
-       concept: null
+      demo: null
     }
     this.state = {
       static: '',
@@ -141,7 +237,10 @@ class BytesList extends HTMLElement {
       updatedBytes.forEach((byte, i) => {
         updatedTemplate += `<li class="bytes-list-item">
         <b>${byte.title}</b>
-        <div class="bytes-preview-1">
+        <div class="byte-preview-1">
+        <div class="byte-preview-2">
+        <img src="img/${byte.img}" alt="${byte.type} link"/>
+        </div>
         </div>
         </li>`
       }) 

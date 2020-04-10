@@ -165,3 +165,7 @@
   .works-list .work-info, .works-list .byte-info, .bytes-list .work-info, .bytes-list .byte-info {
     list-style-type: none;
     padding-left: 0; }
+  .works-list .work-preview-1, .bytes-list .work-preview-1 {
+    width: 100%; }
+    .works-list .work-preview-1 img, .bytes-list .work-preview-1 img {
+      width: 100%; }
