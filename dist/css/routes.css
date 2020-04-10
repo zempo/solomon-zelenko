@@ -30,7 +30,8 @@
   height: 45px;
   overflow: hidden;
   position: relative;
-  border: 2px solid black; }
+  border: 2px solid black;
+  font-weight: bold; }
   .home-pg .resume-btn::before,
   .home-pg .contact-btn::before {
     content: attr(data-text);
@@ -129,10 +130,13 @@
     -webkit-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 
-.works-list {
+.filter-bytes, .filter-works {
+  margin-bottom: 50px; }
+
+.works-list, .bytes-list {
   list-style-type: none;
   padding-left: 0; }
-  .works-list .filter-btn {
+  .works-list .filter-works .filter-btn, .bytes-list .filter-works .filter-btn {
     -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
     visibility: visible;
     user-select: none;
@@ -144,11 +148,10 @@
     border: 1px solid #646464;
     border-width: 1px 1px 2px 1px;
     border-radius: 3px;
-    text-transform: uppercase;
     font-family: MontSerrat,Tahoma,Arial,sans-serif;
     font-weight: 700;
-    font-size: .75em;
-    line-height: 1em;
+    font-size: .9em;
+    line-height: 1.5em;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     margin: 3px;
     opacity: 1;
@@ -156,9 +159,9 @@
     position: relative;
     overflow: hidden;
     padding: 6px 5px; }
-  .works-list .selected {
+  .works-list .filter-works .selected, .bytes-list .filter-works .selected {
     background-color: #414141;
     border-color: #222222; }
-  .works-list .work-info {
+  .works-list .work-info, .works-list .byte-info, .bytes-list .work-info, .bytes-list .byte-info {
     list-style-type: none;
     padding-left: 0; }

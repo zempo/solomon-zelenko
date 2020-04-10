@@ -16,7 +16,7 @@ const portfolioProjects = [
     libs: ["Axois", "ReactPDF ", "React Resizeable", "JWT"],
     repo: "https://github.com/zempo/jto-client",
     live: "https://above-the-line.now.sh/",
-    tags: ['fullstack', 'PERN']
+    tags: ['pern']
   },
   {
     title: "Just the Occasion",
@@ -40,7 +40,8 @@ const portfolioProjects = [
       "JWT",
     ],
     repo: "https://github.com/zempo/jto-client",
-    live: "https://just-the-occasion.com/"
+    live: "https://just-the-occasion.com/",
+    tags: ['pern']
   },
   {
     title: "Aeropolis",
@@ -50,14 +51,18 @@ const portfolioProjects = [
     tech: ["HTML / CSS, ", "jQuery, ", "and github pages"],
     libs: ["AirVisual, ", "Leaflet.js, ", "News API, and ", "Wikipedia API"],
     repo: "https://github.com/zempo/aeropolis",
-    live: "https://zempo.github.io/Aeropolis/"
-  },
+    live: "https://zempo.github.io/Aeropolis/",
+    tags: ['frontend']
+  }, 
 ];
 
 const worksTemplate = document.createElement('template')
 worksTemplate.innerHTML = `<style>
 @import url("css/global.css"); 
- .filter-btn {
+@import url("css/routes.css"); 
+.filter-bytes, .filter-works {
+  margin-bottom: 50px; }
+.filter-btn {
   -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
   visibility: visible;
   user-select: none;
@@ -69,11 +74,10 @@ worksTemplate.innerHTML = `<style>
   border: 1px solid #646464;
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
-  text-transform: uppercase;
   font-family: MontSerrat,Tahoma,Arial,sans-serif;
   font-weight: 700;
-  font-size: .75em;
-  line-height: 1em;
+  font-size: .9em;
+  line-height: 1.5em;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
   margin: 3px;
   opacity: 1;
@@ -81,19 +85,16 @@ worksTemplate.innerHTML = `<style>
   position: relative;
   overflow: hidden;
   padding: 6px 5px; }
- .selected {
+.selected {
   background-color: #414141;
   border-color: #222222; }
- .work-info {
-  list-style-type: none;
-  padding-left: 0; }
-</style><form>
-<button class="filter-btn all">Show All</button>
-<button class="filter-btn front">Front-End</button>
+</style><div class="filter-works">
+<button class="filter-btn all selected">Show All</button>
+<button class="filter-btn frontend">Front-End</button>
 <button class="filter-btn pern">PERN Stack</button>
 <button class="filter-btn mern">MERN Stack</button>
-<button class="filter-btn net">.NET Stack</button>
-</form>`
+<button class="filter-btn net">.NET Core</button>
+</div>`
 
 class WorksList extends HTMLElement {
   constructor() {
@@ -103,51 +104,77 @@ class WorksList extends HTMLElement {
     this.shadowRoot.appendChild(worksTemplate.content.cloneNode(true));
   this.refs = {
     all: null,
-    front: null,
+    frontend: null,
     pern: null,
     mern: null,
     net: null
   }
   this.state = {
     static: '',
-    projects: [],
-    selected: 'all'
+    projects: []
   }
   }
 
-  updateWorks(updatedWorks) {
+  updateWorks(updatedWorks, query) {
     let updatedTemplate = ''
-    updatedWorks.forEach((work, i) => {
-      updatedTemplate += `<li class="works-list-item">
-      <div class="work-preview-1">
-      </div>
-      <ul id="w-info-${i+1}" class="work-info">
-      <li>
-      ${work.title}
-      </li>
-      <li>Repo: <a href="${work.repo}">here</a></li>
-      <li>Live: <a href="${work.live}">here</a></li>
-      </ul>
-      </li>`
-    })
+    if(updatedWorks.length === 0) {
+      updatedTemplate += `<h2>No ${this.refs[query].innerHTML} Projects...</h2><h2>Yet...</h2>`
+    } else {
+      updatedWorks.forEach((work, i) => {
+        updatedTemplate += `<li class="works-list-item">
+        <b>${work.title}</b>
+        <div class="work-preview-1">
+        </div>
+        </li>`
+      })
+    }
     return updatedTemplate
   }
 
-  sortBy(e) {
+  filterWorks(e) {
     const query = e.target.classList[1]
     this.refs[query].classList.add('selected')
     for (const [_, ref] of Object.entries(this.refs)) {
       if(ref.classList[1] !== query) {
         ref.classList.remove('selected')
       }
+    } 
+    const runSort = async () => {
+      let shadow = this.shadowRoot
+      try {
+        const sorted = await this.sortBy(query)
+        this.state.projects = sorted
+        window.projects = sorted
+        const newTemplate = await this.updateWorks(sorted, query)
+        if(newTemplate) { 
+         shadow.innerHTML = this.state.static
+         shadow.innerHTML += newTemplate
+         return shadow
+        }
+      } catch (err) {
+        console.log(err)
+      }
     }
-    switch (query) {
-      case 'all':
-        console.log('all')
-        return;
-      case 'new':
-      default:
-        return;
+
+    runSort().then(res => {
+      res.querySelector('.all').classList.remove('selected')
+      res.querySelector(`.${query}`).classList.add('selected')
+      let searchButtons = res.querySelectorAll('.filter-works button')
+      searchButtons.forEach(el => {
+        this.refs[el.classList[1]] = el
+        el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} works`)
+        el.addEventListener('click', e => this.filterWorks(e))
+      }) 
+    })
+  } 
+
+  sortBy(query) {
+    let toFilter = portfolioProjects
+    if(query !== 'all') {
+      toFilter = toFilter.filter(work => work.tags.includes(query))
+      return toFilter
+    } else {
+      return toFilter
     }
   }
 
@@ -156,23 +183,25 @@ class WorksList extends HTMLElement {
       let shadow = this.shadowRoot
       shadow.innerHTML = ''
       this.state.static = worksTemplate.innerHTML
-      this.state.projects = [...this.state.projects, works]
+      this.state.projects = [works]
+      window.projects = this.state.projects
       try {
         const getWorks = await this.updateWorks(works)
 
         shadow.innerHTML = this.state.static
-        shadow.innerHTML += getWorks
+        shadow.innerHTML += getWorks 
         return shadow
       } catch (err) {
         console.log(err)
       }
-    }
+    } 
     
     fetchWorks(portfolioProjects).then(res => {
-     let searchButtons = res.querySelectorAll('form button')
+     let searchButtons = res.querySelectorAll('.filter-works button')
      searchButtons.forEach(el => {
        this.refs[el.classList[1]] = el
-       el.addEventListener('click', e => this.sortBy(e))
+       el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} works`)
+       el.addEventListener('click', e => this.filterWorks(e))
      })
     })
   }

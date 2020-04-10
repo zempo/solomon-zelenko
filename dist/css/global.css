@@ -55,7 +55,9 @@ main {
     main .btn-back svg {
       background: rgba(160, 160, 160, 0.3);
       border: 0px solid rgba(150, 150, 150, 0);
-      border-radius: 50%; }
+      border-radius: 50%;
+      width: 48px;
+      height: 48px; }
     body .btn-fwd path,
     body .btn-back path,
     main .btn-fwd path,
@@ -84,6 +86,10 @@ main {
     min-height: 101vh;
     padding: 0px 15px; }
 
+a {
+  font-weight: bold;
+  color: #000000; }
+
 nav {
   position: fixed;
   bottom: 0;
@@ -103,6 +109,7 @@ nav {
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
+    text-decoration: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); }
     nav a:active {
       background: rgba(0, 0, 0, 0.3); }
@@ -111,10 +118,6 @@ nav {
     nav a img {
       text-align: center;
       width: 35px; }
-
-a {
-  text-decoration: none;
-  color: #000000; }
 
 .logo-main {
   margin-top: 8rem;
