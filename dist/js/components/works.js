@@ -156,6 +156,37 @@ worksTemplate.innerHTML = `<style>
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
   }
+  .open-item {
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: calc(100% - 7px);
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;   }
+  .open-item:hover,
+  .open-item:focus,
+  .open-item:active {
+    background: rgba(0, 0, 0, 0.3); }
+  .open-item span {
+    color: rgba(0, 0, 0, 0);
+    font-size: 22px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+.open-item:hover span,
+.open-item:active span,
+.open-item:focus span {
+  background: #3d3a3a;
+  padding: 10px;
+  border: 1px solid #3d3a3a;
+  font-weight: bold;
+  border-radius: 7px;
+  color: #f7f7f7; }
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -217,6 +248,7 @@ class WorksList extends HTMLElement {
         <div class="work-preview-1">
         <div class="work-preview-2">
         <img src="img/works/${work.code + '/' + work.code}-1.png" alt="Work hero image"/>
+        <button class="open-item" data-item="${i}"><span>See More</span></button>
         </div>
         </div>
         </li>`
@@ -254,11 +286,16 @@ class WorksList extends HTMLElement {
       res.querySelector('.all').classList.remove('selected')
       res.querySelector(`.${query}`).classList.add('selected')
       let searchButtons = res.querySelectorAll('.filter-works button')
+      let itemButtons = res.querySelectorAll('.open-item')
       searchButtons.forEach(el => {
         this.refs[el.classList[1]] = el
         el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} works`)
         el.addEventListener('click', e => this.filterWorks(e))
       }) 
+      itemButtons.forEach(el => {
+        let itemId = el.getAttribute('data-item')
+        el.addEventListener('click', e => window.openModal(e, itemId))
+      })
     })
   } 
 
@@ -277,7 +314,7 @@ class WorksList extends HTMLElement {
       let shadow = this.shadowRoot
       shadow.innerHTML = ''
       this.state.static = worksTemplate.innerHTML
-      this.state.projects = [works]
+      this.state.projects = works
       window.projects = this.state.projects
       try {
         const getWorks = await this.updateWorks(works)
@@ -292,10 +329,15 @@ class WorksList extends HTMLElement {
     
     fetchWorks(portfolioProjects).then(res => {
      let searchButtons = res.querySelectorAll('.filter-works button')
+     let itemButtons = res.querySelectorAll('.open-item')
      searchButtons.forEach(el => {
        this.refs[el.classList[1]] = el
        el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} works`)
        el.addEventListener('click', e => this.filterWorks(e))
+     })
+     itemButtons.forEach(el => {
+       let itemId = el.getAttribute('data-item')
+       el.addEventListener('click', e => window.openModal(e, itemId))
      })
     })
   }

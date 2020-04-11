@@ -134,8 +134,7 @@ class Router {
         });
         return;
       case "works":
-        const worksTarget = document.querySelector(".works-list");
-        // loadWorks(worksTarget);
+        document.getElementsByTagName('work-modal')[0].style.display = 'none'
         return;
       default:
         return;
