@@ -177,6 +177,37 @@ bytesTemplate.innerHTML = `
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
     }
+    .open-byte {
+      background: rgba(0, 0, 0, 0);
+      width: 100%;
+      height: calc(100% - 7px);
+      border: none;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      left: 0px;   }
+    .open-byte:hover,
+    .open-byte:focus,
+    .open-byte:active {
+      background: rgba(0, 0, 0, 0.3); }
+    .open-byte span {
+      color: rgba(0, 0, 0, 0);
+      font-size: 22px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  .open-byte:hover span,
+  .open-byte:active span,
+  .open-byte:focus span {
+    background: #3d3a3a;
+    padding: 10px;
+    border: 1px solid #3d3a3a;
+    font-weight: bold;
+    border-radius: 7px;
+    color: #f7f7f7; }
   @-webkit-keyframes fadeIn {
     from {
       opacity: 0; }
@@ -240,6 +271,7 @@ class BytesList extends HTMLElement {
         <div class="byte-preview-1">
         <div class="byte-preview-2">
         <img src="img/${byte.img}" alt="${byte.type} link"/>
+        <button class="open-byte" data-item="${i}"><span>See More</span></button>
         </div>
         </div>
         </li>`
@@ -276,11 +308,16 @@ class BytesList extends HTMLElement {
       res.querySelector('.all').classList.remove('selected')
       res.querySelector(`.${query}`).classList.add('selected')
       let searchButtons = res.querySelectorAll('.filter-bytes button')
+      let itemButtons = res.querySelectorAll('.open-byte')
       searchButtons.forEach(el => {
         this.refs[el.classList[1]] = el
         el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} bytes`)
         el.addEventListener('click', e => this.filterBytes(e))
       }) 
+      itemButtons.forEach(el => {
+        let itemId = el.getAttribute('data-item')
+        el.addEventListener('click', e => window.openByteModal(e, itemId))
+      })
     })
   } 
 
@@ -299,7 +336,7 @@ class BytesList extends HTMLElement {
       let shadow = this.shadowRoot
       shadow.innerHTML = ''
       this.state.static = bytesTemplate.innerHTML
-      this.state.bytes = [bytes]
+      this.state.bytes = bytes
       window.bytes = this.state.bytes
       try {
         const getBytes = await this.updateBytes(bytes)
@@ -314,13 +351,17 @@ class BytesList extends HTMLElement {
 
     fetchBytes(currentBytes).then(res => {
       let searchButtons = res.querySelectorAll('.filter-bytes button')
+      let byteButtons = res.querySelectorAll('.open-byte')
       searchButtons.forEach(el => {
         this.refs[el.classList[1]] = el
         el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML + 's' : 'bytes'}`)
         el.addEventListener('click', e => this.filterBytes(e))
       })
+      byteButtons.forEach(el => {
+        let itemId = el.getAttribute('data-item')
+        el.addEventListener('click', e => window.openByteModal(e, itemId))
+      }) 
     })
   }
 }
-
 window.customElements.define("bytes-list", BytesList);

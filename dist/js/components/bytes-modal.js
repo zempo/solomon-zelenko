@@ -1,5 +1,5 @@
-workModalTemplate = document.createElement("template");
-workModalTemplate.innerHTML = `
+byteModalTemplate = document.createElement("template");
+byteModalTemplate.innerHTML = `
 <style>
 #modal {
   position: fixed;
@@ -223,26 +223,26 @@ button {
 </style>
 `;
 
-class WorkModal extends HTMLElement {
+class ByteModal extends HTMLElement {
   constructor() {
     super();
 
     this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(workModalTemplate.content.cloneNode(true));
+    this.shadowRoot.appendChild(byteModalTemplate.content.cloneNode(true));
   }
 
-  updateWorkModal(currentItem, direction) {
+  updateByteModal(currentItem, direction) {
     let pgClass = direction
     let updatedTemplate = `
-    <div class="work-modal" id="modal">
+    <div class="byte-modal" id="modal">
     <div class="modal-content opened">
     <button class="close-modal">X</button>
     <button class="resize-modal small">Resize</button>
     <button class="hide-modal">Hide</button>
     <div class="modal-pg ${pgClass}">
     <h1>${currentItem.title}</h1>
-    <button class="modal-back" title="last work">
-    previous work<svg viewBox="-15 -15 130 130">
+    <button class="modal-back" title="last byte">
+    previous byte<svg viewBox="-15 -15 130 130">
     <path
     d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
     class="arrow"
@@ -250,7 +250,7 @@ class WorkModal extends HTMLElement {
     ></path>
     </svg>
     </button>
-    <button class="modal-fwd" title="next work">next work<svg viewBox="-15 -15 130 130">
+    <button class="modal-fwd" title="next byte">next byte<svg viewBox="-15 -15 130 130">
     <path
     d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
     class="arrow"
@@ -264,31 +264,30 @@ class WorkModal extends HTMLElement {
     return updatedTemplate
   }
 
-  displayWorkModal(opened, direction) {
-    const fetchWork = async (work) => {
-      window.workShadow.innerHTML = ''
+  displayByteModal(opened, direction) {
+    const fetchByte = async (byte) => {
+      window.byteShadow.innerHTML = ''
       try {
-        const getWork = await window.updateWorkModal(work, direction)
+        const getbyte = await window.updateByteModal(byte, direction)
 
-        window.workShadow.innerHTML = window.static
-        window.workShadow.innerHTML += getWork 
-        return workShadow
+        window.byteShadow.innerHTML = window.byteStatic 
+        window.byteShadow.innerHTML += getbyte 
+        return byteShadow
       } catch (err) {
         console.log(err)
       }
     } 
     
-    fetchWork(window.currentWork).then(res => {
+    fetchByte(window.currentByte).then(res => {
       let modal = res.querySelector('#modal')
       let modalContent = res.querySelector('.modal-content')
           if(opened) {
            modalContent.classList.remove('opened') 
           }
-      let pg = res.querySelector('.work-pg')
       let toggleSize = res.querySelector('.resize-modal')
       let closeBtn = res.querySelector('.close-modal')
       let hideBtn = res.querySelector('.hide-modal')
-      let currentWorkId = window.projects.map(el => el.title).indexOf(window.currentWork.title)
+      let currentByteId = window.bytes.map(el => el.title).indexOf(window.currentByte.title)
       let fwd = res.querySelector('.modal-fwd')
       let back = res.querySelector('.modal-back')
       toggleSize.addEventListener('click', e => {
@@ -310,45 +309,45 @@ class WorkModal extends HTMLElement {
           modalContent.style.margin = '0'          
         }
       })
-      hideBtn.addEventListener('click', e => document.getElementsByTagName('work-modal')[0].style.display = 'none')
-      closeBtn.addEventListener('click', e => document.getElementsByTagName('work-modal')[0].style.display = 'none')
+      hideBtn.addEventListener('click', e => document.getElementsByTagName('byte-modal')[0].style.display = 'none')
+      closeBtn.addEventListener('click', e => document.getElementsByTagName('byte-modal')[0].style.display = 'none')
       modal.addEventListener('click', e => {
         if(e.target == modal) {
-        document.getElementsByTagName('work-modal')[0].style.display = 'none'
+        document.getElementsByTagName('byte-modal')[0].style.display = 'none'
         }
       })
       fwd.addEventListener('click', e => {
-        if(window.projects.length === currentWorkId + 1) {
-          window.updateWorkItem(e, 0, 'modal-r')
+        if(window.bytes.length === currentByteId + 1) {
+          window.updateByteItem(e, 0, 'modal-r')
         } else {
-          window.updateWorkItem(e, currentWorkId + 1, 'modal-r')
+          window.updateByteItem(e, currentByteId + 1, 'modal-r')
         }
       })
       back.addEventListener('click', e => {
-        if(currentWorkId === 0) {
-          window.updateWorkItem(e, window.projects.length - 1, 'modal-l')
+        if(currentByteId === 0) {
+          window.updateByteItem(e, window.bytes.length - 1, 'modal-l')
         } else {
-          window.updateWorkItem(e, currentWorkId - 1, 'modal-l')
+          window.updateByteItem(e, currentByteId - 1, 'modal-l')
         }
       })
     })
   }
   
   connectedCallback() {
-    window.displayWorkModal = this.displayWorkModal
-    window.updateWorkModal = this.updateWorkModal
-    window.workShadow = this.shadowRoot
-    window.static = workModalTemplate.innerHTML
-    window.openModal = function(e, id) {
-      document.getElementsByTagName('work-modal')[0].style.display = 'block'
-      window.currentWork = window.projects[id]
-      window.displayWorkModal(false)
+    window.displayByteModal = this.displayByteModal
+    window.updateByteModal = this.updateByteModal
+    window.byteShadow = this.shadowRoot
+    window.byteStatic = byteModalTemplate.innerHTML
+    window.openByteModal = function(e, id) {
+        document.getElementsByTagName('byte-modal')[0].style.display = 'block'
+        window.currentByte = window.bytes[id]
+        window.displayByteModal(false)
     } 
-    window.updateWorkItem = function(e, id, direction) {
-      window.currentWork = window.projects[id]
-      window.displayWorkModal(true, direction)
+    window.updateByteItem = function(e, id, direction) {
+      window.currentByte = window.bytes[id]
+      window.displayByteModal(true, direction)
     }
   }
-} 
+}  
 
-window.customElements.define("work-modal", WorkModal);
+window.customElements.define("byte-modal", ByteModal);

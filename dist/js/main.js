@@ -137,6 +137,10 @@ class Router {
         let workM = document.getElementsByTagName('work-modal')[0]
         workM.style.display = 'none'
         return;
+      case 'bytes':
+        let byteM = document.getElementsByTagName('byte-modal')[0]
+        byteM.style.display = 'none' 
+        return;        
       default:
         return;
     }
