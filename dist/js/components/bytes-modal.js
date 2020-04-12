@@ -17,7 +17,7 @@ byteModalTemplate.innerHTML = `
   background-color: #fefefe;
   margin: 0; 
   width: calc(100% - 20px);
-  height: calc(100% - 138px);
+  height: calc(100vh - 138px);
   -webkit-animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -226,7 +226,6 @@ button {
 class ByteModal extends HTMLElement {
   constructor() {
     super();
-
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(byteModalTemplate.content.cloneNode(true));
   }
@@ -303,7 +302,7 @@ class ByteModal extends HTMLElement {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')
           toggleSize.style.background = 'none' 
-          toggleSize.style.border = 'none'
+          toggleSize.style.border = 'none' 
           modalContent.style.height = 'calc(100vh - 138px)'
           modalContent.style.width = 'calc(100% - 20px)'
           modalContent.style.margin = '0'          
