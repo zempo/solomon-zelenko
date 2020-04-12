@@ -16,7 +16,45 @@ workModalTemplate.innerHTML = `
   border-top: 44px solid #3d3a3a;
   background-color: #fefefe;
   width: calc(100% - 20px);
+  height: calc(100% - 138px);
+}
+.modal-pg {
+  overflow-y:scroll;
+  position: absolute;
   height: 100%;
+  width: 100%;
+}
+.modal-content:after {
+  content: "";
+  background: rgba(255, 255, 255, 0);
+  color: #f7f7f7;
+  display: inline-block;
+  vertical-align: center;
+  position: absolute;
+  top: -36px;
+  right: 40px;
+  height: 19px;
+  width: 19px;
+  text-align: center;
+  z-index: 3;
+  border: 2px solid #f7f7f7;
+}
+.modal-content:before {
+  content: "";
+  background: none;
+  color: #f7f7f7;
+  display: inline-block;
+  vertical-align: center;
+  position: absolute;
+  top: -36px;
+  right: 40px;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  z-index: 3;
+  border: 2px solid #f7f7f7;
+  border-top:none;
+  border-right: none;
 }
 .close-modal {
   background: #eb6637;
@@ -24,21 +62,50 @@ workModalTemplate.innerHTML = `
   display: inline-block;
   vertical-align: center;
   position: absolute;
+  font-weight:bold;
   top: -37px;
-  right: -5px;
+  right: 0px;
   height: 30px;
   width: 30px;
   font-size: 25px;
   text-align: center;
   border: 0px solid rgba(0, 0, 0, 0);
   border-radius: 50%;
+  overflow: visible;
+}
+.resize-modal {
+  position: absolute;
+  background: none;
+  z-index: 4;
+  border: none; 
+  font-size: 0;
+  top: -37px;
+  right: 40px;
+  height: 28px;
+  width: 28px;
+}
+.hide-modal {
+  background: none;
+  color: #f7f7f7;
+  position: absolute;
+  font-size: 0;
+  top: -34px;
+  right: 80px;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  z-index: 3;
+  border: 2px solid #f7f7f7;
+  border-top:none;
+  border-right: none;
+  border-left:none;
 }
 .btn-fwd, .btn-back {
   position: fixed;
   border: none;
   font-size: 0;
   padding: 0;
-  top: calc(50vh - 44px);
+  top: 50%;
   width: 60px;
   height: 60px;
   z-index: 1;
@@ -109,23 +176,27 @@ class WorkModal extends HTMLElement {
     <div class="work-modal" id="modal">
     <div class="modal-content opened">
     <button class="close-modal">X</button>
+    <button class="resize-modal small">Resize</button>
+    <button class="hide-modal">Hide</button>
+    <div class="modal-pg">
     <h1>${currentItem.title}</h1>
     <button class="btn-back" title="last work">
     previous work<svg viewBox="-15 -15 130 130">
-      <path
-        d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
-        class="arrow"
-        transform="translate(15,0)"
-      ></path>
+    <path
+    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+    class="arrow"
+    transform="translate(15,0)"
+    ></path>
     </svg>
-  </button>
+    </button>
     <button class="btn-fwd" title="next work">next work<svg viewBox="-15 -15 130 130">
     <path
-      d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
-      class="arrow"
-      transform="translate(85,100) rotate(180)"
+    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+    class="arrow"
+    transform="translate(85,100) rotate(180)"
     ></path>
-  </svg></button>
+    </svg></button>
+    </div>
     </div>
     </div> 
     `
@@ -147,7 +218,29 @@ class WorkModal extends HTMLElement {
     } 
     
     fetchWork(window.currentWork).then(res => {
+      let modalContent = res.querySelector('.modal-content')
+      let toggleSize = res.querySelector('.resize-modal')
       let closeBtn = res.querySelector('.close-modal')
+      toggleSize.addEventListener('click', e => {
+        if(toggleSize.classList[1] === 'small') {
+          toggleSize.classList.remove('small')
+          toggleSize.classList.add('big')
+          toggleSize.style.background = '#3d3a3a'
+          toggleSize.style.border = '2px solid #f7f7f7'
+          modalContent.style.height = '60vh'
+          modalContent.style.width = 'calc(80% - 10vw)'
+          modalContent.style.margin = 'calc(20vh - 79px) calc(10% + 10px)'
+        } else {
+          toggleSize.classList.remove('big')
+          toggleSize.classList.add('small')
+          toggleSize.style.background = 'none'
+          toggleSize.style.border = 'none'
+          modalContent.style.height = 'calc(100vh - 138px)'
+          modalContent.style.width = 'calc(100% - 20px)'
+          modalContent.style.margin = '0'          
+        }
+        // document.getElementsByTagName('work-modal')[0].style.display = 'none'
+      })
       closeBtn.addEventListener('click', e => {
         document.getElementsByTagName('work-modal')[0].style.display = 'none'
       })
