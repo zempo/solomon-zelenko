@@ -304,16 +304,17 @@ class ArrowNav {
 let router = new Router();
 let arrowNav = new ArrowNav();
 const handleSwipe = async (e, navFxn, direction) => {
+// navFxn(e)
   try {
     const ready = await navFxn(e);
-    if (ready && navigator.connection.downlink >= 1.5) {
+    if (ready && navigator.connection.downlink >= .9) {
       App.style.visibility = "hidden";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);
-    } else if (ready && navigator.connection.downlink < 1.5) {
+    } else if (ready && navigator.connection.downlink < .9) {
       App.style.visibility = "hidden";
       loader.style.display = "block";
       arrowNav.hasUpdated(window.location.hash.substr(1), direction);
-    }
+    } 
   } catch (err) {
     console.log(err);
   }

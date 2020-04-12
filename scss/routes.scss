@@ -14,6 +14,7 @@ $colors: (
 
 .route { 
   overflow-x: hidden;
+  margin: 0;
   -o-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
@@ -22,17 +23,17 @@ $colors: (
 }
 
 .l {
-  -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .r {
-  -o-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -moz-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -o-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 //  HOME
