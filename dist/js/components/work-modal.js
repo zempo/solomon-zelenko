@@ -17,7 +17,7 @@ workModalTemplate.innerHTML = `
   background-color: #fefefe;
   margin: 0; 
   width: calc(100% - 20px);
-  height: calc(100% - 138px);
+  height: calc(100vh - 138px);
   -webkit-animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -284,7 +284,6 @@ class WorkModal extends HTMLElement {
           if(opened) {
            modalContent.classList.remove('opened') 
           }
-      let pg = res.querySelector('.work-pg')
       let toggleSize = res.querySelector('.resize-modal')
       let closeBtn = res.querySelector('.close-modal')
       let hideBtn = res.querySelector('.hide-modal')
