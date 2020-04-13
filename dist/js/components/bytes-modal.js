@@ -141,6 +141,9 @@ button {
   background: #3d3a3a;
   width: 100%;
 }
+.light-bg {
+  background: none;
+}
 .item-img {
   max-width: 100%; 
   max-height: 70vh;
@@ -277,7 +280,7 @@ class ByteModal extends HTMLElement {
     <button class="resize-modal small">Resize</button>
     <button class="hide-modal">Hide</button>
     <div class="modal-pg ${pgClass}"> 
-    <div class="img-container">
+    <div class="img-container ${currentItem.type === 'demo' ? 'dark-bg': 'light-bg'}">
     <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
     </div>
     <h2>${currentItem.title}</h2>

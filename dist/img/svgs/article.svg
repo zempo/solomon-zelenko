@@ -8,9 +8,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="300mm"
-   height="168mm"
+   height="178mm"
    version="1.1"
-   viewBox="0 0 600 336"
+   viewBox="0 0 600 356"
    id="svg1245"
    sodipodi:docname="article.svg"
    inkscape:version="0.92.4 (unknown)">
@@ -30,8 +30,8 @@
      id="namedview1247"
      showgrid="false"
      inkscape:zoom="0.44661666"
-     inkscape:cx="-387.85024"
-     inkscape:cy="156.36248"
+     inkscape:cx="555.23034"
+     inkscape:cy="693.73607"
      inkscape:window-x="59"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -44,12 +44,12 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="matrix(0.68851662,0,0,0.68851662,671.76901,161.17764)"
+     transform="matrix(0.74846744,0,0,0.74846744,701.17723,164.75352)"
      id="g1243">
     <flowRoot
        font-size="40px"
