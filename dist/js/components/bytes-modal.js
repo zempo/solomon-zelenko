@@ -111,7 +111,7 @@ button {
   border: none;
   font-size: 0;
   padding: 0;
-  top: 50%;
+  bottom: 20px;
   width: 60px;
   height: 60px;
   z-index: 1;
@@ -136,6 +136,14 @@ button {
 .modal-l {
   -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.img-container {
+  background: #3d3a3a;
+  width: 100%;
+}
+.item-img {
+  max-width: 100%; 
+  max-height: 70vh;
 }
 @-webkit-keyframes modalIn {
   0% {
@@ -220,6 +228,36 @@ button {
       opacity: 1;
     }
   }
+  ::-webkit-scrollbar {
+    width: 13px;
+    height: 13px; }
+  
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px none #000000; }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.5); }
+  
+  ::-webkit-scrollbar-track {
+    background: none;
+    border: 1px none #000000; }
+  
+  ::-webkit-scrollbar-track:hover {
+    background: none; }
+  
+  ::-webkit-scrollbar-track:active {
+    background: none; }
+  
+  ::-webkit-scrollbar-corner {
+    background: transparent; }
 </style>
 `;
 
@@ -238,8 +276,11 @@ class ByteModal extends HTMLElement {
     <button class="close-modal">X</button>
     <button class="resize-modal small">Resize</button>
     <button class="hide-modal">Hide</button>
-    <div class="modal-pg ${pgClass}">
-    <h1>${currentItem.title}</h1>
+    <div class="modal-pg ${pgClass}"> 
+    <div class="img-container">
+    <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
+    </div>
+    <h2>${currentItem.title}</h2>
     <button class="modal-back" title="last byte">
     previous byte<svg viewBox="-15 -15 130 130">
     <path
@@ -295,9 +336,9 @@ class ByteModal extends HTMLElement {
           toggleSize.classList.add('big')
           toggleSize.style.background = '#3d3a3a'
           toggleSize.style.border = '2px solid #f7f7f7'
-          modalContent.style.height = '60vh'
+          modalContent.style.height = '80vh'
           modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(20vh - 79px) calc(10% + 5vw)'
+          modalContent.style.margin = 'calc(10vh - 79px) calc(10% + 5vw)'
         } else {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')

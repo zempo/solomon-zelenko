@@ -146,3 +146,34 @@ nav {
     background-position: center;
     -webkit-animation: ping 0.8s ease-in-out infinite both;
     animation: ping 0.8s ease-in-out infinite both; }
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px; }
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px; }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px none #000000; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4); }
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.5); }
+
+::-webkit-scrollbar-track {
+  background: none;
+  border: 1px none #000000; }
+
+::-webkit-scrollbar-track:hover {
+  background: none; }
+
+::-webkit-scrollbar-track:active {
+  background: none; }
+
+::-webkit-scrollbar-corner {
+  background: transparent; }

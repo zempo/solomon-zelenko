@@ -107,11 +107,11 @@ button {
   cursor: pointer;
 }
 .modal-fwd, .modal-back {
-  position: fixed;
   border: none;
   font-size: 0;
   padding: 0;
-  top: 50%;
+  position: fixed;
+  bottom: 20px;
   width: 60px;
   height: 60px;
   z-index: 1;
@@ -136,6 +136,54 @@ button {
 .modal-l {
   -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.img-container {
+  background: #3d3a3a;
+  width: 100%;
+}
+.item-img {
+  max-width: 100%; 
+  max-height: 70vh;
+}
+.img-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  }
+.pic-control {
+  display: block;
+  position: relative;  
+  cursor: pointer;
+  font-size: 0px;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.pic-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.pic-control:hover input ~ .checkmark {
+  background-color: #eee;
+}
+.pic-control input:checked ~ .checkmark {
+  background-color: #f7f7f7;
+  top: -16px;
+  width: 28px;
+  height: 28px;
 }
 @-webkit-keyframes modalIn {
   0% {
@@ -220,6 +268,36 @@ button {
       opacity: 1;
     }
   }
+  ::-webkit-scrollbar {
+    width: 13px;
+    height: 13px; }
+  
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px none #000000; }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.5); }
+  
+  ::-webkit-scrollbar-track {
+    background: none;
+    border: 1px none #000000; }
+  
+  ::-webkit-scrollbar-track:hover {
+    background: none; }
+  
+  ::-webkit-scrollbar-track:active {
+    background: none; }
+  
+  ::-webkit-scrollbar-corner {
+    background: transparent; }
 </style>
 `;
 
@@ -240,7 +318,27 @@ class WorkModal extends HTMLElement {
     <button class="resize-modal small">Resize</button>
     <button class="hide-modal">Hide</button>
     <div class="modal-pg ${pgClass}">
-    <h1>${currentItem.title}</h1>
+    <div class="img-container">
+    <img src="img/works/${currentItem.code + '/' + currentItem.code}-1.png" class="item-img" alt="${currentItem.title} image"/>
+    <div class="img-controls">
+    ${currentItem.pics.map((pic, i) => {
+      if (i === 0) {
+        return `
+        <label class="pic-control">
+        <input type="radio" id="${pic}" name="pics" checked="checked" value="${pic}">
+        <span class="checkmark"></span>
+        </label>`
+      } else {
+        return `
+        <label class="pic-control">
+        <input type="radio" id="${pic}" name="pics" value="${pic}">
+        <span class="checkmark"></span>
+        </label>`
+      }
+    })} 
+    </div>
+    </div>
+    <h2>${currentItem.title}</h2>
     <button class="modal-back" title="last work">
     previous work<svg viewBox="-15 -15 130 130">
     <path
@@ -296,9 +394,9 @@ class WorkModal extends HTMLElement {
           toggleSize.classList.add('big')
           toggleSize.style.background = '#3d3a3a'
           toggleSize.style.border = '2px solid #f7f7f7'
-          modalContent.style.height = '60vh'
+          modalContent.style.height = '80vh'
           modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(20vh - 79px) calc(10% + 5vw)'
+          modalContent.style.margin = 'calc(10vh - 79px) calc(10% + 5vw)'
         } else {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')
