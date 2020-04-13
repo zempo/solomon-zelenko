@@ -324,14 +324,14 @@ class WorkModal extends HTMLElement {
     ${currentItem.pics.map((pic, i) => {
       if (i === 0) {
         return `
-        <label class="pic-control">
-        <input type="radio" id="${pic}" name="pics" checked="checked" value="${pic}">
+        <label class="pic-control" data-pos=${currentItem.code + '/' + pic}>
+        <input type="radio" id="${pic}" name="${currentItem.code}" checked value="${pic}">
         <span class="checkmark"></span>
         </label>`
       } else {
         return `
-        <label class="pic-control">
-        <input type="radio" id="${pic}" name="pics" value="${pic}">
+        <label class="pic-control" data-pos=${currentItem.code + '/' + pic}>
+        <input type="radio" id="${pic}" name="${currentItem.code}" value="${pic}">
         <span class="checkmark"></span>
         </label>`
       }
@@ -388,6 +388,34 @@ class WorkModal extends HTMLElement {
       let currentWorkId = window.projects.map(el => el.title).indexOf(window.currentWork.title)
       let fwd = res.querySelector('.modal-fwd')
       let back = res.querySelector('.modal-back')
+      let image = res.querySelector('.img-container img')
+      let imgBtns = res.querySelectorAll('.pic-control input')
+      const runSlideShow = setInterval(() => {
+        imgBtns.forEach((el, i, els) => {
+
+          if(i > 0) {
+            if(els[i - 1].checked == true) {
+              // el.checked = false
+              let nextChecked = el
+              console.log(nextChecked)
+              // nextChecked.checked = true
+              // const newPic = nextChecked.parentElement.getAttribute('data-pos')
+              // image.setAttribute('src', `img/works/${newPic}`)
+            }
+          }
+        })
+      }, 4000)
+      document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
+      setTimeout(() => {
+        clearInterval(runSlideShow)
+      }, 60000) 
+      imgBtns.forEach(el=> {
+        el.addEventListener('click', e => {
+          let dir = e.target.name 
+          let pic = e.target.value
+          image.setAttribute('src', `img/works/${dir + '/' + pic}`)
+        })
+      })
       toggleSize.addEventListener('click', e => {
         if(toggleSize.classList[1] === 'small') {
           toggleSize.classList.remove('small')
@@ -407,14 +435,22 @@ class WorkModal extends HTMLElement {
           modalContent.style.margin = '0'          
         }
       })
-      hideBtn.addEventListener('click', e => document.getElementsByTagName('work-modal')[0].style.display = 'none')
-      closeBtn.addEventListener('click', e => document.getElementsByTagName('work-modal')[0].style.display = 'none')
+      hideBtn.addEventListener('click', e => {
+        clearInterval(runSlideShow)
+        document.getElementsByTagName('work-modal')[0].style.display = 'none'
+      })
+      closeBtn.addEventListener('click', e => {
+        clearInterval(runSlideShow)
+        document.getElementsByTagName('work-modal')[0].style.display = 'none'
+    })
       modal.addEventListener('click', e => {
         if(e.target == modal) {
-        document.getElementsByTagName('work-modal')[0].style.display = 'none'
+        clearInterval(runSlideShow)
+          document.getElementsByTagName('work-modal')[0].style.display = 'none'
         }
       })
       fwd.addEventListener('click', e => {
+        clearInterval(runSlideShow)
         if(window.projects.length === currentWorkId + 1) {
           window.updateWorkItem(e, 0, 'modal-r')
         } else {
@@ -422,6 +458,7 @@ class WorkModal extends HTMLElement {
         }
       })
       back.addEventListener('click', e => {
+        clearInterval(runSlideShow)
         if(currentWorkId === 0) {
           window.updateWorkItem(e, window.projects.length - 1, 'modal-l')
         } else {
