@@ -1,6 +1,21 @@
 byteModalTemplate = document.createElement("template");
 byteModalTemplate.innerHTML = `
 <style>
+h1 {
+  color: #f7f7f7;
+  margin-top: 0;
+  font-size: 9vw;
+}
+h2 a {
+  color: #f7f7f7;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 4.5vw;
+}
+h2 a svg  { 
+  position: relative;
+  top: 10px;
+}
 #modal {
   position: fixed;
   z-index: 3;
@@ -144,6 +159,9 @@ button {
 .light-bg {
   background: none;
 }
+.light-bg h1, .light-bg h2 a {
+  color: black;
+}
 .item-img {
   max-width: 100%; 
   max-height: 70vh;
@@ -261,6 +279,14 @@ button {
   
   ::-webkit-scrollbar-corner {
     background: transparent; }
+@media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 5.5vw;
+      }
+      h2 a {
+        font-size: 3vw;
+      }
+    }
 </style>
 `;
 
@@ -281,9 +307,15 @@ class ByteModal extends HTMLElement {
     <button class="hide-modal">Hide</button>
     <div class="modal-pg ${pgClass}"> 
     <div class="img-container ${currentItem.type === 'demo' ? 'dark-bg': 'light-bg'}">
+    <h1>${currentItem.title}</h1>
+    <h2>
+    <a href="${currentItem.link}" target="_blank" rel="noopener noreferrer">
+    <svg class="i-svg" height="50" version="1.1" width="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50" space="preserve" data-icon="facebook,"><path d="M36.999,36.998H13V13.089L19,13V7h-12v35.998h35.998V27.999h-6V36.998z M25,7l6,6l-9,9l6,6l8.999-9l6,6V7H25z" fill="#ffffff"></path></svg>
+    View this Byte
+    </a>
+    </h2>
     <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
     </div>
-    <h2>${currentItem.title}</h2>
     <button class="modal-back" title="last byte">
     previous byte<svg viewBox="-15 -15 130 130">
     <path

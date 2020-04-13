@@ -1,6 +1,25 @@
 workModalTemplate = document.createElement("template");
 workModalTemplate.innerHTML = `
 <style>
+h1 {
+  color: #f7f7f7;
+  margin-top: 0;
+  font-size: 10vw;
+}
+h2 a {
+  color: #f7f7f7;
+  font-weight: bold;
+  text-decoration: none;
+}
+a .icon {
+  font-size: 60px;
+  font-weight: normal;
+  position: relative;
+  top: 5px;
+}
+br {
+  display: block;
+}
 #modal {
   position: fixed;
   z-index: 3;
@@ -110,14 +129,28 @@ button {
   border: none;
   font-size: 0;
   padding: 0;
-  position: fixed;
-  bottom: 20px;
+  position: fixed; 
+  bottom: 50vh;
   width: 60px;
   height: 60px;
   z-index: 1;
   outline: none;
-  background: none;
+  background: #f7f7f7;
+  border: 0px solid #3d3a3a;
+  border-radius: 50%;
+  opacity: .8;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
  }
+.modal-fwd:hover, .modal-fwd:active, .modal-back:hover, .modal-back:active {
+opacity: 1;
+-moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+-o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+-webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
 .modal-fwd svg, .modal-back svg {
   width: 60px;
   height: 60px; }
@@ -268,6 +301,29 @@ button {
       opacity: 1;
     }
   }
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @-moz-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @-o-keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
   ::-webkit-scrollbar {
     width: 13px;
     height: 13px; }
@@ -298,6 +354,20 @@ button {
   
   ::-webkit-scrollbar-corner {
     background: transparent; }
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    color: #f7f7f7;
+    margin-top: 0;
+    font-size: 5.5vw;
+  }
+  h2 a:first-child {
+    margin-right: 40px;
+  }
+  br {
+    display: none;
+  }
+}
 </style>
 `;
 
@@ -319,7 +389,15 @@ class WorkModal extends HTMLElement {
     <button class="hide-modal">Hide</button>
     <div class="modal-pg ${pgClass}">
     <div class="img-container">
+    <h1>${currentItem.title}</h1>  
+    <h2>
+    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer"><span class="icon">&#9921; </span> Visit the Site</a>
+    <br> 
+    <a href="${currentItem.repo}" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
+    </h2>
+    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer">
     <img src="img/works/${currentItem.code + '/' + currentItem.code}-1.png" class="item-img" alt="${currentItem.title} image"/>
+    </a>    
     <div class="img-controls">
     ${currentItem.pics.map((pic, i) => {
       if (i === 0) {
@@ -338,7 +416,8 @@ class WorkModal extends HTMLElement {
     })} 
     </div>
     </div>
-    <h2>${currentItem.title}</h2>
+    <h2>
+    </h2>
     <button class="modal-back" title="last work">
     previous work<svg viewBox="-15 -15 130 130">
     <path
@@ -390,27 +469,69 @@ class WorkModal extends HTMLElement {
       let back = res.querySelector('.modal-back')
       let image = res.querySelector('.img-container img')
       let imgBtns = res.querySelectorAll('.pic-control input')
-      const runSlideShow = setInterval(() => {
-        imgBtns.forEach((el, i, els) => {
-
-          if(i > 0) {
-            if(els[i - 1].checked == true) {
-              // el.checked = false
-              let nextChecked = el
-              console.log(nextChecked)
-              // nextChecked.checked = true
-              // const newPic = nextChecked.parentElement.getAttribute('data-pos')
-              // image.setAttribute('src', `img/works/${newPic}`)
+      let runSlideShow = setInterval(() => {
+        for (let i = 0; i < imgBtns.length; i++) {
+          if(imgBtns[i].checked == true) {
+            if(i < imgBtns.length - 1) {
+              imgBtns[i].checked = false
+              imgBtns[i + 1].checked = true
+              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+              image.setAttribute('src', `img/works/${newPic}`)
+              image.style.animation = 'fadeIn 1s'
+              setTimeout(() => {
+                image.style.animation = 'none'
+              }, 500)
+              return
+            } else {
+              imgBtns[i].checked = false
+              imgBtns[0].checked = true
+              let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
+              image.setAttribute('src', `img/works/${newPic}`)              
+              image.style.animation = 'fadeIn 1s'
+              setTimeout(() => {
+                image.style.animation = 'none'
+              }, 500) 
+              return
             }
           }
-        })
-      }, 4000)
+        }
+      }, 3000)
       document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
       setTimeout(() => {
         clearInterval(runSlideShow)
-      }, 60000) 
+      }, 600000) 
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
+        clearInterval(runSlideShow)
+        setTimeout(() => {
+          runSlideShow = setInterval(() => {
+            for (let i = 0; i < imgBtns.length; i++) {
+              if(imgBtns[i].checked == true) {
+                if(i < imgBtns.length - 1) {
+                  imgBtns[i].checked = false
+                  imgBtns[i + 1].checked = true
+                  let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+                  image.setAttribute('src', `img/works/${newPic}`)
+                  image.style.animation = 'fadeIn 1s'
+                  setTimeout(() => {
+                    image.style.animation = 'none'
+                  }, 500)
+                  return
+                } else {
+                  imgBtns[i].checked = false
+                  imgBtns[0].checked = true
+                  let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
+                  image.setAttribute('src', `img/works/${newPic}`)              
+                  image.style.animation = 'fadeIn 1s'
+                  setTimeout(() => {
+                    image.style.animation = 'none'
+                  }, 500) 
+                  return
+                }
+              }
+            }
+          }, 3000)
+        }, 2000)
           let dir = e.target.name 
           let pic = e.target.value
           image.setAttribute('src', `img/works/${dir + '/' + pic}`)
