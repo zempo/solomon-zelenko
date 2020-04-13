@@ -122,22 +122,36 @@ button {
   cursor: pointer;
 }
 .modal-fwd, .modal-back {
-  position: fixed;
   border: none;
   font-size: 0;
   padding: 0;
-  bottom: 20px;
+  position: fixed; 
+  bottom: 50vh;
   width: 60px;
   height: 60px;
   z-index: 1;
   outline: none;
-  background: none;
+  background: #f7f7f7;
+  border: 0px solid #3d3a3a;
+  border-radius: 50%;
+  opacity: .8;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
  }
+.modal-fwd:hover, .modal-fwd:active, .modal-back:hover, .modal-back:active {
+opacity: 1;
+-moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+-o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+-webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
 .modal-fwd svg, .modal-back svg {
   width: 60px;
   height: 60px; }
 .modal-back {
-  left: 20px; }
+  left: 10px; } 
 .modal-fwd {
   right: 20px; }
 .opened {

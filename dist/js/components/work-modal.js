@@ -4,18 +4,32 @@ workModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  font-size: 10vw;
+  font-size: 9vw;
 }
 h2 a {
   color: #f7f7f7;
   font-weight: bold;
   text-decoration: none;
+  font-size: 4.5vw;
+  border: 2px solid #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+a:hover {
+  color: #3d3a3a;
+  background: #f7f7f7; 
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 a .icon {
-  font-size: 60px;
+  font-size: 6vw;
   font-weight: normal;
-  position: relative;
-  top: 5px;
 }
 br {
   display: block;
@@ -155,7 +169,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   width: 60px;
   height: 60px; }
 .modal-back {
-  left: 20px; }
+  left: 10px; } 
 .modal-fwd {
   right: 20px; }
 .opened {
@@ -359,7 +373,15 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   h1 {
     color: #f7f7f7;
     margin-top: 0;
-    font-size: 5.5vw;
+    font-size: 5vw;
+  }
+  h2 a {
+    font-size: 2.5vw;
+  }
+  h2 a .icon {
+    font-size: 3.5vw;
+    position: relative;
+    top: 5px;
   }
   h2 a:first-child {
     margin-right: 40px;
@@ -392,6 +414,7 @@ class WorkModal extends HTMLElement {
     <h1>${currentItem.title}</h1>  
     <h2>
     <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer"><span class="icon">&#9921; </span> Visit the Site</a>
+    <br> 
     <br> 
     <a href="${currentItem.repo}" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
     </h2>
@@ -497,9 +520,9 @@ class WorkModal extends HTMLElement {
         }
       }, 3000)
       document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
-      setTimeout(() => {
+      window.onhashchange = e => {
         clearInterval(runSlideShow)
-      }, 600000) 
+      }
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
         clearInterval(runSlideShow)
