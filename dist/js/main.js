@@ -32,14 +32,14 @@ const toggleTab = (e) => {
   }
 };
 
-const updateHue = (hue, hueV, pic) => {
+const updateHue = (hue, hueV, pic1, pic2, pic3) => {
   let newVal = Number((hue.value - hue.min) * 100 / (hue.max - hue.min))
   let newPos = 10 - (newVal * .2)
   hueV.innerHTML = `<span>${hue.value}&deg;</span>`
-  setTimeout(() => {
-    hueV.style.left = `calc(${newVal} + ${newPos}px)`
-  }, 20)
-  pic.style.filter = `hue-rotate(${hue.value}deg)`
+  hueV.style.left = `calc(${newVal}% + ${newPos}px)`
+  pic1.style.filter = `hue-rotate(${hue.value}deg)`
+  pic2.style.filter = `hue-rotate(${hue.value}deg)`
+  pic3.style.filter = `hue-rotate(${hue.value}deg)`
 }
 
 // Hero Animation
@@ -140,14 +140,16 @@ class Router {
       case "about":
         const hue = document.getElementById('hue')
         const hueV = document.getElementById('hueV')
-        const pic = document.querySelector('.about-pic')
+        const pic1 = document.querySelector('.about-pic-1')
+        const pic2 = document.querySelector('.about-pic-2')
+        const pic3 = document.querySelector('.about-pic-3')
         const aboutTabs = document.querySelectorAll(".btn-a");
         aboutTabs.forEach((el) => {
           el.addEventListener("click", (e) => toggleTab(e));
         });
-        updateHue(hue, hueV, pic)
+        updateHue(hue, hueV, pic1, pic2, pic3)
         hue.addEventListener('input', e => {
-          updateHue(hue, hueV, pic)
+          updateHue(hue, hueV, pic1, pic2, pic3)
         })
         return;
       case "works":

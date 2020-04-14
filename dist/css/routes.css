@@ -77,11 +77,13 @@
     width: 35px;
     text-decoration: none; }
 
-.about-pg img {
+.about-pg .about-pic-1, .about-pg .about-pic-2, .about-pg .about-pic-3 {
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50%; }
+
+.about-pg .about-pic-1 {
   width: calc(200px + 20vw);
   max-width: 600px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 50%;
   margin: 20px auto 50px; }
 
 .about-pg .img-controls {
