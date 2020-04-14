@@ -1,8 +1,10 @@
 <div class="route about-pg">
   <h1>Who is Solomon?</h1>
-  <img src="img/s-about.png" alt="Picture of Solomon" />
-  <input type="range" class="hue" name="hue" id="hue" min="-360" max="360" value="0" oninput="huedeg.value=hue.value" />
-  <output name="huedeg" id="huedeg" for="hue">0</output>
+  <img src="img/s-about.png" alt="Picture of Solomon" class="about-pic" />
+  <div class="img-controls">
+    <div class="hue-value" id="hueV"></div>
+    <input type="range" name="hue" id="hue" min="-360" max="360" value="0" />
+  </div>
   <section class="accordion">
     <button class="btn-a">
       <!-- todo: add border and padding, to look like hr  -->

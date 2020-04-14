@@ -5,7 +5,7 @@ h1 {
   color: #f7f7f7;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 8.5vw;
+  font-size: calc(20px + 2.3vw);
 }
 h2 {
   margin: 35px auto 35px;
@@ -16,7 +16,7 @@ h2 a {
   text-decoration: none;
   background: #3d3a3a;
   padding: 10px 20px;
-  font-size: 4.5vw;
+  font-size: calc(10px + 1.8vw);
   border: 2px solid rgba(247, 247, 247, .7);
   padding: 10px 20px;
   border-radius: 5px;
@@ -47,10 +47,10 @@ a:hover path {
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 h2 a svg  { 
-  height: 5.4vw;
-  width: 5.4vw;
+  height: calc(14px + 1.8vw);
+  width: calc(14px + 1.8vw);
   position: relative;
-  top: .75vw;
+  top: calc(2px + .25vw);
 }
 #modal {
   position: fixed;
@@ -185,8 +185,8 @@ opacity: 1;
 transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 .modal-fwd svg, .modal-back svg {
-  width: 60px;
-  height: 60px; }
+  width: calc(60px + 1vw);
+  height: calc(60px + 1vw); }
 .modal-back {
   left: calc(5px + 1vw); } 
 .modal-fwd {
@@ -196,12 +196,12 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 } 
 .modal-r {
-  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .modal-l {
-  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .img-container {
   background: #3d3a3a;
@@ -278,57 +278,57 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     opacity: 1;
   }
 } 
-  @-webkit-keyframes fromRight {
-    0% {
-      -webkit-transform: translateX(100px);
-      transform: translateX(100px);
-      opacity: 0.1;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      opacity: 1;
-    }
+@-webkit-keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0.9;
   }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0.9;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
   
-  @keyframes fromRight {
-    0% {
-      -webkit-transform: translateX(100px);
-      transform: translateX(100px);
-      opacity: 0.1;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      opacity: 1;
-    }
+@-webkit-keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0.9;
   }
-    
-  @-webkit-keyframes fromLeft {
-    0% {
-      -webkit-transform: translateX(-100px);
-      transform: translateX(-100px);
-      opacity: 0.1;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  @keyframes fromLeft {
-    0% {
-      -webkit-transform: translateX(-100px);
-      transform: translateX(-100px);
-      opacity: 0.1;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      opacity: 1;
-    }
+}
+
+@keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0.9;
   }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
   ::-webkit-scrollbar {
     width: 13px;
     height: 13px; }
@@ -361,16 +361,75 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     background: transparent; }
 @media only screen and (min-width: 800px) {
       h1 {
-        font-size: 4vw;
+        font-size: calc(16px + 2vw);
       }
       h2 a {
-        font-size: 2.2vw;
+        font-size: calc(10px + 1vw);
       }
       h2 a svg { 
-        height: 2.6vw;
-        width: 2.6vw;
+        height: calc(15px + 1vw);
+        width: calc(15px + 1vw);
         position: relative;
-        top: .3vw;
+        top: calc(1px + .2vw);
+      }
+      .modal-r {
+        -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+        animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+      .modal-l {
+        -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+        animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+      @-webkit-keyframes fromRight {
+        0% {
+          -webkit-transform: translateX(12vw);
+          transform: translateX(12vw);
+          opacity: 0.9;
+        }
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fromRight {
+        0% {
+          -webkit-transform: translateX(12vw);
+          transform: translateX(12vw);
+          opacity: 0.9;
+        }
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+        
+      @-webkit-keyframes fromLeft {
+        0% {
+          -webkit-transform: translateX(-12vw);
+          transform: translateX(-12vw);
+          opacity: 0.9;
+        }
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fromLeft {
+        0% {
+          -webkit-transform: translateX(-12vw);
+          transform: translateX(-12vw);
+          opacity: 0.9;
+        }
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
       }
     }
 </style>

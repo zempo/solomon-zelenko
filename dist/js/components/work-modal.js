@@ -5,7 +5,7 @@ h1 {
   color: #f7f7f7;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 8.5vw;
+  font-size: calc(20px + 2.3vw);
 }
 h2 {
   margin: 15px auto 35px;
@@ -14,7 +14,7 @@ h2 a {
   color: #f7f7f7;
   font-weight: bold;
   text-decoration: none; 
-  font-size: 4.5vw;
+  font-size: calc(10px + 1.8vw);
   border: 2px solid rgba(247, 247, 247, .7);
   padding: 10px 20px;
   border-radius: 5px;
@@ -32,8 +32,9 @@ a:hover {
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 a .icon {
-  font-size: 6vw;
+  font-size: calc(18px + 1.8vw);
   font-weight: normal;
+  top: calc(2px + .25vw);
 }
 br {
   display: block;
@@ -148,9 +149,9 @@ button {
   font-size: 0;
   padding: 0;
   position: fixed; 
-  bottom: 50vh;
-  width: 60px;
-  height: 60px;
+  bottom: calc(50vh - .5vw - 30px);
+  width: calc(60px + 1vw);
+  height: calc(60px + 1vw);
   z-index: 1;
   outline: none;
   background: #f7f7f7;
@@ -170,23 +171,23 @@ opacity: 1;
 transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 .modal-fwd svg, .modal-back svg {
-  width: 60px;
-  height: 60px; }
-.modal-back {
-  left: 10px; } 
-.modal-fwd {
-  right: 20px; }
+  width: calc(60px + 1vw);
+  height: calc(60px + 1vw); }
+  .modal-back {
+    left: calc(5px + 1vw); } 
+  .modal-fwd {
+    right: calc(10px + 1vw); }
 .opened {
   -webkit-animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 } 
 .modal-r {
-  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromRight .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromRight .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .modal-l {
-  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation: fromLeft .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fromLeft .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .img-container {
   background: #3d3a3a;
@@ -272,7 +273,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     0% {
       -webkit-transform: translateX(100px);
       transform: translateX(100px);
-      opacity: 0.1;
+      opacity: 0.9;
     }
     100% {
       -webkit-transform: translateX(0);
@@ -285,7 +286,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     0% {
       -webkit-transform: translateX(100px);
       transform: translateX(100px);
-      opacity: 0.1;
+      opacity: 0.9;
     }
     100% {
       -webkit-transform: translateX(0);
@@ -298,7 +299,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     0% {
       -webkit-transform: translateX(-100px);
       transform: translateX(-100px);
-      opacity: 0.1;
+      opacity: 0.9;
     }
     100% {
       -webkit-transform: translateX(0);
@@ -311,7 +312,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     0% {
       -webkit-transform: translateX(-100px);
       transform: translateX(-100px);
-      opacity: 0.1;
+      opacity: 0.9;
     }
     100% {
       -webkit-transform: translateX(0);
@@ -377,15 +378,15 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   h1 {
     color: #f7f7f7;
     margin-top: 0;
-    font-size: 4vw;
+    font-size: calc(16px + 2vw);
   }
   h2 a {
-    font-size: 2.2vw;
+    font-size: calc(10px + .8vw);
   }
   h2 a .icon {
-    font-size: 3.3vw;
+    font-size: calc(18px + .8vw);
     position: relative;
-    top: .25vw;
+    top: 0;
   }
   h2 a:first-child {
     margin-right: 40px;
@@ -393,6 +394,64 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   br {
     display: none;
   }
+  .modal-r {
+    -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+  .modal-l {
+    -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+  @-webkit-keyframes fromRight {
+    0% {
+      -webkit-transform: translateX(12vw);
+      transform: translateX(12vw);
+      opacity: 0.9;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fromRight {
+    0% {
+      -webkit-transform: translateX(12vw);
+      transform: translateX(12vw);
+      opacity: 0.9;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+    
+  @-webkit-keyframes fromLeft {
+    0% {
+      -webkit-transform: translateX(-12vw);
+      transform: translateX(-12vw);
+      opacity: 0.9;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fromLeft {
+    0% {
+      -webkit-transform: translateX(-12vw);
+      transform: translateX(-12vw);
+      opacity: 0.9;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
 }
 </style>
 `;
@@ -417,7 +476,7 @@ class WorkModal extends HTMLElement {
     <div class="img-container">
     <h1>${currentItem.title}</h1>  
     <h2>
-    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer"><span class="icon">&#9921; </span> Visit the Site</a>
+    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer"><span class="icon">&#9921; </span> Visit the Website</a>
     <br> 
     <br> 
     <a href="${currentItem.repo}" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
@@ -530,7 +589,6 @@ class WorkModal extends HTMLElement {
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
         clearInterval(runSlideShow) 
-        setTimeout(() => {
           runSlideShow = setInterval(() => {
             for (let i = 0; i < imgBtns.length; i++) {
               if(imgBtns[i].checked == true) {
@@ -557,8 +615,7 @@ class WorkModal extends HTMLElement {
                 }
               }
             }
-          }, 3000)
-        }, 2000)
+          }, 3100)
           let dir = e.target.name 
           let pic = e.target.value
           image.setAttribute('src', `img/works/${dir + '/' + pic}`)

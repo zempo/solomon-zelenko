@@ -30,10 +30,10 @@ main {
   padding: 0; }
   body .btn-fwd,
   main .btn-fwd {
-    right: 20px; }
+    right: calc(10px + 1vw); }
   body .btn-back,
   main .btn-back {
-    left: 20px; }
+    left: calc(10px + 1vw); }
   body .btn-fwd,
   body .btn-back,
   main .btn-fwd,
@@ -41,9 +41,9 @@ main {
     position: fixed;
     font-size: 0;
     padding: 0;
-    top: 50vh;
-    width: 50px;
-    height: 50px;
+    top: calc(50vh - 30px - 1vw);
+    width: calc(60px + 1vw);
+    height: calc(60px + 1vw);
     z-index: 2;
     outline: none;
     background: black;
@@ -56,8 +56,8 @@ main {
       background: rgba(160, 160, 160, 0.3);
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: 48px;
-      height: 48px; }
+      width: calc(60px + 1vw);
+      height: calc(60px + 1vw); }
     body .btn-fwd path,
     body .btn-back path,
     main .btn-fwd path,
