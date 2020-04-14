@@ -4,15 +4,19 @@ workModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  font-size: 9vw;
+  margin-bottom: 0;
+  font-size: 8.5vw;
+}
+h2 {
+  margin: 15px auto 35px;
 }
 h2 a {
   color: #f7f7f7;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none; 
   font-size: 4.5vw;
-  border: 2px solid #f7f7f7;
-  padding: 10px;
+  border: 2px solid rgba(247, 247, 247, .7);
+  padding: 10px 20px;
   border-radius: 5px;
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -21,7 +25,7 @@ h2 a {
 }
 a:hover {
   color: #3d3a3a;
-  background: #f7f7f7; 
+  background: rgba(247, 247, 247, .95); 
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -196,7 +200,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 50px;
   }
 .pic-control {
   display: block;
@@ -369,19 +373,19 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   ::-webkit-scrollbar-corner {
     background: transparent; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   h1 {
     color: #f7f7f7;
     margin-top: 0;
-    font-size: 5vw;
+    font-size: 4vw;
   }
   h2 a {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
   }
   h2 a .icon {
-    font-size: 3.5vw;
+    font-size: 3.3vw;
     position: relative;
-    top: 5px;
+    top: .25vw;
   }
   h2 a:first-child {
     margin-right: 40px;
@@ -525,7 +529,7 @@ class WorkModal extends HTMLElement {
       }
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
-        clearInterval(runSlideShow)
+        clearInterval(runSlideShow) 
         setTimeout(() => {
           runSlideShow = setInterval(() => {
             for (let i = 0; i < imgBtns.length; i++) {
@@ -539,7 +543,7 @@ class WorkModal extends HTMLElement {
                   setTimeout(() => {
                     image.style.animation = 'none'
                   }, 500)
-                  return
+                  return;
                 } else {
                   imgBtns[i].checked = false
                   imgBtns[0].checked = true
@@ -549,7 +553,7 @@ class WorkModal extends HTMLElement {
                   setTimeout(() => {
                     image.style.animation = 'none'
                   }, 500) 
-                  return
+                  return;
                 }
               }
             }

@@ -4,17 +4,53 @@ byteModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  font-size: 9vw;
+  margin-bottom: 0;
+  font-size: 8.5vw;
+}
+h2 {
+  margin: 35px auto 35px;
 }
 h2 a {
   color: #f7f7f7;
   font-weight: bold;
   text-decoration: none;
+  background: #3d3a3a;
+  padding: 10px 20px;
   font-size: 4.5vw;
+  border: 2px solid rgba(247, 247, 247, .7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+a:hover {
+  color: #3d3a3a;
+  background: rgba(247, 247, 247, .95); 
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+a path {
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+a:hover path {
+  fill: #3d3a3a;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 h2 a svg  { 
+  height: 5.4vw;
+  width: 5.4vw;
   position: relative;
-  top: 10px;
+  top: .75vw;
 }
 #modal {
   position: fixed;
@@ -41,6 +77,7 @@ h2 a svg  {
   position: absolute;
   height: 100%;
   width: 100%;
+  background: #f7f7f7;
 }
 .modal-content:after {
   content: "";
@@ -126,9 +163,9 @@ button {
   font-size: 0;
   padding: 0;
   position: fixed; 
-  bottom: 50vh;
-  width: 60px;
-  height: 60px;
+  bottom: calc(50vh - .5vw - 30px);
+  width: calc(60px + 1vw);
+  height: calc(60px + 1vw);
   z-index: 1;
   outline: none;
   background: #f7f7f7;
@@ -151,9 +188,9 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   width: 60px;
   height: 60px; }
 .modal-back {
-  left: 10px; } 
+  left: calc(5px + 1vw); } 
 .modal-fwd {
-  right: 20px; }
+  right: calc(10px + 1vw); }
 .opened {
   -webkit-animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -175,6 +212,35 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 .light-bg h1, .light-bg h2 a {
   color: black;
+  background: none;
+}
+.light-bg h2 a {
+  border: 1px solid #3d3a3a;
+  border-radius: 5px;
+}
+.light-bg h2 a path {
+  fill: black;
+}
+.light-bg h2 a:hover {
+  color: #f7f7f7;
+  background: #3d3a3a;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+} 
+.light-bg a path {
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+.light-bg a:hover path {
+  fill: #f7f7f7;
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 .item-img {
   max-width: 100%; 
@@ -293,12 +359,18 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   
   ::-webkit-scrollbar-corner {
     background: transparent; }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
       h1 {
-        font-size: 5.5vw;
+        font-size: 4vw;
       }
       h2 a {
-        font-size: 3vw;
+        font-size: 2.2vw;
+      }
+      h2 a svg { 
+        height: 2.6vw;
+        width: 2.6vw;
+        position: relative;
+        top: .3vw;
       }
     }
 </style>

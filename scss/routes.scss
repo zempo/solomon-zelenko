@@ -115,9 +115,97 @@ $homeFonts: (
 // about
 .about-pg {
   img {
-    max-width: 250px;
+    width: calc(200px + 20vw);
+    max-width: 600px;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 90%;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+      width: 90%;
+      height: 5px;
+      cursor: pointer;
+      animate: 0.2s;
+      box-shadow: 1px 1px 1px #000000;
+      background: #000000;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+    &::-webkit-slider-thumb {
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 23px;
+      width: 44px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -10px;
+    }
+    &:focus::-webkit-slider-runnable-track {
+      background: #000000;
+    }
+    &::-moz-range-track {
+      width: 90%;
+      height: 5px;
+      cursor: pointer;
+      animate: 0.2s;
+      box-shadow: 1px 1px 1px #000000;
+      background: #000000;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+    &::-moz-range-thumb {
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 23px;
+      width: 44px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      cursor: pointer;
+    }
+    &::-ms-track {
+      width: 90%;
+      height: 5px;
+      cursor: pointer;
+      animate: 0.2s;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+    &::-ms-fill-lower {
+      background: #000000;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px #000000;
+    }
+    &::-ms-fill-upper {
+      background: #000000;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px #000000;
+    }
+    &::-ms-thumb {
+      box-shadow: 1px 1px 1px #000000;
+      border: 1px solid #000000;
+      height: 23px;
+      width: 44px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      cursor: pointer;
+    }
+    &:focus::-ms-fill-lower {
+      background: #000000;
+    }
+    &:focus::-ms-fill-upper {
+      background: #000000;
+    }
   }
 }
 
