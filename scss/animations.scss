@@ -1,3 +1,4 @@
+@import 'config';
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -40,8 +41,8 @@
 
 @-o-keyframes fromRight {
   0% {
-    -o-transform: translateX(100px);
-    transform: translateX(100px);
+    -o-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1;
   }
   100% {
@@ -52,8 +53,8 @@
 }
 @-moz-keyframes fromRight {
   0% {
-    -moz-transform: translateX(100px);
-    transform: translateX(100px);
+    -moz-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1;
   }
   100% {
@@ -65,8 +66,8 @@
 
 @-webkit-keyframes fromRight {
   0% {
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px);
+    -webkit-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1;
   }
   100% {
@@ -78,8 +79,8 @@
 
 @keyframes fromRight {
   0% {
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px);
+    -webkit-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1;
   }
   100% {
@@ -91,8 +92,8 @@
 
 @-o-keyframes fromLeft {
   0% {
-    -o-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -o-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1;
   }
   100% {
@@ -103,8 +104,8 @@
 }
 @-moz-keyframes fromLeft {
   0% {
-    -moz-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -moz-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1;
   }
   100% {
@@ -116,8 +117,8 @@
 
 @-webkit-keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -webkit-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1;
   }
   100% {
@@ -129,8 +130,8 @@
 
 @keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -webkit-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1;
   }
   100% {

@@ -9,16 +9,33 @@
   src: url(../font/SpartanMB-Regular.otf);
   font-weight: normal; }
 
+body .btn-fwd,
+body .btn-back,
+main .btn-fwd,
+main .btn-back, body .btn-fwd svg,
+body .btn-back svg,
+main .btn-fwd svg,
+main .btn-back svg, a {
+  cursor: pointer;
+  font-family: "SpartanMB";
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+  body .btn-fwd:hover,
+  body .btn-back:hover,
+  main .btn-fwd:hover,
+  main .btn-back:hover, body .btn-fwd svg:hover,
+  body .btn-back svg:hover,
+  main .btn-fwd svg:hover,
+  main .btn-back svg:hover, a:hover {
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+
 * {
   box-sizing: border-box; }
-
-button,
-a {
-  cursor: pointer;
-  font: "SpartanMB"; }
-
-.min-txt {
-  font-family: "Indie Flower", cursive; }
 
 body,
 main {
@@ -27,7 +44,8 @@ main {
   min-height: 100%;
   font-family: "SpartanMB";
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background: #fafafa; }
   body .btn-fwd,
   main .btn-fwd {
     right: calc(10px + 1vw); }
@@ -53,7 +71,7 @@ main {
     body .btn-back svg,
     main .btn-fwd svg,
     main .btn-back svg {
-      background: rgba(160, 160, 160, 0.3);
+      background: #3d3a3a;
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
       width: calc(60px + 1vw);
@@ -62,7 +80,24 @@ main {
     body .btn-back path,
     main .btn-fwd path,
     main .btn-back path {
-      fill: rgba(250, 250, 250, 0.9); }
+      fill: white; }
+    body .btn-fwd:active:not([disabled]) svg, body .btn-fwd:active:not([disabled]) path, body .btn-fwd:hover:not([disabled]) svg, body .btn-fwd:hover:not([disabled]) path,
+    body .btn-back:active:not([disabled]) svg,
+    body .btn-back:active:not([disabled]) path,
+    body .btn-back:hover:not([disabled]) svg,
+    body .btn-back:hover:not([disabled]) path,
+    main .btn-fwd:active:not([disabled]) svg,
+    main .btn-fwd:active:not([disabled]) path,
+    main .btn-fwd:hover:not([disabled]) svg,
+    main .btn-fwd:hover:not([disabled]) path,
+    main .btn-back:active:not([disabled]) svg,
+    main .btn-back:active:not([disabled]) path,
+    main .btn-back:hover:not([disabled]) svg,
+    main .btn-back:hover:not([disabled]) path {
+      -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+      -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+      -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+      transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
     body .btn-fwd:active:not([disabled]) svg, body .btn-fwd:hover:not([disabled]) svg,
     body .btn-back:active:not([disabled]) svg,
     body .btn-back:hover:not([disabled]) svg,
@@ -70,7 +105,7 @@ main {
     main .btn-fwd:hover:not([disabled]) svg,
     main .btn-back:active:not([disabled]) svg,
     main .btn-back:hover:not([disabled]) svg {
-      background: rgba(160, 160, 160, 0.3); }
+      background: #000000; }
     body .btn-fwd:active:not([disabled]) path, body .btn-fwd:hover:not([disabled]) path,
     body .btn-back:active:not([disabled]) path,
     body .btn-back:hover:not([disabled]) path,

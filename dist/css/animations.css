@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Extra-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Regular.otf);
+  font-weight: normal; }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -24,8 +35,8 @@
 
 @-o-keyframes fromRight {
   0% {
-    -o-transform: translateX(100px);
-    transform: translateX(100px);
+    -o-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1; }
   100% {
     -o-transform: translateX(0);
@@ -34,8 +45,8 @@
 
 @-moz-keyframes fromRight {
   0% {
-    -moz-transform: translateX(100px);
-    transform: translateX(100px);
+    -moz-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1; }
   100% {
     -moz-transform: translateX(0);
@@ -44,8 +55,8 @@
 
 @-webkit-keyframes fromRight {
   0% {
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px);
+    -webkit-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -54,8 +65,8 @@
 
 @keyframes fromRight {
   0% {
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px);
+    -webkit-transform: translateX(15vw);
+    transform: translateX(15vw);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -64,8 +75,8 @@
 
 @-o-keyframes fromLeft {
   0% {
-    -o-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -o-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1; }
   100% {
     -o-transform: translateX(0);
@@ -74,8 +85,8 @@
 
 @-moz-keyframes fromLeft {
   0% {
-    -moz-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -moz-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1; }
   100% {
     -moz-transform: translateX(0);
@@ -84,8 +95,8 @@
 
 @-webkit-keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -webkit-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);
@@ -94,8 +105,8 @@
 
 @keyframes fromLeft {
   0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
+    -webkit-transform: translateX(-15vw);
+    transform: translateX(-15vw);
     opacity: 0.1; }
   100% {
     -webkit-transform: translateX(0);

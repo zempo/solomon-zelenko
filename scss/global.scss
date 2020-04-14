@@ -1,45 +1,8 @@
-@font-face {
-  font-family: SpartanMB;
-  src: url(../font/SpartanMB-Extra-Bold.otf);
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: SpartanMB;
-  src: url(../font/SpartanMB-Regular.otf);
-  font-weight: normal;
-} 
-
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-
-$font: "SpartanMB";
-$colors: (
-  main-bg: rgb(250, 250, 250),
-  null: rgba(0, 0, 0, 0),
-  lighestGray: #f8f8fa,
-  lightGray: #a5acba,
-  light: #ffffff,
-  "dark": #000000,
-  link: #428bca,
-  linkHover: #555,
-  navBlue: #7ac243,
-  navGreen: #009cdc,
-);
-
+@import 'config';
+@import 'utils';
 * { 
   box-sizing: border-box;
 }
-
-button,
-a {
-  cursor: pointer;
-  font: $font;
-}
-
-.min-txt {
-  font-family: "Indie Flower", cursive;
-}
-
 body,
 main {
   overflow-x: hidden;
@@ -48,6 +11,7 @@ main {
   font-family: $font;
   margin: 0;
   padding: 0;
+  background: map-get($colors, app-white );
   .btn-fwd {
     right:calc(10px + 1vw);;
   }
@@ -56,6 +20,7 @@ main {
   }
   .btn-fwd,
   .btn-back {
+    @extend %btn;
     position: fixed;
     font-size: 0;
     padding: 0;
@@ -65,32 +30,39 @@ main {
     z-index: 2;
     outline: none;
     background: rgb(0, 0, 0);
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 1px solid map-get($colors, null );
     border-radius: 50%;
     svg {
-      background: rgba(160, 160, 160, 0.3);
+      @extend %btn;
+      background: map-get($colors, dark-2 );
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
       width: calc(60px + 1vw);
       height: calc(60px + 1vw);
     }
     path {
-      fill: rgba(250, 250, 250, 0.9);
+      fill: lighten(map-get($colors, app-white ), 10%);
     }
     &:active:not([disabled]),
     &:hover:not([disabled]) {
+      svg, path {
+        -moz-transition: map-get($animations, transition-1);
+        -o-transition: map-get($animations, transition-1);
+        -webkit-transition: map-get($animations, transition-1);
+        transition: map-get($animations, transition-1);
+      }
       svg {
-        background: rgba(160, 160, 160, 0.3);
+        background: map-get($colors, dark );
       }
       path {
-        fill: rgba(250, 250, 250, 1);
+        fill: map-get($colors, app-white );
       }
     }
   }
   
   #container {
     text-align: center;
-    background: rgb(250, 250, 250);
+    background: map-get($colors, app-white );
     min-height: 101vh;
     padding: 0px 15px;
     margin: 0;
@@ -98,6 +70,7 @@ main {
 }
 
 a {
+  @extend %btn;
   font-weight: bold;
   color: map-get($colors, "dark");
 } 
@@ -106,7 +79,7 @@ nav {
   bottom: 0;
   z-index: 5;
   width: 100%; 
-  background: rgb(250, 250, 250);
+  background: map-get($colors, app-white );
   box-shadow: 0px -3px 6px -5px rgba(51, 51, 51, 0.4);
   ul {
     list-style-type: none;
@@ -151,7 +124,7 @@ nav {
   z-index: 1;
   width: 100vw;
   height: 100vh; 
-  background-color: rgba(250, 250, 250, 1);
+  background-color: map-get($colors, app-white );
   .load-icon {
     position: absolute;
     width: 80px;

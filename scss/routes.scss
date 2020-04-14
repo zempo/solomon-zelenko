@@ -1,60 +1,41 @@
-// Global
-$colors: (
-  main-bg: rgb(250, 250, 250),
-  null: rgba(0, 0, 0, 0),
-  lighestGray: #f8f8fa,
-  lightGray: #a5acba,
-  light: #ffffff,
-  "dark": #000000,
-  link: #428bca,
-  linkHover: #555,
-  navBlue: #7ac243,
-  navGreen: #009cdc,
-);  
-
+@import 'config';
+@import 'utils';
+// All Routes
 .route { 
   overflow-x: hidden;
   margin: 0;
-  -o-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+  -o-animation: map-get($animations, fade-in);
+  -moz-animation: map-get($animations, fade-in);
+  -webkit-animation: map-get($animations, fade-in);
+  animation: map-get($animations, fade-in);
   padding-bottom: 100px; 
+  .min-txt {
+    font-family: $font-hand;
+  }
 }
 
 .l {
-  -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-animation: map-get($animations, from-left);
+  -o-animation: map-get($animations, from-left);
+  -webkit-animation: map-get($animations, from-left);
+  animation: map-get($animations, from-left);
 }
 
 .r {
-  -o-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-animation: map-get($animations, from-right);
+  -moz-animation: map-get($animations, from-right);
+  -webkit-animation: map-get($animations, from-right);
+  animation: map-get($animations, from-right);
 }
 
 //  HOME
-$homeFonts: (
-  mobile-1: 20px,
-  mobile-2: 18px,
-  mobile-3: 15px,
-  tablet-1: 20px,
-  tablet-2: 18px,
-  tablet-3: 15px,
-  desk-1: 20px,
-  desk-2: 18px,
-  desk-3: 15px,
-);
-
 .home-pg {
   .min-txt {
     margin-top: 16vw;
   }
-  .resume-btn,
-  .contact-btn {
+  .btn-resume,
+  .btn-contact {
+    @extend %btn;
     background: none;
     font-size: 20px;
     margin: 0.5rem;
@@ -67,7 +48,7 @@ $homeFonts: (
     &::before {
       content: attr(data-text);
       position: absolute;
-      top: 0;
+      top: -15%; 
       left: 0;
       background: black;
       color: rgb(250, 250, 250);
@@ -77,24 +58,27 @@ $homeFonts: (
     &::before,
     & > span {
       padding: 10.5px 0;
-      -webkit-transition: -webkit-transform 0.4s;
-      transition: transform 0.4s;
-      -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+      -moz-transition: map-get($animations, transition-1);
+      -o-transition: map-get($animations, transition-1);
+      -webkit-transition: map-get($animations, transition-1);
+      transition: map-get($animations, transition-1);
     }
     &:hover::before {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
     }
     &:hover > span {
-      transition: transform 0.3s;
+      -moz-transition: transform .4s;
+      -o-transition: transform .4s;
+      -webkit-transition: transform .4s;
+      transition: transform 0.4s;
     }
   }
-  .resume-btn::before {
+  .btn-resume::before {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
-  .contact-btn::before {
+  .btn-contact::before {
     -webkit-transform: translate3d(200%, 0, 0);
     transform: translate3d(200%, 0, 0);
   }
@@ -117,51 +101,56 @@ $homeFonts: (
   .about-pic-1, .about-pic-2, .about-pic-3 {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
-  }
+  } 
   .about-pic-1 {
-    width: calc(200px + 20vw);
-    max-width: 600px;
-    margin: 20px auto 50px;
+    width: calc(240px + 14vw);
+    max-width: 720px;
+    position: relative;
   }
   .about-pic-2 {
-
+    width: calc(180px + 14vw);
+    max-width: 540px;
+    position: relative;
   }
   .about-pic-3 {
-
-  }
+    width: calc(90px + 14vw);
+    max-width: 270px;
+    position: relative;
+  } 
   .img-controls {
-    width: 80%;
-    margin-left: 10%;
+    margin-top: 50px;
+    width: 100%;
     position: relative; 
     .hue-value{
       position: absolute;
-      top: -150%;
+      top: -135%;
       span{
-        width: 50px;
-        height: 40px;
+        width: 60px;
+        height: 35px;
         line-height: 30px;
         text-align: center;
-        background: #000000;
-        color: #fff;
+        background: #fff;
+        color: #000;
         font-size: 18px;
         display: block;
         position: absolute;
         left: 50%;
         transform: translate(-50%, 0);
+        border: 2px solid #000;
         border-radius: 6px;
-      }
-      span:before{
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-top: 10px solid #000000;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        margin-top: -1px;
+        &:before{
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 10px solid #000000;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          margin-top: 1px;
+        }
       }
     }
     input[type=range] {
@@ -263,6 +252,7 @@ $homeFonts: (
   height: auto;
   width: 100%;
   .btn-a {
+    @extend %btn;
     width: 100%;
     padding: 25px;
     // border-top: 1px solid black;
@@ -309,14 +299,17 @@ $homeFonts: (
   }
   .open-content {
     display: block;
-    -webkit-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
-    animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -o-animation: map-get($animations, expand-down);
+    -moz-animation: map-get($animations, expand-down);
+    -webkit-animation: map-get($animations, expand-down);
+    animation: map-get($animations, expand-down);
   }
   .close-content {
     display: none;
-    -webkit-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -o-animation: map-get($animations, fold-up);
+    -moz-animation: map-get($animations, fold-up);
+    -webkit-animation: map-get($animations, fold-up);
+    animation: map-get($animations, fold-up);
   }
 }
 

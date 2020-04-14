@@ -356,6 +356,9 @@ function handleTouchStart(e) {
   yDown = e.touches[0].clientY;
 }
 function handleTouchMove(e) {
+  if(e.target.name === 'hue') {
+    return
+  }
   if (!xDown || !yDown) {
     return;
   }

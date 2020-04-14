@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Extra-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Regular.otf);
+  font-weight: normal; }
+
+.home-pg .btn-resume,
+.home-pg .btn-contact, .accordion .btn-a {
+  cursor: pointer;
+  font-family: "SpartanMB";
+  -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+  transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+  .home-pg .btn-resume:hover,
+  .home-pg .btn-contact:hover, .accordion .btn-a:hover {
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+
 .route {
   overflow-x: hidden;
   margin: 0;
@@ -6,6 +32,8 @@
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
   padding-bottom: 100px; }
+  .route .min-txt {
+    font-family: "Indie Flower", cursive; }
 
 .l {
   -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -22,8 +50,8 @@
 .home-pg .min-txt {
   margin-top: 16vw; }
 
-.home-pg .resume-btn,
-.home-pg .contact-btn {
+.home-pg .btn-resume,
+.home-pg .btn-contact {
   background: none;
   font-size: 20px;
   margin: 0.5rem;
@@ -33,38 +61,41 @@
   position: relative;
   border: 2px solid black;
   font-weight: bold; }
-  .home-pg .resume-btn::before,
-  .home-pg .contact-btn::before {
+  .home-pg .btn-resume::before,
+  .home-pg .btn-contact::before {
     content: attr(data-text);
     position: absolute;
-    top: 0;
+    top: -15%;
     left: 0;
     background: black;
     color: #fafafa;
     height: 100%;
     width: 100%; }
-  .home-pg .resume-btn::before,
-  .home-pg .resume-btn > span,
-  .home-pg .contact-btn::before,
-  .home-pg .contact-btn > span {
+  .home-pg .btn-resume::before,
+  .home-pg .btn-resume > span,
+  .home-pg .btn-contact::before,
+  .home-pg .btn-contact > span {
     padding: 10.5px 0;
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
-  .home-pg .resume-btn:hover::before,
-  .home-pg .contact-btn:hover::before {
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+  .home-pg .btn-resume:hover::before,
+  .home-pg .btn-contact:hover::before {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
-  .home-pg .resume-btn:hover > span,
-  .home-pg .contact-btn:hover > span {
-    transition: transform 0.3s; }
+  .home-pg .btn-resume:hover > span,
+  .home-pg .btn-contact:hover > span {
+    -moz-transition: transform .4s;
+    -o-transition: transform .4s;
+    -webkit-transition: transform .4s;
+    transition: transform 0.4s; }
 
-.home-pg .resume-btn::before {
+.home-pg .btn-resume::before {
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
 
-.home-pg .contact-btn::before {
+.home-pg .btn-contact::before {
   -webkit-transform: translate3d(200%, 0, 0);
   transform: translate3d(200%, 0, 0); }
 
@@ -82,42 +113,53 @@
   border-radius: 50%; }
 
 .about-pg .about-pic-1 {
-  width: calc(200px + 20vw);
-  max-width: 600px;
-  margin: 20px auto 50px; }
+  width: calc(240px + 14vw);
+  max-width: 720px;
+  position: relative; }
+
+.about-pg .about-pic-2 {
+  width: calc(180px + 14vw);
+  max-width: 540px;
+  position: relative; }
+
+.about-pg .about-pic-3 {
+  width: calc(90px + 14vw);
+  max-width: 270px;
+  position: relative; }
 
 .about-pg .img-controls {
-  width: 80%;
-  margin-left: 10%;
+  margin-top: 50px;
+  width: 100%;
   position: relative; }
   .about-pg .img-controls .hue-value {
     position: absolute;
-    top: -150%; }
+    top: -135%; }
     .about-pg .img-controls .hue-value span {
-      width: 50px;
-      height: 40px;
+      width: 60px;
+      height: 35px;
       line-height: 30px;
       text-align: center;
-      background: #000000;
-      color: #fff;
+      background: #fff;
+      color: #000;
       font-size: 18px;
       display: block;
       position: absolute;
       left: 50%;
       transform: translate(-50%, 0);
+      border: 2px solid #000;
       border-radius: 6px; }
-    .about-pg .img-controls .hue-value span:before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-top: 10px solid #000000;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      margin-top: -1px; }
+      .about-pg .img-controls .hue-value span:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #000000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: 1px; }
   .about-pg .img-controls input[type=range] {
     -webkit-appearance: none;
     margin: 10px 0;
@@ -235,10 +277,14 @@
       list-style-position: inside; }
   .accordion .open-content {
     display: block;
+    -o-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -moz-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     -webkit-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
   .accordion .close-content {
     display: none;
+    -o-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    -moz-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     -webkit-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Extra-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: SpartanMB;
+  src: url(../font/SpartanMB-Regular.otf);
+  font-weight: normal;
+} 
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+$font: "SpartanMB";
+$font-hand: "Indie Flower", cursive;
+$colors: (
+  app-white: rgb(250, 250, 250),
+  dark: #000000, 
+  dark-2: rgb(61, 58, 58),
+  modal-white: rgb(247, 247, 247),
+  null: rgba(0, 0, 0, 0)
+);
+$animations: (
+    expand-down: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    fade-in: fadeIn 1s,
+    from-right: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
+    from-left: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
+    fold-up: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
+    transition-2: all .4s
+)
