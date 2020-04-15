@@ -83,7 +83,10 @@ const bytesTemplate = document.createElement("template");
 bytesTemplate.innerHTML = `
 <style>
 @import url("css/global.css"); 
-@import url("css/routes.css"); 
+@import url("css/routes.css");
+h2 {
+  font-size: calc(16px + 1vw); 
+} 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
 .filter-btn {
@@ -231,6 +234,11 @@ bytesTemplate.innerHTML = `
       opacity: 0; }
     to {
       opacity: 1; } }
+@media only screen and (min-width: 850px) {
+  h2 {
+    font-size: calc(20px + 1vw);
+  }
+}    
 </style><div class="filter-bytes">
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn article">Articles</button>
@@ -267,7 +275,7 @@ class BytesList extends HTMLElement {
     } else {
       updatedBytes.forEach((byte, i) => {
         updatedTemplate += `<li class="bytes-list-item">
-        <b>${byte.title}</b>
+        <h2>${byte.title}</h2>
         <div class="byte-preview-1">
         <div class="byte-preview-2">
         <img src="img/${byte.img}" alt="${byte.type} link"/>

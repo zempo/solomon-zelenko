@@ -4,7 +4,7 @@ byteModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 15vh;
   font-size: calc(20px + 2.3vw);
 }
 h2 {

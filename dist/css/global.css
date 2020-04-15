@@ -46,6 +46,36 @@ main {
   margin: 0;
   padding: 0;
   background: #fafafa; }
+  body h1,
+  main h1 {
+    font-size: 26px; }
+    @media screen and (min-width: 560px) {
+      body h1,
+      main h1 {
+        font-size: 30px; } }
+    @media screen and (min-width: 768px) {
+      body h1,
+      main h1 {
+        font-size: calc(28px + 1vw); } }
+    @media screen and (min-width: 1248px) {
+      body h1,
+      main h1 {
+        font-size: calc(32px + 1vw); } }
+  body h2,
+  main h2 {
+    font-size: 18px; }
+    @media screen and (min-width: 560px) {
+      body h2,
+      main h2 {
+        font-size: calc(22px + .5vw); } }
+    @media screen and (min-width: 768px) {
+      body h2,
+      main h2 {
+        font-size: calc(24px + .5vw); } }
+    @media screen and (min-width: 1248px) {
+      body h2,
+      main h2 {
+        font-size: calc(24px + .5vw); } }
   body .btn-fwd,
   main .btn-fwd {
     right: calc(10px + 1vw); }

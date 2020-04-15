@@ -43,12 +43,34 @@ $breakpoints: (
     "desktop-wide": 1440px
 );
 
+$bigh-font-sizes: (
+  null: calc(26px + 1vw),
+  map-get($breakpoints, "phone"): calc(26px + 1.5vw),
+  map-get($breakpoints, "phablet") : calc(30px + 2vw),
+  map-get($breakpoints, "tablet") : calc(31px + 2vw),
+  map-get($breakpoints, "desktop"): calc(34px + 1vw)
+); 
+
 $h1-font-sizes: (
+  null: 26px,
+  map-get($breakpoints, "phablet"): 30px,
+  map-get($breakpoints, "tablet") : calc(28px + 1vw),
+  map-get($breakpoints, "desktop"): calc(32px + 1vw)
+); 
+
+$h2-font-sizes: (
+  null: 18px,
+  map-get($breakpoints, "phablet") : calc(22px + .5vw),
+  map-get($breakpoints, "tablet") : calc(24px + .5vw),
+  map-get($breakpoints, "desktop"): calc(24px + .5vw)
+); 
+
+$h3-font-sizes: (
   null: 15px,
-  480px : 16px,
-  768px : 17px,
-  1024px: 19px
-);
+  map-get($breakpoints, "phablet") : calc(16px + .25vw),
+  map-get($breakpoints, "tablet") : calc(17px + .25vw),
+  map-get($breakpoints, "desktop"): calc(19px + .25vw)
+); 
 
 $p-font-sizes: (
   null: 15px,
@@ -67,6 +89,19 @@ $p-font-sizes: (
 }
 
 // Mixins
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+  
 @mixin position($position, $args) {
   @each $o in top right bottom left {
       $i: index($args, $o);

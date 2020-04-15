@@ -9,6 +9,12 @@
   -webkit-animation: map-get($animations, fade-in);
   animation: map-get($animations, fade-in);
   padding-bottom: 100px; 
+  h1:first-child {
+    margin-bottom: 10vh;
+    @include mq('tablet-med') {
+      margin-bottom: 15vh;
+    }
+  }
 }
 
 .l {
@@ -28,30 +34,40 @@
 //  HOME
 .home-pg {
   .logo-main {
-    margin-top: 8rem;
+    margin-top: 15vh;
     max-width: 90%;
     max-height: 250px;
+    @include mq('tablet-med') {
+      max-width: 85%;
+    }
+  }
+  .big-h {
+    @include font-size($bigh-font-sizes);
+    font-weight: normal;
   }
   .min-txt {
     font-family: $font-hand;
-    margin-top: 15vh;
+    font-weight: 300;
+    @include font-size($h1-font-sizes);
+    @include mq('tablet-med') {
+      display: none;
+    }
   }
   .btn-resume,
   .btn-contact {
     @extend %btn;
     background: none;
-    font-size: 20px;
     margin: 0.5rem;
-    width: 120px;
-    height: 45px;
+    padding: 10px 20px;
     overflow: hidden;
     position: relative;
     border: 2px solid black;
-    font-weight: bold;
+    font-weight: normal;
+    @include font-size($h2-font-sizes);
     &::before {
       content: attr(data-text);
       position: absolute;
-      top: -15%; 
+      top: 0%; 
       left: 0;
       background: black;
       color: rgb(250, 250, 250);
@@ -84,6 +100,9 @@
   .btn-contact::before {
     -webkit-transform: translate3d(200%, 0, 0);
     transform: translate3d(200%, 0, 0);
+  }
+  .btn-resume {
+    margin-bottom: 12vh;
   }
 }
 
@@ -156,7 +175,7 @@
     width: 90%;
     position: relative;
     @include mq('tablet-med') {
-      width: calc((22vw * 2) + 40px);   
+      width: 60%;   
       margin: 0 auto 20px;
       top: 0;
     } 
@@ -290,12 +309,12 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 15vh;
   .btn-a {
     @extend %btn;
     width: 100%;
     padding: 25px;
-    // border-top: 1px solid black;
+    @include font-size($h3-font-sizes);
     position: relative;
     border: none;
     border-bottom: 1px solid #000;
@@ -305,14 +324,14 @@
     font-weight: bold;
     img {
       margin: 20px auto;
-      max-width: 40px;
+      max-width: 50px;
     }
     &::after {
       font-weight: normal;
       cursor: pointer;
       content: "+";
       position: absolute;
-      top: 15px;
+      top: calc(50% - 26px);
       right: 15px;
       font-size: 35px;
     }
@@ -320,12 +339,13 @@
   .open {
     &::after {
       content: "_";
-      top: 1px;
+      top: calc(50% - 41px);
     }
   }
   .a-content {
     display: none;
     transition: all 0.3s;
+    padding: 5vh 0;
     ul {
       list-style-type: none;
       text-align: left;

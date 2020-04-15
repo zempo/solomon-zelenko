@@ -63,6 +63,9 @@ const worksTemplate = document.createElement('template')
 worksTemplate.innerHTML = `<style>
 @import url("css/global.css"); 
 @import url("css/routes.css"); 
+h2 {
+  font-size: calc(16px + 1vw);
+}
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
 .filter-btn {
@@ -210,6 +213,11 @@ worksTemplate.innerHTML = `<style>
     opacity: 0; }
   to {
     opacity: 1; } }
+@media only screen and (min-width: 850px) {
+  h2 {
+    font-size: calc(20px + 1vw);
+  }
+}    
 </style><div class="filter-works">
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn frontend">Front-End</button>
@@ -244,7 +252,7 @@ class WorksList extends HTMLElement {
     } else {
       updatedWorks.forEach((work, i) => {
         updatedTemplate += `<li class="works-list-item">
-        <h2><b>${work.title}</b></h2>
+        <h2>${work.title}</h2>
         <div class="work-preview-1">
         <div class="work-preview-2">
         <img src="img/works/${work.code + '/' + work.code}-1.png" alt="Work hero image"/>

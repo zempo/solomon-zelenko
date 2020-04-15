@@ -32,6 +32,11 @@
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
   padding-bottom: 100px; }
+  .route h1:first-child {
+    margin-bottom: 10vh; }
+    @media only screen and (min-width: 900px) {
+      .route h1:first-child {
+        margin-bottom: 15vh; } }
 
 .l {
   -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -46,30 +51,73 @@
   animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 .home-pg .logo-main {
-  margin-top: 8rem;
+  margin-top: 15vh;
   max-width: 90%;
   max-height: 250px; }
+  @media only screen and (min-width: 900px) {
+    .home-pg .logo-main {
+      max-width: 85%; } }
+
+.home-pg .big-h {
+  font-size: calc(26px + 1vw);
+  font-weight: normal; }
+  @media screen and (min-width: 400px) {
+    .home-pg .big-h {
+      font-size: calc(26px + 1.5vw); } }
+  @media screen and (min-width: 560px) {
+    .home-pg .big-h {
+      font-size: calc(30px + 2vw); } }
+  @media screen and (min-width: 768px) {
+    .home-pg .big-h {
+      font-size: calc(31px + 2vw); } }
+  @media screen and (min-width: 1248px) {
+    .home-pg .big-h {
+      font-size: calc(34px + 1vw); } }
 
 .home-pg .min-txt {
   font-family: "Indie Flower", cursive;
-  margin-top: 15vh; }
+  font-weight: 300;
+  font-size: 26px; }
+  @media screen and (min-width: 560px) {
+    .home-pg .min-txt {
+      font-size: 30px; } }
+  @media screen and (min-width: 768px) {
+    .home-pg .min-txt {
+      font-size: calc(28px + 1vw); } }
+  @media screen and (min-width: 1248px) {
+    .home-pg .min-txt {
+      font-size: calc(32px + 1vw); } }
+  @media only screen and (min-width: 900px) {
+    .home-pg .min-txt {
+      display: none; } }
 
 .home-pg .btn-resume,
 .home-pg .btn-contact {
   background: none;
-  font-size: 20px;
   margin: 0.5rem;
-  width: 120px;
-  height: 45px;
+  padding: 10px 20px;
   overflow: hidden;
   position: relative;
   border: 2px solid black;
-  font-weight: bold; }
+  font-weight: normal;
+  font-size: 18px; }
+  @media screen and (min-width: 560px) {
+    .home-pg .btn-resume,
+    .home-pg .btn-contact {
+      font-size: calc(22px + .5vw); } }
+  @media screen and (min-width: 768px) {
+    .home-pg .btn-resume,
+    .home-pg .btn-contact {
+      font-size: calc(24px + .5vw); } }
+  @media screen and (min-width: 1248px) {
+    .home-pg .btn-resume,
+    .home-pg .btn-contact {
+      font-size: calc(24px + .5vw); } }
   .home-pg .btn-resume::before,
   .home-pg .btn-contact::before {
     content: attr(data-text);
     position: absolute;
-    top: -15%;
+    top: 0%;
     left: 0;
     background: black;
     color: #fafafa;
@@ -102,6 +150,9 @@
 .home-pg .btn-contact::before {
   -webkit-transform: translate3d(200%, 0, 0);
   transform: translate3d(200%, 0, 0); }
+
+.home-pg .btn-resume {
+  margin-bottom: 12vh; }
 
 .icons-list {
   padding-left: 0;
@@ -167,7 +218,7 @@
   position: relative; }
   @media only screen and (min-width: 900px) {
     .about-pg .img-controls {
-      width: calc((22vw * 2) + 40px);
+      width: 60%;
       margin: 0 auto 20px;
       top: 0; } }
   .about-pg .img-controls .hue-value {
@@ -282,10 +333,11 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
-  margin-top: 50px; }
+  margin-top: 15vh; }
   .accordion .btn-a {
     width: 100%;
     padding: 25px;
+    font-size: 15px;
     position: relative;
     border: none;
     border-bottom: 1px solid #000;
@@ -293,23 +345,33 @@
     background: rgba(0, 0, 0, 0);
     font-size: 20px;
     font-weight: bold; }
+    @media screen and (min-width: 560px) {
+      .accordion .btn-a {
+        font-size: calc(16px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      .accordion .btn-a {
+        font-size: calc(17px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      .accordion .btn-a {
+        font-size: calc(19px + .25vw); } }
     .accordion .btn-a img {
       margin: 20px auto;
-      max-width: 40px; }
+      max-width: 50px; }
     .accordion .btn-a::after {
       font-weight: normal;
       cursor: pointer;
       content: "+";
       position: absolute;
-      top: 15px;
+      top: calc(50% - 26px);
       right: 15px;
       font-size: 35px; }
   .accordion .open::after {
     content: "_";
-    top: 1px; }
+    top: calc(50% - 41px); }
   .accordion .a-content {
     display: none;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    padding: 5vh 0; }
     .accordion .a-content ul {
       list-style-type: none;
       text-align: left; }
