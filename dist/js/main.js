@@ -129,8 +129,8 @@ class Router {
   getRefs(pg) {
     switch (pg) {
       case "home":
-        const cBtn = document.querySelector(".contact-btn");
-        const rBtn = document.querySelector(".resume-btn");
+        const cBtn = document.querySelector(".btn-contact");
+        const rBtn = document.querySelector(".btn-resume");
         cBtn.addEventListener(
           "click",
           (e) => (window.location.hash = "#contact")

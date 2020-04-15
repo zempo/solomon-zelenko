@@ -22,6 +22,7 @@ main {
   .btn-back {
     @extend %btn;
     position: fixed;
+    display: none;
     font-size: 0;
     padding: 0;
     top: calc(50vh - 30px - 1vw);
@@ -32,6 +33,9 @@ main {
     background: rgb(0, 0, 0);
     border: 1px solid map-get($colors, null );
     border-radius: 50%;
+    @include mq('tablet') {
+      display: block;
+    } 
     svg {
       @extend %btn;
       background: map-get($colors, dark-2 );
@@ -64,7 +68,10 @@ main {
     text-align: center;
     background: map-get($colors, app-white );
     min-height: 101vh;
-    padding: 0px 15px;
+    padding: 0px 5vw;
+    @include mq('tablet-med') {
+      padding: 0 15vw;
+    }
     margin: 0;
   }
 }

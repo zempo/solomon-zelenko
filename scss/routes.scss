@@ -9,9 +9,6 @@
   -webkit-animation: map-get($animations, fade-in);
   animation: map-get($animations, fade-in);
   padding-bottom: 100px; 
-  .min-txt {
-    font-family: $font-hand;
-  }
 }
 
 .l {
@@ -31,7 +28,8 @@
 //  HOME
 .home-pg {
   .min-txt {
-    margin-top: 16vw;
+    font-family: $font-hand;
+    margin-top: 15vh;
   }
   .btn-resume,
   .btn-contact {
@@ -101,29 +99,65 @@
   .about-pic-1, .about-pic-2, .about-pic-3 {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
+    @include mq('tablet-med') {
+      margin: 20px;
+    }
   } 
+  .responsive {
+    @include mq('tablet-med') {
+     display: none; 
+    }
+  }
   .about-pic-1 {
-    width: calc(240px + 14vw);
-    max-width: 720px;
+    width: calc(220px + 3vw);
     position: relative;
+    @include mq('phablet') {
+      width: calc(270px + 14vw);
+    }
+    @include mq('tablet-med') {
+      width: 22vw;
+      position: relative;
+      top: -3vw;
+      margin: 20px auto 0px;
+    }
   }
   .about-pic-2 {
-    width: calc(180px + 14vw);
-    max-width: 540px;
+    width: calc(140px + 3vw);
     position: relative;
+    top: 10px;
+    @include mq('phablet') {
+    width: calc(180px + 12vw);
+    }
+    @include mq('tablet-med') {
+      width: 22vw;
+      top: 0;
+    }
   }
   .about-pic-3 {
-    width: calc(90px + 14vw);
-    max-width: 270px;
+    width: calc(100px + 3vw);
     position: relative;
+    top: 16px;
+    @include mq('phablet') {
+      width: calc(90px + 12vw);
+      top: calc(10px + 2vw);
+    }
+    @include mq('tablet-med') {
+      width: 22vw;
+      top: 0;
+    }
   } 
   .img-controls {
-    margin-top: 50px;
-    width: 100%;
-    position: relative; 
+    margin: 10px auto 0px;
+    width: 90%;
+    position: relative;
+    @include mq('tablet-med') {
+      width: calc((22vw * 2) + 40px);   
+      margin: 0 auto 20px;
+      top: 0;
+    } 
     .hue-value{
       position: absolute;
-      top: -135%;
+      bottom: -10px;
       span{
         width: 60px;
         height: 35px;
@@ -143,10 +177,10 @@
           position: absolute;
           width: 0;
           height: 0;
-          border-top: 10px solid #000000;
+          border-bottom: 10px solid #000000;
           border-left: 5px solid transparent;
           border-right: 5px solid transparent;
-          top: 100%;
+          bottom: calc(100% + 2px);
           left: 50%;
           margin-left: -5px;
           margin-top: 1px;
@@ -162,7 +196,7 @@
       }
       &::-webkit-slider-runnable-track {
         width: 100%;
-        height: 5px;
+        height: 3px;
         cursor: pointer;
         animate: 0.2s;
         box-shadow: 1px 1px 1px #000000;
@@ -172,7 +206,7 @@
       }
       &::-webkit-slider-thumb {
         box-shadow: 1px 1px 1px #000000;
-        border: 1px solid #000000;
+        border: 1.5px solid #000000;
         height: 23px;
         width: 44px;
         border-radius: 6px;
@@ -251,6 +285,7 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
+  margin-top: 50px;
   .btn-a {
     @extend %btn;
     width: 100%;
@@ -263,7 +298,10 @@
     background: rgba(0, 0, 0, 0);
     font-size: 20px;
     font-weight: bold;
-
+    img {
+      margin: 20px auto;
+      max-width: 40px;
+    }
     &::after {
       font-weight: normal;
       cursor: pointer;

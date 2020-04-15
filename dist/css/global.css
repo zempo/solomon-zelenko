@@ -57,6 +57,7 @@ main {
   main .btn-fwd,
   main .btn-back {
     position: fixed;
+    display: none;
     font-size: 0;
     padding: 0;
     top: calc(50vh - 30px - 1vw);
@@ -67,6 +68,12 @@ main {
     background: black;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%; }
+    @media only screen and (min-width: 768px) {
+      body .btn-fwd,
+      body .btn-back,
+      main .btn-fwd,
+      main .btn-back {
+        display: block; } }
     body .btn-fwd svg,
     body .btn-back svg,
     main .btn-fwd svg,
@@ -119,8 +126,12 @@ main {
     text-align: center;
     background: #fafafa;
     min-height: 101vh;
-    padding: 0px 15px;
+    padding: 0px 5vw;
     margin: 0; }
+    @media only screen and (min-width: 900px) {
+      body #container,
+      main #container {
+        padding: 0 15vw; } }
 
 a {
   font-weight: bold;
