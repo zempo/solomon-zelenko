@@ -45,6 +45,11 @@
   -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
   animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
 
+.home-pg .logo-main {
+  margin-top: 8rem;
+  max-width: 90%;
+  max-height: 250px; }
+
 .home-pg .min-txt {
   font-family: "Indie Flower", cursive;
   margin-top: 15vh; }

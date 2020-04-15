@@ -27,6 +27,7 @@ $animations: (
     from-right: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-left: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
     fold-up: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    ping: ping 0.8s ease-in-out infinite both,
     transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
     transition-2: all .4s
 );
@@ -41,6 +42,21 @@ $breakpoints: (
     "desktop":      1248px,
     "desktop-wide": 1440px
 );
+
+$h1-font-sizes: (
+  null: 15px,
+  480px : 16px,
+  768px : 17px,
+  1024px: 19px
+);
+
+$p-font-sizes: (
+  null: 15px,
+  480px : 16px,
+  768px : 17px,
+  1024px: 19px
+);
+
 // Functions
 @function responsive-theme($color) {
  @if(lightness($color) > 70) {
@@ -51,6 +67,26 @@ $breakpoints: (
 }
 
 // Mixins
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+      $i: index($args, $o);
+      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+        #{$o}: nth($args, $i + 1);
+      }
+  }
+  position: $position;
+}
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
 @mixin push--auto {
     margin: { 
         left: auto;

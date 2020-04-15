@@ -166,11 +166,6 @@ nav {
       text-align: center;
       width: 35px; }
 
-.logo-main {
-  margin-top: 8rem;
-  max-width: 90%;
-  max-height: 250px; }
-
 #loading {
   display: block;
   position: absolute;
@@ -190,6 +185,8 @@ nav {
     background-repeat: no-repeat;
     background-size: 80px 80px;
     background-position: center;
+    -o-animation: ping 0.8s ease-in-out infinite both;
+    -moz-animation: ping 0.8s ease-in-out infinite both;
     -webkit-animation: ping 0.8s ease-in-out infinite both;
     animation: ping 0.8s ease-in-out infinite both; }
 

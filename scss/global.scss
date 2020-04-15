@@ -116,13 +116,6 @@ nav {
   }
 }
 
-
-.logo-main {
-  margin-top: 8rem;
-  max-width: 90%;
-  max-height: 250px;
-}
-
 #loading {
   display: block;
   position: absolute;
@@ -142,8 +135,10 @@ nav {
     background-repeat: no-repeat;
     background-size: 80px 80px;
     background-position: center;
-    -webkit-animation: ping 0.8s ease-in-out infinite both;
-    animation: ping 0.8s ease-in-out infinite both;
+    -o-animation: map-get($animations, ping);
+    -moz-animation: map-get($animations, ping);
+    -webkit-animation: map-get($animations, ping);
+    animation: map-get($animations, ping);
   }
 } 
 ::-webkit-scrollbar {
