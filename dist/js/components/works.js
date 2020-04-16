@@ -4,7 +4,7 @@ const portfolioProjects = [
     code: 'atl',
     pics: ["atl-1.png", "atl-2.png", "atl-3.png", "atl-4.png", "atl-5.png", "atl-6.png"],
     description:
-      "helps users create and download their own scripts/screenplays -- and handles the formatting. You can even customize your homepage and organize your scripts.",
+      "helps users create and download their own scripts and screenplays - and handles the formatting. You can even customize your homepage and organize your scripts. Discover your personalized scriptwriting environment.",
     tech: [
       "React.js (Hooks & Context)",
       "JWT auth",
@@ -24,8 +24,8 @@ const portfolioProjects = [
     code: 'jto',
     pics: ["jto-1.png", "jto-2.png", , "jto-3.png", "jto-4.png", "jto-5.png", "jto-6.png", "jto-7.png"],
     description:
-      " transforms greeting cards into a personal and social experience. You can create, react to, and customize greeting cards within minutes.",
-    tech: [
+      " transforms greeting cards into a personal and social experience. You can create, copy, download, react to, and customize greeting cards within minutes. Get the right card, right now.",
+    tech: [  
       "React.js (Hooks & Context)",
       "JWT auth",
       "Node.js (Express)",
@@ -58,13 +58,14 @@ const portfolioProjects = [
     tags: ['frontend']
   }, 
 ];
-
+ 
 const worksTemplate = document.createElement('template')
 worksTemplate.innerHTML = `<style>
 @import url("css/global.css"); 
 @import url("css/routes.css"); 
 h2 {
-  font-size: calc(16px + 1vw);
+  font-size: calc(17px + 1vw);
+  font-weight: normal;
 }
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -81,8 +82,8 @@ h2 {
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
   font-family: MontSerrat,Tahoma,Arial,sans-serif;
-  font-weight: 700;
-  font-size: .9em;
+  font-weight: 400;
+  font-size: calc(16px + .25vw); 
   line-height: 1.5em;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
   margin: 3px;
@@ -90,7 +91,7 @@ h2 {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  padding: 6px 5px; }
+  padding: 5px 10px; }
 .selected {
   background-color: #414141;
   border-color: #222222; }
@@ -177,9 +178,9 @@ h2 {
     background: rgba(0, 0, 0, 0.3); }
   .open-item span {
     color: rgba(0, 0, 0, 0);
-    font-size: 22px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: calc(17px + 1vw);
+    font-weight: 400 !important; 
   }
 .open-item:hover span,
 .open-item:active span,
@@ -215,7 +216,13 @@ h2 {
     opacity: 1; } }
 @media only screen and (min-width: 850px) {
   h2 {
-    font-size: calc(20px + 1vw);
+    font-size: calc(22px + 1vw);
+  }
+  .filter-btn {
+    font-size: calc(17px + .5vw); 
+  }
+  .open-item span {
+    font-size: calc(22px + 1vw); 
   }
 }    
 </style><div class="filter-works">

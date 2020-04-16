@@ -85,7 +85,8 @@ bytesTemplate.innerHTML = `
 @import url("css/global.css"); 
 @import url("css/routes.css");
 h2 {
-  font-size: calc(16px + 1vw); 
+  font-size: calc(17px + 1vw);
+  font-weight: normal;
 } 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -102,8 +103,8 @@ h2 {
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
   font-family: MontSerrat,Tahoma,Arial,sans-serif;
-  font-weight: 700;
-  font-size: .9em;
+  font-weight: 400;
+  font-size: calc(16px + .25vw); 
   line-height: 1.5em;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
   margin: 3px;
@@ -111,7 +112,7 @@ h2 {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  padding: 6px 5px; }
+  padding: 5px 10px; }
 .selected {
   background-color: #414141;
   border-color: #222222; }
@@ -198,9 +199,9 @@ h2 {
       background: rgba(0, 0, 0, 0.3); }
     .open-byte span {
       color: rgba(0, 0, 0, 0);
-      font-size: 22px;
       cursor: pointer;
-      font-size: 20px;
+      font-size: calc(17px + 1vw); 
+      font-weight: 400 !important; 
     }
   .open-byte:hover span,
   .open-byte:active span,
@@ -236,7 +237,13 @@ h2 {
       opacity: 1; } }
 @media only screen and (min-width: 850px) {
   h2 {
-    font-size: calc(20px + 1vw);
+    font-size: calc(22px + 1vw);
+  }
+  .filter-btn {
+    font-size: calc(17px + .5vw); 
+  }
+  .open-byte span {
+    font-size: calc(22px + 1vw); 
   }
 }    
 </style><div class="filter-bytes">

@@ -52,8 +52,8 @@ $bigh-font-sizes: (
 ); 
 
 $h1-font-sizes: (
-  null: 26px,
-  map-get($breakpoints, "phablet"): 30px,
+  null: 24px,
+  map-get($breakpoints, "phablet"): 28px,
   map-get($breakpoints, "tablet") : calc(28px + 1vw),
   map-get($breakpoints, "desktop"): calc(32px + 1vw)
 ); 
@@ -73,10 +73,10 @@ $h3-font-sizes: (
 ); 
 
 $p-font-sizes: (
-  null: 15px,
-  480px : 16px,
-  768px : 17px,
-  1024px: 19px
+    null: 15px,
+    map-get($breakpoints, "phablet") : calc(15px + .25vw),
+    map-get($breakpoints, "tablet") : calc(16px + .25vw),
+    map-get($breakpoints, "desktop"): calc(18px + .25vw)
 );
 
 // Functions

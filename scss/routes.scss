@@ -12,7 +12,7 @@
   h1:first-child {
     margin-bottom: 10vh;
     @include mq('tablet-med') {
-      margin-bottom: 15vh;
+      margin-bottom: 15vh; 
     }
   }
 }
@@ -120,6 +120,11 @@
 
 // about 
 .about-pg {
+  .min-txt {
+    font-family: $font-hand;
+    font-weight: 300;
+    @include font-size($h2-font-sizes);
+  } 
   .about-pic-1, .about-pic-2, .about-pic-3 {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
@@ -171,12 +176,12 @@
     }
   } 
   .img-controls {
-    margin: 10px auto 0px;
-    width: 90%;
+    margin: 10px auto 50px;
+    width: 70%;
     position: relative;
     @include mq('tablet-med') {
       width: 60%;   
-      margin: 0 auto 20px;
+      margin: 0 auto 50px;
       top: 0;
     } 
     .hue-value{
@@ -314,17 +319,19 @@
     @extend %btn;
     width: 100%;
     padding: 25px;
-    @include font-size($h3-font-sizes);
+    font-weight: normal;
     position: relative;
     border: none;
     border-bottom: 1px solid #000;
     outline: none;
     background: rgba(0, 0, 0, 0);
-    font-size: 20px;
-    font-weight: bold;
+    @include font-size($h2-font-sizes);
+    font-weight: normal;
     img {
       margin: 20px auto;
-      max-width: 50px;
+      max-width: calc(50px + 1vw);
+      position: relative;
+      top: 10px;
     }
     &::after {
       font-weight: normal;
@@ -346,6 +353,7 @@
     display: none;
     transition: all 0.3s;
     padding: 5vh 0;
+    text-align: justify;
     ul {
       list-style-type: none;
       text-align: left;

@@ -4,7 +4,7 @@ workModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
   font-size: calc(20px + 2.3vw);
 }
 h2 {
@@ -12,7 +12,7 @@ h2 {
 }
 h2 a {
   color: #f7f7f7;
-  font-weight: bold;
+  font-weight: normal;
   text-decoration: none; 
   font-size: calc(10px + 1.8vw);
   border: 2px solid rgba(247, 247, 247, .7);
@@ -22,6 +22,27 @@ h2 a {
   -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+}
+.info {
+  text-align: center;
+  width: 100%;
+}
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(13px + 1.8vw);
+  margin: 5vh auto;
+}
+.info {
+  text-align: justify;
+  width: 100%;
+}
+p {
+  text-indent: 5%;
+  font-size: calc(15px + .25vw);
+  padding: auto 10px;
+  width: 90%;
+  margin-left: 5%;
 }
 a:hover {
   color: #3d3a3a;
@@ -48,16 +69,16 @@ br {
   height: 100vh;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-}
+} 
 .modal-content {
   border: 10px solid #3d3a3a;
   border-top: 44px solid #3d3a3a;
   background-color: #fefefe;
   margin: 0; 
   width: calc(100% - 20px);
-  height: calc(100vh - 138px);
-  -webkit-animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  height: calc(100vh - 138px); 
+  -webkit-animation: modalIn 0s linear both;
+  animation: modalIn 0s linear both; 
 }
 .modal-pg {
   overflow-y:scroll;
@@ -178,8 +199,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   .modal-fwd {
     right: calc(10px + 1vw); }
 .opened {
-  -webkit-animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: modalIn 0.4s linear both;
+  animation: modalIn 0.4s linear both; 
 } 
 .modal-r {
   -webkit-animation: fromRight .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -243,7 +264,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
             transform: scaleY(0);
     -webkit-transform-origin: 100% 0%;
             transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     -webkit-transform: scaleY(1);
@@ -259,7 +280,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
             transform: scaleY(0);
     -webkit-transform-origin: 100% 0%;
             transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     -webkit-transform: scaleY(1);
@@ -379,6 +400,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     color: #f7f7f7;
     margin-top: 0;
     font-size: calc(16px + 2vw);
+    margin-bottom: 15vh;
   }
   h2 a {
     font-size: calc(10px + .8vw);
@@ -393,6 +415,15 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   }
   br {
     display: none;
+  }
+  h3 {
+    font-size: calc(10px + 1.8vw);
+  }
+  p {
+    font-size: calc(17px + .25vw);
+    width: 80%;
+    margin-left: 10%;
+    text-indent: 10%;
   }
   .modal-r {
     -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -520,6 +551,12 @@ class WorkModal extends HTMLElement {
     transform="translate(85,100) rotate(180)"
     ></path>
     </svg></button>
+    <section class="info">
+    <section>
+    <h3>Project Mission</h3>
+    <p>${currentItem.title} ${currentItem.description}</p>
+    </section>
+    </section>
     </div>
     </div>
     </div> 

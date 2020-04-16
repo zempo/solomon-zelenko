@@ -69,8 +69,8 @@ h2 a svg  {
   margin: 0; 
   width: calc(100% - 20px);
   height: calc(100vh - 138px);
-  -webkit-animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: modalIn 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: modalIn 0s linear both;
+  animation: modalIn 0s linear both; 
 }
 .modal-pg {
   overflow-y:scroll;
@@ -192,8 +192,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 .modal-fwd {
   right: calc(10px + 1vw); }
 .opened {
-  -webkit-animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: modalIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: modalIn 0.4s linear both;
+  animation: modalIn 0.4s linear both; 
 } 
 .modal-r {
   -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;

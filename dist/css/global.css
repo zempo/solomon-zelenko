@@ -48,11 +48,11 @@ main {
   background: #fafafa; }
   body h1,
   main h1 {
-    font-size: 26px; }
+    font-size: 24px; }
     @media screen and (min-width: 560px) {
       body h1,
       main h1 {
-        font-size: 30px; } }
+        font-size: 28px; } }
     @media screen and (min-width: 768px) {
       body h1,
       main h1 {
@@ -76,6 +76,21 @@ main {
       body h2,
       main h2 {
         font-size: calc(24px + .5vw); } }
+  body p,
+  main p {
+    font-size: 15px; }
+    @media screen and (min-width: 560px) {
+      body p,
+      main p {
+        font-size: calc(15px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      body p,
+      main p {
+        font-size: calc(16px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      body p,
+      main p {
+        font-size: calc(18px + .25vw); } }
   body .btn-fwd,
   main .btn-fwd {
     right: calc(10px + 1vw); }

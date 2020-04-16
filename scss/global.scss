@@ -18,6 +18,9 @@ main {
   h2 {
     @include font-size($h2-font-sizes);
   }
+  p {
+    @include font-size($p-font-sizes);
+  }
   .btn-fwd {
     right:calc(10px + 1vw);;
   }
