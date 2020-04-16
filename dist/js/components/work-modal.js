@@ -262,6 +262,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   position: relative;
   max-width: 100%;
   margin: calc(8vh + 2px) auto 5vh;
+  border-top: 2px solid #3d3a
 }
 .timeline h3 {
   position: relative;
