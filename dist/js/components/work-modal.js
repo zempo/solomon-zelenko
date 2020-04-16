@@ -84,7 +84,7 @@ br {
   overflow-y:scroll;
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 100%; 
 }
 .modal-content:after {
   content: "";
@@ -203,10 +203,18 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   animation: modalIn 0.4s linear both; 
 } 
 .modal-r {
+  overflow-y:scroll;
+  position: absolute;
+  height: 100%;
+  width: 100%; 
   -webkit-animation: fromRight .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fromRight .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .modal-l {
+  overflow-y:scroll;
+  position: absolute;
+  height: 100%;
+  width: 100%; 
   -webkit-animation: fromLeft .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fromLeft .4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
@@ -788,14 +796,22 @@ class WorkModal extends HTMLElement {
           if(opened) {
            modalContent.classList.remove('opened') 
           }
+      let modalPage = res.querySelector('.modal-pg')
       let toggleSize = res.querySelector('.resize-modal')
       let closeBtn = res.querySelector('.close-modal')
       let hideBtn = res.querySelector('.hide-modal')
       let currentWorkId = window.projects.map(el => el.title).indexOf(window.currentWork.title)
-      let fwd = res.querySelector('.modal-fwd')
-      let back = res.querySelector('.modal-back')
-      let image = res.querySelector('.img-container img')
-      let imgBtns = res.querySelectorAll('.pic-control input')
+      let fwd = res.querySelector('.modal-fwd');
+      let back = res.querySelector('.modal-back');
+      let image = res.querySelector('.img-container img');
+      let imgBtns = res.querySelectorAll('.pic-control input');
+modalPage.addEventListener('scroll', e => {
+  if (modalPage.classList[1] === ('modal-r') || modalPage.classList[1] === ('modal-l')) { 
+    let distance = (e.currentTarget.clientHeight / 2) + e.currentTarget.scrollTop
+    fwd.style.top = `calc(${distance}px - .5vw - 60px)`
+    back.style.top = `calc(${distance}px - .5vw - 60px)`
+  }
+})
       let runSlideShow = setInterval(() => {
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
