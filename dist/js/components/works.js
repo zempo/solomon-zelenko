@@ -5,7 +5,16 @@ const portfolioProjects = [
     pics: ["atl-1.png", "atl-2.png", "atl-3.png", "atl-4.png", "atl-5.png", "atl-6.png"],
     description:
       "helps users create and download their own scripts and screenplays - and handles the formatting. You can even customize your homepage and organize your scripts. Discover your personalized scriptwriting environment.",
-    tech: [
+    timeline: [
+      {stage: 'Concept',
+       desc: `Though I originally set out to create a MadLibs clone, a more practical application came to mind. A friend had recently complained about the high cost of his Screenplay editor. So I set out to create a <span style="text-decoration:line-through;">simple</span> screenplay editor.`},
+      {stage: 'Research', desc: `In my other project, `},
+      {stage: 'Implementation: Client', desc: ''},
+      {stage: 'Implementation: Server', desc: ''},
+      {stage: 'Feedback', desc: ''},
+      {stage: 'Implementation: Production', desc: ''},
+      {stage: 'Insight Gained', desc: ''}],
+      tech: [
       "React.js (Hooks & Context)",
       "JWT auth",
       "Node.js (Express)",
@@ -25,7 +34,14 @@ const portfolioProjects = [
     pics: ["jto-1.png", "jto-2.png", , "jto-3.png", "jto-4.png", "jto-5.png", "jto-6.png", "jto-7.png"],
     description:
       " transforms greeting cards into a personal and social experience. You can create, copy, download, react to, and customize greeting cards within minutes. Get the right card, right now.",
-    tech: [  
+    timeline: [{stage: 'Concept', desc: ''},
+    {stage: 'Research', desc: ''},
+    {stage: 'Implementation: Client', desc: ''},
+    {stage: 'Implementation: Server', desc: ''},
+    {stage: 'Feedback', desc: ''},
+    {stage: 'Implementation: Production', desc: ''},
+    {stage: 'Insight Gained', desc: ''}],
+      tech: [  
       "React.js (Hooks & Context)",
       "JWT auth",
       "Node.js (Express)",
@@ -51,7 +67,13 @@ const portfolioProjects = [
     pics: ["aero-1.png", "aero-2.png", "aero-3.png", "aero-4.png"],
     description:
       "provides live air quality values for thousands of cities around the globe. Discover a city's air quality, read local health news, and browse the wikipedia.",
-    tech: ["HTML / CSS, ", "jQuery, ", "and github pages"],
+    timeline: [{stage: 'Concept', desc: ''},
+    {stage: 'Research', desc: ''},
+    {stage: 'Implementation: Functionality', desc: ''},
+    {stage: 'Implementation: Styling', desc: ''},
+    {stage: 'Feedback', desc: ''},
+    {stage: 'Insight Gained', desc: ''}],
+      tech: ["HTML / CSS, ", "jQuery, ", "and github pages"],
     libs: ["AirVisual, ", "Leaflet.js, ", "News API, and ", "Wikipedia API"],
     repo: "https://github.com/zempo/aeropolis",
     live: "https://zempo.github.io/Aeropolis/",

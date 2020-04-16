@@ -173,7 +173,7 @@ button {
   bottom: calc(50vh - .5vw - 30px);
   width: calc(60px + 1vw);
   height: calc(60px + 1vw);
-  z-index: 1;
+  z-index: 6;
   outline: none;
   background: #f7f7f7;
   border: 0px solid #3d3a3a;
@@ -258,6 +258,92 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   width: 28px;
   height: 28px;
 }
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin: calc(8vh + 2px) auto 5vh;
+}
+.timeline h3 {
+  position: relative;
+  top: calc(-3vh - 2px);
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  background-color: #3d3a3a;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+}
+.node {
+  padding: 0;
+  position: relative;
+  left: 50px;
+  background-color: none;
+  width: 90%;
+}
+.node::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 10px;
+  background-color: white;
+  border: 4px solid #eb6637;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 4;
+}
+.node-left {
+  left: 0;
+}
+.node-right {
+  left: 0;
+}
+.node-left:before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+.node-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+.node-left::after, .node-right::after {
+  left: 15px;
+}
+.node-content {
+  padding: 10px 20px;
+  background-color: white;
+  position: relative;
+  border: 1px solid #3d3a3a;
+  border-radius: 6px;
+  z-index: 4;
+}
+
+.node::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
 @-webkit-keyframes modalIn {
   0% {
     -webkit-transform: scaleY(0);
@@ -416,14 +502,19 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   br {
     display: none;
   }
+  .info {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+  }
   h3 {
     font-size: calc(10px + 1.8vw);
   }
   p {
     font-size: calc(17px + .25vw);
-    width: 80%;
-    margin-left: 10%;
-    text-indent: 10%;
+    width: 100%;
+    margin-left: 0%;
+    text-indent: 0%;
   }
   .modal-r {
     -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -497,6 +588,34 @@ class WorkModal extends HTMLElement {
 
   updateWorkModal(currentItem, direction) {
     let pgClass = direction
+    const timeline = (nodes) => {
+      let output = ''
+      for (let i = 0; i < nodes.length; i++) {
+        if (i === nodes.length - 1) {
+          output += `<div class="node node-left">
+          <div class="node-content">
+          <h4>${nodes[i].stage}</h4>
+          <p>${nodes[i].desc}</p>
+          </div>
+          </div>`
+        } else {
+          output += `<div class="node node-left">
+          <div class="node-content">
+          <h4>${nodes[i].stage}</h4>
+          <p>${nodes[i].desc}</p>
+          </div>
+          </div>
+          <div class="node node-right">
+          <div class="node-content">
+          <h4>${nodes[i + 1].stage}</h4>
+          <p>${nodes[i + 1].desc}</p>
+          </div>
+          </div>`
+          i++
+        }
+      }
+      return output
+    }
     let updatedTemplate = `
     <div class="work-modal" id="modal">
     <div class="modal-content opened">
@@ -551,10 +670,16 @@ class WorkModal extends HTMLElement {
     transform="translate(85,100) rotate(180)"
     ></path>
     </svg></button>
+    <section class="info-pg">
     <section class="info">
-    <section>
-    <h3>Project Mission</h3>
+    <h3>About this Work</h3>
     <p>${currentItem.title} ${currentItem.description}</p>
+    </section>
+    <section class="technologies">
+    </section>
+    <section class="timeline">
+    <h3>Project Timeline</h3>
+    ${timeline(currentItem.timeline)}
     </section>
     </section>
     </div>
