@@ -4,7 +4,7 @@ const portfolioProjects = [
     code: 'atl',
     pics: ["atl-1.png", "atl-2.png", "atl-3.png", "atl-4.png", "atl-5.png", "atl-6.png"],
     description:
-      "helps users create and download their own scripts and screenplays - and handles the formatting. You can even customize your homepage and organize your scripts. Discover your personalized scriptwriting environment.",
+      "helps users create and download their own scripts and screenplays - and handles the formatting. <br> You can even customize your homepage and organize your scripts. Discover your personalized scriptwriting environment.",
     timeline: [
       {stage: 'Concept',
        desc: `Though I originally set out to create a MadLibs clone, a more practical application came to mind. A friend had recently complained about the high cost of his Screenplay editor. So I set out to create a <span style="text-decoration:line-through;">simple</span> screenplay editor.`},

@@ -23,10 +23,6 @@ h2 a {
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
-.info {
-  text-align: center;
-  width: 100%;
-}
 h3 {
   text-align: center;
   font-weight: bold;
@@ -170,7 +166,7 @@ button {
   font-size: 0;
   padding: 0;
   position: fixed; 
-  bottom: calc(50vh - .5vw - 30px);
+  bottom: calc(50vh - .5vw - 74px);
   width: calc(60px + 1vw);
   height: calc(60px + 1vw);
   z-index: 6;
@@ -490,8 +486,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     display: none;
   }
   .info {
-    width: 80%;
-    margin-left: 10%;
+    width: 70%;
+    margin-left: 15%;
     text-align: center;
   }
   h3 {
@@ -499,8 +495,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   }
   p {
     font-size: calc(17px + .25vw);
-    width: 100%;
-    margin-left: 0%;
+    width: 90%;
+    margin-left: 5%;
     text-indent: 0%;
   }
   .node-content {
@@ -514,7 +510,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     z-index: 4;
   }
   .node-content h4 {
-    font-size: calc(10px + 1.5vw);
+    font-size: calc(10px + 1vw);
   }
   .node-content p {
     text-indent: 40px;
@@ -709,6 +705,22 @@ class WorkModal extends HTMLElement {
     <button class="close-modal">X</button>
     <button class="resize-modal small">Resize</button>
     <button class="hide-modal">Hide</button>
+    <button class="modal-back" title="last work">
+    previous work<svg viewBox="-15 -15 130 130">
+    <path
+    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+    class="arrow"
+    transform="translate(15,0)"
+    ></path>
+    </svg>
+    </button>
+    <button class="modal-fwd" title="next work">next work<svg viewBox="-15 -15 130 130">
+    <path
+    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
+    class="arrow"
+    transform="translate(85,100) rotate(180)"
+    ></path>
+    </svg></button>
     <div class="modal-pg ${pgClass}">
     <div class="img-container">
     <h1>${currentItem.title}</h1>  
@@ -741,22 +753,6 @@ class WorkModal extends HTMLElement {
     </div>
     <h2>
     </h2>
-    <button class="modal-back" title="last work">
-    previous work<svg viewBox="-15 -15 130 130">
-    <path
-    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
-    class="arrow"
-    transform="translate(15,0)"
-    ></path>
-    </svg>
-    </button>
-    <button class="modal-fwd" title="next work">next work<svg viewBox="-15 -15 130 130">
-    <path
-    d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"
-    class="arrow"
-    transform="translate(85,100) rotate(180)"
-    ></path>
-    </svg></button>
     <section class="info-pg">
     <section class="info">
     <h3>About this Work</h3>
@@ -796,7 +792,6 @@ class WorkModal extends HTMLElement {
           if(opened) {
            modalContent.classList.remove('opened') 
           }
-      let modalPage = res.querySelector('.modal-pg')
       let toggleSize = res.querySelector('.resize-modal')
       let closeBtn = res.querySelector('.close-modal')
       let hideBtn = res.querySelector('.hide-modal')
@@ -805,13 +800,6 @@ class WorkModal extends HTMLElement {
       let back = res.querySelector('.modal-back');
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
-modalPage.addEventListener('scroll', e => {
-  if (modalPage.classList[1] === ('modal-r') || modalPage.classList[1] === ('modal-l')) { 
-    let distance = (e.currentTarget.clientHeight / 2) + e.currentTarget.scrollTop
-    fwd.style.top = `calc(${distance}px - .5vw - 60px)`
-    back.style.top = `calc(${distance}px - .5vw - 60px)`
-  }
-})
       let runSlideShow = setInterval(() => {
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
