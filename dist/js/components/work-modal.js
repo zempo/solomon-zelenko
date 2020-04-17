@@ -29,7 +29,7 @@ h3 {
   font-size: calc(13px + 1.8vw);
   margin: 5vh auto;
 }
-.info {
+.info, .tech {
   text-align: justify;
   width: 100%;
   padding-bottom: 10vh;
@@ -40,6 +40,9 @@ p {
   padding: auto 10px;
   width: 90%;
   margin-left: 5%;
+}
+li {
+  font-size: calc(15px + .25vw);
 }
 a:hover {
   color: #3d3a3a;
@@ -498,6 +501,11 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     margin-left: 5%;
     text-indent: 0%;
   }
+  .tech ul {
+    width: 800px;
+    margin-left: calc(50% - 400px); 
+    font-size: calc(17px + .25vw); 
+  }
   .node-content {
     padding: 20px 10%;
     background-color: white;
@@ -721,6 +729,13 @@ class WorkModal extends HTMLElement {
       }
       return output
     }
+    const technologies = (arr) => {
+      let output = ''
+      for (let i = 0; i < arr.length; i++) {
+        output += `<li>${arr[i]}</li>`
+      }
+      return output
+    }
     let updatedTemplate = `
     <div class="work-modal" id="modal">
     <div class="modal-content opened">
@@ -780,11 +795,20 @@ class WorkModal extends HTMLElement {
     <h3>Mission Statement</h3>
     <p>${currentItem.title} ${currentItem.description}</p>
     </section>
-    <section class="technologies">
-    </section>
     <section class="timeline">
     <h3>Product Timeline</h3>
     ${timeline(currentItem.timeline)}
+    </section>
+    <section class="tech">
+    <h3>Technologies Sheet</h3>
+    <ul>
+    ${technologies(currentItem.tech)}
+    </ul>
+    <br>
+    <h3>External Libraries</h3>
+    <ul>
+    ${technologies(currentItem.libs)}
+    </ul>
     </section>
     </section>
     </div>

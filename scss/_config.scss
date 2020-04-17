@@ -61,7 +61,7 @@ $h1-font-sizes: (
 $h2-font-sizes: (
   null: 18px,
   map-get($breakpoints, "phablet") : calc(22px + .5vw),
-  map-get($breakpoints, "tablet") : calc(24px + .5vw),
+  map-get($breakpoints, "tablet") : calc(24px + .5vw), 
   map-get($breakpoints, "desktop"): calc(24px + .5vw)
 ); 
 
