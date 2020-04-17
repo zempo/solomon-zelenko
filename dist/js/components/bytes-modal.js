@@ -25,7 +25,29 @@ h2 a {
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
-a:hover {
+a {
+  color: black;
+  font-weight: bold;
+}
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(13px + 1.8vw);
+  margin: 5vh auto;
+}
+.info {
+  text-align: justify;
+  width: 100%;
+  padding-bottom: 10vh;
+}
+p {
+  text-indent: 5%;
+  font-size: calc(15px + .25vw);
+  padding: auto 10px;
+  width: 90%;
+  margin-left: 5%;
+}
+h2 a:hover {
   color: #3d3a3a;
   background: rgba(247, 247, 247, .95); 
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -252,7 +274,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
             transform: scaleY(0);
     -webkit-transform-origin: 100% 0%;
             transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     -webkit-transform: scaleY(1);
@@ -268,7 +290,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
             transform: scaleY(0);
     -webkit-transform-origin: 100% 0%;
             transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
     -webkit-transform: scaleY(1);
@@ -371,6 +393,20 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
         width: calc(15px + 1vw);
         position: relative;
         top: calc(1px + .2vw);
+      }
+      .info {
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+      }
+      h3 {
+        font-size: calc(10px + 1.8vw);
+      }
+      p {
+        font-size: calc(17px + .25vw);
+        width: 90%;
+        margin-left: 5%;
+        text-indent: 0%;
       }
       .modal-r {
         -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -477,6 +513,10 @@ class ByteModal extends HTMLElement {
     </h2>
     <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
     </div>
+    <section class="info">
+    <h3>About this Byte</h3>
+    <p>${currentItem.info}</p>
+    </section>
     </div>
     </div>
     </div> 

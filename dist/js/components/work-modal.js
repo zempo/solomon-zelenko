@@ -10,6 +10,10 @@ h1 {
 h2 {
   margin: 15px auto 35px;
 }
+a {
+  color: black;
+  font-weight: bold;
+}
 h2 a {
   color: #f7f7f7;
   font-weight: normal;
@@ -44,7 +48,7 @@ p {
 li {
   font-size: calc(15px + .25vw);
 }
-a:hover {
+h2 a:hover {
   color: #3d3a3a;
   background: rgba(247, 247, 247, .95); 
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -500,6 +504,9 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     width: 90%;
     margin-left: 5%;
     text-indent: 0%;
+  }
+  li {
+    font-size: calc(17px + .25vw);
   }
   .tech ul {
     width: 800px;
