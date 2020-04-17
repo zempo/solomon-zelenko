@@ -32,6 +32,7 @@ h3 {
 .info {
   text-align: justify;
   width: 100%;
+  padding-bottom: 10vh;
 }
 p {
   text-indent: 5%;
@@ -270,8 +271,6 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   border-top: 5px solid #3d3a3a;
   border-bottom: 5px solid #3d3a3a;
 }
-.timeline h3 {
-}
 .timeline::after {
   content: '';
   position: absolute;
@@ -504,10 +503,32 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     background-color: white;
     position: relative;
     width: calc(70% - 40px);
-    border: 2px solid #3d3a3a;
+    border: 3px solid #3d3a3a;
     border-radius: 6px;
     text-align: justify;
     z-index: 4;
+    left: 28px;
+    top: -10px;
+  }
+  .node::after {
+    width: 20px;
+    height: 20px;
+    left: 13px;
+  } 
+  .node:before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 18px;
+    width: 0;
+    z-index: 3;
+    left: 44px;
+    border: medium solid #3d3a3a;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #3d3a3a transparent transparent;
+  }
+  .timeline::after {
+    left: 25px;
   }
   .node-content h4 {
     font-size: calc(10px + 1vw);
@@ -578,7 +599,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   .timeline {
     position: relative;
     margin: calc(6.5vh + 40px) auto 5vh;
-    max-width: 1000px;
+    max-width: 1500px;
     padding: 0 0 5vh;
     border-top: 5px solid #3d3a3a;
     border-bottom: 5px solid #3d3a3a;
@@ -595,7 +616,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   .timeline h3 {
     margin: 0;
     position: relative; 
-    top: calc(-2.5vw - 30px);
+    top: calc(-5vw - 30px);
     width: 90%;
     margin-left: 5%;
   }
@@ -612,6 +633,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     border-radius: 6px;
     text-align: justify;
     z-index: 4;
+    left: 5px;
   }
   .node-left {
     left: 10px;
@@ -623,7 +645,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     width: 20px;
     height: 20px;
     top: 15px;
-    left: calc(90% + 23px);
+    left: calc(100% - 25px);
   }
   .node-right::after {
     width: 20px;
@@ -755,13 +777,13 @@ class WorkModal extends HTMLElement {
     </h2>
     <section class="info-pg">
     <section class="info">
-    <h3>About this Work</h3>
+    <h3>Mission Statement</h3>
     <p>${currentItem.title} ${currentItem.description}</p>
     </section>
     <section class="technologies">
     </section>
     <section class="timeline">
-    <h3>Project Timeline</h3>
+    <h3>Product Timeline</h3>
     ${timeline(currentItem.timeline)}
     </section>
     </section>

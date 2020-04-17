@@ -477,12 +477,6 @@ class ByteModal extends HTMLElement {
     </h2>
     <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
     </div>
-    <h1>${currentItem.title}</h1>
-    <h1>${currentItem.title}</h1>
-    <h1>${currentItem.title}</h1>
-    <h1>${currentItem.title}</h1>
-    <h1>${currentItem.title}</h1>
-    <h1>${currentItem.title}</h1>
     </div>
     </div>
     </div> 

@@ -24,11 +24,11 @@ main {
   .btn-fwd {
     right:calc(10px + 1vw);;
   }
-  .btn-back {
+  .btn-back { 
     left:calc(10px + 1vw);;
   }
   .btn-fwd,
-  .btn-back {
+  .btn-back { 
     @extend %btn;
     position: fixed;
     display: none;
