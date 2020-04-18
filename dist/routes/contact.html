@@ -1,38 +1,110 @@
 <div class="route contact-pg">
   <h1>Let's get in touch!</h1>
   <!-- 3 form tabs (hire, tutoring, collab) -->
-  <div class="contact-forms">
-    <input type="radio" name="form-tab" id="form1" checked="checked">
+    <!-- <input type="radio" name="form-tab" id="form1" checked="checked">
     <label for="form1">Hire me to build your brand</label>
     <input type="radio" name="form-tab" id="form2">
     <label for="form2">Learn Web Development from me</label>
     <input type="radio" name="gen-tab" id="form3">
-    <label for="form3">Chat with Me</label>
-  
-    <section class="accordion contact-forms">
-      <button class="btn-a">
-        My Story
-      </button>
+    <label for="form3">Chat with Me</label> -->
+    <section class="contact-forms">
+      <input type="radio" class="contact-radio" id="hire-form" name="form-tabs" checked />
+      <label class="form-label" for="hire-form">
+        Hire Solomon
+        <span class="form-open"></span>
+      </label>
       <section id="form-content-hire" class="form-content">
-        <p>Include FAQs PDF, Testimonials</p>
-        <p>Please include as much information as you can</p>
-        <p>Name, email, phone number (optional) </p>
-        <p>What is your industry? What is your story? What is your product/talent? What is your timeline? </p>
-        <p>Great! I'll respond to your request within 72hrs</p>
+        <form class="hire-form">
+          <div class="form-status"></div>
+          <!-- <p>Include FAQs PDF link, Testimonials</p>
+          <p>Please include as much information as you can</p>
+          <p>Name, email, phone number (optional) </p>
+          <p>What is your industry? What is your story? What is your product/talent? What is your timeline? </p>
+          <p>Great! I'll respond to your request within 72hrs</p> -->
+          <fieldset id="step-1">
+            <h2>About You</h2>
+            <label for="name-1">
+              What's your name?
+            </label>
+            <input type="text" placeholder="eg. Ruby Ellis" name="name-1" id="name-1">
+            <label for="email-1">
+              What's your email?
+              <span class="sub">To share files</span>
+            </label>
+            <input type="text" name="email-1" id="email-1" placeholder="eg. ruby.ellis@gmail.com">
+            <label for="contact-1">
+              How might we best communicate?
+              <span class="sub">Phone number or Skype/Hangouts username</span>
+            </label>
+            <input type="text" name="contact-1" id="contact-1" placeholder="eg. 707-526-7256">
+            <label for="current-site" class="optional">
+              What's your current website?
+            </label>
+            <input type="text" name="current-site" id="current-site" placeholder="eg. ruby-makes-jewelry.com" />
+            <label for="refer-1" class="optional">
+              How did you hear about me?
+            </label>
+            <input type="text" name="refer-1" id="refer-1" placeholder="eg. Google, YouTube, referred by...etc" />            
+          </fieldset>
+          <fieldset id="step-2">
+            <h2>About the Project</h2>
+            <label for="industry">What's your industry?</label>
+            <input type="text" placeholder="eg. retail, entertainment, etc...">
+            <label for="story">How would you describe your brand?</label>
+            <textarea
+             name="story"
+             id="story"
+             placeholder="Ruby Makes Jewelry is a small retailer based in Idyllwild, CA. Since 1967, we've proudly served our community. Our jewelers have decades of experience repairing, crafting, and selling precious jewels for any budget."></textarea>
+            <label for="vision">What will our new site accomplish?</label>
+            <textarea
+             name="vision"
+             id="vision"
+             placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. We would like to update our online store and add youtube videos from our channel. Finally, we want to add a portal for hiring apprentices."></textarea>  
+            <label for="budget">
+              What's your budget? 
+            <span class="sub">Please read the FAQs, if unsure</span>
+            </label>            
+            <input type="number" step=".01" name="budget" placeholder="600.00" id="budget">
+          </fieldset>
+        </form>
       </section>
-      <div id="form-content-edu" class="form-content">
-        <p>What I teach</p>
-        <p>FAQ on being tutored by me</p>
-        <p>Name, email, phone (optional)</p>
-        <p>Which subject would you like help with?</p>
-        <p>What are your learning needs?</p>
-        <p>On submit: Great! I'll reach out to you within 24 hours and we'll set up a time to meet!</p>
-      </div>
-      <div id="form-content-gen" class="form-content">
+      <input type="radio" class="contact-radio" id="tutor-form" name="form-tabs" />
+      <label class="form-label" for="tutor-form">
+        Learn from Solomon
+        <span class="form-open"></span>
+      </label>      
+      <section id="form-content-tutor" class="form-content">
+        <form class="tutor-form">
+          <!-- <p>What I teach</p>
+          <p>FAQ on being tutored by me</p>
+          <p>Name, email, phone (optional)</p>
+          <p>Which subject would you like help with?</p>
+          <p>What are your learning needs?</p>
+          <p>On submit: Great! I'll reach out to you within 24 hours and we'll set up a time to meet!</p> -->
+          <fieldset id="step-1">
+            <h2>About You</h2>
+            <label for="name-1">
+              What's your name?
+            </label>
+            <input type="text" placeholder="eg. Sam Barlow" name="name-2" id="name-2">
+            <label for="email-1">
+              What's your email?
+              <span class="sub">(To share problems/assignments)</span>
+            </label>
+            <input type="text" name="email-1" id="email-1" placeholder="eg. ruby.ellis@gmail.com">
+            <label for="contact-1">
+              How may I contact you?
+              <span class="sub">Phone number or Skype/Hangouts username</span>
+            </label>
+          </fieldset>
+          <fieldset id="step-2">
+          </fieldset>
+        </form>
+      </section>
+      <section id="form-content-gen" class="form-content">
         <p> name, email, subject, message</p>
-      </div>
+      </section>
     </section>
-  </div>
 
   <h2>Follow me on Social Media</h2>
   <ul class="icons-list">

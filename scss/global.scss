@@ -78,10 +78,10 @@ main {
     background: map-get($colors, app-white );
     min-height: 101vh;
     padding: 0px 5vw;
+    margin: 0;
     @include mq('tablet-med') {
       padding: 0 15vw;
     }
-    margin: 0;
   }
 }
 

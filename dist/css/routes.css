@@ -10,7 +10,7 @@
   font-weight: normal; }
 
 .home-pg .btn-resume,
-.home-pg .btn-contact, .about-pg .accordion .btn-a, .contact-pg .accordion .btn-a {
+.home-pg .btn-contact, .about-pg .accordion .btn-a {
   cursor: pointer;
   font-family: "SpartanMB";
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -18,7 +18,7 @@
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
   .home-pg .btn-resume:hover,
-  .home-pg .btn-contact:hover, .about-pg .accordion .btn-a:hover, .contact-pg .accordion .btn-a:hover {
+  .home-pg .btn-contact:hover, .about-pg .accordion .btn-a:hover {
     -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -31,7 +31,7 @@
   -moz-animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-  padding-bottom: 100px; }
+  padding-bottom: 10vh; }
   .route h1:first-child {
     margin-bottom: 10vh; }
     @media only screen and (min-width: 900px) {
@@ -489,81 +489,7 @@
     .works-list .work-preview-1 img, .bytes-list .work-preview-1 img {
       width: 100%; }
 
-.contact-pg .accordion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  height: auto;
-  width: 100%;
-  margin-top: 15vh; }
-  .contact-pg .accordion .btn-a {
-    width: 100%;
-    padding: 25px;
-    font-weight: normal;
-    position: relative;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    background: rgba(0, 0, 0, 0);
-    font-size: 18px;
+.contact-pg .contact-forms {
+  width: 100%; }
+  .contact-pg .contact-forms h2 {
     font-weight: normal; }
-    @media screen and (min-width: 560px) {
-      .contact-pg .accordion .btn-a {
-        font-size: calc(22px + .5vw); } }
-    @media screen and (min-width: 768px) {
-      .contact-pg .accordion .btn-a {
-        font-size: calc(24px + .5vw); } }
-    @media screen and (min-width: 1248px) {
-      .contact-pg .accordion .btn-a {
-        font-size: calc(24px + .5vw); } }
-    .contact-pg .accordion .btn-a img {
-      margin: 20px auto;
-      max-width: calc(50px + 1vw);
-      position: relative;
-      top: 10px; }
-    .contact-pg .accordion .btn-a::after {
-      font-weight: normal;
-      cursor: pointer;
-      content: "+";
-      position: absolute;
-      top: calc(50% - 26px);
-      right: 15px;
-      font-size: 35px; }
-  .contact-pg .accordion .open::after {
-    content: "_";
-    top: calc(50% - 41px); }
-  .contact-pg .accordion .a-content {
-    display: none;
-    transition: all 0.3s;
-    padding: 5vh 0;
-    text-align: justify; }
-    .contact-pg .accordion .a-content ul {
-      list-style-type: none;
-      text-align: left; }
-  .contact-pg .accordion .story p {
-    width: 100%;
-    margin: 5vh auto; }
-    @media only screen and (min-width: 480px) {
-      .contact-pg .accordion .story p {
-        width: 80%;
-        margin-left: 10%;
-        text-indent: 10%; } }
-  .contact-pg .accordion .vision {
-    width: 100%;
-    text-align: left; }
-    .contact-pg .accordion .vision ol {
-      list-style-position: inside; }
-  .contact-pg .accordion .open-content {
-    display: block;
-    -o-animation: expand-down 0.4s linear both;
-    -moz-animation: expand-down 0.4s linear both;
-    -webkit-animation: expand-down 0.4s linear both;
-    animation: expand-down 0.4s linear both; }
-  .contact-pg .accordion .close-content {
-    display: none;
-    -o-animation: fold-up 0.4s linear both;
-    -moz-animation: fold-up 0.4s linear both;
-    -webkit-animation: fold-up 0.4s linear both;
-    animation: fold-up 0.4s linear both; }

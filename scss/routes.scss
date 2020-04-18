@@ -8,7 +8,7 @@
   -moz-animation: map-get($animations, fade-in);
   -webkit-animation: map-get($animations, fade-in);
   animation: map-get($animations, fade-in);
-  padding-bottom: 100px; 
+  padding-bottom: 10vh; 
   h1:first-child {
     margin-bottom: 10vh;
     @include mq('tablet-med') {
@@ -454,92 +454,17 @@
 }
 
 .contact-pg {
-  .accordion {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    height: auto;
+  .contact-forms {
     width: 100%;
-    margin-top: 15vh;
-    .btn-a {
-      @extend %btn;
-      width: 100%;
-      padding: 25px;
+    h2 {
       font-weight: normal;
-      position: relative;
-      border: none;
-      border-bottom: 1px solid #000;
-      outline: none;
-      background: rgba(0, 0, 0, 0);
-      @include font-size($h2-font-sizes);
-      font-weight: normal;
-      img {
-        margin: 20px auto;
-        max-width: calc(50px + 1vw);
-        position: relative;
-        top: 10px;
-      }
-      &::after {
-        font-weight: normal;
-        cursor: pointer;
-        content: "+";
-        position: absolute;
-        top: calc(50% - 26px);
-        right: 15px;
-        font-size: 35px;
-      }
     }
-    .open {
-      &::after {
-        content: "_";
-        top: calc(50% - 41px);
-      }
-    }
-    .a-content {
-      display: none;
-      transition: all 0.3s;
-      padding: 5vh 0;
-      text-align: justify;
-      ul {
-        list-style-type: none; 
-        text-align: left;
-        // padding-left: 0;
-      }
-    }
-    .story {
-      p {
-        width: 100%;
-        margin: 5vh auto; 
-        @include mq('phone-wide') {
-          width: 80%;   
-          margin-left: 10%;
-          text-indent: 10%;
-        } 
-      }
-    }
-    .vision {
-      width: 100%;
-      text-align: left;
-      ol {
-        // padding-left: 0;
-        list-style-position: inside;
-      }
-    }
-    .open-content {
-      display: block;
-      -o-animation: map-get($animations, expand-down);
-      -moz-animation: map-get($animations, expand-down);
-      -webkit-animation: map-get($animations, expand-down);
-      animation: map-get($animations, expand-down);
-    }
-    .close-content {
-      display: none;
-      -o-animation: map-get($animations, fold-up);
-      -moz-animation: map-get($animations, fold-up);
-      -webkit-animation: map-get($animations, fold-up);
-      animation: map-get($animations, fold-up);
-    }
+    // .open-content {
+    //   display: block;
+    //   -o-animation: map-get($animations, expand-down);
+    //   -moz-animation: map-get($animations, expand-down);
+    //   -webkit-animation: map-get($animations, expand-down);
+    //   animation: map-get($animations, expand-down);
+    // }
   }
 }
