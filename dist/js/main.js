@@ -14,8 +14,8 @@ const handleResume = (e) => {
 
 // About pg
 const toggleTab = (e) => {
-  let sign = e.target.classList;
-  let panel = e.target.nextElementSibling;
+  let sign = document.querySelector(`button#${e.target.id}`).classList
+  let panel = document.querySelector(`.${e.target.id}`);
 
   sign[1] === "open" ? sign.remove("open") : sign.add("open");
 

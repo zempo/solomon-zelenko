@@ -10,7 +10,7 @@
   font-weight: normal; }
 
 .home-pg .btn-resume,
-.home-pg .btn-contact, .accordion .btn-a {
+.home-pg .btn-contact, .about-pg .accordion .btn-a, .contact-pg .accordion .btn-a {
   cursor: pointer;
   font-family: "SpartanMB";
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -18,7 +18,7 @@
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
   .home-pg .btn-resume:hover,
-  .home-pg .btn-contact:hover, .accordion .btn-a:hover {
+  .home-pg .btn-contact:hover, .about-pg .accordion .btn-a:hover, .contact-pg .accordion .btn-a:hover {
     -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -339,7 +339,7 @@
     .about-pg .img-controls input[type=range]:focus::-ms-fill-upper {
       background: #000000; }
 
-.accordion {
+.about-pg .accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,7 +348,7 @@
   height: auto;
   width: 100%;
   margin-top: 15vh; }
-  .accordion .btn-a {
+  .about-pg .accordion .btn-a {
     width: 100%;
     padding: 25px;
     font-weight: normal;
@@ -360,20 +360,20 @@
     font-size: 18px;
     font-weight: normal; }
     @media screen and (min-width: 560px) {
-      .accordion .btn-a {
+      .about-pg .accordion .btn-a {
         font-size: calc(22px + .5vw); } }
     @media screen and (min-width: 768px) {
-      .accordion .btn-a {
+      .about-pg .accordion .btn-a {
         font-size: calc(24px + .5vw); } }
     @media screen and (min-width: 1248px) {
-      .accordion .btn-a {
+      .about-pg .accordion .btn-a {
         font-size: calc(24px + .5vw); } }
-    .accordion .btn-a img {
+    .about-pg .accordion .btn-a img {
       margin: 20px auto;
       max-width: calc(50px + 1vw);
       position: relative;
       top: 10px; }
-    .accordion .btn-a::after {
+    .about-pg .accordion .btn-a::after {
       font-weight: normal;
       cursor: pointer;
       content: "+";
@@ -381,42 +381,73 @@
       top: calc(50% - 26px);
       right: 15px;
       font-size: 35px; }
-  .accordion .open::after {
+  .about-pg .accordion .open::after {
     content: "_";
     top: calc(50% - 41px); }
-  .accordion .a-content {
+  .about-pg .accordion .a-content {
     display: none;
     transition: all 0.3s;
     padding: 5vh 0;
     text-align: justify; }
-    .accordion .a-content ul {
+    .about-pg .accordion .a-content ul {
       list-style-type: none;
       text-align: left; }
-  .accordion .story p {
+  .about-pg .accordion .story p {
     width: 100%;
-    margin: 5vh auto; }
+    margin: 5vh auto;
+    font-size: 15px; }
+    @media screen and (min-width: 560px) {
+      .about-pg .accordion .story p {
+        font-size: calc(15px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      .about-pg .accordion .story p {
+        font-size: calc(16px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      .about-pg .accordion .story p {
+        font-size: calc(18px + .25vw); } }
     @media only screen and (min-width: 480px) {
-      .accordion .story p {
+      .about-pg .accordion .story p {
         width: 80%;
         margin-left: 10%;
         text-indent: 10%; } }
-  .accordion .values {
+  .about-pg .accordion .values {
     width: 100%;
     text-align: left; }
-    .accordion .values ol {
-      list-style-position: inside; }
-  .accordion .open-content {
+    .about-pg .accordion .values ol {
+      list-style-position: inside;
+      font-size: 15px; }
+      @media screen and (min-width: 560px) {
+        .about-pg .accordion .values ol {
+          font-size: calc(15px + .25vw); } }
+      @media screen and (min-width: 768px) {
+        .about-pg .accordion .values ol {
+          font-size: calc(16px + .25vw); } }
+      @media screen and (min-width: 1248px) {
+        .about-pg .accordion .values ol {
+          font-size: calc(18px + .25vw); } }
+  .about-pg .accordion .skills ul {
+    font-size: 15px; }
+    @media screen and (min-width: 560px) {
+      .about-pg .accordion .skills ul {
+        font-size: calc(15px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      .about-pg .accordion .skills ul {
+        font-size: calc(16px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      .about-pg .accordion .skills ul {
+        font-size: calc(18px + .25vw); } }
+  .about-pg .accordion .open-content {
     display: block;
-    -o-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    -moz-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    -webkit-animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-  .accordion .close-content {
+    -o-animation: expand-down 0.4s linear both;
+    -moz-animation: expand-down 0.4s linear both;
+    -webkit-animation: expand-down 0.4s linear both;
+    animation: expand-down 0.4s linear both; }
+  .about-pg .accordion .close-content {
     display: none;
-    -o-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    -moz-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    -webkit-animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+    -o-animation: fold-up 0.4s linear both;
+    -moz-animation: fold-up 0.4s linear both;
+    -webkit-animation: fold-up 0.4s linear both;
+    animation: fold-up 0.4s linear both; }
 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -457,3 +488,82 @@
     width: 100%; }
     .works-list .work-preview-1 img, .bytes-list .work-preview-1 img {
       width: 100%; }
+
+.contact-pg .accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  margin-top: 15vh; }
+  .contact-pg .accordion .btn-a {
+    width: 100%;
+    padding: 25px;
+    font-weight: normal;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    font-size: 18px;
+    font-weight: normal; }
+    @media screen and (min-width: 560px) {
+      .contact-pg .accordion .btn-a {
+        font-size: calc(22px + .5vw); } }
+    @media screen and (min-width: 768px) {
+      .contact-pg .accordion .btn-a {
+        font-size: calc(24px + .5vw); } }
+    @media screen and (min-width: 1248px) {
+      .contact-pg .accordion .btn-a {
+        font-size: calc(24px + .5vw); } }
+    .contact-pg .accordion .btn-a img {
+      margin: 20px auto;
+      max-width: calc(50px + 1vw);
+      position: relative;
+      top: 10px; }
+    .contact-pg .accordion .btn-a::after {
+      font-weight: normal;
+      cursor: pointer;
+      content: "+";
+      position: absolute;
+      top: calc(50% - 26px);
+      right: 15px;
+      font-size: 35px; }
+  .contact-pg .accordion .open::after {
+    content: "_";
+    top: calc(50% - 41px); }
+  .contact-pg .accordion .a-content {
+    display: none;
+    transition: all 0.3s;
+    padding: 5vh 0;
+    text-align: justify; }
+    .contact-pg .accordion .a-content ul {
+      list-style-type: none;
+      text-align: left; }
+  .contact-pg .accordion .story p {
+    width: 100%;
+    margin: 5vh auto; }
+    @media only screen and (min-width: 480px) {
+      .contact-pg .accordion .story p {
+        width: 80%;
+        margin-left: 10%;
+        text-indent: 10%; } }
+  .contact-pg .accordion .vision {
+    width: 100%;
+    text-align: left; }
+    .contact-pg .accordion .vision ol {
+      list-style-position: inside; }
+  .contact-pg .accordion .open-content {
+    display: block;
+    -o-animation: expand-down 0.4s linear both;
+    -moz-animation: expand-down 0.4s linear both;
+    -webkit-animation: expand-down 0.4s linear both;
+    animation: expand-down 0.4s linear both; }
+  .contact-pg .accordion .close-content {
+    display: none;
+    -o-animation: fold-up 0.4s linear both;
+    -moz-animation: fold-up 0.4s linear both;
+    -webkit-animation: fold-up 0.4s linear both;
+    animation: fold-up 0.4s linear both; }

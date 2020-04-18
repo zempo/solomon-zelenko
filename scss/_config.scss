@@ -22,11 +22,11 @@ $colors: (
   null: rgba(0, 0, 0, 0)
 );
 $animations: (
-    expand-down: expand-down 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    expand-down: expand-down 0.4s linear both,
     fade-in: fadeIn 1s,
     from-right: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-left: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
-    fold-up: fold-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    fold-up: fold-up 0.4s linear both,
     ping: ping 0.8s ease-in-out infinite both,
     transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
     transition-2: all .4s
