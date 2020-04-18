@@ -4,21 +4,21 @@ const currentBytes = [
     img: 'bytes/pen-1.png',
     title: "Cloudy Landing Page",
     link: "https://codepen.io/zemposPen/pen/bGNQmgX",
-    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. It doesn't JavaScript free! Borders, a sample image, and comments have been added to help others repurpose this codepen in their own projects. It works in most major web and mobile browsers.`
+    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. This animation is JavaScript-free! I've added borders for sizing and comments to help you repurpose this animation. It works in most major web and mobile browsers.`
   },
-  {
+  { 
     type: "demo",
     img: 'bytes/pen-2.png',
     title: "Interactive Greeting Cards",
     link: "https://codepen.io/zemposPen/pen/PowLbBd",
-    info: `This is a demo of the greeting cards in my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. It makes use of checkbox inputs and unique ids to individually check and uncheck the cards. When hovering over the cards, it appears as if the cards have been opened by a gentle breeze. It works in most major web and mobile browsers.`
+    info: `This is a demo of the greeting cards in my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. It makes use of checkboxes and labels and uses no JavaScript. When hovering over the cards, they open slightly and cast a realistic shadow. It works in most major web and mobile browsers.`
   },
   {
     type: "demo",
     img: 'bytes/pen-3.png',
     title: "Above the Line Concept",
     link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor here. In this Byte, I was testing to see how I could update a textbox with content. I also used this as a reference for the actual layout.`
+    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor here. In this Byte, I wanted to see if I could update a textbox with dynamic and outside content through the React lifecycle. I also used this sample as a reference for the actual project layout.`
   },
   {
     type: "article",
@@ -26,14 +26,14 @@ const currentBytes = [
     title: "Expedite your Eurekas",
     link:
       "https://medium.com/@solomonzelenko/expedite-your-eurekas-704d35c7892a",
-    info: `I believe creativity can be fostered in everyone, so I wanted to share some of things that have made my creative process more efficient. This is the first in a series of articles I'd like to release in the near future.`
+    info: `I believe creativity can be fostered in everyone, so I wanted to share some of things that have made my creative process more efficient. This is the first in a series of articles I plan on releasing this year.`
     },
   {
     type: "component",
     img: 'svgs/component.svg',
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
-    info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte taught me about react hooks and preventing memory leaks. I'm confident it will prove useful in future projects.`
+    info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte taught me about react hooks and preventing memory leaks. I'm confident it will prove useful in future projects as a utility component.`
   },
   {
     type: "algo",
@@ -54,7 +54,7 @@ const currentBytes = [
     img: 'svgs/ghub.svg',
     title: "React Boilerplate",
     link: "https://github.com/zempo/react-boilerplate",
-    info: `This is my quick-start react boilerplate. It comes with fontawesome, react router, context, and my favorite utility components. This is my preferred file organization in a React project. However, it might need to be updated soon for the new hooks and react router 6`
+    info: `This is my quick-start react boilerplate. It comes with fontawesome, react router, context, and my favorite utility components. However, it might need to be updated soon for the new hooks and react router 6.`
   },
   {
     type: "boilerplate",
@@ -75,7 +75,7 @@ const currentBytes = [
     img: 'svgs/ghub.svg',
     title: "Svelte with Router",
     link: "https://github.com/zempo/svelte-boiler",
-    info: `This is my personal Svelte boilerplate. I found Svelte.js incredible straightforward to use. And, given the size of most major frameworks, I wouldl like to have a smaller frontend workflow in my toolkit. For this boilerplate, I included routing, animations, and a sense of the file structure in the project. I plan on adding utility components over time.`
+    info: `This is my personal Svelte boilerplate. I found Svelte.js incredible straightforward to use. And, given the size of most major frameworks, I would like to have a smaller frontend framework in my toolkit. For this boilerplate, I included routing, animations, and state management in the project. I plan on adding utility components over time.`
   } 
 ];
 
