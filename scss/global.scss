@@ -68,7 +68,7 @@ main {
         background: map-get($colors, dark );
       }
       path {
-        fill: map-get($colors, app-white );
+        fill: map-get($colors, app-white ); 
       }
     }
   }

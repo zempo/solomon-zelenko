@@ -1,12 +1,5 @@
 <div class="route contact-pg">
   <h1>Let's get in touch!</h1>
-  <!-- 3 form tabs (hire, tutoring, collab) -->
-    <!-- <input type="radio" name="form-tab" id="form1" checked="checked">
-    <label for="form1">Hire me to build your brand</label>
-    <input type="radio" name="form-tab" id="form2">
-    <label for="form2">Learn Web Development from me</label>
-    <input type="radio" name="gen-tab" id="form3">
-    <label for="form3">Chat with Me</label> -->
     <section class="contact-forms">
       <input type="radio" class="contact-radio" id="hire-form" name="form-tabs" checked />
       <label class="form-label" for="hire-form">
@@ -16,27 +9,27 @@
       <section id="form-content-hire" class="form-content">
         <form class="hire-form">
           <div class="form-status"></div>
-          <!-- <p>Include FAQs PDF link, Testimonials</p>
-          <p>Please include as much information as you can</p>
-          <p>Name, email, phone number (optional) </p>
-          <p>What is your industry? What is your story? What is your product/talent? What is your timeline? </p>
-          <p>Great! I'll respond to your request within 72hrs</p> -->
           <fieldset id="step-1">
-            <h2>About You</h2>
-            <label for="name-1">
+            <h2>Nice to meet you</h2>
+            <label for="name-1"> 
               What's your name?
             </label>
             <input type="text" placeholder="eg. Ruby Ellis" name="name-1" id="name-1">
             <label for="email-1">
               What's your email?
-              <span class="sub">To share files</span>
             </label>
-            <input type="text" name="email-1" id="email-1" placeholder="eg. ruby.ellis@gmail.com">
+            <input type="email" name="email-1" id="email-1" placeholder="eg. ruby.ellis@gmail.com">
             <label for="contact-1">
               How might we best communicate?
-              <span class="sub">Phone number or Skype/Hangouts username</span>
             </label>
-            <input type="text" name="contact-1" id="contact-1" placeholder="eg. 707-526-7256">
+            <select name="contact-1" id="contact-1">
+              <option value="" disabled selected>Please Select</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="hangouts">Google Hangouts</option>
+              <option value="skype">Skype</option>
+              <option value="zoom">Zoom</option>
+            </select>
             <label for="current-site" class="optional">
               What's your current website?
             </label>
@@ -45,26 +38,39 @@
               How did you hear about me?
             </label>
             <input type="text" name="refer-1" id="refer-1" placeholder="eg. Google, YouTube, referred by...etc" />            
-          </fieldset>
+          </fieldset> 
           <fieldset id="step-2">
-            <h2>About the Project</h2>
+            <h2>Great!</h2>
+            <h2>Let's plan our project</h2>
             <label for="industry">What's your industry?</label>
             <input type="text" placeholder="eg. retail, entertainment, etc...">
             <label for="story">How would you describe your brand?</label>
             <textarea
              name="story"
              id="story"
-             placeholder="Ruby Makes Jewelry is a small retailer based in Idyllwild, CA. Since 1967, we've proudly served our community. Our jewelers have decades of experience repairing, crafting, and selling precious jewels for any budget."></textarea>
+             placeholder="Ruby Makes Jewelry is a small retailer located in Idyllwild, CA. Since 1967, we've proudly served our community. Our jewelers have decades of experience repairing, crafting, and selling precious jewels for any budget."></textarea>
             <label for="vision">What will our new site accomplish?</label>
             <textarea
              name="vision"
              id="vision"
-             placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. We would like to update our online store and add youtube videos from our channel. Finally, we want to add a portal for hiring apprentices."></textarea>  
+             placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. The current WordPress site is hard to use. We would like to update our online store and add youtube videos from our channel. Finally, we want to add a portal for hiring apprentices."></textarea>  
             <label for="budget">
-              What's your budget? 
-            <span class="sub">Please read the FAQs, if unsure</span>
-            </label>            
-            <input type="number" step=".01" name="budget" placeholder="600.00" id="budget">
+              What's your budget?
+            <button class="sub" id="project-guide">My Hire FAQ</button>
+            </label>               
+            <input type="text" name="budget" placeholder="$400" id="budget">
+            <label for="completion" class="optional">
+              Your ideal completion date? 
+            <button class="sub" id="project-guide">My Hire FAQ</button>
+            </label>              
+            <select name="completion" id="completion">
+              <option value="" disabled selected>Please Select</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="hangouts">Google Hangouts</option>
+              <option value="skype">Skype</option>
+              <option value="zoom">Zoom</option>
+            </select>
           </fieldset>
         </form>
       </section>
@@ -82,27 +88,78 @@
           <p>What are your learning needs?</p>
           <p>On submit: Great! I'll reach out to you within 24 hours and we'll set up a time to meet!</p> -->
           <fieldset id="step-1">
-            <h2>About You</h2>
-            <label for="name-1">
+            <h2>Nice to meet you</h2>
+            <label for="name-2">
               What's your name?
-            </label>
+            </label> 
             <input type="text" placeholder="eg. Sam Barlow" name="name-2" id="name-2">
-            <label for="email-1">
+            <label for="email-2">
               What's your email?
-              <span class="sub">(To share problems/assignments)</span>
             </label>
-            <input type="text" name="email-1" id="email-1" placeholder="eg. ruby.ellis@gmail.com">
-            <label for="contact-1">
-              How may I contact you?
-              <span class="sub">Phone number or Skype/Hangouts username</span>
-            </label>
-          </fieldset>
+            <input type="email" name="email-2" id="email-2" placeholder="eg. sammybarlow@yahoo.com">
+            <label for="contact-2">
+              How shall we meet?
+            </label> 
+            <select type="text" name="contact-2" id="contact-2">
+              <option value="" disabled selected>Please Select</option>
+              <option value="phone">Phone</option>
+              <option value="person" disabled>In-Person</option>
+              <option value="hangouts">Google Hangouts</option>
+              <option value="skype">Skype</option>
+              <option value="zoom">Zoom</option>
+            </select>
+          </fieldset> 
           <fieldset id="step-2">
+            <h2>Great!</h2>
+            <h2>Let's build our lesson plan</h2>
+            <label for="subject-1">
+              Which subject shall we study? <br>
+              <button class="sub" id="tutor-guide">Open Tutor Guide</button>
+            </label>
+            <input
+             type="text"
+             id="subject-1"
+             name="subject-1"
+             placeholder="eg. Data Structures, CSS, React.js, etc...">
+            <label for="experience">
+              When did you start coding?
+            </label>
+            <input
+             type="text"
+             id="experience"
+             name="experience"
+             placeholder="eg. just started, 2 months, etc...">
+            <label for="strength">
+              What are your coding strengths?
+            </label>
+            <textarea
+             name="strength"
+             id="strength"
+             placeholder="I am great with vanilla JavaScript. I usually write clean, functional code."></textarea>
+             <label for="weak">
+               What are your coding blindspots?
+             </label>
+             <textarea name="weakness" id="weakness" placeholder="I struggle with CSS. I don't really know which fonts to use or how to center things. I just use bootstrap, but I'd like to get good at styling."></textarea>
           </fieldset>
         </form>
       </section>
+      <input type="radio" class="contact-radio" id="gen-form" name="form-tabs" />
+      <label class="form-label" for="gen-form">
+        Chat with Solomon
+        <span class="form-open"></span>
+      </label>      
       <section id="form-content-gen" class="form-content">
-        <p> name, email, subject, message</p>
+        <form class="gen-form">
+          <h2>Let's Chat!</h2> 
+          <label for="name-3">What's your name?</label>
+          <input type="text" name="name-3" id="name-3" placeholder="Ronald R. Cruiter">
+          <label for="email-3">What's your email?</label>
+          <input type="email" name="email-3" id="email-3" placeholder="ronaldrecruits@rmail.org">
+          <label for="subject-2">What's the topic?</label>
+          <input type="text" name="subject-2" id="subject-2" placeholder="eg. Collabs, Work, etc...">
+          <label for="email-3">What's the story?</label> 
+          <textarea name="name-3" id="name-3"></textarea>
+        </form>
       </section>
     </section>
 
