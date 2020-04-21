@@ -93,10 +93,10 @@ main {
         font-size: calc(18px + .25vw); } }
   body .btn-fwd,
   main .btn-fwd {
-    right: calc(10px + 1vw); }
+    right: calc(10px + 3vw); }
   body .btn-back,
   main .btn-back {
-    left: calc(10px + 1vw); }
+    left: calc(10px + 3vw); }
   body .btn-fwd,
   body .btn-back,
   main .btn-fwd,
@@ -111,9 +111,9 @@ main {
     z-index: 2;
     outline: none;
     background: black;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 1px solid #3d3a3a;
     border-radius: 50%; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 1024px) {
       body .btn-fwd,
       body .btn-back,
       main .btn-fwd,

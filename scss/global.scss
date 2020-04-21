@@ -22,10 +22,10 @@ main {
     @include font-size($p-font-sizes);
   }
   .btn-fwd {
-    right:calc(10px + 1vw);;
+    right:calc(10px + 3vw);;
   } 
   .btn-back { 
-    left:calc(10px + 1vw);;
+    left:calc(10px + 3vw);;
   }
   .btn-fwd,
   .btn-back { 
@@ -40,9 +40,9 @@ main {
     z-index: 2;
     outline: none;
     background: rgb(0, 0, 0);
-    border: 1px solid map-get($colors, null );
+    border: 1px solid map-get($colors, dark-2 );
     border-radius: 50%;
-    @include mq('tablet') {
+    @include mq('tablet-wide') {
       display: block;
     } 
     svg {

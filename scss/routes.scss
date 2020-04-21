@@ -311,6 +311,7 @@
       padding: 5% 6% 5% 6%;
       border: 1px solid map-get($colors, dark );
       display: flex;
+      cursor: pointer;
       justify-content: space-between;
       @include font-size($h2-font-sizes);
       .form-open {
@@ -321,12 +322,6 @@
         max-width: calc(50px + 1vw);
         position: relative;
         top: 10px;
-      }
-    }
-    .open {
-      &::after {
-        content: "_";
-        top: calc(50% - 41px);
       }
     }
     .a-content {
@@ -458,7 +453,6 @@
     flex-wrap: wrap;
     height: auto;
     width: 100%;
-    border: 1px solid map-get($colors, dark );
     .form-content {
       order: initial;
       flex-direction: column;
@@ -467,6 +461,11 @@
       width: 100%;
       height: 100%;
       display: none;
+      padding: 7vh 5%; 
+      @include mq('tablet-wide') {
+        order: 1;
+        flex-direction: none;
+      } 
       .min-txt {
         font-weight: bold;
       @include font-size($h3-font-sizes);
@@ -482,12 +481,20 @@
       width: 100%;
       order: initial;
       margin-right: 0;
-      margin-bottom: 1px;
       padding: 5% 6% 5% 6%;
-      border: 1px solid map-get($colors, dark );
+      border: 1px solid lighten(map-get($colors, dark-2), 40%);
       display: flex;
+      cursor: pointer;
       justify-content: space-between;
       @include font-size($h2-font-sizes);
+      @include mq('tablet-wide') {
+        flex-grow: 1;
+        padding: 1% 5%;
+        width: 33%;
+        justify-content: center;
+        border: 2px solid lighten(map-get($colors, dark-2), 40%);
+        border-bottom: 2px solid map-get($colors, dark-2); 
+      } 
       .form-open {
         display: inline;
       }
@@ -501,7 +508,12 @@
         content: "—";
       }
       &:checked + label {
-        border: none;
+        border: 2px solid map-get($colors, dark-2 );
+        border-bottom: none;
+        @include mq('tablet-wide') {
+          border: 2px solid map-get($colors, dark-2 );
+          border-bottom: none; 
+        }
       }
       &:checked + label span:after {
         content: '+';
@@ -511,13 +523,21 @@
       }
       &:checked + label + .form-content {
         display: flex;
-        border: none;
+        border: 2px solid map-get($colors, dark);
+        border-top: none;
         margin-right: 0;
-        -o-animation: map-get($animations, fade-in);
-        -moz-animation: map-get($animations, fade-in);
-        -webkit-animation: map-get($animations, fade-in);
-        animation: map-get($animations, fade-in);
-      }      
+        & > * {
+          -o-animation: map-get($animations, fade-in);
+          -moz-animation: map-get($animations, fade-in);
+          -webkit-animation: map-get($animations, fade-in);
+          animation: map-get($animations, fade-in);
+        }
+      }     
+      & + label .form-open {
+        @include mq('tablet-wide') {
+          display: none;
+        }        
+      } 
     }
     h2 {
       font-weight: normal;
