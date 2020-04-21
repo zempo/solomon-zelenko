@@ -286,11 +286,11 @@ class ArrowNav {
     const updateCheck = () => {
       fetch(`routes/${hash}.html`)
         .then((r) => {
-          App.style.visibility = "visible";
           r.text();
         })
         .then((content) => {
           setTimeout(() => {
+            App.style.visibility = "visible";
             loader.style.display = "none";
           }, 0.4);
           return true;
