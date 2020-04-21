@@ -9,9 +9,11 @@
   <br> 
   <img src="img/s-about.png" alt="Solomon in Washington Cascades" class="about-pic-1" />
   <section class="accordion">
-    <button class="btn-a" id="story"> 
+    <input type="radio" class="accordion-radio" id="tab-1" name="about-tabs" checked />
+    <label class="accordion-label" for="tab-1">
       My Story
-    </button>
+      <span class="tab-open"></span>
+    </label>
     <section class="a-content story">
       <p>
         To support my psychology degree, I taught young children how to code
@@ -49,35 +51,40 @@
         writing short stories.
       </p>
     </section>
-            <button class="btn-a" id="values">
-              My 2020 Vision
-              <br id="values">
-              <img src="img/svgs/n-home-on.svg" alt="Solomon logo" id="values" />
-              <br id="values"> 
-              <span class="min-txt" id="values">( Pun Intended )</span> 
-            </button> 
-            <section class="a-content values">
-              <ol>
-                <p><b>Content Goals</b></p>
-                <li>Launch YouTube channel</li>
-                <li>Offer tutoring services</li>
-                <li>Release an NPM</li>
-                <li>Write 6 articles</li>
-                <li>Publish a mobile App</li>
-              </ol>
-              <ol>
-               <p><b>Learning Goals</b></p>
-                <li>MongoDB &#10004;</li>
-                <li>Svelte.js &#10004;</li>
-                <li>Three.js</li>
-                <li>Firebase</li>
-                <li>ASP.NET with Razor</li>
-                <li>React Native</li>
-              </ol>
-            </section>
-    <button class="btn-a" id="skills">
+    <input type="radio" class="accordion-radio" id="tab-2" name="about-tabs" />
+    <label class="accordion-label" for="tab-2">
+      <div> 
+       My 2020 Vision
+       <br>
+       <img src="img/svgs/n-home-on.svg" alt="Solomon logo" />
+       <br>
+       <p class="min-txt">( Pun Intended )</p> 
+      </div>
+      <span class="tab-open"></span>
+    </label> 
+    <section class="a-content vision">
+      <ol>
+        <p><b>Content Goals</b></p>
+        <li>Launch YouTube channel</li>
+        <li>Release an NPM</li>
+        <li>Write 6 articles</li>
+        <li>Publish a mobile App</li>
+      </ol>
+      <ol>
+       <p><b>Learning Goals</b></p>
+        <li>MongoDB &#10004;</li>
+        <li>Svelte.js &#10004;</li>
+        <li>Firebase &#10004;</li>
+        <li>Three.js</li>
+        <li>ASP.NET with Razor</li>
+        <li>React Native</li>
+      </ol>
+    </section>
+    <input type="radio" class="accordion-radio" id="tab-3" name="about-tabs" />
+    <label class="accordion-label" for="tab-3">
       My Tools
-    </button>
+      <span class="tab-open"></span>
+    </label>
     <section class="a-content skills">
       <ul class="c-sk">
         <h3>Client Side</h3>
@@ -121,4 +128,49 @@
     </section>
   </section>
 </div>
+<footer>
+  <ul class="icons-list">
+    <li>
+      <a
+      href="https://www.linkedin.com/in/solomon-zelenko/"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/linkd.svg" alt="my LinkedIn account"
+      /></a>
+    </li>
+    <li>
+      <a
+      href="https://github.com/zempo"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/ghub2.svg" alt="my GitHub account"
+      /></a>
+    </li>
+    <li>
+      <a href="https://dev.to/zempo" target="_blank" rel="noopener noreferrer"
+      ><img src="img/svgs/dev.svg" alt="my DEV account"
+      /></a>
+    </li>
+    <li>
+      <a
+      href="https://codepen.io/zemposPen"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/cpen.svg" alt="my Codepen account"
+      /></a>
+    </li>
+    <li>
+      <a
+      href="https://medium.com/@zelenkosolomon"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/medium.svg" alt="my medium account"
+      /></a>      
+    </li>
+  </ul>
+  <h2>Solomon J. Zelenko</h2>
+  <p>&copy; Copyright 2020.</p>
+  <p>All rights reserved. Powered by Vanilla JS.</p>
+</footer>
+
  

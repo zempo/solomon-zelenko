@@ -3,7 +3,7 @@ const App = document.getElementById("container");
 const loader = document.getElementById("loading");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
-const navImgs = document.querySelectorAll("a img");
+const navImgs = document.querySelectorAll("nav a img");
 
 // MAIN EVENT LISTENERS
 // home pg
@@ -13,25 +13,6 @@ const handleResume = (e) => {
 };
 
 // About pg
-const toggleTab = (e) => {
-  let sign = document.querySelector(`button#${e.target.id}`).classList
-  let panel = document.querySelector(`.${e.target.id}`);
-
-  sign[1] === "open" ? sign.remove("open") : sign.add("open");
-
-  if (panel.classList[2] === "open-content") {
-    panel.classList.remove("open-content");
-    panel.classList.add("close-content");
-    setTimeout(() => {
-      panel.style.display = "none";
-    }, 300);
-  } else {
-    panel.classList.remove("close-content");
-    panel.classList.add("open-content");
-    panel.style.display = "block";
-  }
-};
-
 const updateHue = (hue, hueV, pic1, pic2, pic3) => {
   let newVal = Number((hue.value - hue.min) * 100 / (hue.max - hue.min))
   let newPos = 10 - (newVal * .2)
@@ -143,10 +124,6 @@ class Router {
         const pic1 = document.querySelector('.about-pic-1')
         const pic2 = document.querySelector('.about-pic-2')
         const pic3 = document.querySelector('.about-pic-3')
-        const aboutTabs = document.querySelectorAll(".btn-a");
-        aboutTabs.forEach((el) => {
-          el.addEventListener("click", (e) => toggleTab(e));
-        });
         updateHue(hue, hueV, pic1, pic2, pic3)
         hue.addEventListener('input', e => {
           updateHue(hue, hueV, pic1, pic2, pic3)
@@ -300,7 +277,9 @@ class ArrowNav {
   }
   refRoute(direction) {
     let routePg = document.querySelector(".route");
-    routePg.classList.add(direction);
+    setTimeout(() => {
+      routePg.classList.add(direction);
+    }, 10)
   }
 
   hasUpdated(hash, direction) {

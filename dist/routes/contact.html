@@ -9,8 +9,8 @@
       <section id="form-content-hire" class="form-content">
         <form class="hire-form">
           <div class="form-status"></div>
-          <fieldset id="step-1">
-            <h2>Nice to meet you</h2>
+          <fieldset class="step-1">
+            <h2 class="min-txt">Nice to meet you</h2>
             <label for="name-1"> 
               What's your name?
             </label>
@@ -30,6 +30,10 @@
               <option value="skype">Skype</option>
               <option value="zoom">Zoom</option>
             </select>
+            <label for="industry">
+              What's your industry?
+            </label>
+            <input type="text" placeholder="eg. retail, entertainment, etc...">
             <label for="current-site" class="optional">
               What's your current website?
             </label>
@@ -39,11 +43,25 @@
             </label>
             <input type="text" name="refer-1" id="refer-1" placeholder="eg. Google, YouTube, referred by...etc" />            
           </fieldset> 
-          <fieldset id="step-2">
-            <h2>Great!</h2>
-            <h2>Let's plan our project</h2>
-            <label for="industry">What's your industry?</label>
-            <input type="text" placeholder="eg. retail, entertainment, etc...">
+          <fieldset class="step-2">
+            <h2 class="min-txt">Let's plan our project</h2>
+            <label for="budget">
+              What's your budget?
+            <button class="sub" data-content="project-guide">My Hire FAQ</button>
+            </label>               
+            <input type="text" name="budget" placeholder="$400" id="budget">
+            <label for="completion" class="optional">
+              Your ideal completion date? 
+            <button class="sub" data-content="project-guide">My Hire FAQ</button>
+            </label>              
+            <select name="completion" id="completion">
+              <option value="" disabled selected>Please Select</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="hangouts">Google Hangouts</option>
+              <option value="skype">Skype</option>
+              <option value="zoom">Zoom</option>
+            </select>
             <label for="story">How would you describe your brand?</label>
             <textarea
              name="story"
@@ -54,23 +72,6 @@
              name="vision"
              id="vision"
              placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. The current WordPress site is hard to use. We would like to update our online store and add youtube videos from our channel. Finally, we want to add a portal for hiring apprentices."></textarea>  
-            <label for="budget">
-              What's your budget?
-            <button class="sub" id="project-guide">My Hire FAQ</button>
-            </label>               
-            <input type="text" name="budget" placeholder="$400" id="budget">
-            <label for="completion" class="optional">
-              Your ideal completion date? 
-            <button class="sub" id="project-guide">My Hire FAQ</button>
-            </label>              
-            <select name="completion" id="completion">
-              <option value="" disabled selected>Please Select</option>
-              <option value="phone">Phone</option>
-              <option value="email">Email</option>
-              <option value="hangouts">Google Hangouts</option>
-              <option value="skype">Skype</option>
-              <option value="zoom">Zoom</option>
-            </select>
           </fieldset>
         </form>
       </section>
@@ -81,14 +82,9 @@
       </label>      
       <section id="form-content-tutor" class="form-content">
         <form class="tutor-form">
-          <!-- <p>What I teach</p>
-          <p>FAQ on being tutored by me</p>
-          <p>Name, email, phone (optional)</p>
-          <p>Which subject would you like help with?</p>
-          <p>What are your learning needs?</p>
-          <p>On submit: Great! I'll reach out to you within 24 hours and we'll set up a time to meet!</p> -->
-          <fieldset id="step-1">
-            <h2>Nice to meet you</h2>
+          <div class="form-status"></div>
+          <fieldset id="tutor-step-1">
+            <h2 class="min-txt">Nice to meet you</h2>
             <label for="name-2">
               What's your name?
             </label> 
@@ -109,9 +105,8 @@
               <option value="zoom">Zoom</option>
             </select>
           </fieldset> 
-          <fieldset id="step-2">
-            <h2>Great!</h2>
-            <h2>Let's build our lesson plan</h2>
+          <fieldset id="tutor-step-2">
+            <h3 class="min-txt">Let's build our lesson plan</h3>
             <label for="subject-1">
               Which subject shall we study? <br>
               <button class="sub" id="tutor-guide">Open Tutor Guide</button>
@@ -150,49 +145,61 @@
       </label>      
       <section id="form-content-gen" class="form-content">
         <form class="gen-form">
-          <h2>Let's Chat!</h2> 
+          <div class="form-status"></div>
+          <h2 class="min-txt">Let's Chat!</h2> 
           <label for="name-3">What's your name?</label>
           <input type="text" name="name-3" id="name-3" placeholder="Ronald R. Cruiter">
           <label for="email-3">What's your email?</label>
           <input type="email" name="email-3" id="email-3" placeholder="ronaldrecruits@rmail.org">
           <label for="subject-2">What's the topic?</label>
           <input type="text" name="subject-2" id="subject-2" placeholder="eg. Collabs, Work, etc...">
-          <label for="email-3">What's the story?</label> 
-          <textarea name="name-3" id="name-3"></textarea>
+          <label for="msg">What's the story?</label> 
+          <textarea name="msg" id="msg"></textarea>
         </form>
       </section>
     </section>
-
-  <h2>Follow me on Social Media</h2>
+</div>
+<footer>
   <ul class="icons-list">
     <li>
+      <a
+      href="https://www.linkedin.com/in/solomon-zelenko/"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/linkd.svg" alt="my LinkedIn account"
+      /></a>
+    </li>
+    <li>
+      <a
+      href="https://github.com/zempo"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/ghub2.svg" alt="my GitHub account"
+      /></a>
+    </li>
+    <li>
       <a href="https://dev.to/zempo" target="_blank" rel="noopener noreferrer"
-        ><img src="img/svgs/dev.svg" alt=""
+      ><img src="img/svgs/dev.svg" alt="my DEV account"
       /></a>
     </li>
     <li>
       <a
-        href="https://github.com/zempo"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><img src="img/svgs/ghub2.svg" alt=""
+      href="https://codepen.io/zemposPen"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/cpen.svg" alt="my Codepen account"
       /></a>
     </li>
     <li>
       <a
-        href="https://www.linkedin.com/in/solomon-zelenko/"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><img src="img/svgs/linkd.svg" alt=""
-      /></a>
-    </li>
-    <li>
-      <a
-        href="https://codepen.io/zemposPen"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><img src="img/svgs/cpen.svg" alt=""
-      /></a>
+      href="https://medium.com/@zelenkosolomon"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><img src="img/svgs/medium.svg" alt="my medium account"
+      /></a>      
     </li>
   </ul>
-</div>
+  <h2>Solomon J. Zelenko</h2>
+  <p>&copy; Copyright 2020.</p>
+  <p>All rights reserved. Powered by Vanilla JS.</p>
+</footer>

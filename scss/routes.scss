@@ -8,7 +8,11 @@
   -moz-animation: map-get($animations, fade-in);
   -webkit-animation: map-get($animations, fade-in);
   animation: map-get($animations, fade-in);
-  padding-bottom: 10vh; 
+  padding: 0px 5vw 5vh;
+  margin: 0;
+  @include mq('tablet-med') {
+    padding: 0 15vw;
+  }
   h1:first-child {
     margin-bottom: 10vh;
     @include mq('tablet-med') {
@@ -103,18 +107,6 @@
   }
   .btn-resume {
     margin-bottom: 12vh;
-  }
-}
-
-// contact
-.icons-list {
-  padding-left: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  img {
-    width: 35px;
-    text-decoration: none;
   }
 }
 
@@ -305,40 +297,30 @@
     }
   }
   .accordion {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     height: auto;
     width: 100%;
+    border: 1px solid map-get($colors, dark );
     margin-top: 15vh;
-    .btn-a {
-      @extend %btn;
+    .accordion-label {
       width: 100%;
-      padding: 25px;
-      font-weight: normal;
-      position: relative;
-      border: none;
-      border-bottom: 1px solid #000;
-      outline: none;
-      background: rgba(0, 0, 0, 0);
+      order: initial;
+      margin-right: 0;
+      margin-bottom: 1px;
+      padding: 5% 6% 5% 6%;
+      border: 1px solid map-get($colors, dark );
+      display: flex;
+      justify-content: space-between;
       @include font-size($h2-font-sizes);
-      font-weight: normal;
+      .form-open {
+        display: inline;
+      }
       img {
         margin: 20px auto;
         max-width: calc(50px + 1vw);
         position: relative;
         top: 10px;
-      }
-      &::after {
-        font-weight: normal;
-        cursor: pointer;
-        content: "+";
-        position: absolute;
-        top: calc(50% - 26px);
-        right: 15px;
-        font-size: 35px;
       }
     }
     .open {
@@ -348,15 +330,46 @@
       }
     }
     .a-content {
-      display: none;
-      transition: all 0.3s;
-      padding: 5vh 0;
       text-align: justify;
+      order: initial;
+      flex-direction: column;
+      order: initial;
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      padding: 5vh 0;
+      display: none;
       ul {
         list-style-type: none; 
         text-align: left;
-        // padding-left: 0;
       }
+    }
+    input[type="radio"] {
+      display: none;
+      & + label {
+        z-index: 1;
+      }
+      & + label .tab-open:after {
+        content: "—";
+      }
+      &:checked + label {
+        border: none;
+      }
+      &:checked + label .tab-open:after {
+        content: '+';
+      }
+      &:checked + label + .accordion {
+        border: none;
+      }
+      &:checked + label + .a-content {
+        display: flex;
+        border: none;
+        margin-right: 0;
+        -o-animation: map-get($animations, expand-down);
+        -moz-animation: map-get($animations, expand-down);
+        -webkit-animation: map-get($animations, expand-down);
+        animation: map-get($animations, expand-down);
+      }      
     }
     .story {
       p {
@@ -370,7 +383,7 @@
         } 
       }
     }
-    .values {
+    .vision {
       width: 100%;
       text-align: left;
       ol {
@@ -382,20 +395,6 @@
       ul {
         @include font-size($p-font-sizes);
       }
-    }
-    .open-content {
-      display: block;
-      -o-animation: map-get($animations, expand-down);
-      -moz-animation: map-get($animations, expand-down);
-      -webkit-animation: map-get($animations, expand-down);
-      animation: map-get($animations, expand-down);
-    }
-    .close-content {
-      display: none;
-      -o-animation: map-get($animations, fold-up);
-      -moz-animation: map-get($animations, fold-up);
-      -webkit-animation: map-get($animations, fold-up);
-      animation: map-get($animations, fold-up);
     }
   }
   }
@@ -455,16 +454,73 @@
 
 .contact-pg {
   .contact-forms {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
     width: 100%;
+    border: 1px solid map-get($colors, dark );
+    .form-content {
+      order: initial;
+      flex-direction: column;
+      order: initial;
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      display: none;
+      .min-txt {
+        font-weight: bold;
+      @include font-size($h3-font-sizes);
+      }
+      label {
+        @include font-size($h3-font-sizes);
+      }
+      fieldset {
+        border: none;
+      }
+    }
+    .form-label {
+      width: 100%;
+      order: initial;
+      margin-right: 0;
+      margin-bottom: 1px;
+      padding: 5% 6% 5% 6%;
+      border: 1px solid map-get($colors, dark );
+      display: flex;
+      justify-content: space-between;
+      @include font-size($h2-font-sizes);
+      .form-open {
+        display: inline;
+      }
+    }
+    input[type="radio"] {
+      display: none;
+      & + label {
+        z-index: 1;
+      }
+      & + label span:after {
+        content: "—";
+      }
+      &:checked + label {
+        border: none;
+      }
+      &:checked + label span:after {
+        content: '+';
+      }
+      &:checked + label + .contact-forms {
+        border: none;
+      }
+      &:checked + label + .form-content {
+        display: flex;
+        border: none;
+        margin-right: 0;
+        -o-animation: map-get($animations, fade-in);
+        -moz-animation: map-get($animations, fade-in);
+        -webkit-animation: map-get($animations, fade-in);
+        animation: map-get($animations, fade-in);
+      }      
+    }
     h2 {
       font-weight: normal;
     }
-    // .open-content {
-    //   display: block;
-    //   -o-animation: map-get($animations, expand-down);
-    //   -moz-animation: map-get($animations, expand-down);
-    //   -webkit-animation: map-get($animations, expand-down);
-    //   animation: map-get($animations, expand-down);
-    // }
   }
 }

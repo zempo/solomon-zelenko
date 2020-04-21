@@ -25,7 +25,7 @@ const currentBytes = [
     img: 'svgs/article.svg',
     title: "Expedite your Eurekas",
     link:
-      "https://medium.com/@solomonzelenko/expedite-your-eurekas-704d35c7892a",
+      "https://medium.com/@zelenkosolomon/expedite-your-eurekas-850a2073f5de",
     info: `I believe creativity can be fostered in everyone, so I wanted to share some of things that have made my creative process more efficient. This is the first in a series of articles I plan on releasing this year.`
     },
   {

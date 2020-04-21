@@ -170,13 +170,44 @@ main {
   main #container {
     text-align: center;
     background: #fafafa;
-    min-height: 101vh;
-    padding: 0px 5vw;
-    margin: 0; }
-    @media only screen and (min-width: 900px) {
-      body #container,
-      main #container {
-        padding: 0 15vw; } }
+    min-height: 100vh; }
+
+footer {
+  text-align: center;
+  background: #3d3a3a;
+  color: #fafafa;
+  margin-top: 15vh; }
+  footer h2 {
+    font-weight: normal; }
+  footer p {
+    font-weight: 400;
+    font-style: italic;
+    color: #e1e1e1;
+    font-size: 15px; }
+    @media screen and (min-width: 560px) {
+      footer p {
+        font-size: calc(16px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      footer p {
+        font-size: calc(17px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      footer p {
+        font-size: calc(19px + .25vw); } }
+    footer p:last-child {
+      padding-bottom: calc(80px + 7vh); }
+  footer .icons-list {
+    width: 100%;
+    padding: 7vh 0 5vh;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly; }
+    @media only screen and (min-width: 768px) {
+      footer .icons-list {
+        width: 70%;
+        margin-left: 15%; } }
+    footer .icons-list img {
+      width: calc(35px + 1.8vw);
+      text-decoration: none; }
 
 a {
   font-weight: bold;
