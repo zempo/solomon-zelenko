@@ -333,7 +333,7 @@
       flex-grow: 1;
       width: 100%;
       height: 100%;
-      padding: 5vh 5%;
+      padding: 5% 5% 6%;
       display: none;
       @include mq('tablet-wide') {
         order: 1;
@@ -385,6 +385,24 @@
       }     
     }
     .story {
+      figure {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 5vh;
+        img {
+          position: relative;
+          left: 10px;
+          top: 20px;
+          width: 80%;
+          max-width: 700px;
+        }
+        figcaption {
+          font-style: italic;
+          position: relative;
+          color: lighten(map-get($colors, dark), 30%);
+          @include font-size($p-font-sizes);
+        }
+      }
       p {
         width: 100%;
         margin: 5vh auto; 
