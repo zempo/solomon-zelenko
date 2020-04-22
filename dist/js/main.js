@@ -277,9 +277,7 @@ class ArrowNav {
   }
   refRoute(direction) {
     let routePg = document.querySelector(".route");
-    setTimeout(() => {
-      routePg.classList.add(direction);
-    }, 10)
+    routePg.classList.add(direction);
   }
 
   hasUpdated(hash, direction) {
@@ -289,13 +287,10 @@ class ArrowNav {
           r.text();
         })
         .then((content) => {
-          setTimeout(() => {
-            App.style.visibility = "visible";
-            loader.style.display = "none";
-          }, 0.4);
-          return true;
-        })
-        .then(() => this.refRoute(direction));
+          App.style.visibility = "visible";
+          loader.style.display = "none"; 
+          this.refRoute(direction)
+        });
     };
     setTimeout(() => {
       updateCheck(hash);

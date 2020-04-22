@@ -307,21 +307,22 @@
       width: 100%;
       order: initial;
       margin-right: 0;
-      margin-bottom: 1px;
       padding: 5% 6% 5% 6%;
-      border: 1px solid map-get($colors, dark );
+      border: 1px solid lighten(map-get($colors, dark-2), 40%);
       display: flex;
       cursor: pointer;
       justify-content: space-between;
       @include font-size($h2-font-sizes);
-      .form-open {
+      @include mq('tablet-wide') {
+        flex-grow: 1;
+        padding: 1% 5%;
+        width: 33%;
+        justify-content: center;
+        border: 2px solid lighten(map-get($colors, dark-2), 40%);
+        border-bottom: 2px solid map-get($colors, dark-2); 
+      } 
+      .tab-open {
         display: inline;
-      }
-      img {
-        margin: 20px auto;
-        max-width: calc(50px + 1vw);
-        position: relative;
-        top: 10px;
       }
     }
     .a-content {
@@ -332,8 +333,12 @@
       flex-grow: 1;
       width: 100%;
       height: 100%;
-      padding: 5vh 0;
+      padding: 5vh 5%;
       display: none;
+      @include mq('tablet-wide') {
+        order: 1;
+        flex-direction: none;
+      } 
       ul {
         list-style-type: none; 
         text-align: left;
@@ -348,7 +353,12 @@
         content: "—";
       }
       &:checked + label {
-        border: none;
+        border: 2px solid map-get($colors, dark-2 );
+        border-bottom: none;
+        @include mq('tablet-wide') {
+          border: 2px solid map-get($colors, dark-2 );
+          border-bottom: none;  
+        }
       }
       &:checked + label .tab-open:after {
         content: '+';
@@ -358,13 +368,21 @@
       }
       &:checked + label + .a-content {
         display: flex;
-        border: none;
+        border: 2px solid map-get($colors, dark);
+        border-top: none;
         margin-right: 0;
-        -o-animation: map-get($animations, expand-down);
-        -moz-animation: map-get($animations, expand-down);
-        -webkit-animation: map-get($animations, expand-down);
-        animation: map-get($animations, expand-down);
-      }      
+        & > * {
+          -o-animation: map-get($animations, fade-in);
+          -moz-animation: map-get($animations, fade-in);
+          -webkit-animation: map-get($animations, fade-in);
+          animation: map-get($animations, fade-in);
+        }
+      }  
+      & + label .tab-open {
+        @include mq('tablet-wide') {
+          display: none;
+        }        
+      }     
     }
     .story {
       p {
@@ -384,6 +402,15 @@
       ol {
         list-style-position: inside;
         @include font-size($p-font-sizes);
+      }
+      h2 {
+        text-align: center;
+      }
+      img {
+        margin: 20px auto;
+        max-width: calc(50px + 1vw);
+        position: relative;
+        top: 10px;
       }
     }
     .skills {
