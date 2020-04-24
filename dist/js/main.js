@@ -4,6 +4,7 @@ const loader = document.getElementById("loading");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 const navImgs = document.querySelectorAll("nav a img");
+const footer = document.querySelector('footer')
 const API = 'http://localhost:5000/api/mail'
 // MAIN EVENT LISTENERS
 // home pg
@@ -41,6 +42,10 @@ const handleMailForms = (hire, tutor, gen) => {
     const selects = document.querySelectorAll(`.${e.target.classList} select`)
     const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
 
+    status.addEventListener('click', e => {
+      status.innerHTML = ''
+    })
+
     inputs.forEach(el => {
       if(el.name !== '') {
         newGen[el.name] = el.value
@@ -61,9 +66,9 @@ const handleMailForms = (hire, tutor, gen) => {
     .then(res => { 
       status.classList.add('success-status')
       status.innerHTML = `
-      <span class="success">&#10003;</span>
+      <span class="success">&#10004;</span>
       <div class="msg">
-      <p>Success</p>
+      <p>Message Sent</p>
       <p>Expect a reply soon!</p>
       </div>
       `
@@ -73,19 +78,19 @@ const handleMailForms = (hire, tutor, gen) => {
         const feedback = err.response.data.error.details[0].message
         status.classList.add('err-status')
         status.innerHTML = `
-        <span class="err">&#10007;</span>
+        <span class="err">&#10005;</span>
         <div class="msg">
         <p>Oops!</p>
-        <p>${feedback}</p>
+        <p>${feedback.replace(`_gen`, '')}.</p>
         </div>
         `
       } else {
         status.classList.add('err-status')
         status.innerHTML = `
-        <span class="err">&#10007;</span>
+        <span class="err">&#10005;</span>
         <div class="msg">
         <p>Sorry &#9785;</p>
-        <p>Looks like my server is down</p>
+        <p>Looks like my server is down.</p>
         </div>
         `
       }
@@ -228,28 +233,33 @@ class Router {
     navImgs.forEach((img) => {
       img.nextElementSibling.style.color = "#828282";
       img.setAttribute("src", `${svgSrc}${img.getAttribute("alt")}.svg`);
-    });
+    }); 
     switch (window.location.hash.substr(1)) {
       case "":
       case "home":
         navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
         navImgs[0].nextElementSibling.style.color = "#000000";
+        footer.style.display = 'none'
         return;
       case "about":
         navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
         navImgs[1].nextElementSibling.style.color = "#000000";
+        footer.style.display = 'block'
         return;
       case "works":
         navImgs[2].setAttribute("src", `${svgSrc}works-on.svg`);
         navImgs[2].nextElementSibling.style.color = "#000000";
+        footer.style.display = 'block'
         return;
       case "bytes":
         navImgs[3].setAttribute("src", `${svgSrc}bytes-on.svg`);
         navImgs[3].nextElementSibling.style.color = "#000000";
+        footer.style.display = 'block'
         return;
       case "contact":
         navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
         navImgs[4].nextElementSibling.style.color = "#000000";
+        footer.style.display = 'block'
         return;
       default:
         return;
@@ -267,6 +277,7 @@ class Router {
           loader.style.display = "none";
         }, 800);
         slot.innerHTML = content;
+        footer.style.display = 'none'
         this.getRefs("home");
       }
       runCarousel();

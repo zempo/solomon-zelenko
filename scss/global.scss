@@ -80,7 +80,7 @@ main {
   }
 }
 footer {
-  // footer
+  display: none;
   text-align: center;
   background: map-get($colors, dark-2 );
   color: map-get($colors, app-white );
@@ -91,14 +91,14 @@ footer {
   p {
     font-weight: 400;
     font-style: italic;
-  color: darken(map-get($colors, app-white ), 10%);
+    color: darken(map-get($colors, app-white ), 10%);
     @include font-size($h3-font-sizes);
     &:last-child {
       padding-bottom: calc(80px + 7vh);
     }
   }
   .icons-list {
-    width: 100%;
+  width: 100%;
   padding: 7vh 0 5vh;
   list-style-type: none;
   display: flex;

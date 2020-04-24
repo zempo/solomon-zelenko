@@ -439,8 +439,6 @@
   }
   }
 
-
-
 // works + bytes
 .filter-bytes, .filter-works {
   margin-bottom: 50px; 
@@ -524,16 +522,33 @@
       .gen-status, .tutor-status, .hire-status {
         height: auto;
         padding: 5px;
-        width: 80%; 
-        margin: -4vh 10% 5vh;
+        width: 92%; 
+        margin: -4vh auto 5vh;
         border: 0px solid map-get($colors, dark-2);
         border-radius: 5px;
         display: flex;
         justify-content: flex-start;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        position: relative;
+        &::after {
+          content: "x";
+          position: absolute;
+          font-family: "Source Sans Pro", "Arial", sans-serif;
+          font-weight: bold;
+          top: 2px;
+          right: 5px;
+          color: lighten(map-get($colors, dark-2), 35%);
+          @include font-size($p-font-sizes);
+        }
+        @include mq('phablet') {
+          width: 80%;
+          max-width: 400px;
+          margin: -5vh auto 6vh;
+        } 
         @include mq('tablet-wide') {
           width: 60%;
-          margin-left: 20%;
+          max-width: 600px;
+          margin: -3vh auto 5vh;
         } 
         &:empty {
           height: 0;
@@ -542,28 +557,48 @@
           padding: 0;
           border: none;
         }
+        &:empty::after {
+          display: none;
+        }
         .success, .err {
-          font-size: 35px;
-          height: 45px;
-          width: 45px;
+          font-size: 30px;
+          height: 40px;
+          width: 40px;
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          margin: auto 10px;
+          padding: 3px auto;
+          margin: auto 8px;
           border: 1px solid map-get($colors, null);
           color: map-get($colors, app-white);
           border-radius: 50%;
+          @include mq('phablet') {
+            height: 45px;
+            width: 45px;
+            font-size: 35px;
+            margin: auto 12px;
+          } 
+          @include mq('tablet-wide') {
+            height: 53px;
+            width: 53px;
+            font-size: 40px;
+            margin: auto 15px; 
+          } 
         }
         .msg {
           justify-self: center;
           text-align: left;
+          max-width: calc(95% - 75px);
           p {
             margin: 0;
           }
           p:first-child {
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            @include font-size($h3-font-sizes);
+          }
+          p:last-child {
+            color: map-get($colors, dark-2);
+            opacity: .8;
           }
         }
         .success{
