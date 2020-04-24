@@ -4,7 +4,7 @@ const loader = document.getElementById("loading");
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 const navImgs = document.querySelectorAll("nav a img");
-
+const API = 'http://localhost:5000/api/mail'
 // MAIN EVENT LISTENERS
 // home pg
 const handleResume = (e) => {
@@ -22,6 +22,81 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
   pic2.style.filter = `hue-rotate(${hue.value}deg)`
   pic3.style.filter = `hue-rotate(${hue.value}deg)`
 }
+
+// Contact pg
+const handleMailForms = (hire, tutor, gen) => {
+  hire.addEventListener('submit', e => {
+    e.preventDefault()
+    axios.post(`${API}/hire`)
+  })
+  tutor.addEventListener('submit', e => {
+    e.preventDefault()
+    axios.post(`${API}/tutor`)
+  })
+  gen.addEventListener('submit', e => {
+    e.preventDefault()
+    const status = document.querySelector('.gen-status')
+    const newGen = {}
+    const inputs = document.querySelectorAll(`.${e.target.classList} input`)
+    const selects = document.querySelectorAll(`.${e.target.classList} select`)
+    const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
+
+    inputs.forEach(el => {
+      if(el.name !== '') {
+        newGen[el.name] = el.value
+      }
+    })
+    selects.forEach(el => {
+      if(el.name !== '') {
+        newGen[el.name] = el.value
+      }
+    })
+    textareas.forEach(el => {
+      if(el.name !== '') {
+        newGen[el.name] = el.value
+      }
+    })
+    axios
+    .post(`${API}/gen`, newGen)
+    .then(res => { 
+      status.classList.add('success-status')
+      status.innerHTML = `
+      <span class="success">&#10003;</span>
+      <div class="msg">
+      <p>Success</p>
+      <p>Expect a reply soon!</p>
+      </div>
+      `
+    })
+    .catch(err => {
+      if (err.response) { 
+        const feedback = err.response.data.error.details[0].message
+        status.classList.add('err-status')
+        status.innerHTML = `
+        <span class="err">&#10007;</span>
+        <div class="msg">
+        <p>Oops!</p>
+        <p>${feedback}</p>
+        </div>
+        `
+      } else {
+        status.classList.add('err-status')
+        status.innerHTML = `
+        <span class="err">&#10007;</span>
+        <div class="msg">
+        <p>Sorry &#9785;</p>
+        <p>Looks like my server is down</p>
+        </div>
+        `
+      }
+    })
+    setTimeout(() => {
+      status.innerHTML = ''
+      status.classList.remove('err-status')
+      status.classList.remove('success-status')
+    }, 5000)
+  })
+} 
 
 // Hero Animation
 const TextCarousel = function (el, toRotate, duration) {
@@ -136,6 +211,12 @@ class Router {
       case 'bytes':
         let byteM = document.getElementsByTagName('byte-modal')[0]
         byteM.style.display = 'none' 
+        return;
+      case 'contact': 
+        const hireForm = document.querySelector('.hire-form')
+        const tutorForm = document.querySelector('.tutor-form')
+        const genForm = document.querySelector('.gen-form')
+        handleMailForms(hireForm, tutorForm, genForm)
         return;        
       default:
         return;
@@ -342,7 +423,7 @@ function handleTouchMove(e) {
 
   var xDiff = xDown - xUp;
   var yDiff = yDown - yUp;
-  if (Math.abs(xDiff) + Math.abs(yDiff) > 130) {
+  if (Math.abs(xDiff) + Math.abs(yDiff) > 120) {
     //to deal with to short swipes
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {

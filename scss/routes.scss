@@ -511,8 +511,8 @@
         order: 1;
         flex-direction: none;
       } 
-      .min-txt {
-        font-weight: bold;
+      h3 {
+      font-weight: bold;
       @include font-size($h3-font-sizes);
       }
       label {
@@ -521,6 +521,64 @@
       fieldset {
         border: none;
       }
+      .gen-status, .tutor-status, .hire-status {
+        height: auto;
+        padding: 5px;
+        width: 80%; 
+        margin: -4vh 10% 5vh;
+        border: 0px solid map-get($colors, dark-2);
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        @include mq('tablet-wide') {
+          width: 60%;
+          margin-left: 20%;
+        } 
+        &:empty {
+          height: 0;
+          width: 0;
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+        .success, .err {
+          font-size: 35px;
+          height: 45px;
+          width: 45px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto 10px;
+          border: 1px solid map-get($colors, null);
+          color: map-get($colors, app-white);
+          border-radius: 50%;
+        }
+        .msg {
+          justify-self: center;
+          text-align: left;
+          p {
+            margin: 0;
+          }
+          p:first-child {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            @include font-size($h3-font-sizes);
+          }
+        }
+        .success{
+          background: map-get($colors, success);
+        }
+        .err {
+          background: map-get($colors, err);
+        }
+      }
+      .success-status {
+        border-left: 7px solid map-get($colors, success);
+      }
+      .err-status {
+        border-left: 7px solid map-get($colors, err);
+      }      
     }
     .form-label {
       width: 100%;

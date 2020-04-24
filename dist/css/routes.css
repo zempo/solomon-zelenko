@@ -552,17 +552,17 @@
       .contact-pg .contact-forms .form-content {
         order: 1;
         flex-direction: none; } }
-    .contact-pg .contact-forms .form-content .min-txt {
+    .contact-pg .contact-forms .form-content h3 {
       font-weight: bold;
       font-size: 15px; }
       @media screen and (min-width: 560px) {
-        .contact-pg .contact-forms .form-content .min-txt {
+        .contact-pg .contact-forms .form-content h3 {
           font-size: calc(16px + .25vw); } }
       @media screen and (min-width: 768px) {
-        .contact-pg .contact-forms .form-content .min-txt {
+        .contact-pg .contact-forms .form-content h3 {
           font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 1248px) {
-        .contact-pg .contact-forms .form-content .min-txt {
+        .contact-pg .contact-forms .form-content h3 {
           font-size: calc(19px + .25vw); } }
     .contact-pg .contact-forms .form-content label {
       font-size: 15px; }
@@ -577,6 +577,63 @@
           font-size: calc(19px + .25vw); } }
     .contact-pg .contact-forms .form-content fieldset {
       border: none; }
+    .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+      height: auto;
+      padding: 5px;
+      width: 80%;
+      margin: -4vh 10% 5vh;
+      border: 0px solid #3d3a3a;
+      border-radius: 5px;
+      display: flex;
+      justify-content: flex-start;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+      @media only screen and (min-width: 1024px) {
+        .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+          width: 60%;
+          margin-left: 20%; } }
+      .contact-pg .contact-forms .form-content .gen-status:empty, .contact-pg .contact-forms .form-content .tutor-status:empty, .contact-pg .contact-forms .form-content .hire-status:empty {
+        height: 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
+        border: none; }
+      .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
+        font-size: 35px;
+        height: 45px;
+        width: 45px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 10px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        color: #fafafa;
+        border-radius: 50%; }
+      .contact-pg .contact-forms .form-content .gen-status .msg, .contact-pg .contact-forms .form-content .tutor-status .msg, .contact-pg .contact-forms .form-content .hire-status .msg {
+        justify-self: center;
+        text-align: left; }
+        .contact-pg .contact-forms .form-content .gen-status .msg p, .contact-pg .contact-forms .form-content .tutor-status .msg p, .contact-pg .contact-forms .form-content .hire-status .msg p {
+          margin: 0; }
+        .contact-pg .contact-forms .form-content .gen-status .msg p:first-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child, .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-size: 15px; }
+          @media screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content .gen-status .msg p:first-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child, .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
+              font-size: calc(16px + .25vw); } }
+          @media screen and (min-width: 768px) {
+            .contact-pg .contact-forms .form-content .gen-status .msg p:first-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child, .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
+              font-size: calc(17px + .25vw); } }
+          @media screen and (min-width: 1248px) {
+            .contact-pg .contact-forms .form-content .gen-status .msg p:first-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child, .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
+              font-size: calc(19px + .25vw); } }
+      .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .hire-status .success {
+        background: #00eb5e; }
+      .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .err {
+        background: #ff5a91; }
+    .contact-pg .contact-forms .form-content .success-status {
+      border-left: 7px solid #00eb5e; }
+    .contact-pg .contact-forms .form-content .err-status {
+      border-left: 7px solid #ff5a91; }
   .contact-pg .contact-forms .form-label {
     width: 100%;
     order: initial;

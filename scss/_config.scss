@@ -19,7 +19,9 @@ $colors: (
   dark: #000000, 
   dark-2: rgb(61, 58, 58),
   modal-white: rgb(247, 247, 247),
-  null: rgba(0, 0, 0, 0) 
+  null: rgba(0, 0, 0, 0),
+  success: rgb(0, 235, 94),
+  err: rgb(255, 90, 145) 
 );
 $animations: (
     expand-down: expand-down 0.4s linear both,
