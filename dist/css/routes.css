@@ -640,8 +640,9 @@
         padding: 3px auto;
         margin: auto 8px;
         border: 1px solid rgba(0, 0, 0, 0);
-        color: #fafafa;
         border-radius: 50%; }
+        .contact-pg .contact-forms .form-content .gen-status .success path, .contact-pg .contact-forms .form-content .gen-status .err path, .contact-pg .contact-forms .form-content .tutor-status .success path, .contact-pg .contact-forms .form-content .tutor-status .err path, .contact-pg .contact-forms .form-content .hire-status .success path, .contact-pg .contact-forms .form-content .hire-status .err path {
+          fill: #fafafa; }
         @media only screen and (min-width: 560px) {
           .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
             height: 45px;

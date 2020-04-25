@@ -576,8 +576,10 @@
           padding: 3px auto;
           margin: auto 8px;
           border: 1px solid map-get($colors, null);
-          color: map-get($colors, app-white);
           border-radius: 50%;
+          path {
+          fill: map-get($colors, app-white);
+          }
           @include mq('phablet') {
             height: 45px;
             width: 45px;
