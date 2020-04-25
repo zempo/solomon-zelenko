@@ -628,8 +628,14 @@
         font-size: 30px;
         height: 40px;
         width: 40px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 3px auto;
         margin: auto 8px;
@@ -668,6 +674,8 @@
       border-left: 7px solid #00eb5e; }
     .contact-pg .contact-forms .form-content .err-status {
       border-left: 7px solid #ff5a91; }
+  .contact-pg .contact-forms .err_target {
+    outline: 2px solid #ff5a91; }
   .contact-pg .contact-forms .form-label {
     width: 100%;
     order: initial;

@@ -26,13 +26,71 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
 
 // Contact pg
 const handleMailForms = (hire, tutor, gen) => {
+  // helper functions
+  const addToBody = (inputs, selects, textareas, formBody) => {
+    inputs.forEach(el => {
+      if(el.name !== '') {
+        formBody[el.name] = el.value
+      }
+    })
+    selects.forEach(el => {
+      if(el.name !== '') {
+        formBody[el.name] = el.value
+      }
+    })
+    textareas.forEach(el => {
+      if(el.name !== '') {
+        formBody[el.name] = el.value
+      }
+    })
+    return formBody
+  }
+  const formNotification = (formStatus, msgTop, msgBottom, resOk=true) => {
+    formStatus.addEventListener('click', e => {
+      formStatus.innerHTML = ''
+      formStatus.classList.remove('err-status')
+      formStatus.classList.remove('success-status')
+    })
+    setTimeout(() => {
+      formStatus.innerHTML = ''
+      formStatus.classList.remove('err-status')
+      formStatus.classList.remove('success-status')
+    }, 5000) 
+    if(resOk) {
+      formStatus.classList.add('success-status')    
+      formStatus.innerHTML = `
+      <span class="success">&#10004;</span>
+      <div class="msg">
+      <p>${msgTop}</p>
+      <p>${msgBottom}</p>
+      </div>
+      `
+    } else {
+      formStatus.classList.add('err-status')
+      formStatus.innerHTML = `
+      <span class="err">&#10005;</span>
+      <div class="msg">
+      <p>${msgTop}</p>
+      <p>${msgBottom}</p>
+      </div>
+      `
+    }
+  }
+  
+  // submit handlers
   hire.addEventListener('submit', e => {
     e.preventDefault()
     axios.post(`${API}/hire`)
   })
   tutor.addEventListener('submit', e => {
     e.preventDefault()
-    axios.post(`${API}/tutor`)
+    const status = document.querySelector('.tutor-status')
+    const newTutor = {}
+    const inputs = document.querySelectorAll(`.${e.target.classList} input`)
+    const selects = document.querySelectorAll(`.${e.target.classList} select`)
+    const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
+
+    // axios.post(`${API}/tutor`)
   })
   gen.addEventListener('submit', e => {
     e.preventDefault()
@@ -41,65 +99,27 @@ const handleMailForms = (hire, tutor, gen) => {
     const inputs = document.querySelectorAll(`.${e.target.classList} input`)
     const selects = document.querySelectorAll(`.${e.target.classList} select`)
     const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
-
-    status.addEventListener('click', e => {
-      status.innerHTML = ''
-    })
-
-    inputs.forEach(el => {
-      if(el.name !== '') {
-        newGen[el.name] = el.value
-      }
-    })
-    selects.forEach(el => {
-      if(el.name !== '') {
-        newGen[el.name] = el.value
-      }
-    })
-    textareas.forEach(el => {
-      if(el.name !== '') {
-        newGen[el.name] = el.value
-      }
-    })
+    
+    addToBody(inputs, selects, textareas, newGen)
     axios
     .post(`${API}/gen`, newGen)
     .then(res => { 
-      status.classList.add('success-status')
-      status.innerHTML = `
-      <span class="success">&#10004;</span>
-      <div class="msg">
-      <p>Message Sent</p>
-      <p>Expect a reply soon!</p>
-      </div>
-      `
+      formNotification(status, 'Message Sent', 'Expect a reply soon!')
     })
     .catch(err => {
       if (err.response) { 
         const feedback = err.response.data.error.details[0].message
-        status.classList.add('err-status')
-        status.innerHTML = `
-        <span class="err">&#10005;</span>
-        <div class="msg">
-        <p>Oops!</p>
-        <p>${feedback.replace(`_gen`, '')}.</p>
-        </div>
-        `
+        const targetInput = feedback.substr(1, feedback.indexOf('_gen') + 3)
+        const underlineInput = document.getElementById(`${targetInput}`)
+        underlineInput.classList.add('err_target')
+        underlineInput.addEventListener('focus', e => {
+          underlineInput.classList.remove('err_target')
+        })
+        formNotification(status, 'Oops!', feedback.replace(`_gen`, '') + '.', false)
       } else {
-        status.classList.add('err-status')
-        status.innerHTML = `
-        <span class="err">&#10005;</span>
-        <div class="msg">
-        <p>Sorry &#9785;</p>
-        <p>Looks like my server is down.</p>
-        </div>
-        `
+        formNotification(status, 'Sorry &#9785;', 'Looks like my server is down.', false)
       }
     })
-    setTimeout(() => {
-      status.innerHTML = ''
-      status.classList.remove('err-status')
-      status.classList.remove('success-status')
-    }, 5000)
   })
 } 
 
