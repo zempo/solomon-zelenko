@@ -647,14 +647,18 @@
           .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
             height: 45px;
             width: 45px;
-            font-size: 35px;
-            margin: auto 12px; } }
+            margin: auto 12px; }
+            .contact-pg .contact-forms .form-content .gen-status .success svg, .contact-pg .contact-forms .form-content .gen-status .err svg, .contact-pg .contact-forms .form-content .tutor-status .success svg, .contact-pg .contact-forms .form-content .tutor-status .err svg, .contact-pg .contact-forms .form-content .hire-status .success svg, .contact-pg .contact-forms .form-content .hire-status .err svg {
+              width: 28px;
+              height: 28px; } }
         @media only screen and (min-width: 1024px) {
           .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
             height: 53px;
             width: 53px;
-            font-size: 40px;
-            margin: auto 15px; } }
+            margin: auto 15px; }
+            .contact-pg .contact-forms .form-content .gen-status .success svg, .contact-pg .contact-forms .form-content .gen-status .err svg, .contact-pg .contact-forms .form-content .tutor-status .success svg, .contact-pg .contact-forms .form-content .tutor-status .err svg, .contact-pg .contact-forms .form-content .hire-status .success svg, .contact-pg .contact-forms .form-content .hire-status .err svg {
+              width: 31px;
+              height: 31px; } }
       .contact-pg .contact-forms .form-content .gen-status .msg, .contact-pg .contact-forms .form-content .tutor-status .msg, .contact-pg .contact-forms .form-content .hire-status .msg {
         justify-self: center;
         text-align: left;
