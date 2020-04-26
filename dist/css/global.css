@@ -61,6 +61,10 @@ main {
       body h1,
       main h1 {
         font-size: calc(32px + 1vw); } }
+    @media screen and (min-width: 2000px) {
+      body h1,
+      main h1 {
+        font-size: calc(44px + .5vw); } }
   body h2,
   main h2 {
     font-size: 18px; }
@@ -76,6 +80,10 @@ main {
       body h2,
       main h2 {
         font-size: calc(24px + .5vw); } }
+    @media screen and (min-width: 2000px) {
+      body h2,
+      main h2 {
+        font-size: 28px; } }
   body p,
   main p {
     font-size: 15px; }
@@ -91,6 +99,10 @@ main {
       body p,
       main p {
         font-size: calc(18px + .25vw); } }
+    @media screen and (min-width: 2000px) {
+      body p,
+      main p {
+        font-size: 21px; } }
   body .btn-fwd,
   main .btn-fwd {
     right: calc(10px + 3vw); }
@@ -194,6 +206,9 @@ footer {
     @media screen and (min-width: 1248px) {
       footer p {
         font-size: calc(19px + .25vw); } }
+    @media screen and (min-width: 2000px) {
+      footer p {
+        font-size: 24px; } }
     footer p:last-child {
       padding-bottom: calc(80px + 7vh); }
   footer .icons-list {

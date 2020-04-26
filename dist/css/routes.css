@@ -33,7 +33,7 @@
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
   padding: 0px 5vw 5vh;
-  margin: 0; }
+  margin: 0 auto; }
   @media only screen and (min-width: 900px) {
     .route {
       padding: 0 15vw; } }
@@ -78,6 +78,9 @@
   @media screen and (min-width: 1248px) {
     .home-pg .big-h {
       font-size: calc(34px + 1vw); } }
+  @media screen and (min-width: 2000px) {
+    .home-pg .big-h {
+      font-size: calc(40px + 1vw); } }
 
 .home-pg .min-txt {
   font-family: "Indie Flower", cursive;
@@ -92,6 +95,9 @@
   @media screen and (min-width: 1248px) {
     .home-pg .min-txt {
       font-size: calc(32px + 1vw); } }
+  @media screen and (min-width: 2000px) {
+    .home-pg .min-txt {
+      font-size: calc(44px + .5vw); } }
   @media only screen and (min-width: 900px) {
     .home-pg .min-txt {
       display: none; } }
@@ -118,6 +124,10 @@
     .home-pg .btn-resume,
     .home-pg .btn-contact {
       font-size: calc(24px + .5vw); } }
+  @media screen and (min-width: 2000px) {
+    .home-pg .btn-resume,
+    .home-pg .btn-contact {
+      font-size: 28px; } }
   .home-pg .btn-resume::before,
   .home-pg .btn-contact::before {
     content: attr(data-text);
@@ -172,6 +182,9 @@
   @media screen and (min-width: 1248px) {
     .about-pg .min-txt {
       font-size: calc(24px + .5vw); } }
+  @media screen and (min-width: 2000px) {
+    .about-pg .min-txt {
+      font-size: 28px; } }
 
 .about-pg .about-pic-1, .about-pg .about-pic-2, .about-pg .about-pic-3 {
   border: 1px solid rgba(0, 0, 0, 0);
@@ -361,6 +374,9 @@
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .accordion-label {
         font-size: calc(24px + .5vw); } }
+    @media screen and (min-width: 2000px) {
+      .about-pg .accordion .accordion-label {
+        font-size: 28px; } }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .accordion-label {
         flex-grow: 1;
@@ -379,7 +395,7 @@
     flex-grow: 1;
     width: 100%;
     height: 100%;
-    padding: 5% 5% 6%;
+    padding: 0 5% 7vh;
     display: none; }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .a-content {
@@ -442,6 +458,9 @@
       @media screen and (min-width: 1248px) {
         .about-pg .accordion .story figure figcaption {
           font-size: calc(18px + .25vw); } }
+      @media screen and (min-width: 2000px) {
+        .about-pg .accordion .story figure figcaption {
+          font-size: 21px; } }
   .about-pg .accordion .story p {
     width: 100%;
     margin: 5vh auto;
@@ -455,6 +474,9 @@
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .story p {
         font-size: calc(18px + .25vw); } }
+    @media screen and (min-width: 2000px) {
+      .about-pg .accordion .story p {
+        font-size: 21px; } }
     @media only screen and (min-width: 480px) {
       .about-pg .accordion .story p {
         width: 80%;
@@ -475,6 +497,9 @@
       @media screen and (min-width: 1248px) {
         .about-pg .accordion .vision ol {
           font-size: calc(18px + .25vw); } }
+      @media screen and (min-width: 2000px) {
+        .about-pg .accordion .vision ol {
+          font-size: 21px; } }
     .about-pg .accordion .vision h2 {
       text-align: center; }
     .about-pg .accordion .vision img {
@@ -493,6 +518,9 @@
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .skills ul {
         font-size: calc(18px + .25vw); } }
+    @media screen and (min-width: 2000px) {
+      .about-pg .accordion .skills ul {
+        font-size: 21px; } }
 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -547,7 +575,7 @@
     width: 100%;
     height: 100%;
     display: none;
-    padding: 7vh 5%; }
+    padding: 0 5% 7vh; }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-content {
         order: 1;
@@ -564,6 +592,9 @@
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content h3 {
           font-size: calc(19px + .25vw); } }
+      @media screen and (min-width: 2000px) {
+        .contact-pg .contact-forms .form-content h3 {
+          font-size: 24px; } }
     .contact-pg .contact-forms .form-content label {
       font-size: 15px; }
       @media screen and (min-width: 560px) {
@@ -575,13 +606,110 @@
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content label {
           font-size: calc(19px + .25vw); } }
-    .contact-pg .contact-forms .form-content fieldset {
-      border: none; }
+      @media screen and (min-width: 2000px) {
+        .contact-pg .contact-forms .form-content label {
+          font-size: 24px; } }
+    .contact-pg .contact-forms .form-content form {
+      margin: 3vh auto; }
+      .contact-pg .contact-forms .form-content form fieldset {
+        border: none; }
+        .contact-pg .contact-forms .form-content form fieldset legend {
+          font-weight: normal;
+          margin: 0 auto .83rem;
+          font-size: 18px; }
+          @media screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset legend {
+              font-size: calc(22px + .5vw); } }
+          @media screen and (min-width: 768px) {
+            .contact-pg .contact-forms .form-content form fieldset legend {
+              font-size: calc(24px + .5vw); } }
+          @media screen and (min-width: 1248px) {
+            .contact-pg .contact-forms .form-content form fieldset legend {
+              font-size: calc(24px + .5vw); } }
+          @media screen and (min-width: 2000px) {
+            .contact-pg .contact-forms .form-content form fieldset legend {
+              font-size: 28px; } }
+        .contact-pg .contact-forms .form-content form fieldset .subtitle {
+          margin-top: 0;
+          color: #716c6c; }
+          .contact-pg .contact-forms .form-content form fieldset .subtitle a {
+            font-weight: bold;
+            color: #716c6c; }
+    .contact-pg .contact-forms .form-content #tutor-step-2, .contact-pg .contact-forms .form-content #hire-step-2, .contact-pg .contact-forms .form-content #tutor-step-3, .contact-pg .contact-forms .form-content #hire-step-3 {
+      display: none; }
+    .contact-pg .contact-forms .form-content .form-progress {
+      display: flex;
+      margin: .83em auto 5vh;
+      justify-content: space-around;
+      width: 100%;
+      position: relative; }
+      .contact-pg .contact-forms .form-content .form-progress::before {
+        position: absolute;
+        content: "";
+        width: calc(100% / 3);
+        left: calc(100% / 6);
+        height: 6px;
+        top: 14px;
+        z-index: .8;
+        background: #bdb9b9; }
+        @media only screen and (min-width: 768px) {
+          .contact-pg .contact-forms .form-content .form-progress::before {
+            top: 20px; } }
+      .contact-pg .contact-forms .form-content .form-progress::after {
+        position: absolute;
+        content: "";
+        width: calc(100% / 3);
+        right: calc(100% / 6);
+        height: 6px;
+        top: 14px;
+        z-index: .8;
+        background: #bdb9b9; }
+        @media only screen and (min-width: 768px) {
+          .contact-pg .contact-forms .form-content .form-progress::after {
+            top: 20px; } }
+      .contact-pg .contact-forms .form-content .form-progress .step {
+        width: 34px;
+        height: 34px;
+        z-index: 1;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-weight: 600;
+        background: #bdb9b9;
+        border: 2px solid #bdb9b9;
+        color: #fafafa;
+        border-radius: 50%;
+        font-size: 15px; }
+        @media screen and (min-width: 560px) {
+          .contact-pg .contact-forms .form-content .form-progress .step {
+            font-size: calc(16px + .25vw); } }
+        @media screen and (min-width: 768px) {
+          .contact-pg .contact-forms .form-content .form-progress .step {
+            font-size: calc(17px + .25vw); } }
+        @media screen and (min-width: 1248px) {
+          .contact-pg .contact-forms .form-content .form-progress .step {
+            font-size: calc(19px + .25vw); } }
+        @media screen and (min-width: 2000px) {
+          .contact-pg .contact-forms .form-content .form-progress .step {
+            font-size: 24px; } }
+        @media only screen and (min-width: 768px) {
+          .contact-pg .contact-forms .form-content .form-progress .step {
+            width: 44px;
+            height: 44px; } }
+      .contact-pg .contact-forms .form-content .form-progress .step-active {
+        border: 2px solid #3d3a3a;
+        background: #3d3a3a; }
     .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
       height: auto;
       padding: 5px;
-      width: 92%;
-      margin: -4vh auto 5vh;
+      width: 98%;
+      margin: 0 auto 5vh;
       border: 0px solid #3d3a3a;
       border-radius: 5px;
       display: flex;
@@ -590,6 +718,7 @@
       position: relative; }
       .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
         content: "x";
+        cursor: pointer;
         position: absolute;
         font-family: "Source Sans Pro", "Arial", sans-serif;
         font-weight: bold;
@@ -606,16 +735,17 @@
         @media screen and (min-width: 1248px) {
           .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
             font-size: calc(18px + .25vw); } }
+        @media screen and (min-width: 2000px) {
+          .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
+            font-size: 21px; } }
       @media only screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
           width: 80%;
-          max-width: 400px;
-          margin: -5vh auto 6vh; } }
+          max-width: 400px; } }
       @media only screen and (min-width: 1024px) {
         .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
           width: 60%;
-          max-width: 600px;
-          margin: -3vh auto 5vh; } }
+          max-width: 600px; } }
       .contact-pg .contact-forms .form-content .gen-status:empty, .contact-pg .contact-forms .form-content .tutor-status:empty, .contact-pg .contact-forms .form-content .hire-status:empty {
         height: 0;
         width: 0;
@@ -675,6 +805,11 @@
         background: #00eb5e; }
       .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .err {
         background: #ff5a91; }
+    .contact-pg .contact-forms .form-content .success-status, .contact-pg .contact-forms .form-content .err-status {
+      -o-animation: fadeIn 1s;
+      -moz-animation: fadeIn 1s;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s; }
     .contact-pg .contact-forms .form-content .success-status {
       border-left: 7px solid #00eb5e; }
     .contact-pg .contact-forms .form-content .err-status {
@@ -700,10 +835,13 @@
     @media screen and (min-width: 1248px) {
       .contact-pg .contact-forms .form-label {
         font-size: calc(24px + .5vw); } }
+    @media screen and (min-width: 2000px) {
+      .contact-pg .contact-forms .form-label {
+        font-size: 28px; } }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-label {
         flex-grow: 1;
-        padding: 1% 5%;
+        padding: 1% 4%;
         width: 33%;
         justify-content: center;
         border: 2px solid #a49f9f;
@@ -740,5 +878,3 @@
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms input[type="radio"] + label .form-open {
         display: none; } }
-  .contact-pg .contact-forms h2 {
-    font-weight: normal; }

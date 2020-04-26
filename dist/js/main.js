@@ -46,16 +46,17 @@ const handleMailForms = (hire, tutor, gen) => {
     return formBody
   }
   const formNotification = (formStatus, msgTop, msgBottom, resOk=true) => {
-    formStatus.addEventListener('click', e => {
-      formStatus.innerHTML = ''
-      formStatus.classList.remove('err-status')
-      formStatus.classList.remove('success-status')
-    })
-    setTimeout(() => {
+    const clearNotification = setTimeout(() => {
       formStatus.innerHTML = ''
       formStatus.classList.remove('err-status')
       formStatus.classList.remove('success-status')
     }, 5000) 
+    formStatus.addEventListener('click', e => {
+      formStatus.innerHTML = ''
+      formStatus.classList.remove('err-status')
+      formStatus.classList.remove('success-status')
+      clearTimeout(clearNotification)
+    })
     if(resOk) {
       formStatus.classList.add('success-status')    
       formStatus.innerHTML = `
@@ -96,7 +97,33 @@ const handleMailForms = (hire, tutor, gen) => {
   // submit handlers
   hire.addEventListener('submit', e => {
     e.preventDefault()
-    axios.post(`${API}/hire`)
+    const status = document.querySelector('.hire-status')
+    const newHire = {}
+    const inputs = document.querySelectorAll(`.${e.target.classList} input`)
+    const selects = document.querySelectorAll(`.${e.target.classList} select`)
+    const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
+
+    addToBody(inputs, selects, textareas, newHire)
+
+    axios
+    .post(`${API}/hire`, newHire)
+    .then(res => {
+      formNotification(status, 'Project Proposal Sent', 'Expect a reply within 24 hours!')
+    })
+    .catch(err => {
+      if (err.response) { 
+        const feedback = err.response.data.error.details[0].message
+        const targetInput = feedback.substr(1, feedback.indexOf('_hire') + 4)
+        const underlineInput = document.getElementById(`${targetInput}`)
+        underlineInput.classList.add('err_target')
+        underlineInput.addEventListener('focus', e => { 
+          underlineInput.classList.remove('err_target')
+        })
+        formNotification(status, 'Oops!', feedback.replace(`_hire`, '') + '.', false)
+      } else {
+        formNotification(status, 'Sorry &#9785;', 'Looks like my server is down.', false)
+      }      
+    })
   })
   tutor.addEventListener('submit', e => {
     e.preventDefault()
@@ -106,7 +133,26 @@ const handleMailForms = (hire, tutor, gen) => {
     const selects = document.querySelectorAll(`.${e.target.classList} select`)
     const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
 
-    // axios.post(`${API}/tutor`)
+    addToBody(inputs, selects, textareas, newTutor)
+    axios
+    .post(`${API}/tutor`, newTutor)
+    .then(res => { 
+      formNotification(status, 'Tutor Request Sent', `Expect a reply within 24 hours!`)
+    }) 
+    .catch(err => {
+      if (err.response) { 
+        const feedback = err.response.data.error.details[0].message
+        const targetInput = feedback.substr(1, feedback.indexOf('_tutor') + 5)
+        const underlineInput = document.getElementById(`${targetInput}`)
+        underlineInput.classList.add('err_target')
+        underlineInput.addEventListener('focus', e => { 
+          underlineInput.classList.remove('err_target')
+        })
+        formNotification(status, 'Oops!', feedback.replace(`_tutor`, '') + '.', false)
+      } else {
+        formNotification(status, 'Sorry &#9785;', 'Looks like my server is down.', false)
+      }
+    })    
   })
   gen.addEventListener('submit', e => {
     e.preventDefault()
@@ -117,6 +163,7 @@ const handleMailForms = (hire, tutor, gen) => {
     const textareas = document.querySelectorAll(`.${e.target.classList} textarea`)
     
     addToBody(inputs, selects, textareas, newGen)
+
     axios
     .post(`${API}/gen`, newGen)
     .then(res => { 

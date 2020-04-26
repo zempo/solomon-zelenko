@@ -42,7 +42,8 @@ $breakpoints: (
     "tablet-med":   900px,
     "tablet-wide":  1024px,
     "desktop":      1248px,
-    "desktop-wide": 1440px
+    "desktop-wide": 1440px,
+    "ultra-wide": 2000px
 );
 
 $bigh-font-sizes: (
@@ -50,36 +51,41 @@ $bigh-font-sizes: (
   map-get($breakpoints, "phone"): calc(26px + 1.5vw),
   map-get($breakpoints, "phablet") : calc(30px + 2vw),
   map-get($breakpoints, "tablet") : calc(31px + 2vw),
-  map-get($breakpoints, "desktop"): calc(34px + 1vw)
+  map-get($breakpoints, "desktop"): calc(34px + 1vw),
+  map-get($breakpoints, "ultra-wide"): calc(40px + 1vw)
 ); 
 
 $h1-font-sizes: (
   null: 24px,
   map-get($breakpoints, "phablet"): 28px,
   map-get($breakpoints, "tablet") : calc(28px + 1vw),
-  map-get($breakpoints, "desktop"): calc(32px + 1vw)
+  map-get($breakpoints, "desktop"): calc(32px + 1vw),
+  map-get($breakpoints, "ultra-wide"): calc(44px + .5vw)
 ); 
 
 $h2-font-sizes: (
   null: 18px,
   map-get($breakpoints, "phablet") : calc(22px + .5vw),
   map-get($breakpoints, "tablet") : calc(24px + .5vw), 
-  map-get($breakpoints, "desktop"): calc(24px + .5vw)
+  map-get($breakpoints, "desktop"): calc(24px + .5vw),
+  map-get($breakpoints, "ultra-wide"): 28px
 ); 
 
 $h3-font-sizes: (
   null: 15px,
   map-get($breakpoints, "phablet") : calc(16px + .25vw),
   map-get($breakpoints, "tablet") : calc(17px + .25vw),
-  map-get($breakpoints, "desktop"): calc(19px + .25vw)
+  map-get($breakpoints, "desktop"): calc(19px + .25vw),
+  map-get($breakpoints, "ultra-wide"): 24px
 ); 
 
 $p-font-sizes: (
     null: 15px,
     map-get($breakpoints, "phablet") : calc(15px + .25vw),
     map-get($breakpoints, "tablet") : calc(16px + .25vw),
-    map-get($breakpoints, "desktop"): calc(18px + .25vw)
-);
+    map-get($breakpoints, "desktop"): calc(18px + .25vw),
+    map-get($breakpoints, "ultra-wide"): 21px
+); 
 
 // Functions
 @function responsive-theme($color) {
