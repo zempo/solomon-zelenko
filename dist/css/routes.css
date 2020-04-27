@@ -11,7 +11,7 @@
   font-weight: normal; }
 
 .home-pg .btn-resume,
-.home-pg .btn-contact {
+.home-pg .btn-contact, .contact-pg .contact-forms .form-content button {
   cursor: pointer;
   font-family: "SpartanMB";
   -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -19,7 +19,7 @@
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
   .home-pg .btn-resume:hover,
-  .home-pg .btn-contact:hover {
+  .home-pg .btn-contact:hover, .contact-pg .contact-forms .form-content button:hover {
     -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
@@ -353,18 +353,21 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
-  border: 1px solid #000000;
   margin-top: 15vh; }
   .about-pg .accordion .accordion-label {
     width: 100%;
     order: initial;
     margin-right: 0;
     padding: 5% 6% 5% 6%;
-    border: 1px solid #a49f9f;
+    border: 2px solid #a49f9f;
+    border-top: 1px solid #a49f9f;
     display: flex;
     cursor: pointer;
     justify-content: space-between;
     font-size: 18px; }
+    .about-pg .accordion .accordion-label:nth-child(2) {
+      border-top: 2px solid #a49f9f;
+      border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .accordion-label {
         font-size: calc(22px + .5vw); } }
@@ -381,6 +384,7 @@
       .about-pg .accordion .accordion-label {
         flex-grow: 1;
         padding: 1% 5%;
+        border-radius: 8px 8px 0 0;
         width: 33%;
         justify-content: center;
         border: 2px solid #a49f9f;
@@ -562,6 +566,9 @@
     .works-list .work-preview-1 img, .bytes-list .work-preview-1 img {
       width: 100%; }
 
+.contact-pg #form-content-tutor .form-prev, .contact-pg #form-content-tutor .form-submit, .contact-pg #form-content-hire .form-prev, .contact-pg #form-content-hire .form-submit {
+  display: none; }
+
 .contact-pg .contact-forms {
   display: flex;
   flex-wrap: wrap;
@@ -579,7 +586,8 @@
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-content {
         order: 1;
-        flex-direction: none; } }
+        flex-direction: none;
+        padding: 0 10% 7vh; } }
     .contact-pg .contact-forms .form-content h3 {
       font-weight: bold;
       font-size: 15px; }
@@ -595,27 +603,40 @@
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content h3 {
           font-size: 24px; } }
-    .contact-pg .contact-forms .form-content label {
+    .contact-pg .contact-forms .form-content button {
+      background: #fafafa;
+      border: 2px solid #3d3a3a;
+      padding: 5px 20px;
+      margin-top: 5vh;
+      border-radius: 5px;
+      font-weight: bold;
       font-size: 15px; }
       @media screen and (min-width: 560px) {
-        .contact-pg .contact-forms .form-content label {
+        .contact-pg .contact-forms .form-content button {
           font-size: calc(16px + .25vw); } }
       @media screen and (min-width: 768px) {
-        .contact-pg .contact-forms .form-content label {
+        .contact-pg .contact-forms .form-content button {
           font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 1248px) {
-        .contact-pg .contact-forms .form-content label {
+        .contact-pg .contact-forms .form-content button {
           font-size: calc(19px + .25vw); } }
       @media screen and (min-width: 2000px) {
-        .contact-pg .contact-forms .form-content label {
+        .contact-pg .contact-forms .form-content button {
           font-size: 24px; } }
+    .contact-pg .contact-forms .form-content .form-submit {
+      padding: 10px 20px;
+      background: #3d3a3a;
+      color: #fafafa; }
     .contact-pg .contact-forms .form-content form {
-      margin: 3vh auto; }
+      margin: 3vh auto;
+      width: 100%; }
       .contact-pg .contact-forms .form-content form fieldset {
-        border: none; }
+        display: block;
+        border: none;
+        width: 100%; }
         .contact-pg .contact-forms .form-content form fieldset legend {
           font-weight: normal;
-          margin: 0 auto .83rem;
+          margin: 0 auto 4vh;
           font-size: 18px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
@@ -629,6 +650,87 @@
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
               font-size: 28px; } }
+        .contact-pg .contact-forms .form-content form fieldset label {
+          display: inline-block;
+          width: 100%;
+          margin: 10px auto;
+          text-align: left;
+          position: relative;
+          font-size: 15px; }
+          .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+            content: "Optional";
+            color: #008535;
+            position: absolute;
+            right: 0;
+            font-size: 15px; }
+            @media screen and (min-width: 560px) {
+              .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+                font-size: calc(15px + .25vw); } }
+            @media screen and (min-width: 768px) {
+              .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+                font-size: calc(16px + .25vw); } }
+            @media screen and (min-width: 1248px) {
+              .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+                font-size: calc(18px + .25vw); } }
+            @media screen and (min-width: 2000px) {
+              .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+                font-size: 21px; } }
+          @media screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              font-size: calc(16px + .25vw); } }
+          @media screen and (min-width: 768px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              font-size: calc(17px + .25vw); } }
+          @media screen and (min-width: 1248px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              font-size: calc(19px + .25vw); } }
+          @media screen and (min-width: 2000px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              font-size: 24px; } }
+          @media only screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              width: 90%;
+              padding: 12px; } }
+          @media only screen and (min-width: 1024px) {
+            .contact-pg .contact-forms .form-content form fieldset label {
+              width: 75%; } }
+        .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+          width: 100%;
+          border: 1px solid #3d3a3a;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 3vh;
+          font-size: 15px; }
+          @media screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(15px + .25vw); } }
+          @media screen and (min-width: 768px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(16px + .25vw); } }
+          @media screen and (min-width: 1248px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(18px + .25vw); } }
+          @media screen and (min-width: 2000px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: 21px; } }
+          .contact-pg .contact-forms .form-content form fieldset input:last-child, .contact-pg .contact-forms .form-content form fieldset select:last-child, .contact-pg .contact-forms .form-content form fieldset textarea:last-child {
+            margin-bottom: 0; }
+          @media only screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              width: 90%;
+              padding: 12px; } }
+          @media only screen and (min-width: 1024px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+              width: 75%;
+              padding: 15px; } }
+        .contact-pg .contact-forms .form-content form fieldset select {
+          background: #3d3a3a;
+          color: #fafafa;
+          cursor: pointer; }
+        .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+          background: #fafafa; }
+        .contact-pg .contact-forms .form-content form fieldset textarea {
+          min-height: 20vh; }
         .contact-pg .contact-forms .form-content form fieldset .subtitle {
           margin-top: 0;
           color: #716c6c; }
@@ -821,11 +923,15 @@
     order: initial;
     margin-right: 0;
     padding: 5% 6% 5% 6%;
-    border: 1px solid #a49f9f;
+    border: 2px solid #a49f9f;
+    border-top: 1px solid #a49f9f;
     display: flex;
     cursor: pointer;
     justify-content: space-between;
     font-size: 18px; }
+    .contact-pg .contact-forms .form-label:nth-child(2) {
+      border-top: 2px solid #a49f9f;
+      border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .contact-pg .contact-forms .form-label {
         font-size: calc(22px + .5vw); } }
@@ -843,6 +949,7 @@
         flex-grow: 1;
         padding: 1% 4%;
         width: 33%;
+        border-radius: 8px 8px 0 0;
         justify-content: center;
         border: 2px solid #a49f9f;
         border-bottom: 2px solid #3d3a3a; } }
