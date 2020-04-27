@@ -41,6 +41,7 @@ $breakpoints: (
     "tablet":       768px,
     "tablet-med":   900px,
     "tablet-wide":  1024px,
+    "desktop-small": 1150px,
     "desktop":      1248px,
     "desktop-wide": 1440px,
     "ultra-wide": 2000px
@@ -85,6 +86,14 @@ $p-font-sizes: (
     map-get($breakpoints, "tablet") : calc(16px + .25vw),
     map-get($breakpoints, "desktop"): calc(18px + .25vw),
     map-get($breakpoints, "ultra-wide"): 21px
+); 
+
+$sub-font-sizes: (
+    null: 12px,
+    map-get($breakpoints, "phablet") : calc(12px + .25vw),
+    map-get($breakpoints, "tablet") : calc(13px + .25vw),
+    map-get($breakpoints, "desktop"): calc(14px + .25vw),
+    map-get($breakpoints, "ultra-wide"): 15px
 ); 
 
 // Functions

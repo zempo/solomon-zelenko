@@ -24,6 +24,12 @@
     -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+  .home-pg .btn-resume:active,
+  .home-pg .btn-contact:active, .contact-pg .contact-forms .form-content button:active {
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
 
 .route {
   overflow-x: hidden;
@@ -606,10 +612,10 @@
     .contact-pg .contact-forms .form-content button {
       background: #fafafa;
       border: 2px solid #3d3a3a;
-      padding: 5px 20px;
-      margin-top: 5vh;
+      padding: 10px 35px;
+      margin-top: 6vh;
       border-radius: 5px;
-      font-weight: bold;
+      opacity: .9;
       font-size: 15px; }
       @media screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content button {
@@ -623,20 +629,25 @@
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content button {
           font-size: 24px; } }
-    .contact-pg .contact-forms .form-content .form-submit {
-      padding: 10px 20px;
+      .contact-pg .contact-forms .form-content button:hover, .contact-pg .contact-forms .form-content button:active {
+        opacity: 1; }
+      .contact-pg .contact-forms .form-content button:active {
+        transform: scale(0.96); }
+    .contact-pg .contact-forms .form-content .form-submit, .contact-pg .contact-forms .form-content .form-next {
       background: #3d3a3a;
       color: #fafafa; }
     .contact-pg .contact-forms .form-content form {
-      margin: 3vh auto;
+      margin: 2.5vh auto;
       width: 100%; }
       .contact-pg .contact-forms .form-content form fieldset {
-        display: block;
+        display: none;
         border: none;
-        width: 100%; }
+        width: 100%;
+        position: relative; }
         .contact-pg .contact-forms .form-content form fieldset legend {
           font-weight: normal;
-          margin: 0 auto 4vh;
+          margin: 0 auto 3vh;
+          grid-area: legend;
           font-size: 18px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
@@ -657,6 +668,29 @@
           text-align: left;
           position: relative;
           font-size: 15px; }
+          .contact-pg .contact-forms .form-content form fieldset label button {
+            position: absolute;
+            right: 0;
+            top: -2px;
+            margin: 5px;
+            padding: 5px;
+            font-weight: normal;
+            font-size: 12px; }
+            .contact-pg .contact-forms .form-content form fieldset label button:hover, .contact-pg .contact-forms .form-content form fieldset label button:active {
+              background: #3d3a3a;
+              color: #fafafa; }
+            @media screen and (min-width: 560px) {
+              .contact-pg .contact-forms .form-content form fieldset label button {
+                font-size: calc(12px + .25vw); } }
+            @media screen and (min-width: 768px) {
+              .contact-pg .contact-forms .form-content form fieldset label button {
+                font-size: calc(13px + .25vw); } }
+            @media screen and (min-width: 1248px) {
+              .contact-pg .contact-forms .form-content form fieldset label button {
+                font-size: calc(14px + .25vw); } }
+            @media screen and (min-width: 2000px) {
+              .contact-pg .contact-forms .form-content form fieldset label button {
+                font-size: 15px; } }
           .contact-pg .contact-forms .form-content form fieldset label.optional::after {
             content: "Optional";
             color: #008535;
@@ -694,12 +728,33 @@
           @media only screen and (min-width: 1024px) {
             .contact-pg .contact-forms .form-content form fieldset label {
               width: 75%; } }
+        .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm {
+          margin: 0 auto 1vh; }
+          @media only screen and (min-width: 1150px) {
+            .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm {
+              display: grid;
+              width: 75%;
+              grid-gap: 1vw;
+              margin-bottom: 2vh;
+              grid-template-columns: 1fr 1fr;
+              grid-template-areas: "l1 l2" "i1 i2"; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input, .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
+                width: 100%;
+                margin: auto; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label:first-child {
+                grid-area: l1; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label:nth-child(3) {
+                grid-area: l2; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input:nth-child(2) {
+                grid-area: i1; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input:last-child {
+                grid-area: i2; } }
         .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
           width: 100%;
           border: 1px solid #3d3a3a;
           padding: 10px;
           border-radius: 5px;
-          margin-bottom: 3vh;
+          margin-bottom: 2vh;
           font-size: 15px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
@@ -728,17 +783,32 @@
           color: #fafafa;
           cursor: pointer; }
         .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-          background: #fafafa; }
+          background: #fafafa;
+          color: #575353;
+          font-size: 15px; }
+          @media screen and (min-width: 560px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(15px + .25vw); } }
+          @media screen and (min-width: 768px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(16px + .25vw); } }
+          @media screen and (min-width: 1248px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(18px + .25vw); } }
+          @media screen and (min-width: 2000px) {
+            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: 21px; } }
         .contact-pg .contact-forms .form-content form fieldset textarea {
-          min-height: 20vh; }
+          min-height: 20vh;
+          font-family: "SpartanMB"; }
         .contact-pg .contact-forms .form-content form fieldset .subtitle {
           margin-top: 0;
           color: #716c6c; }
           .contact-pg .contact-forms .form-content form fieldset .subtitle a {
             font-weight: bold;
             color: #716c6c; }
-    .contact-pg .contact-forms .form-content #tutor-step-2, .contact-pg .contact-forms .form-content #hire-step-2, .contact-pg .contact-forms .form-content #tutor-step-3, .contact-pg .contact-forms .form-content #hire-step-3 {
-      display: none; }
+    .contact-pg .contact-forms .form-content .active-form-step {
+      display: block; }
     .contact-pg .contact-forms .form-content .form-progress {
       display: flex;
       margin: .83em auto 5vh;
@@ -750,25 +820,27 @@
         content: "";
         width: calc(100% / 3);
         left: calc(100% / 6);
-        height: 6px;
+        height: 4px;
         top: 14px;
         z-index: .8;
         background: #bdb9b9; }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress::before {
-            top: 20px; } }
+            top: 20px;
+            height: 6px; } }
       .contact-pg .contact-forms .form-content .form-progress::after {
         position: absolute;
         content: "";
         width: calc(100% / 3);
         right: calc(100% / 6);
-        height: 6px;
+        height: 4px;
         top: 14px;
         z-index: .8;
         background: #bdb9b9; }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress::after {
-            top: 20px; } }
+            top: 20px;
+            height: 6px; } }
       .contact-pg .contact-forms .form-content .form-progress .step {
         width: 34px;
         height: 34px;
@@ -788,6 +860,8 @@
         color: #fafafa;
         border-radius: 50%;
         font-size: 15px; }
+        .contact-pg .contact-forms .form-content .form-progress .step path {
+          fill: #fafafa; }
         @media screen and (min-width: 560px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
             font-size: calc(16px + .25vw); } }
@@ -807,6 +881,12 @@
       .contact-pg .contact-forms .form-content .form-progress .step-active {
         border: 2px solid #3d3a3a;
         background: #3d3a3a; }
+    .contact-pg .contact-forms .form-content .form-progress-mid::before {
+      background: #3d3a3a; }
+    .contact-pg .contact-forms .form-content .form-progress-end::before {
+      background: #3d3a3a; }
+    .contact-pg .contact-forms .form-content .form-progress-end::after {
+      background: #3d3a3a; }
     .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
       height: auto;
       padding: 5px;

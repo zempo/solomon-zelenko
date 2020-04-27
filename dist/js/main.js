@@ -26,6 +26,8 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
 
 // Contact pg
 const handleMailForms = (hire, tutor, gen) => {
+  const nextBtns = document.querySelectorAll(`.form-next`);
+  const prevBtns = document.querySelectorAll(`.form-prev`);
   // helper functions
   const addToBody = (inputs, selects, textareas, formBody) => {
     inputs.forEach(el => {
@@ -93,6 +95,90 @@ const handleMailForms = (hire, tutor, gen) => {
       `
     }
   }
+  const validateStep = (e, form, direction) => {
+    e.preventDefault()
+    const acc = direction === 'next' ? 1 : -1
+    const prevBtn = document.querySelector(`.${form.classList[0]} .form-prev`)
+    const nextBtn = document.querySelector(`.${form.classList[0]} .form-next`)
+    const submitBtn = document.querySelector(`.${form.classList[0]} .form-submit`)
+    const steps = document.querySelectorAll(`.${form.classList[0]} fieldset`)
+    const currentStep = document.querySelector(`.${form.classList[0]} .active-form-step`)
+    const currentProgress = document.querySelector(`.${form.classList[0]} .form-progress #step-${parseInt(currentStep.id.substr(currentStep.id.length - 1)) + 1}`)
+    const lastProgress = document.querySelector(`.${form.classList[0]} .form-progress #step-${parseInt(currentStep.id.substr(currentStep.id.length - 1))}`)
+    
+    if(acc === 1) {
+      if (currentStep.id.includes('1')) {
+        prevBtn.style.display = 'inline-block'
+        currentProgress.classList.add('step-active')
+        lastProgress.innerHTML = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24">
+        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+        </svg>`
+        currentProgress.parentElement.classList.add('form-progress-mid')
+      }
+      if (currentStep.id.includes('2')) {
+        submitBtn.style.display = 'inline-block'
+        nextBtn.style.display = 'none'
+        currentProgress.classList.add('step-active')
+        lastProgress.innerHTML = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24">
+        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+        </svg>`
+        currentProgress.parentElement.classList.add('form-progress-end')
+      }
+    }
+
+    if(acc === -1) {
+      if (currentStep.id.includes('3')) {
+        submitBtn.style.display = 'none'
+        nextBtn.style.display = 'inline-block'
+        lastProgress.classList.remove('step-active')
+        lastProgress.parentElement.classList.remove('form-progress-end')        
+      }
+      if (currentStep.id.includes('2')) {
+        nextBtn.style.display = 'inline-block'
+        prevBtn.style.display = 'none'
+        lastProgress.classList.remove('step-active')
+        lastProgress.parentElement.classList.remove('form-progress-mid')    
+      }      
+    }
+
+    steps.forEach((el, i) => {
+      let a = parseInt(el.id.substr(el.id.length - 1))
+      let b = parseInt(currentStep.id.substr(currentStep.id.length - 1))
+        if(a === b + acc) {
+          currentStep.classList.remove('active-form-step')
+          el.classList.add('active-form-step')
+        }
+    })
+  }
+
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const query = '.' + btn.parentElement.classList[0] + ' .active-form-step'
+      const allInputs = document.querySelectorAll(`${query} textarea, ${query} select, ${query} input`)
+      let valid = true
+      allInputs.forEach(el => {
+        if (el.value === '') {
+          valid = false
+        }
+        if(el.type === 'email') {
+          el.checkValidity() === false ? valid = false : valid = true; 
+        }
+      })
+      valid ? validateStep(e, btn.parentElement, 'next') : alert('Please fill out all required fields.')
+    })
+  })
+
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', e => validateStep(e, btn.parentElement, 'prev'))
+  })
 
   // submit handlers
   hire.addEventListener('submit', e => {

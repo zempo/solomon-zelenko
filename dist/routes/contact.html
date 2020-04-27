@@ -10,20 +10,26 @@
       <section id="form-content-hire" class="form-content">
         <form class="hire-form">
           <div class="form-progress">
-            <span class="step step-active">1</span>
-            <span class="step">2</span>
-            <span class="step">3</span>
+            <span id="step-1" class="step step-active">1</span>
+            <span id="step-2" class="step">2</span>
+            <span id="step-3" class="step">3</span>
           </div>
-          <fieldset class="form-step" id="hire-step-1">
+          <fieldset class="form-step active-form-step" id="hire-step-1">
             <legend>Create Your Profile</legend>
-            <label for="name_hire"> 
-              What's your name?
+            <div class="form-wrapper-sm">
+              <label for="name_hire"> 
+                What's your name?
+              </label>
+              <input type="text" placeholder="Ruby Ellis" name="name_hire" id="name_hire" required>
+              <label for="email_hire">
+                What's your email?
+              </label>
+              <input type="email" name="email_hire" id="email_hire" placeholder="ruby@jewelry.org" required>
+            </div>
+            <label for="refer_hire" class="optional">
+              How did you hear about me?
             </label>
-            <input type="text" placeholder="eg. Ruby Ellis" name="name_hire" id="name_hire" required>
-            <label for="email_hire">
-              What's your email?
-            </label>
-            <input type="email" name="email_hire" id="email_hire" placeholder="eg. ruby.ellis@gmail.com" required>
+            <input type="text" name="refer_hire" id="refer_hire" placeholder="eg. Google, YouTube, referred by...etc" />  
             <label for="contact_hire">
               How might we best communicate? 
             </label>
@@ -35,15 +41,7 @@
               <option value="hangouts">Google Hangouts</option>
               <option value="skype">Skype</option>
               <option value="zoom">Zoom</option>
-            </select> 
-            <label for="current_site_hire" class="optional">
-              What's your current website?
-            </label>
-            <input type="text" name="current_site_hire" id="current_site_hire" placeholder="eg. ruby-makes-jewelry.com" />
-            <label for="refer_hire" class="optional">
-              How did you hear about me?
-            </label>
-            <input type="text" name="refer_hire" id="refer_hire" placeholder="eg. Google, YouTube, referred by...etc" />           
+            </select>          
           </fieldset> 
           <fieldset class="form-step" id="hire-step-2"> 
             <legend>Describe Your Brand</legend> 
@@ -78,7 +76,11 @@
             <button class="file-btn project-guide">View Hire FAQ</button>
             </label>               
             <input type="text" name="budget_hire" placeholder="$400" id="budget_hire">
-            <label for="completion_hire" class="optional">
+            <label for="current_site_hire" class="optional">
+              What's your current website?
+            </label>
+            <input type="text" name="current_site_hire" id="current_site_hire" placeholder="eg. ruby-makes-jewelry.com" />
+            <label for="completion_hire">
               Ideal completion date? 
             <button class="file-btn project-guide">View Hire FAQ</button> 
             </label>              
@@ -94,7 +96,7 @@
           </fieldset>
           <button class="form-prev">Previous</button>
           <button class="form-next">Next</button>
-          <button type="submit" class="form-submit">Send Your Project Proposal</button>
+          <button type="submit" class="form-submit">Send Project Proposal</button>
         </form>
       </section>
       <input type="radio" class="contact-radio" id="tutor-form" name="form-tabs" />
@@ -105,20 +107,24 @@
       <section id="form-content-tutor" class="form-content">
         <form class="tutor-form">
           <div class="form-progress">
-            <span class="step step-active">1</span>
-            <span class="step">2</span>
-            <span class="step">3</span>
+            <span id="step-1" class="step step-active">1</span>
+            <span id="step-2" class="step">2</span>
+            <span id="step-3" class="step">3</span>
           </div>
-          <fieldset class="form-step" id="tutor-step-1">
+          <fieldset class="form-step active-form-step" id="tutor-step-1">
             <legend>Create Your Profile</legend>
-            <label for="name_tutor">
-              What's your name?
-            </label> 
-            <input type="text" placeholder="eg. Sam Barlow" name="name_tutor" required id="name_tutor">
-            <label for="email_tutor">
-              What's your email?
-            </label>
-            <input type="email" name="email_tutor" id="email_tutor" required placeholder="eg. sammybarlow@yahoo.com">
+            <div class="form-wrapper-sm">
+              <label for="name_tutor">
+                What's your name?
+              </label> 
+              <input type="text" placeholder="Sam Barlow" name="name_tutor" required id="name_tutor">
+              <label for="email_tutor">
+                What's your email?
+              </label>
+              <input type="email" name="email_tutor" id="email_tutor" required placeholder="sammy-bee@gmail.com">
+            </div>
+            <label for="refer_tutor" class="optional">How did you hear about me?</label>
+            <input type="text" name="refer_tutor" id="refer_tutor" placeholder="eg. Google, YouTube, referred by...etc" />    
             <label for="contact_tutor">
               How shall we meet?
             </label> 
@@ -129,9 +135,7 @@
               <option value="hangouts">Google Hangouts</option>
               <option value="skype">Skype</option>
               <option value="zoom">Zoom</option>
-            </select>
-            <label for="refer_tutor" class="optional">How did you hear about me?</label>
-            <input type="text" name="refer_tutor" id="refer_tutor" placeholder="eg. Google, YouTube, referred by...etc" />            
+            </select>        
           </fieldset> 
           <fieldset class="form-step" id="tutor-step-2">
             <legend>Find Your Learning Style</legend> 
@@ -206,16 +210,18 @@
       </label>      
       <section id="form-content-gen" class="form-content">
         <form class="gen-form">
-          <fieldset>
+          <fieldset class="form-step active-form-step">
             <legend>New Message</legend>
             <div class="gen-status"></div>
-            <label for="name_gen">What's your name?</label>
-            <input type="text" name="name_gen" id="name_gen" required placeholder="Ronald R. Cruiter">
-            <label for="email_gen">What's your email?</label>
-            <input type="email" name="email_gen" id="email_gen" required placeholder="ronaldrecruits@rmail.org">
-            <label for="subject_gen">What's the topic?</label>
+            <div class="form-wrapper-sm">
+              <label for="name_gen">What's your name?</label>
+              <input type="text" name="name_gen" id="name_gen" required placeholder="Ron Recruiter">
+              <label for="email_gen">What's your email?</label>
+              <input type="email" name="email_gen" id="email_gen" required placeholder="ronald781@yahoo.com">
+            </div>
+            <label for="subject_gen">What would you like to talk about?</label>
             <input type="text" name="subject_gen" id="subject_gen" required placeholder="eg. Collabs, Work, etc...">
-            <label for="story_gen">What's the story?</label> 
+            <label for="story_gen">Write your message here:</label> 
             <textarea name="story_gen" id="story_gen" required></textarea>
           </fieldset>
           <button type="submit" class="form-submit">Send Your Message</button> 

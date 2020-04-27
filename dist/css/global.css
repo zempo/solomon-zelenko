@@ -33,6 +33,17 @@ main .btn-back svg, a {
     -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
+  body .btn-fwd:active,
+  body .btn-back:active,
+  main .btn-fwd:active,
+  main .btn-back:active, body .btn-fwd svg:active,
+  body .btn-back svg:active,
+  main .btn-fwd svg:active,
+  main .btn-back svg:active, a:active {
+    -moz-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
+    transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1); }
 
 * {
   box-sizing: border-box; }
