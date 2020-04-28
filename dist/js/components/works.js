@@ -89,6 +89,11 @@ worksTemplate.innerHTML = `<style>
 h2 {
   font-size: calc(17px + 1vw);
   font-weight: normal;
+  margin: 10px;
+}
+.works-list-item {
+  max-width: 650px;
+  margin: 0 auto 7vh;
 }
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -240,12 +245,37 @@ h2 {
 @media only screen and (min-width: 850px) {
   h2 {
     font-size: calc(22px + 1vw);
+    margin: 15px;
   }
   .filter-btn {
     font-size: calc(17px + .5vw); 
   }
   .open-item span {
     font-size: calc(22px + 1vw); 
+  }
+  .works-list-item {
+    max-width: 650px;
+    margin: 0 auto 7vh;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h2 {
+    font-size: calc(24px + .5vw);
+  }
+  .open-item span {
+    font-size: calc(24px + .5vw); 
+  }
+  .works-list-item {
+    max-width: 700px;
+    margin: 0 auto 7vh;
+  }
+} 
+@media only screen and (min-width: 2000px) {
+  h2 {
+    font-size: 28px;
+  }
+  .open-item span {
+    font-size: 28px; 
   }
 }    
 </style><div class="filter-works">

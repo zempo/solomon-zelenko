@@ -80,7 +80,7 @@ br {
   background-color: #fefefe;
   margin: 0; 
   width: calc(100% - 20px);
-  height: calc(100vh - 138px); 
+  height: calc(100vh - 142px); 
   -webkit-animation: modalIn 0s linear both;
   animation: modalIn 0s linear both; 
 }
@@ -693,8 +693,12 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     border-width: 15px 0 15px 15px;
     border-color: transparent transparent transparent #3d3a3a;
   }
-
 }
+@media only screen and (min-width: 1440px) {
+  .modal-content {
+    height: calc(100vh - 148px); 
+  }
+} 
 </style>
 `;
 
@@ -886,34 +890,6 @@ class WorkModal extends HTMLElement {
       }
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
-        clearInterval(runSlideShow) 
-          runSlideShow = setInterval(() => {
-            for (let i = 0; i < imgBtns.length; i++) {
-              if(imgBtns[i].checked == true) {
-                if(i < imgBtns.length - 1) {
-                  imgBtns[i].checked = false
-                  imgBtns[i + 1].checked = true
-                  let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-                  image.setAttribute('src', `img/works/${newPic}`)
-                  image.style.animation = 'fadeIn 1s'
-                  setTimeout(() => {
-                    image.style.animation = 'none'
-                  }, 500)
-                  return;
-                } else {
-                  imgBtns[i].checked = false
-                  imgBtns[0].checked = true
-                  let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-                  image.setAttribute('src', `img/works/${newPic}`)              
-                  image.style.animation = 'fadeIn 1s'
-                  setTimeout(() => {
-                    image.style.animation = 'none'
-                  }, 500) 
-                  return;
-                }
-              }
-            }
-          }, 3100)
           let dir = e.target.name 
           let pic = e.target.value
           image.setAttribute('src', `img/works/${dir + '/' + pic}`)
@@ -927,15 +903,18 @@ class WorkModal extends HTMLElement {
           toggleSize.style.border = '2px solid #f7f7f7'
           modalContent.style.height = '80vh'
           modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(10vh - 79px) calc(10% + 5vw)'
+          modalContent.style.margin = 'calc(10vh - 75px) calc(10% + 5vw)'
         } else {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')
           toggleSize.style.background = 'none' 
           toggleSize.style.border = 'none'
-          modalContent.style.height = 'calc(100vh - 138px)'
+          modalContent.style.height = 'calc(100vh - 142px)'
           modalContent.style.width = 'calc(100% - 20px)'
           modalContent.style.margin = '0'          
+          if(window.innerWidth >= 1440) {
+            modalContent.style.height = 'calc(100vh - 148px)'
+          }
         }
       })
       hideBtn.addEventListener('click', e => {
