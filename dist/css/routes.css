@@ -999,10 +999,10 @@
       .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .err {
         background: #ff5a91; }
     .contact-pg .contact-forms .form-content .success-status, .contact-pg .contact-forms .form-content .err-status {
-      -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-      -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-      -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-      animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
+      -o-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
+      -moz-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
+      -webkit-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
+      animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1); }
     .contact-pg .contact-forms .form-content .success-status {
       border-left: 7px solid #00eb5e;
       background: #ebfff3; }

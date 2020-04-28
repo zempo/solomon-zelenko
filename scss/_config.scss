@@ -26,6 +26,7 @@ $colors: (
 $animations: (
     expand-down: expand-down 0.45s ease-in both,
     fade-in: fadeIn 1s,
+    from-top: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-right: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-left: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
     fold-up: fold-up 0.4s linear both,

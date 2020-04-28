@@ -861,10 +861,10 @@
         }
       }
       .success-status, .err-status {
-        -o-animation: map-get($animations, from-left);
-        -moz-animation: map-get($animations, from-left);
-        -webkit-animation: map-get($animations, from-left);
-        animation: map-get($animations, from-left);
+        -o-animation: map-get($animations, from-top);
+        -moz-animation: map-get($animations, from-top);
+        -webkit-animation: map-get($animations, from-top);
+        animation: map-get($animations, from-top);
       }
       .success-status {
         border-left: 7px solid map-get($colors, success);
