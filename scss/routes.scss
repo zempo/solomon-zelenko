@@ -524,12 +524,18 @@
       font-weight: bold;
       @include font-size($h3-font-sizes);
       }
+      .form-controls {
+        display: flex;
+        width: 75%;
+        margin: auto;
+        justify-content: flex-end;
+      }
       button {
         @extend %btn;
         background: map-get($colors, app-white);
         border: 2px solid map-get($colors, dark-2);
         padding: 10px 35px;
-        margin-top: 6vh;
+        margin: 6vh .1vw 0;
         border-radius: 5px;
         opacity: .9;
         @include font-size($h3-font-sizes);
@@ -545,7 +551,7 @@
         color: map-get($colors, app-white);
       }
       form {
-        margin: 2.5vh auto;
+        margin: 8vh auto 2.5vh;
         width: 100%;
         fieldset {
           display: none;
@@ -561,15 +567,14 @@
           label {
             display: inline-block;
             width: 100%;
-            margin: 10px auto;
+            margin: 10px auto 15px;
             text-align: left;
             position: relative;
             button {
-             position: absolute;
-             right: 0;
-             top: -2px;
-             margin: 5px;
-             padding: 5px;
+             text-align: center;
+             display: inline-block;
+             margin: 15px 0 0;
+             padding: 10px;
              font-weight: normal;
              &:hover, &:active {
               background: map-get($colors, dark-2);
@@ -669,7 +674,7 @@
       }
       .form-progress {
         display: flex;
-        margin: .83em auto 5vh;
+        margin: 0 auto 8vh;
         justify-content: space-around;
         width: 100%;
         position: relative;
@@ -681,7 +686,7 @@
           height: 4px;
           top: 14px;
           z-index: .8;
-          background: lighten(map-get($colors, dark-2), 50%);
+          background: lighten(map-get($colors, dark-2), 30%);
           @include mq('tablet') {
             top: 20px;
             height: 6px;
@@ -695,7 +700,7 @@
           height: 4px;
           top: 14px;
           z-index: .8;
-          background: lighten(map-get($colors, dark-2), 50%);
+          background: lighten(map-get($colors, dark-2), 30%);
           @include mq('tablet') {
             top: 20px;
           height: 6px;
@@ -715,8 +720,8 @@
               -ms-flex-align: center;
                   align-items: center;
           font-weight: 600;
-          background: lighten(map-get($colors, dark-2), 50%);
-          border: 2px solid lighten(map-get($colors, dark-2), 50%);
+          background: lighten(map-get($colors, dark-2), 30%);
+          border: 2px solid lighten(map-get($colors, dark-2), 30%);
           color: map-get($colors, app-white);
           border-radius: 50%; 
           path {
@@ -749,14 +754,17 @@
       .gen-status, .tutor-status, .hire-status {
         height: auto;
         padding: 5px;
-        width: 98%; 
-        margin: 0 auto 5vh;
+        width: 85vw; 
+        margin: 3vh 0 -2vh;
         border: 0px solid map-get($colors, dark-2);
         border-radius: 5px;
         display: flex;
         justify-content: flex-start;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        position: relative;
+        position: fixed;
+        top: 0px;
+        left: 7.5vw;
+        z-index: 3;
         &::after {
           content: "x";
           cursor: pointer;
@@ -769,12 +777,16 @@
           @include font-size($p-font-sizes);
         }
         @include mq('phablet') {
-          width: 80%;
-          max-width: 400px;
+          width: 80vw;
+          left: 10vw;
         } 
         @include mq('tablet-wide') {
-          width: 60%;
-          max-width: 600px;
+          width: 60vw; 
+          left: 20vw;
+        } 
+        @include mq('desktop') {
+          width: 700px; 
+          left: calc(50vw - 350px);
         } 
         &:empty {
           height: 0;
@@ -849,16 +861,23 @@
         }
       }
       .success-status, .err-status {
-        -o-animation: map-get($animations, fade-in);
-        -moz-animation: map-get($animations, fade-in);
-        -webkit-animation: map-get($animations, fade-in);
-        animation: map-get($animations, fade-in);
+        -o-animation: map-get($animations, from-left);
+        -moz-animation: map-get($animations, from-left);
+        -webkit-animation: map-get($animations, from-left);
+        animation: map-get($animations, from-left);
       }
       .success-status {
         border-left: 7px solid map-get($colors, success);
+        background: lighten(map-get($colors, success), 50%);
       }
       .err-status {
         border-left: 7px solid map-get($colors, err);
+        background: lighten(map-get($colors, err), 30%);
+        .err {
+          path {
+            fill: lighten(map-get($colors, err), 60%);
+          }
+        }
       }      
     }
     .err_target { 

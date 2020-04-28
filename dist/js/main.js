@@ -47,12 +47,34 @@ const handleMailForms = (hire, tutor, gen) => {
     })
     return formBody
   }
+  const clearForm = (inputs, selects, textareas, step_form='') => {
+    inputs.forEach(el => el.value = '')
+    selects.forEach(el => el.value = '')
+    textareas.forEach(el => el.value = '')
+    if(step_form !== '') {
+      const prevBtn = document.querySelector(`.${step_form.classList[0]} .form-prev`)
+      const progressIndicators = document.querySelectorAll(`.${step_form.classList[0]} .form-progress .step`)
+      progressIndicators.forEach((el, i) => {
+        el.innerHTML = `${i + 1}`
+      })
+      prevBtn.click()
+      prevBtn.click()
+    }
+  }
   const formNotification = (formStatus, msgTop, msgBottom, resOk=true) => {
     const clearNotification = setTimeout(() => {
       formStatus.innerHTML = ''
       formStatus.classList.remove('err-status')
       formStatus.classList.remove('success-status')
     }, 5000) 
+    document.querySelectorAll('.form-submit').forEach(el => {
+      el.addEventListener('click', e => {
+      formStatus.innerHTML = ''
+      formStatus.classList.remove('err-status')
+      formStatus.classList.remove('success-status')
+      clearTimeout(clearNotification)
+    })
+  })
     formStatus.addEventListener('click', e => {
       formStatus.innerHTML = ''
       formStatus.classList.remove('err-status')
@@ -158,6 +180,23 @@ const handleMailForms = (hire, tutor, gen) => {
         }
     })
   }
+  const validateForm = (form, targetEl) => {
+    const prev = document.querySelector(`.${form.classList[0]} .form-prev`)
+    const targetStep = targetEl.parentElement
+    const stepIdx = targetStep.id.substr(targetStep.id.length - 1) 
+    if (stepIdx === '2') {
+      prev.click()
+    }
+    if (stepIdx === '1') {
+      prev.click()
+      prev.click()
+    }
+
+    targetEl.classList.add('err_target')
+    targetEl.addEventListener('focus', e => { 
+      targetEl.classList.remove('err_target')
+    })
+  }
 
   nextBtns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -165,10 +204,10 @@ const handleMailForms = (hire, tutor, gen) => {
       const allInputs = document.querySelectorAll(`${query} textarea, ${query} select, ${query} input`)
       let valid = true
       allInputs.forEach(el => {
-        if (el.value === '') {
+        if (el.value === '' && el.classList[0] !== 'optional-item') {
           valid = false
         }
-        if(el.type === 'email') {
+        if(el.type === 'email' || el.type === 'url') {
           el.checkValidity() === false ? valid = false : valid = true; 
         }
       })
@@ -195,16 +234,14 @@ const handleMailForms = (hire, tutor, gen) => {
     .post(`${API}/hire`, newHire)
     .then(res => {
       formNotification(status, 'Project Proposal Sent', 'Expect a reply within 24 hours!')
+      clearForm(inputs, selects, textareas, hire)
     })
     .catch(err => {
       if (err.response) { 
         const feedback = err.response.data.error.details[0].message
         const targetInput = feedback.substr(1, feedback.indexOf('_hire') + 4)
         const underlineInput = document.getElementById(`${targetInput}`)
-        underlineInput.classList.add('err_target')
-        underlineInput.addEventListener('focus', e => { 
-          underlineInput.classList.remove('err_target')
-        })
+        validateForm(hire, underlineInput)
         formNotification(status, 'Oops!', feedback.replace(`_hire`, '') + '.', false)
       } else {
         formNotification(status, 'Sorry &#9785;', 'Looks like my server is down.', false)
@@ -224,16 +261,14 @@ const handleMailForms = (hire, tutor, gen) => {
     .post(`${API}/tutor`, newTutor)
     .then(res => { 
       formNotification(status, 'Tutor Request Sent', `Expect a reply within 24 hours!`)
+      clearForm(inputs, selects, textareas, tutor)
     }) 
     .catch(err => {
       if (err.response) { 
         const feedback = err.response.data.error.details[0].message
         const targetInput = feedback.substr(1, feedback.indexOf('_tutor') + 5)
         const underlineInput = document.getElementById(`${targetInput}`)
-        underlineInput.classList.add('err_target')
-        underlineInput.addEventListener('focus', e => { 
-          underlineInput.classList.remove('err_target')
-        })
+        validateForm(tutor, underlineInput)
         formNotification(status, 'Oops!', feedback.replace(`_tutor`, '') + '.', false)
       } else {
         formNotification(status, 'Sorry &#9785;', 'Looks like my server is down.', false)
@@ -254,6 +289,7 @@ const handleMailForms = (hire, tutor, gen) => {
     .post(`${API}/gen`, newGen)
     .then(res => { 
       formNotification(status, 'Message Sent', 'Expect a reply soon!')
+      clearForm(inputs, selects, textareas)
     })
     .catch(err => {
       if (err.response) { 
@@ -271,7 +307,6 @@ const handleMailForms = (hire, tutor, gen) => {
     })
   })
 } 
-
 // Hero Animation
 const TextCarousel = function (el, toRotate, duration) {
   this.toRotate = toRotate;

@@ -29,7 +29,7 @@
             <label for="refer_hire" class="optional">
               How did you hear about me?
             </label>
-            <input type="text" name="refer_hire" id="refer_hire" placeholder="eg. Google, YouTube, referred by...etc" />  
+            <input type="text" name="refer_hire" id="refer_hire" class="optional-item" placeholder="eg. Google, YouTube, referred by...etc" />  
             <label for="contact_hire">
               How might we best communicate? 
             </label>
@@ -70,18 +70,17 @@
           </fieldset>  
           <fieldset class="form-step" id="hire-step-3">
             <legend>Draft Project Proposal</legend>
-            <div class="hire-status"></div> 
             <label for="budget_hire">
-              What's your budget?
+              What's your budget? <br>
             <button class="file-btn project-guide">View Hire FAQ</button>
             </label>               
-            <input type="text" name="budget_hire" placeholder="$400" id="budget_hire">
+            <input type="text" name="budget_hire" class="optional-item" placeholder="$400" id="budget_hire">
             <label for="current_site_hire" class="optional">
               What's your current website?
             </label>
-            <input type="text" name="current_site_hire" id="current_site_hire" placeholder="eg. ruby-makes-jewelry.com" />
+            <input type="url" name="current_site_hire" id="current_site_hire" placeholder="eg. https://ruby-makes-jewelry.com" />
             <label for="completion_hire">
-              Ideal completion date? 
+              Ideal completion date? <br>
             <button class="file-btn project-guide">View Hire FAQ</button> 
             </label>              
             <select name="completion_hire" id="completion_hire">
@@ -94,6 +93,7 @@
               <option value="unsure">Unsure/TBD</option>
             </select>
           </fieldset>
+          <div class="hire-status"></div> 
           <button class="form-prev">Previous</button>
           <button class="form-next">Next</button>
           <button type="submit" class="form-submit">Send Project Proposal</button>
@@ -124,7 +124,7 @@
               <input type="email" name="email_tutor" id="email_tutor" required placeholder="sammy-bee@gmail.com">
             </div>
             <label for="refer_tutor" class="optional">How did you hear about me?</label>
-            <input type="text" name="refer_tutor" id="refer_tutor" placeholder="eg. Google, YouTube, referred by...etc" />    
+            <input type="text" name="refer_tutor" id="refer_tutor" class="optional-item" placeholder="eg. Google, YouTube, referred by...etc" />    
             <label for="contact_tutor">
               How shall we meet?
             </label> 
@@ -161,10 +161,9 @@
           </fieldset>
           <fieldset class="form-step" id="tutor-step-3">
             <legend>Build Your Lesson Plan</legend>
-            <div class="tutor-status"></div>
             <label for="subject_tutor">
-              Which subject shall we study? <br>
-              <button class="file-btn tutor-guide">Open Tutor Guide</button>
+              Which subject shall we study? <br> 
+              <button class="file-btn tutor-guide">Open Tutor FAQ</button>
             </label>
             <input
              type="text"
@@ -198,6 +197,7 @@
               required
               placeholder="I struggle with CSS. I don't really know which fonts to use or how to center things. I use bootstrap, but I'd like to get better at styling."></textarea>
           </fieldset>
+          <div class="tutor-status"></div>
           <button class="form-prev">Previous</button>
           <button class="form-next">Next</button>
           <button type="submit" class="form-submit">Code with Solomon</button>           
@@ -212,7 +212,6 @@
         <form class="gen-form">
           <fieldset class="form-step active-form-step">
             <legend>New Message</legend>
-            <div class="gen-status"></div>
             <div class="form-wrapper-sm">
               <label for="name_gen">What's your name?</label>
               <input type="text" name="name_gen" id="name_gen" required placeholder="Ron Recruiter">
@@ -224,6 +223,7 @@
             <label for="story_gen">Write your message here:</label> 
             <textarea name="story_gen" id="story_gen" required></textarea>
           </fieldset>
+          <div class="gen-status"></div>
           <button type="submit" class="form-submit">Send Your Message</button> 
         </form> 
       </section>
