@@ -862,7 +862,7 @@
       }
       .success-status, .err-status {
         -o-animation: map-get($animations, from-top);
-        -moz-animation: map-get($animations, from-top);
+        -moz-animation: map-get($animations, from-top); 
         -webkit-animation: map-get($animations, from-top);
         animation: map-get($animations, from-top);
       }

@@ -5,9 +5,9 @@ const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 const navImgs = document.querySelectorAll("nav a img");
 const footer = document.querySelector('footer')
-// https://solomon-zelenko.wm.r.appspot.com/
-// http://localhost:5000/api/mail 
-const API = 'http://localhost:5000/api/mail'
+const deployedURI = 'https://solomon-zelenko.wm.r.appspot.com/api/mail'
+const localURI = 'http://localhost:5000/api/mail' 
+const API = localURI
 // MAIN EVENT LISTENERS
 // home pg
 const handleResume = (e) => {
