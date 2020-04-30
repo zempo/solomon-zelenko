@@ -233,10 +233,6 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 .item-img {
   max-width: 100%; 
   max-height: 70vh;
-  -o-animation: fadeIn 4s infinite;
-  -moz-animation: fadeIn 4s infinite;
-  -webkit-animation: fadeIn 4s infinite;
-  animation: fadeIn 4s infinite;
 }
 .img-controls {
   display: flex;
@@ -892,17 +888,31 @@ class WorkModal extends HTMLElement {
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
+              image.animate([
+                {opacity: '0'},
+                {opacity: '1'}
+              ], {
+                duration: 1000,
+                iterations: 1
+              })
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
+              image.animate([
+                {opacity: '0'},
+                {opacity: '1'}
+              ], {
+                duration: 1000,
+                iterations: 1
+              })
               return
             }
           }
         }
-      }, 4000)
+      }, 3500)
       document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
       window.onhashchange = e => {
         clearInterval(runSlideShow)
