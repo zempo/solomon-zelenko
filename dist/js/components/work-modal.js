@@ -233,6 +233,10 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 .item-img {
   max-width: 100%; 
   max-height: 70vh;
+  -o-animation: fadeIn 3s infinite;
+  -moz-animation: fadeIn 3s infinite;
+  -webkit-animation: fadeIn 3s infinite;
+  animation: fadeIn 3s infinite;
 }
 .img-controls {
   display: flex;
@@ -421,28 +425,44 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     }
   }
   @-webkit-keyframes fadeIn {
-    from {
+    0% {
       opacity: 0; }
-    to {
-      opacity: 1; } }
+    33% {
+      opacity: 1; }
+    100% {
+      opacity: 1;
+    }
+    }
   
   @-moz-keyframes fadeIn {
-    from {
+    0% {
       opacity: 0; }
-    to {
-      opacity: 1; } }
+    33% {
+      opacity: 1; }
+    100% {
+      opacity: 1;
+    }
+    }
   
   @-o-keyframes fadeIn {
-    from {
+    0% {
       opacity: 0; }
-    to {
-      opacity: 1; } }
+    33% {
+      opacity: 1; }
+    100% {
+      opacity: 1;
+    }
+    }
   
   @keyframes fadeIn {
-    from {
+    0% {
       opacity: 0; }
-    to {
-      opacity: 1; } }
+    33% {
+      opacity: 1; }
+    100% {
+      opacity: 1;
+    }
+    }
   ::-webkit-scrollbar {
     width: 13px;
     height: 13px; }
@@ -865,29 +885,19 @@ class WorkModal extends HTMLElement {
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
-        image.style.animation = 'none'
-        setTimeout(() => {
-          image.style.animation = 'none'
-        }, 1000)
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
-              .then(image.style.opacity = '0')
-              .then(image.style.opacity = '1')
-              .then(image.style.animation = 'fadeIn 1s')
+              image.setAttribute('src', `img/works/${newPic}`)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
-              .then(image.style.opacity = '0')
-              .then(image.style.opacity = '1')
-              .then(image.style.animation = 'fadeIn 1s')
+              image.setAttribute('src', `img/works/${newPic}`)
               return
             }
           }
