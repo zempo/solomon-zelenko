@@ -876,10 +876,13 @@ class WorkModal extends HTMLElement {
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
         const isNewImg = async (newSrc, newImg) => {
-          // console.log(newPic)
+        const switchImg = (newImg, newSrc) => {
+          newImg.setAttribute('src', `img/works/${newSrc}`)
+          return true
+        }
         try {
           const ready = await newSrc
-          const switched = await newImg.setAttribute('src', `img/works/${newSrc}`)
+          const switched = await switchImg(newImg, newSrc)
           if(ready && switched) {
             newImg.classList.add('animate-img')
             setTimeout(() => {
@@ -891,29 +894,18 @@ class WorkModal extends HTMLElement {
         }
         }
         for (let i = 0; i < imgBtns.length; i++) {
-          if(i === 0) {
-            image.classList.add('animate-img');
-            setTimeout(() => {
-              image.classList.remove('animate-img')
-            }, 1000);
-          }
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              // image.setAttribute('src', `img/works/${newPic}`)
               isNewImg(newPic, image)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
-              let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              image.classList.add('animate-img')
-              setTimeout(() => {
-                image.classList.remove('animate-img')
-              }, 1000);
+              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+              isNewImg(newPic, image)
               return
             }
           }
