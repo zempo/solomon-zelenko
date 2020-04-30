@@ -1,19 +1,24 @@
-# Solomon Zelenko
+# My Portfolio
 
-_Live Site: [Here](https://zempo.github.io/solomon-zelenko)_
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3d596c7a-d6cd-4563-b734-8ee3c0819b2e/deploy-status)](https://app.netlify.com/sites/priceless-shockley-1023ef/deploys)
 
-## Contact
-
-Business Number: (425)-200-4403
-
-Linkedin: [Here](https://www.linkedin.com/in/solomon-zelenko/)
+_Live Site: [Here](https:solomonzelenko.dev)_
 
 ## About
 
-Committed to writing clean, testable code. Proficient in mobile-first responsive design, writing ARIA-compliant code, and test-driven development. 4 years of experience teaching Logo programming language and applied math to 3rd-5th graders. 1 year of experience using react, postgres, and node. 2 years experience with html, css, vanilla js. 1 month with MongoDB. A life-long learner.
+To showcase my developer skills, I decided to rebuild my portfolio using a "vanilla workflow".
+This project includes a hash-router, web components, modals, form-validation, and pagination.
+For added security, I've made my server private.
 
 ## Tech Used
 
 - HTML5
 - SCSS
-- JS (Custom Web Components)
+- Vanilla JavaScript (Custom Web Components)
+- Node.js + Email Handling (BackEnd)
+
+## Contact Me
+
+Mail: [Here](https://solomonzelenko.dev#contact)
+Linkedin: [Here](https://www.linkedin.com/in/solomon-zelenko/)
+Business Number: (425)-200-4403

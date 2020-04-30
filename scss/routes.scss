@@ -141,6 +141,9 @@
       top: -3vw;
       margin: 20px auto 0px;
     }
+    @include mq('desktop') {
+      width: 18vw;
+    }
   }
   .about-pic-2 {
     width: calc(140px + 3vw);
@@ -152,6 +155,9 @@
     @include mq('tablet-med') {
       width: 22vw;
       top: 0;
+    }
+    @include mq('desktop') {
+      width: 18vw;
     }
   }
   .about-pic-3 {
@@ -166,6 +172,9 @@
       width: 22vw;
       top: 0;
     }
+    @include mq('desktop') {
+      width: 18vw;
+    }
   } 
   .img-controls {
     margin: 10px auto 50px;
@@ -176,6 +185,9 @@
       margin: 0 auto 50px;
       top: 0;
     } 
+    @include mq('desktop') {
+      width: 55%;
+    }
     .hue-value{
       position: absolute;
       bottom: -10px;
@@ -301,7 +313,7 @@
     flex-wrap: wrap;
     height: auto;
     width: 100%;
-    margin-top: 15vh;
+    margin-top: 100px;
     .accordion-label {
       width: 100%;
       order: initial;

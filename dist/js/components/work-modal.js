@@ -783,7 +783,9 @@ class WorkModal extends HTMLElement {
     <div class="img-container">
     <h1>${currentItem.title}</h1>  
     <h2>
-    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer"><span class="icon">&#9921; </span> Visit the Website</a>
+    <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer">
+    <span class="icon">&#9921; </span>
+     Visit the Website</a>
     <br> 
     <br> 
     <a href="${currentItem.repo}" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
