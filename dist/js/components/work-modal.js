@@ -887,27 +887,29 @@ class WorkModal extends HTMLElement {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
               image.animate([
                 {opacity: '0'},
                 {opacity: '1'}
               ], {
                 duration: 1000,
+                easing: 'ease-out',
                 iterations: 1
               })
+              image.setAttribute('src', `img/works/${newPic}`)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
               image.animate([
                 {opacity: '0'},
                 {opacity: '1'}
               ], {
                 duration: 1000,
+                easing: 'ease-out',
                 iterations: 1
               })
+              image.setAttribute('src', `img/works/${newPic}`)
               return
             }
           }
