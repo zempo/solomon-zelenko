@@ -875,6 +875,21 @@ class WorkModal extends HTMLElement {
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
+        const isNewImg = async (newSrc, newImg) => {
+          // console.log(newPic)
+        try {
+          const ready = await newSrc
+          const switched = await newImg.setAttribute('src', `img/works/${newSrc}`)
+          if(ready && switched) {
+            newImg.classList.add('animate-img')
+            setTimeout(() => {
+              newImg.classList.remove('animate-img')
+            }, 1000)
+          }
+        } catch (err) {
+          console.error
+        }
+        }
         for (let i = 0; i < imgBtns.length; i++) {
           if(i === 0) {
             image.classList.add('animate-img');
@@ -887,11 +902,8 @@ class WorkModal extends HTMLElement {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              image.classList.add('animate-img')
-              setTimeout(() => {
-                image.classList.remove('animate-img')
-              }, 1000);
+              // image.setAttribute('src', `img/works/${newPic}`)
+              isNewImg(newPic, image)
               return 
             } else {
               imgBtns[i].checked = false
