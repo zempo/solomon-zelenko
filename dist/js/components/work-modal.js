@@ -868,22 +868,22 @@ class WorkModal extends HTMLElement {
         image.style.animation = 'none'
         setTimeout(() => {
           image.style.animation = 'none'
-        }, 1500)
+        }, 1000)
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              image.style.animation = 'fadeIn 1s'
+              const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
+              .then(image.style.animation = 'fadeIn 1s')
               return
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              image.style.animation = 'fadeIn 1s'
+              const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
+              .then(image.style.animation = 'fadeIn 1s')
               return
             }
           }
