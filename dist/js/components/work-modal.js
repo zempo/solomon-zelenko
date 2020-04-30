@@ -234,6 +234,12 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   max-width: 100%; 
   max-height: 70vh;
 }
+.animate-img {
+  -o-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
 .img-controls {
   display: flex;
   align-items: center;
@@ -423,41 +429,29 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   @-webkit-keyframes fadeIn {
     0% {
       opacity: 0; }
-    25% {
-      opacity: 1; }
     100% {
-      opacity: 1;
-    }
+      opacity: 1; }
     }
   
   @-moz-keyframes fadeIn {
     0% {
       opacity: 0; }
-    25% {
-      opacity: 1; }
     100% {
-      opacity: 1;
-    }
+      opacity: 1; }
     }
   
   @-o-keyframes fadeIn {
     0% {
       opacity: 0; }
-    25% {
-      opacity: 1; }
     100% {
-      opacity: 1;
-    }
+      opacity: 1; }
     }
   
   @keyframes fadeIn {
     0% {
       opacity: 0; }
-    25% {
-      opacity: 1; }
     100% {
-      opacity: 1;
-    }
+      opacity: 1; }
     }
   ::-webkit-scrollbar {
     width: 13px;
@@ -887,29 +881,21 @@ class WorkModal extends HTMLElement {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              image.animate([
-                {opacity: '0'},
-                {opacity: '1'}
-              ], {
-                duration: 1000,
-                easing: 'ease-out',
-                iterations: 1
-              })
               image.setAttribute('src', `img/works/${newPic}`)
+              image.classList.add('animate-img')
+              setTimeout(() => {
+                image.classList.remove('animate-img')
+              }, 1000);
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.animate([
-                {opacity: '0'},
-                {opacity: '1'}
-              ], {
-                duration: 1000,
-                easing: 'ease-out',
-                iterations: 1
-              })
               image.setAttribute('src', `img/works/${newPic}`)
+              image.classList.add('animate-img')
+              setTimeout(() => {
+                image.classList.remove('animate-img')
+              }, 1000);
               return
             }
           }
