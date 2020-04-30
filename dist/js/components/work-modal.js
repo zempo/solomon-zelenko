@@ -876,6 +876,7 @@ class WorkModal extends HTMLElement {
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
+              .then(console.log(newPic))
               .then(image.style.animation = 'fadeIn 1s')
               return
             } else {
@@ -883,6 +884,7 @@ class WorkModal extends HTMLElement {
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               const setNewImg = (new Promise(() => image.setAttribute('src', `img/works/${newPic}`)))
+              .then(console.log(newPic))
               .then(image.style.animation = 'fadeIn 1s')
               return
             }
