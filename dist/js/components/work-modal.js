@@ -234,12 +234,6 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   max-width: 100%; 
   max-height: 70vh;
 }
-.animate-img {
-  -o-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
 .img-controls {
   display: flex;
   align-items: center;
@@ -875,49 +869,28 @@ class WorkModal extends HTMLElement {
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
-        const isNewImg = async (newSrc, newImg) => {
-        const switchImg = async (newImg, newSrc) => {
-          newImg.setAttribute('src', `img/works/${newSrc}`)
-          try {
-            const ready = await newImg.getAttribute('src')
-            if(ready === `img/works/${newSrc}`) {
-              return true
-            }
-            return false
-          } catch (err) {
-            //
-          }
-        }
-        try {
-          const switched = await switchImg(newImg, newSrc)
-          if(switched) {
+        const animatePic = (pic) => {
+          for (let i = 0; i < 10; i++) {
             setTimeout(() => {
-              newImg.classList.add('animate-img')
-            }, 200)
-            setTimeout(() => {
-              newImg.classList.remove('animate-img')
-              newImg.style.opacity = '1'
-            }, 1200)
+              pic.style.opacity = `${i === 10 ? '1': `.${i}`}`
+            }, i * 100)
           }
-        } catch (err) {
-          newImg.style.opacity = '1'
-        }
-        }
+        } 
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
-              image.style.opacity = '0'
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              isNewImg(newPic, image)
+              image.setAttribute('src', `img/works/${newPic}`)
+              animatePic(image)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
-              image.style.opacity = '0'
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              isNewImg(newPic, image)
+              image.setAttribute('src', `img/works/${newPic}`)
+              animatePic(image)
               return
             }
           }
