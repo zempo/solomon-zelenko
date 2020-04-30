@@ -233,10 +233,10 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 .item-img {
   max-width: 100%; 
   max-height: 70vh;
-  -o-animation: fadeIn 3s infinite;
-  -moz-animation: fadeIn 3s infinite;
-  -webkit-animation: fadeIn 3s infinite;
-  animation: fadeIn 3s infinite;
+  -o-animation: fadeIn 4s infinite;
+  -moz-animation: fadeIn 4s infinite;
+  -webkit-animation: fadeIn 4s infinite;
+  animation: fadeIn 4s infinite;
 }
 .img-controls {
   display: flex;
@@ -427,7 +427,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   @-webkit-keyframes fadeIn {
     0% {
       opacity: 0; }
-    33% {
+    25% {
       opacity: 1; }
     100% {
       opacity: 1;
@@ -437,7 +437,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   @-moz-keyframes fadeIn {
     0% {
       opacity: 0; }
-    33% {
+    25% {
       opacity: 1; }
     100% {
       opacity: 1;
@@ -447,7 +447,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   @-o-keyframes fadeIn {
     0% {
       opacity: 0; }
-    33% {
+    25% {
       opacity: 1; }
     100% {
       opacity: 1;
@@ -457,7 +457,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   @keyframes fadeIn {
     0% {
       opacity: 0; }
-    33% {
+    25% {
       opacity: 1; }
     100% {
       opacity: 1;
@@ -902,7 +902,7 @@ class WorkModal extends HTMLElement {
             }
           }
         }
-      }, 3000)
+      }, 4000)
       document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
       window.onhashchange = e => {
         clearInterval(runSlideShow)
