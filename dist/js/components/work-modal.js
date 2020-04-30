@@ -869,13 +869,6 @@ class WorkModal extends HTMLElement {
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
-        const animatePic = (pic) => {
-          for (let i = 0; i < 10; i++) {
-            setTimeout(() => {
-              pic.style.opacity = `${i === 10 ? '1': `.${i}`}`
-            }, i * 100)
-          }
-        } 
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
@@ -883,14 +876,12 @@ class WorkModal extends HTMLElement {
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
-              animatePic(image)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
-              animatePic(image)
               return
             }
           }
