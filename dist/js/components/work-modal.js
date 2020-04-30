@@ -878,12 +878,11 @@ class WorkModal extends HTMLElement {
         const isNewImg = async (newSrc, newImg) => {
         const switchImg = (newImg, newSrc) => {
           newImg.setAttribute('src', `img/works/${newSrc}`)
-          return true
+          return newSrc
         }
         try {
-          const ready = await newSrc
           const switched = await switchImg(newImg, newSrc)
-          if(ready && switched) {
+          if(switched === newSrc) {
             newImg.classList.add('animate-img')
             setTimeout(() => {
               newImg.classList.remove('animate-img')
@@ -904,7 +903,7 @@ class WorkModal extends HTMLElement {
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
-              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+              let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               isNewImg(newPic, image)
               return
             }
