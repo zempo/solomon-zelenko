@@ -876,20 +876,28 @@ class WorkModal extends HTMLElement {
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
         const isNewImg = async (newSrc, newImg) => {
-        const switchImg = (newImg, newSrc) => {
+        const switchImg = async (newImg, newSrc) => {
           newImg.setAttribute('src', `img/works/${newSrc}`)
-          return newSrc
+          try {
+            const ready = await newImg.getAttribute('src')
+            if(ready === `img/works/${newSrc}`) {
+              console.log(ready)
+              return true
+            }
+          } catch (err) {
+            console.error
+          }
         }
         try {
           const switched = await switchImg(newImg, newSrc)
-          if(switched === newSrc) {
+          if(switched) {
             setTimeout(() => {
               newImg.classList.add('animate-img')
-            }, 100)
+            }, 300)
             setTimeout(() => {
               newImg.classList.remove('animate-img')
               newImg.style.opacity = '1'
-            }, 1000)
+            }, 1300)
           }
         } catch (err) {
           console.error
