@@ -883,8 +883,12 @@ class WorkModal extends HTMLElement {
         try {
           const switched = await switchImg(newImg, newSrc)
           if(switched === newSrc) {
-            newImg.classList.add('animate-img')
+            newImg.style.opacity = '0'
             setTimeout(() => {
+              newImg.classList.add('animate-img')
+            }, 5)
+            setTimeout(() => {
+              newImg.style.opacity = '1'
               newImg.classList.remove('animate-img')
             }, 1000)
           }
