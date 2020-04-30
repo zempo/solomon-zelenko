@@ -876,6 +876,12 @@ class WorkModal extends HTMLElement {
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
         for (let i = 0; i < imgBtns.length; i++) {
+          if(i === 0) {
+            image.classList.add('animate-img');
+            setTimeout(() => {
+              image.classList.remove('animate-img')
+            }, 1000);
+          }
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
