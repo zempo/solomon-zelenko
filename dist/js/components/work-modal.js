@@ -881,11 +881,11 @@ class WorkModal extends HTMLElement {
           try {
             const ready = await newImg.getAttribute('src')
             if(ready === `img/works/${newSrc}`) {
-              console.log(ready)
               return true
             }
+            return false
           } catch (err) {
-            console.error
+            //
           }
         }
         try {
@@ -893,14 +893,14 @@ class WorkModal extends HTMLElement {
           if(switched) {
             setTimeout(() => {
               newImg.classList.add('animate-img')
-            }, 300)
+            }, 200)
             setTimeout(() => {
               newImg.classList.remove('animate-img')
               newImg.style.opacity = '1'
-            }, 1300)
+            }, 1200)
           }
         } catch (err) {
-          console.error
+          newImg.style.opacity = '1'
         }
         }
         for (let i = 0; i < imgBtns.length; i++) {
@@ -908,20 +908,21 @@ class WorkModal extends HTMLElement {
             if(i < imgBtns.length - 1) {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
-              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               image.style.opacity = '0'
+              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               isNewImg(newPic, image)
               return 
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
+              image.style.opacity = '0'
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               isNewImg(newPic, image)
               return
             }
           }
         }
-      }, 3500)
+      }, 3000)
       document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
       window.onhashchange = e => {
         clearInterval(runSlideShow)
