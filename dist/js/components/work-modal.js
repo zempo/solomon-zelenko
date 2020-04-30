@@ -4,7 +4,7 @@ workModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 10vh;
+  margin-bottom: 100px;
   font-size: calc(20px + 2.3vw);
 }
 h2 {
@@ -33,17 +33,21 @@ h3 {
   font-size: calc(13px + 1.8vw);
   margin: 5vh auto;
 }
-.info, .tech {
+.tech {
   text-align: justify;
   width: 100%;
   padding-bottom: 10vh;
 }
+.info {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10vh;
+}
 p {
-  text-indent: 5%;
   font-size: calc(15px + .25vw);
   padding: auto 10px;
-  width: 90%;
-  margin-left: 5%;
+  width: 85%;
+  margin: 20px auto;
 }
 li {
   font-size: calc(15px + .25vw);
@@ -502,8 +506,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   p {
     font-size: calc(17px + .25vw);
     width: 90%;
-    margin-left: 5%;
-    text-indent: 0%;
+    margin: 25px auto;
   }
   li {
     font-size: calc(17px + .25vw);
@@ -747,6 +750,9 @@ class WorkModal extends HTMLElement {
       }
       return output
     }
+    let descBreak = currentItem.description.indexOf('.');
+    let tagline = currentItem.description.substr(0, descBreak + 1);
+    let goal = currentItem.description.substr(descBreak + 1)
     let updatedTemplate = `
     <div class="work-modal" id="modal">
     <div class="modal-content opened">
@@ -804,10 +810,11 @@ class WorkModal extends HTMLElement {
     <section class="info-pg">
     <section class="info">
     <h3>Mission Statement</h3>
-    <p>${currentItem.title} ${currentItem.description}</p>
+    <p>${goal}</p>
+    <p>${tagline}</p>
     </section>
     <section class="timeline">
-    <h3>Product Timeline</h3>
+    <h3>Project Timeline</h3>
     ${timeline(currentItem.timeline)}
     </section>
     <section class="tech">
@@ -858,6 +865,11 @@ class WorkModal extends HTMLElement {
       let image = res.querySelector('.img-container img');
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
+        image.style.animation = 'none'
+        image.style.animation = 'fadeIn 1s'
+        setTimeout(() => {
+          image.style.animation = 'none'
+        }, 1000)
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
@@ -865,20 +877,12 @@ class WorkModal extends HTMLElement {
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
-              image.style.animation = 'fadeIn 1s'
-              setTimeout(() => {
-                image.style.animation = 'none'
-              }, 500)
               return
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)              
-              image.style.animation = 'fadeIn 1s'
-              setTimeout(() => {
-                image.style.animation = 'none'
-              }, 500) 
+              image.setAttribute('src', `img/works/${newPic}`)
               return
             }
           }
@@ -903,7 +907,7 @@ class WorkModal extends HTMLElement {
           toggleSize.style.border = '2px solid #f7f7f7'
           modalContent.style.height = '80vh'
           modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(10vh - 75px) calc(10% + 5vw)'
+          modalContent.style.margin = 'calc(10vh - 75px) calc(10% + 5vw)' 
         } else {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')

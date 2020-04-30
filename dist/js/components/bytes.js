@@ -2,78 +2,78 @@ const currentBytes = [
   {
     type: "demo",
     img: 'bytes/pen-1.png',
-    title: "Cloudy Landing Page",
+    title: "Cloudy Landing",
     link: "https://codepen.io/zemposPen/pen/bGNQmgX",
-    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. This animation is JavaScript-free! I've added borders for sizing and comments to help you repurpose this animation. It works in most major web and mobile browsers.`
-  },
+    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. This animation is JavaScript-free! I've added borders for sizing and comments for reverse-engineering. It works in most major web and mobile browsers.`
+  }, 
   { 
     type: "demo",
     img: 'bytes/pen-2.png',
-    title: "Interactive Greeting Cards",
+    title: "Great Greeting Cards",
     link: "https://codepen.io/zemposPen/pen/PowLbBd",
     info: `This is a demo of the greeting cards in my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. It makes use of checkboxes and labels and uses no JavaScript. When hovering over the cards, they open slightly and cast a realistic shadow. It works in most major web and mobile browsers.`
   },
   {
     type: "demo",
     img: 'bytes/pen-3.png',
-    title: "Above the Line Concept",
+    title: "ATL Concept",
     link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor here. In this Byte, I wanted to see if I could update a textbox with dynamic and outside content through the React lifecycle. I also used this sample as a reference for the actual project layout.`
+    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor. In this Byte, I needed a textbox to work with the React Lifecycle.`
   },
   {
     type: "article",
     img: 'svgs/article.svg',
-    title: "Expedite your Eurekas",
+    title: "Expedite Eurekas",
     link:
       "https://medium.com/@zelenkosolomon/expedite-your-eurekas-850a2073f5de",
-    info: `I believe creativity can be fostered in everyone, so I wanted to share some of things that have made my creative process more efficient. This is the first in a series of articles I plan on releasing this year.`
+    info: `I believe we can all foster creativity. Here, I've written my approach to coming up with great ideas.`
     },
   {
     type: "component",
     img: 'svgs/component.svg',
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
-    info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte taught me about react hooks and preventing memory leaks. I'm confident it will prove useful in future projects as a utility component.`
+    info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte would make a great utility component.`
   },
   {
     type: "algo",
     img: 'svgs/algo.svg',
     title: "Maze Matrices",
     link: "https://repl.it/@zempo1/Mad-Mazes",
-    info: `I occasionally review this pathfinding algorithm to stay sharp. It is an excellent application of recursion and might prove useful in a future project. It is one of the many coding challenges I revisit.`
+    info: `I review this pathfinding algorithm to stay sharp. It might prove useful in a future project.`
   },
   {
     type: "algo",
     img: 'svgs/algo.svg',
     title: "Memo-ize Fibonacci",
     link: "https://repl.it/@zempo1/memo",
-    info: `This algorithm expands upon the original Fibonacci recursive solution. I review this solution from time to time when trying to understanding memoization. I think this will be useful if I need to perform taxing calculations in future projects.`
+    info: `This algo expands upon the original Fibonacci recursive solution. I review this solution to understand memoization.`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
-    title: "React Boilerplate",
+    title: "React Boiler",
     link: "https://github.com/zempo/react-boilerplate",
-    info: `This is my quick-start react boilerplate. It comes with fontawesome, react router, context, and my favorite utility components. However, it might need to be updated soon for the new hooks and react router 6.`
+    info: `This is my React.js boilerplate. It comes with fontawesome, react router, context, and my favorite utility components. It might require an update, soon.`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
-    title: "Node Boilerplate (PERN)",
+    title: "Node Boiler (PERN)",
     link: "https://github.com/zempo/node-boiler-postgres",
-    info: `This is my Node boilerplate for a PostgreSQL project. It handles logging, security middleware, and a starter route. It has saved me a lot of time starting projects.`
-  },
+    info: `This is my Node boilerplate for a PostgreSQL project. It handles logging, security, and a starter route.`
+  }, 
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
-    title: "Node Boilerplate (MERN)",
+    title: "Node Boiler (MERN)",
     link: "https://github.com/zempo/node-boiler-mongo",
-    info: `This is my other Node boilerplate for a MongoDB project. I made sure to include a sample schema, key middleware, and the relevant packages. I plan on adding to the README for slightly different use cases (pdfs, fileshare, emails, authentication, etc)`
+    info: `This is my other Node boilerplate for a MongoDB project. I included a sample schema and middleware.`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
-    title: "Svelte with Router",
+    title: "Svelte Boiler",
     link: "https://github.com/zempo/svelte-boiler",
     info: `This is my personal Svelte boilerplate. I found Svelte.js incredible straightforward to use. And, given the size of most major frameworks, I would like to have a smaller frontend framework in my toolkit. For this boilerplate, I included routing, animations, and state management in the project. I plan on adding utility components over time.`
   } 
@@ -89,22 +89,27 @@ h2 {
   font-weight: normal;
   margin: 10px;
 }
+.byte-items {
+  list-style-type: none;
+  padding-left: 0;
+ }
 .bytes-list-item {
   max-width: 650px;
   margin: 0 auto 7vh;
 }
 .filter-bytes, .filter-works {
-  margin-bottom: 50px; }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto 50px;
+ }
 .filter-btn {
-  -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
-  visibility: visible;
-  user-select: none;
-  list-style: none;
   box-sizing: border-box;
   display: inline-block;
   color: #fafafa;
   background-color: #787878;
-  border: 1px solid #646464;
+  border: 2px solid #646464;
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
   font-family: MontSerrat,Tahoma,Arial,sans-serif;
@@ -194,6 +199,10 @@ h2 {
       border: 1px solid rgba(0, 0, 0, 0);
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
+      -moz-transition: all 0.4s ease-out;
+      -o-transition: all 0.4s ease-out;
+      -webkit-transition: all 0.4s ease-out;
+      transition: all 0.4s ease-out;
       cursor: pointer;
       position: absolute;
       top: 0px;
@@ -201,11 +210,12 @@ h2 {
     .open-byte:hover,
     .open-byte:focus,
     .open-byte:active {
-      background: rgba(0, 0, 0, 0.3); }
+      background: rgba(0, 0, 0, 0.3);
+     }
     .open-byte span {
       color: rgba(0, 0, 0, 0);
       cursor: pointer;
-      font-size: calc(17px + 1vw); 
+      font-size: calc(15px + 1vw);
       font-weight: 400 !important; 
     }
   .open-byte:hover span,
@@ -216,6 +226,10 @@ h2 {
     border: 1px solid #3d3a3a;
     font-weight: bold;
     border-radius: 7px;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
     color: #f7f7f7; }
   @-webkit-keyframes fadeIn {
     from {
@@ -242,28 +256,61 @@ h2 {
       opacity: 1; } }
 @media only screen and (min-width: 850px) {
   h2 {
-    font-size: calc(22px + 1vw);
+    font-size: calc(20px + 1vw);
   }
   .filter-btn {
     font-size: calc(17px + .5vw); 
   }
   .open-byte span {
-    font-size: calc(22px + 1vw); 
+    font-size: calc(18px + 1vw); 
+  }
+  .bytes-list-item {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 10vh;
+  }
+  .filter-bytes {
+    max-width: 700px;
+  }
+  .filter-btn {
+    margin: 6px;
   }
 }  
-.bytes-list-item {
-  max-width: 650px;
-  margin: 0 auto 7vh;
+@media only screen and (min-width: 1000px) {
+  .byte-items {
+    display: grid;
+    width: 100%
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 1080px;
+   }
+   h2 {
+    margin: 0 auto 5px; 
+  }
+  .bytes-list-item {
+   width: 100%;
+   margin: 0;
+ }
 }
 @media only screen and (min-width: 1200px) {
+  .byte-items {
+    grid-gap: 30px;
+  }  
 h2 {
-  font-size: calc(24px + .5vw);
+font-size: calc(23px + .5vw);
+}
+.filter-bytes {
+  max-width: 750px;
+  margin: auto auto 80px;
 }
 .open-byte span {
-  font-size: calc(24px + .5vw); 
+font-size: calc(20px + .5vw); 
 }
 .bytes-list-item {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto 7vh;
 }
 } 
@@ -272,16 +319,17 @@ h2 {
   font-size: 28px;
 }
 .open-byte span {
-  font-size: 28px; 
+  font-size: 25px; 
 }
 }    
 </style><div class="filter-bytes">
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn article">Articles</button>
+<button class="filter-btn demo">Snippets</button>
+<button class="filter-btn npm">NPMs</button>
 <button class="filter-btn algo">Algorithms</button>
-<button class="filter-btn boilerplate">Boilerplates</button>
 <button class="filter-btn component">Components</button>
-<button class="filter-btn demo">Demos</button>
+<button class="filter-btn boilerplate">Boilerplates</button>
 </div>`;
 
 class BytesList extends HTMLElement {
@@ -296,6 +344,7 @@ class BytesList extends HTMLElement {
       algo: null,
       boilerplate: null,
       component: null,
+      npm: null,
       demo: null
     }
     this.state = {
@@ -307,18 +356,40 @@ class BytesList extends HTMLElement {
   updateBytes(updatedBytes, query) {
     let updatedTemplate = ''
     if(updatedBytes.length === 0) {
-      updatedTemplate += `<h2>No ${this.refs[query].innerHTML} Projects...</h2><h2>Yet...</h2>`
+      updatedTemplate += `<h2>No ${this.refs[query].innerHTML}-Type Bytes...</h2><h2>Yet...</h2>`
     } else {
-      updatedBytes.forEach((byte, i) => {
-        updatedTemplate += `<li class="bytes-list-item">
-        <h2>${byte.title}</h2>
-        <div class="byte-preview-1">
-        <div class="byte-preview-2">
-        <img src="img/${byte.img}" alt="${byte.type} link"/>
-        <button class="open-byte" data-item="${i}"><span>See More</span></button>
-        </div>
-        </div>
-        </li>`
+      updatedBytes.forEach((byte, i, allBytes) => {
+        if(i === 0) {
+          updatedTemplate += `<ul class="byte-items"><li class="bytes-list-item">
+          <h2>${byte.title}</h2>
+          <div class="byte-preview-1">
+          <div class="byte-preview-2">
+          <img src="img/${byte.img}" alt="${byte.type} link"/>
+          <button class="open-byte" data-item="${i}"><span>See More</span></button>
+          </div>
+          </div>
+          </li>`          
+        } else if (i === allBytes.length - 1) {
+          updatedTemplate += `<li class="bytes-list-item">
+          <h2>${byte.title}</h2>
+          <div class="byte-preview-1">
+          <div class="byte-preview-2">
+          <img src="img/${byte.img}" alt="${byte.type} link"/>
+          <button class="open-byte" data-item="${i}"><span>See More</span></button>
+          </div>
+          </div>
+          </li></ul>`  
+        } else {
+          updatedTemplate += `<li class="bytes-list-item">
+          <h2>${byte.title}</h2>
+          <div class="byte-preview-1">
+          <div class="byte-preview-2">
+          <img src="img/${byte.img}" alt="${byte.type} link"/>
+          <button class="open-byte" data-item="${i}"><span>See More</span></button>
+          </div>
+          </div>
+          </li>`
+        }
       }) 
     }
     return updatedTemplate

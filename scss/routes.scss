@@ -14,9 +14,9 @@
     padding: 0 15vw;
   }
   h1:first-child {
-    margin-bottom: 10vh;
+    margin: 60px auto; 
     @include mq('tablet-med') {
-      margin-bottom: 15vh; 
+      margin: 80px auto; 
     }
   }
 }
@@ -455,10 +455,6 @@
   padding-left: 0;
   .filter-works {
     .filter-btn  {
-      -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
-      visibility: visible;
-      user-select: none;
-      list-style: none;
       box-sizing: border-box;
       display: inline-block;
       color: #fafafa;
@@ -506,6 +502,8 @@
     flex-wrap: wrap;
     height: auto;
     width: 100%;
+    margin: auto;
+    max-width: 1000px;
     .form-content {
       order: initial;
       flex-direction: column;

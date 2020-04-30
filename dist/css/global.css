@@ -63,7 +63,7 @@ main {
     @media screen and (min-width: 560px) {
       body h1,
       main h1 {
-        font-size: 28px; } }
+        font-size: calc(28px + .5vw); } }
     @media screen and (min-width: 768px) {
       body h1,
       main h1 {
@@ -116,10 +116,18 @@ main {
         font-size: 21px; } }
   body .btn-fwd,
   main .btn-fwd {
-    right: calc(10px + 3vw); }
+    right: calc(15px + 3vw); }
+    @media only screen and (min-width: 1440px) {
+      body .btn-fwd,
+      main .btn-fwd {
+        right: calc(10px + 6vw); } }
   body .btn-back,
   main .btn-back {
-    left: calc(10px + 3vw); }
+    left: calc(15px + 3vw); }
+    @media only screen and (min-width: 1440px) {
+      body .btn-back,
+      main .btn-back {
+        left: calc(10px + 6vw); } }
   body .btn-fwd,
   body .btn-back,
   main .btn-fwd,
@@ -129,8 +137,8 @@ main {
     font-size: 0;
     padding: 0;
     top: calc(50vh - 30px - 1vw);
-    width: calc(60px + 1vw);
-    height: calc(60px + 1vw);
+    width: calc(60px + .8vw);
+    height: calc(60px + .8vw);
     z-index: 2;
     outline: none;
     background: black;
@@ -149,8 +157,8 @@ main {
       background: #3d3a3a;
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(60px + 1vw);
-      height: calc(60px + 1vw); }
+      width: calc(60px + .8vw);
+      height: calc(60px + .8vw); }
     body .btn-fwd path,
     body .btn-back path,
     main .btn-fwd path,

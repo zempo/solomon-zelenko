@@ -44,10 +44,10 @@
     .route {
       padding: 0 15vw; } }
   .route h1:first-child {
-    margin-bottom: 10vh; }
+    margin: 60px auto; }
     @media only screen and (min-width: 900px) {
       .route h1:first-child {
-        margin-bottom: 15vh; } }
+        margin: 80px auto; } }
 
 .l {
   -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -94,7 +94,7 @@
   font-size: 24px; }
   @media screen and (min-width: 560px) {
     .home-pg .min-txt {
-      font-size: 28px; } }
+      font-size: calc(28px + .5vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .min-txt {
       font-size: calc(28px + 1vw); } }
@@ -539,10 +539,6 @@
   list-style-type: none;
   padding-left: 0; }
   .works-list .filter-works .filter-btn, .bytes-list .filter-works .filter-btn {
-    -webkit-tap-highlight-color: rgba(201, 224, 253, 0);
-    visibility: visible;
-    user-select: none;
-    list-style: none;
     box-sizing: border-box;
     display: inline-block;
     color: #fafafa;
@@ -579,7 +575,9 @@
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  width: 100%; }
+  width: 100%;
+  margin: auto;
+  max-width: 1000px; }
   .contact-pg .contact-forms .form-content {
     order: initial;
     flex-direction: column;

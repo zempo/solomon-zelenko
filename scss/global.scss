@@ -22,10 +22,16 @@ main {
     @include font-size($p-font-sizes);
   }
   .btn-fwd {
-    right:calc(10px + 3vw);;
+    right:calc(15px + 3vw);
+    @include mq('desktop-wide') {
+      right:calc(10px + 6vw);
+    } 
   } 
   .btn-back { 
-    left:calc(10px + 3vw);;
+    left:calc(15px + 3vw);
+    @include mq('desktop-wide') {
+      left:calc(10px + 6vw);
+    } 
   }
   .btn-fwd,
   .btn-back { 
@@ -35,8 +41,8 @@ main {
     font-size: 0;
     padding: 0;
     top: calc(50vh - 30px - 1vw);
-    width:calc(60px + 1vw);
-    height:calc(60px + 1vw);
+    width:calc(60px + .8vw);
+    height:calc(60px + .8vw);
     z-index: 2;
     outline: none; 
     background: rgb(0, 0, 0);
@@ -50,8 +56,8 @@ main {
       background: map-get($colors, dark-2 );
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(60px + 1vw);
-      height: calc(60px + 1vw);
+      width: calc(60px + .8vw);
+      height: calc(60px + .8vw);
     }
     path {
       fill: lighten(map-get($colors, app-white ), 10%);

@@ -4,7 +4,7 @@ byteModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 15vh;
+  margin-bottom: 100px;
   font-size: calc(20px + 2.3vw);
 }
 h2 {
@@ -90,7 +90,7 @@ h2 a svg  {
   background-color: #fefefe;
   margin: 0; 
   width: calc(100% - 20px);
-  height: calc(100vh - 138px);
+  height: calc(100vh - 142px); 
   -webkit-animation: modalIn 0s linear both;
   animation: modalIn 0s linear both; 
 }

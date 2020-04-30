@@ -59,7 +59,7 @@ $bigh-font-sizes: (
 
 $h1-font-sizes: (
   null: 24px,
-  map-get($breakpoints, "phablet"): 28px,
+  map-get($breakpoints, "phablet"): calc(28px + .5vw),
   map-get($breakpoints, "tablet") : calc(28px + 1vw),
   map-get($breakpoints, "desktop"): calc(32px + 1vw),
   map-get($breakpoints, "ultra-wide"): calc(44px + .5vw)
