@@ -883,13 +883,12 @@ class WorkModal extends HTMLElement {
         try {
           const switched = await switchImg(newImg, newSrc)
           if(switched === newSrc) {
-            newImg.style.opacity = '0'
             setTimeout(() => {
               newImg.classList.add('animate-img')
-            }, 5)
+            }, 100)
             setTimeout(() => {
-              newImg.style.opacity = '1'
               newImg.classList.remove('animate-img')
+              newImg.style.opacity = '1'
             }, 1000)
           }
         } catch (err) {
@@ -902,6 +901,7 @@ class WorkModal extends HTMLElement {
               imgBtns[i].checked = false
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+              image.style.opacity = '0'
               isNewImg(newPic, image)
               return 
             } else {
