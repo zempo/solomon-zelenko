@@ -866,10 +866,9 @@ class WorkModal extends HTMLElement {
       let imgBtns = res.querySelectorAll('.pic-control input');
       let runSlideShow = setInterval(() => {
         image.style.animation = 'none'
-        image.style.animation = 'fadeIn 1s'
         setTimeout(() => {
           image.style.animation = 'none'
-        }, 1000)
+        }, 1500)
         for (let i = 0; i < imgBtns.length; i++) {
           if(imgBtns[i].checked == true) {
             if(i < imgBtns.length - 1) {
@@ -877,12 +876,14 @@ class WorkModal extends HTMLElement {
               imgBtns[i + 1].checked = true
               let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
+              image.style.animation = 'fadeIn 1s'
               return
             } else {
               imgBtns[i].checked = false
               imgBtns[0].checked = true
               let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
               image.setAttribute('src', `img/works/${newPic}`)
+              image.style.animation = 'fadeIn 1s'
               return
             }
           }
