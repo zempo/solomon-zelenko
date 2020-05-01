@@ -285,6 +285,7 @@ h2 {
     margin: auto;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+    gap: 20px;
     max-width: 1080px;
    }
    h2 {
@@ -298,6 +299,7 @@ h2 {
 @media only screen and (min-width: 1200px) {
   .byte-items {
     grid-gap: 30px;
+    gap: 30px;
   }  
 h2 {
 font-size: calc(23px + .5vw);
