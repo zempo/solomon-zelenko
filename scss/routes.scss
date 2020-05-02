@@ -67,7 +67,7 @@
     font-family: $font-hand;
     font-weight: 300;
     @include font-size($h1-font-sizes);
-    @include mq('tablet-med') {
+    @include mq('tablet-wide') {
       display: none;
     }
   }
@@ -120,7 +120,7 @@
     transform: translate3d(200%, 0, 0);
   }
   .btn-resume {
-    margin-bottom: 12vh;
+    margin-bottom: 100px;
   }
 }
 
@@ -456,7 +456,7 @@
         list-style-position: inside;
         @include font-size($p-font-sizes);
         h2 {
-          text-align: justify;
+          text-align: left;
         }
       }
       h2 {
@@ -478,8 +478,9 @@
         padding: 40px 10px;
         grid-template-columns: 1fr;
         ul, ol { 
-          text-align: center;
-          width: 100%;
+          text-align: left;
+          list-style-type: none;
+          width: 170px;
           padding-left: 0;
           margin: 20px auto;
           h2 {
@@ -489,14 +490,14 @@
             margin: 5px auto;
           }
         }
-        @include mq('phone-wide') {
+        @include mq('phablet') {
           grid-template-columns: 1fr 1fr;
           grid-gap: 10px;
           gap: 10px; 
           ul, ol {
             width: 100%;
-            text-align: left;
-            max-width: 300px;
+            text-align: justify;
+            max-width: calc(210px + 2vw);
             margin: 10px auto;
           }
         } 

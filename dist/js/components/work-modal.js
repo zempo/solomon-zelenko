@@ -505,7 +505,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     text-align: center;
   }
   h3 {
-    font-size: calc(10px + 1.8vw);
+    font-size: calc(12px + 1.8vw);
   }
   p {
     font-size: calc(17px + .25vw);
@@ -513,12 +513,17 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     margin: 25px auto;
   }
   li {
-    font-size: calc(17px + .25vw);
+    font-size: calc(12px + 1.8vw);
   }
   .tech ul {
     width: 800px;
     margin-left: calc(50% - 400px); 
-    font-size: calc(17px + .25vw); 
+    font-size: calc(19px + .25vw);
+    list-style-type: "→ ";
+  }
+  .tech ul li {
+    font-size: calc(19px + .25vw);
+    margin: calc(10px + .25vw);
   }
   .node-content {
     padding: 20px 10%;

@@ -126,7 +126,7 @@
   @media screen and (min-width: 2000px) {
     .home-pg .min-txt {
       font-size: calc(44px + .5vw); } }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 1024px) {
     .home-pg .min-txt {
       display: none; } }
 
@@ -195,7 +195,7 @@
   transform: translate3d(200%, 0, 0); }
 
 .home-pg .btn-resume {
-  margin-bottom: 12vh; }
+  margin-bottom: 100px; }
 
 .about-pg .min-txt {
   font-family: "Indie Flower", cursive;
@@ -549,7 +549,7 @@
         .about-pg .accordion .vision ol {
           font-size: 21px; } }
       .about-pg .accordion .vision ol h2 {
-        text-align: justify; }
+        text-align: left; }
     .about-pg .accordion .vision h2 {
       text-align: center; }
     .about-pg .accordion .vision img {
@@ -564,23 +564,24 @@
     padding: 40px 10px;
     grid-template-columns: 1fr; }
     .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
-      text-align: center;
-      width: 100%;
+      text-align: left;
+      list-style-type: none;
+      width: 170px;
       padding-left: 0;
       margin: 20px auto; }
       .about-pg .accordion .skills .content-items ul h2, .about-pg .accordion .skills .content-items ol h2, .about-pg .accordion .vision .content-items ul h2, .about-pg .accordion .vision .content-items ol h2 {
         margin: 20px auto; }
       .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
         margin: 5px auto; }
-    @media only screen and (min-width: 480px) {
+    @media only screen and (min-width: 560px) {
       .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
         gap: 10px; }
         .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
           width: 100%;
-          text-align: left;
-          max-width: 300px;
+          text-align: justify;
+          max-width: calc(210px + 2vw);
           margin: 10px auto; } }
   .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
     font-size: 15px; }
