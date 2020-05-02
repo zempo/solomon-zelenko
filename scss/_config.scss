@@ -21,14 +21,15 @@ $colors: (
   modal-white: rgb(247, 247, 247),
   null: rgba(0, 0, 0, 0),
   success: rgb(0, 235, 94),
-  err: rgb(255, 90, 145) 
+  err: rgb(255, 90, 145),
+  focus: rgb(0, 149, 235) 
 );
 $animations: (
     expand-down: expand-down 0.45s ease-in both,
-    fade-in: fadeIn 1s,
+    fade-in: fadeIn .8s, 
     from-top: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1),
-    from-right: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
-    from-left: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1),
+    from-right: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
+    from-left: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
     fold-up: fold-up 0.4s linear both,
     ping: ping 0.8s ease-in-out infinite both,
     transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
@@ -59,18 +60,26 @@ $bigh-font-sizes: (
 
 $h1-font-sizes: (
   null: 24px,
-  map-get($breakpoints, "phablet"): calc(28px + .5vw),
-  map-get($breakpoints, "tablet") : calc(28px + 1vw),
-  map-get($breakpoints, "desktop"): calc(32px + 1vw),
+  map-get($breakpoints, "phablet"): calc(27px + .5vw),
+  map-get($breakpoints, "tablet") : calc(27px + 1vw),
+  map-get($breakpoints, "desktop"): calc(30px + 1vw),
   map-get($breakpoints, "ultra-wide"): calc(44px + .5vw)
 ); 
 
 $h2-font-sizes: (
   null: 18px,
-  map-get($breakpoints, "phablet") : calc(22px + .5vw),
-  map-get($breakpoints, "tablet") : calc(24px + .5vw), 
-  map-get($breakpoints, "desktop"): calc(24px + .5vw),
+  map-get($breakpoints, "phablet") : calc(21px + .5vw),
+  map-get($breakpoints, "tablet") : calc(21px + .5vw), 
+  map-get($breakpoints, "desktop"): calc(22px + .5vw),
   map-get($breakpoints, "ultra-wide"): 28px
+); 
+
+$h3-big-font-sizes: (
+  null: 16px,
+  map-get($breakpoints, "phablet") : calc(17px + .25vw),
+  map-get($breakpoints, "tablet") : calc(18px + .25vw), 
+  map-get($breakpoints, "desktop"): calc(20px + .25vw),
+  map-get($breakpoints, "ultra-wide"): 26px
 ); 
 
 $h3-font-sizes: (

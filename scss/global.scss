@@ -40,9 +40,9 @@ main {
     display: none;
     font-size: 0;
     padding: 0;
-    top: calc(50vh - 30px - 1vw);
-    width:calc(60px + .8vw);
-    height:calc(60px + .8vw);
+    top: calc(50vh - 30px - .5vw);
+    width:calc(65px + .25vw);
+    height:calc(65px + .25vw);
     z-index: 2;
     outline: none; 
     background: rgb(0, 0, 0);
@@ -51,13 +51,16 @@ main {
     @include mq('tablet-wide') {
       display: block;
     } 
+    @include mq('tablet-wide') {
+      max-width: calc(65px + .25vw);
+    } 
     svg {
       @extend %btn;
       background: map-get($colors, dark-2 );
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(60px + .8vw);
-      height: calc(60px + .8vw);
+      width: calc(65px + .25vw);
+      height: calc(65px + .25vw);
     }
     path {
       fill: lighten(map-get($colors, app-white ), 10%);

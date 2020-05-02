@@ -34,40 +34,62 @@
 .route {
   overflow-x: hidden;
   margin: 0;
-  -o-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+  -o-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  animation: fadeIn 0.8s;
   padding: 0px 5vw 5vh;
   margin: 0 auto; }
+  .route h1::selection, .route h2::selection, .route h3::selection, .route p::selection, .route li::selection, .route a::selection, .route strong::selection, .route span::selection, .route label::selection, .route input::selection, .route textarea::selection {
+    color: #fafafa;
+    background: #000000; }
   @media only screen and (min-width: 900px) {
     .route {
       padding: 0 15vw; } }
   .route h1:first-child {
-    margin: 60px auto; }
+    margin: 60px auto 40px; }
     @media only screen and (min-width: 900px) {
       .route h1:first-child {
-        margin: 80px auto; } }
+        margin: 80px auto 50px; } }
+  .route h3:nth-child(2) {
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 16px; }
+    @media screen and (min-width: 560px) {
+      .route h3:nth-child(2) {
+        font-size: calc(17px + .25vw); } }
+    @media screen and (min-width: 768px) {
+      .route h3:nth-child(2) {
+        font-size: calc(18px + .25vw); } }
+    @media screen and (min-width: 1248px) {
+      .route h3:nth-child(2) {
+        font-size: calc(20px + .25vw); } }
+    @media screen and (min-width: 2000px) {
+      .route h3:nth-child(2) {
+        font-size: 26px; } }
 
 .l {
-  -moz-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation: fromLeft 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
+  -moz-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 .r {
-  -o-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation: fromRight 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
+  -o-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 .home-pg .logo-main {
-  margin-top: 15vh;
+  margin-top: 100px;
   max-width: 90%;
   max-height: 250px; }
   @media only screen and (min-width: 900px) {
     .home-pg .logo-main {
       max-width: 85%; } }
+  @media only screen and (min-width: 1440px) {
+    .home-pg .logo-main {
+      max-width: 60%; } }
 
 .home-pg .big-h {
   font-size: calc(26px + 1vw);
@@ -94,13 +116,13 @@
   font-size: 24px; }
   @media screen and (min-width: 560px) {
     .home-pg .min-txt {
-      font-size: calc(28px + .5vw); } }
+      font-size: calc(27px + .5vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .min-txt {
-      font-size: calc(28px + 1vw); } }
+      font-size: calc(27px + 1vw); } }
   @media screen and (min-width: 1248px) {
     .home-pg .min-txt {
-      font-size: calc(32px + 1vw); } }
+      font-size: calc(30px + 1vw); } }
   @media screen and (min-width: 2000px) {
     .home-pg .min-txt {
       font-size: calc(44px + .5vw); } }
@@ -121,15 +143,15 @@
   @media screen and (min-width: 560px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(22px + .5vw); } }
+      font-size: calc(21px + .5vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(24px + .5vw); } }
+      font-size: calc(21px + .5vw); } }
   @media screen and (min-width: 1248px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(24px + .5vw); } }
+      font-size: calc(22px + .5vw); } }
   @media screen and (min-width: 2000px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
@@ -181,13 +203,13 @@
   font-size: 18px; }
   @media screen and (min-width: 560px) {
     .about-pg .min-txt {
-      font-size: calc(22px + .5vw); } }
+      font-size: calc(21px + .5vw); } }
   @media screen and (min-width: 768px) {
     .about-pg .min-txt {
-      font-size: calc(24px + .5vw); } }
+      font-size: calc(21px + .5vw); } }
   @media screen and (min-width: 1248px) {
     .about-pg .min-txt {
-      font-size: calc(24px + .5vw); } }
+      font-size: calc(22px + .5vw); } }
   @media screen and (min-width: 2000px) {
     .about-pg .min-txt {
       font-size: 28px; } }
@@ -276,6 +298,9 @@
       display: block;
       position: absolute;
       left: 50%;
+      -o-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
       border: 2px solid #000;
       border-radius: 6px; }
@@ -389,13 +414,13 @@
       border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(22px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(22px + .5vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .accordion-label {
         font-size: 28px; } }
@@ -450,10 +475,10 @@
       border-top: none;
       margin-right: 0; }
       .about-pg .accordion input[type="radio"]:checked + label + .a-content > * {
-        -o-animation: fadeIn 1s;
-        -moz-animation: fadeIn 1s;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s; }
+        -o-animation: fadeIn 0.8s;
+        -moz-animation: fadeIn 0.8s;
+        -webkit-animation: fadeIn 0.8s;
+        animation: fadeIn 0.8s; }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion input[type="radio"] + label .tab-open {
         display: none; } }
@@ -675,6 +700,9 @@
       .contact-pg .contact-forms .form-content button:hover, .contact-pg .contact-forms .form-content button:active {
         opacity: 1; }
       .contact-pg .contact-forms .form-content button:active {
+        -o-transform: scale(0.96);
+        -webkit-transform: scale(0.96);
+        -moz-transform: scale(0.96);
         transform: scale(0.96); }
     .contact-pg .contact-forms .form-content .form-submit, .contact-pg .contact-forms .form-content .form-next {
       background: #3d3a3a;
@@ -694,13 +722,13 @@
           font-size: 18px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(22px + .5vw); } }
+              font-size: calc(21px + .5vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(24px + .5vw); } }
+              font-size: calc(21px + .5vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(24px + .5vw); } }
+              font-size: calc(22px + .5vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
               font-size: 28px; } }
@@ -798,6 +826,11 @@
           border-radius: 5px;
           margin-bottom: 2vh;
           font-size: 15px; }
+          .contact-pg .contact-forms .form-content form fieldset input:focus, .contact-pg .contact-forms .form-content form fieldset select:focus, .contact-pg .contact-forms .form-content form fieldset textarea:focus {
+            -webkit-tap-highlight-color: #0095eb;
+            color: #3d3a3a;
+            border: 2px solid #0095eb;
+            padding: 14px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
               font-size: calc(15px + .25vw); } }
@@ -824,6 +857,8 @@
           background: #3d3a3a;
           color: #fafafa;
           cursor: pointer; }
+          .contact-pg .contact-forms .form-content form fieldset select:focus {
+            color: #fafafa; }
         .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
           background: #fafafa;
           color: #575353;
@@ -1067,13 +1102,13 @@
       border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(22px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 768px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 1248px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(22px + .5vw); } }
     @media screen and (min-width: 2000px) {
       .contact-pg .contact-forms .form-label {
         font-size: 28px; } }
@@ -1111,10 +1146,10 @@
       border-top: none;
       margin-right: 0; }
       .contact-pg .contact-forms input[type="radio"]:checked + label + .form-content > * {
-        -o-animation: fadeIn 1s;
-        -moz-animation: fadeIn 1s;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s; }
+        -o-animation: fadeIn 0.8s;
+        -moz-animation: fadeIn 0.8s;
+        -webkit-animation: fadeIn 0.8s;
+        animation: fadeIn 0.8s; }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms input[type="radio"] + label .form-open {
         display: none; } }

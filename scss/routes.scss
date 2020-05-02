@@ -10,14 +10,25 @@
   animation: map-get($animations, fade-in);
   padding: 0px 5vw 5vh;
   margin: 0 auto;
+  h1, h2, h3, p, li, a, strong, span, label, input, textarea {
+    &::selection {
+      color: map-get($colors, app-white);
+      background: map-get($colors, dark);
+    }
+  }
   @include mq('tablet-med') {
     padding: 0 15vw;
   }
   h1:first-child {
-    margin: 60px auto; 
+    margin: 60px auto 40px; 
     @include mq('tablet-med') {
-      margin: 80px auto; 
+      margin: 80px auto 50px; 
     }
+  }
+  h3:nth-child(2) {
+    font-weight: normal;
+    margin-top: 0;
+    @include font-size($h3-big-font-sizes);
   }
 }
 
@@ -38,11 +49,14 @@
 //  HOME
 .home-pg {
   .logo-main {
-    margin-top: 15vh;
+    margin-top: 100px;
     max-width: 90%;
     max-height: 250px;
     @include mq('tablet-med') {
       max-width: 85%;
+    }
+    @include mq('desktop-wide') {
+      max-width: 60%;
     }
   }
   .big-h {
@@ -202,6 +216,9 @@
         display: block;
         position: absolute;
         left: 50%;
+        -o-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
         transform: translate(-50%, 0);
         border: 2px solid #000;
         border-radius: 6px;
@@ -590,7 +607,10 @@
           opacity: 1;
         }
         &:active {
-          transform: scale(.96)
+          -o-transform: scale(.96);
+          -webkit-transform: scale(.96);
+          -moz-transform: scale(.96);
+          transform: scale(.96);
         }
       }
       .form-submit, .form-next {
@@ -679,6 +699,12 @@
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 2vh;
+            &:focus {
+              -webkit-tap-highlight-color: map-get($colors, focus);
+              color: map-get($colors, dark-2);
+              border: 2px solid map-get($colors, focus); 
+              padding: 14px;
+            }
             @include font-size($p-font-sizes);
             &:last-child {
               margin-bottom: 0;
@@ -696,6 +722,9 @@
             background: map-get($colors, dark-2);
             color: map-get($colors, app-white);
             cursor: pointer;
+            &:focus {
+              color: map-get($colors, app-white);
+            }
           }
           input, textarea {
             background: map-get($colors, app-white);

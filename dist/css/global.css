@@ -63,15 +63,15 @@ main {
     @media screen and (min-width: 560px) {
       body h1,
       main h1 {
-        font-size: calc(28px + .5vw); } }
+        font-size: calc(27px + .5vw); } }
     @media screen and (min-width: 768px) {
       body h1,
       main h1 {
-        font-size: calc(28px + 1vw); } }
+        font-size: calc(27px + 1vw); } }
     @media screen and (min-width: 1248px) {
       body h1,
       main h1 {
-        font-size: calc(32px + 1vw); } }
+        font-size: calc(30px + 1vw); } }
     @media screen and (min-width: 2000px) {
       body h1,
       main h1 {
@@ -82,15 +82,15 @@ main {
     @media screen and (min-width: 560px) {
       body h2,
       main h2 {
-        font-size: calc(22px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 768px) {
       body h2,
       main h2 {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 1248px) {
       body h2,
       main h2 {
-        font-size: calc(24px + .5vw); } }
+        font-size: calc(22px + .5vw); } }
     @media screen and (min-width: 2000px) {
       body h2,
       main h2 {
@@ -136,9 +136,9 @@ main {
     display: none;
     font-size: 0;
     padding: 0;
-    top: calc(50vh - 30px - 1vw);
-    width: calc(60px + .8vw);
-    height: calc(60px + .8vw);
+    top: calc(50vh - 30px - .5vw);
+    width: calc(65px + .25vw);
+    height: calc(65px + .25vw);
     z-index: 2;
     outline: none;
     background: black;
@@ -150,6 +150,12 @@ main {
       main .btn-fwd,
       main .btn-back {
         display: block; } }
+    @media only screen and (min-width: 1024px) {
+      body .btn-fwd,
+      body .btn-back,
+      main .btn-fwd,
+      main .btn-back {
+        max-width: calc(65px + .25vw); } }
     body .btn-fwd svg,
     body .btn-back svg,
     main .btn-fwd svg,
@@ -157,8 +163,8 @@ main {
       background: #3d3a3a;
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(60px + .8vw);
-      height: calc(60px + .8vw); }
+      width: calc(65px + .25vw);
+      height: calc(65px + .25vw); }
     body .btn-fwd path,
     body .btn-back path,
     main .btn-fwd path,

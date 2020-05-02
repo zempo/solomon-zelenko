@@ -14,11 +14,11 @@ const currentBytes = [
     info: `This is a demo of the greeting cards in my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. It makes use of checkboxes and labels and uses no JavaScript. When hovering over the cards, they open slightly and cast a realistic shadow. It works in most major web and mobile browsers.`
   },
   {
-    type: "demo",
-    img: 'bytes/pen-3.png',
-    title: "ATL Concept",
-    link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor. In this Byte, I needed a textbox to work with the React Lifecycle.`
+    type: "boilerplate",
+    img: 'svgs/ghub.svg',
+    title: "Node Boiler (MERN)",
+    link: "https://github.com/zempo/node-boiler-mongo",
+    info: `This is my other Node boilerplate for a MongoDB project. I included a sample schema and middleware.`
   },
   {
     type: "article",
@@ -34,6 +34,13 @@ const currentBytes = [
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
     info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte would make a great utility component.`
+  },
+  {
+    type: "demo",
+    img: 'bytes/pen-3.png',
+    title: "ATL Concept",
+    link: "https://stackblitz.com/edit/above-the-line-concept",
+    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor. In this Byte, I needed a textbox to work with the React Lifecycle.`
   },
   {
     type: "algo",
@@ -66,13 +73,6 @@ const currentBytes = [
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
-    title: "Node Boiler (MERN)",
-    link: "https://github.com/zempo/node-boiler-mongo",
-    info: `This is my other Node boilerplate for a MongoDB project. I included a sample schema and middleware.`
-  },
-  {
-    type: "boilerplate",
-    img: 'svgs/ghub.svg',
     title: "Svelte Boiler",
     link: "https://github.com/zempo/svelte-boiler",
     info: `This is my personal Svelte boilerplate. I found Svelte.js incredible straightforward to use. And, given the size of most major frameworks, I would like to have a smaller frontend framework in my toolkit. For this boilerplate, I included routing, animations, and state management in the project. I plan on adding utility components over time.`
@@ -84,6 +84,10 @@ bytesTemplate.innerHTML = `
 <style>
 @import url("css/global.css"); 
 @import url("css/routes.css");
+h2::selection, p::selection {
+    color: rgb(250, 250, 250);
+    background: #000000;
+}
 h2 {
   font-size: calc(17px + 1vw);
   font-weight: normal;
@@ -123,14 +127,20 @@ h2 {
   position: relative;
   overflow: hidden;
   padding: 5px 10px; }
+.filter-btn:active {
+  -o-transform: scale(.96);
+  -webkit-transform: scale(.96);
+  -moz-transform: scale(.96);
+  transform: scale(.96);
+}
 .selected {
   background-color: #414141;
   border-color: #222222; }
-    .bytes-list-item {
-      -o-animation: fadeIn 1s;
-      -moz-animation: fadeIn 1s;
-      -webkit-animation: fadeIn 1s;
-      animation: fadeIn 1s;
+    .bytes-list-item, h2 {
+      -o-animation: fadeIn .8s;
+      -moz-animation: fadeIn .8s;
+      -webkit-animation: fadeIn .8s;
+      animation: fadeIn .8s;
     }
     .byte-preview-1, .byte-preview-2, img {
       position: relative;

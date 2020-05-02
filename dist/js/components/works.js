@@ -4,7 +4,7 @@ const portfolioProjects = [
     code: 'atl',
     pics: ["atl-1.png", "atl-2.png", "atl-3.png", "atl-4.png", "atl-5.png", "atl-6.png"],
     description:
-      "Above the Line is your scriptwriting environment. Users can create and download movie scripts (with automatic formatting).",
+      "Above the Line is your scriptwriting environment. You can create and download preformatted movie scripts.",
     timeline: [
       {stage: 'Concept',
        desc: `Originally, I wanted to build an app that parsed tags into a string - a Mad Libs&trade; generator. However, a slight change came to mind. A friend told to me about the cost of his screenwriting software. Like Mad Libs&trade;, scripts also used specific formatting guidelines. I also knew my friend would enjoy a free screenplay editor.`},
@@ -33,7 +33,7 @@ const portfolioProjects = [
     code: 'jto',
     pics: ["jto-1.png", "jto-2.png", , "jto-3.png", "jto-4.png", "jto-5.png", "jto-6.png", "jto-7.png"],
     description:
-      "The new social network is here. Users can customize, copy, react to, and download greeting cards in seconds.",
+      "The new social network is here. You can customize, react to, and download greeting cards in seconds.",
     timeline: [{stage: 'Concept', desc: `When you need to get greeting card for someone, it can be a difficult process - as most options are rather limited. The goal was as follows: users should be able to customize, read, update, share, and download greeting cards. I wanted to make a social network and solve a common problem.`},
     {stage: 'Research', desc: 'I wireframed the major routes with user stories. Next, I prototyped the routes on Repl.it. I also built a <a href="https://stackblitz.com/edit/above-the-line-concept" target="_blank" rel="noopener noreferrer">proof of concept</a> for the cards. Next, I looked for ways to moderate card content and store images. To that end, I reached out to a fellow <a href="https://www.claytonweller.com/" target="_blank" rel="noopener noreferrer">Thinkful Alumn</a> about his use of Cloudinary. Finally, I experimented with many libraries in order to download the customized cards (fonts and all).'},
     {stage: 'MVP: Client', desc: `I created a dummy card store and finalized the semantics of the cards. I had recently finished a <a href="https://github.com/zempo/react-boiler" target="_blank" rel="noopener noreferrer">React Boilerplate</a>, so I made use of it. However, I ended up refactoring much of the code to manage authentication and context. As I built the MVP, I learned about modals, the window object, and the basics of hooks and context. Finally, I deployed the client to Netlify`},
@@ -66,7 +66,7 @@ const portfolioProjects = [
     code: 'aero',
     pics: ["aero-1.png", "aero-2.png", "aero-3.png", "aero-4.png"],
     description:
-      "Aeropolis monitors thousands of cities around the globe. Check on a city's air quality, location, local health news, and wikipedia - in one place.",
+      "Aeropolis has all of the info - all in one place. See the air quality, location, health news, and wikipedia for major cities.",
     timeline: [{stage: 'Concept', desc: `I set out to build a static site that used multiple APIs and jQuery. With my recent move to California, I had been thinking about Air Quality and how it affected me. You can look up Air Quality values, but they don't make much sense to most people. There had to be a better way to present this information!`},
     {stage: 'Research', desc: `I made a list of the APIs I wanted to include in the project. Next, I wireframed the app on paper and referenced some previous exercises that used the fetch API (which was new to me, at the time). During this stage, my ability to read and comprehend documentation was tested (particularly with the Wikipedia API).`},
     {stage: 'Implementation: Functionality', desc: `I started out with the output containers and input forms. The goal was to first fetch the countries, then the states/provinces, then the cities, and get the city data from the other APIs. During this process, I practiced writing callback functions, turning spaghetti code into ravioli, regex, and chaining promises.`},
@@ -90,6 +90,10 @@ h2 {
   font-size: calc(17px + 1vw);
   font-weight: normal;
   margin: 10px;
+}
+h2::selection, p::selection {
+  color: rgb(250, 250, 250);
+  background: #000000;
 }
 .projects-list {
  list-style-type: none;
@@ -125,14 +129,20 @@ h2 {
   position: relative;
   overflow: hidden;
   padding: 5px 10px; }
+  .filter-btn:active {
+    -o-transform: scale(.96);
+    -webkit-transform: scale(.96);
+    -moz-transform: scale(.96);
+    transform: scale(.96);
+  }
 .selected {
   background-color: #414141;
   border-color: #222222; }
   .works-list-item {
-    -o-animation: fadeIn 1s;
-    -moz-animation: fadeIn 1s;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+    -o-animation: fadeIn .8s;
+    -moz-animation: fadeIn .8s;
+    -webkit-animation: fadeIn .8s;
+    animation: fadeIn .8s;
   }
   .work-preview-1, .work-preview-2, img {
     position: relative;
