@@ -79,7 +79,19 @@ const portfolioProjects = [
     repo: "https://github.com/zempo/aeropolis",
     live: "https://zempo.github.io/Aeropolis/",
     tags: ['jquery']
-  },  
+  }, 
+  {
+    title: "Portfolio",
+    code: "sol",
+    pics: ["sol-1.png"],
+    description: "Using Vanilla JS and SASS. I set out to create a Portfolio with all the bells and whistles",
+    timeline: [{state: 'Concept', desc: "sds"}, {state: 'Research', desc: 'This'}],
+    tech: ["HTML", "CSS"],
+    libs: ["sdfdf", "sdfsf"],
+    repo: "https://github.com/zempo/solomon-zelenko",
+    live: "https://solomonzelenko.dev",
+    tags: ["vanilla"]
+  } 
 ];
  
 const worksTemplate = document.createElement('template')
@@ -94,6 +106,9 @@ h2 {
 h2::selection, p::selection {
   color: rgb(250, 250, 250);
   background: #000000;
+}
+p {
+  font-size: calc(15px + .25vw);
 }
 .projects-list {
  list-style-type: none;
@@ -270,6 +285,9 @@ h2::selection, p::selection {
     font-size: calc(20px + 1vw);
     margin: 15px;
   }
+  p {
+    font-size: calc(18px + .25vw);
+  }
   .filter-btn {
     font-size: calc(17px + .5vw); 
   }
@@ -307,6 +325,9 @@ h2::selection, p::selection {
     width: 100%;
     margin: 0;
   }
+  p {
+    font-size: calc(19px + .25vw);
+  }
 }
 @media only screen and (min-width: 1200px) {
   .projects-list {
@@ -320,6 +341,9 @@ h2::selection, p::selection {
   h2 {
     font-size: calc(23px + .5vw);
   }
+  p {
+    font-size: calc(19px + .25vw);
+  }
   .open-item span {
     font-size: calc(20px + .5vw); 
   }
@@ -327,6 +351,9 @@ h2::selection, p::selection {
 @media only screen and (min-width: 2000px) {
   h2 {
     font-size: 28px;
+  }
+  p {
+    font-size: 22px;
   }
   .open-item span {
     font-size: 25px; 
