@@ -446,26 +446,31 @@ class Router {
         navImgs[0].setAttribute("src", `${svgSrc}home-on.svg`);
         navImgs[0].nextElementSibling.style.color = "#000000";
         footer.style.display = 'none'
+        document.title = 'Home'
         return;
       case "about":
         navImgs[1].setAttribute("src", `${svgSrc}about-on.svg`);
         navImgs[1].nextElementSibling.style.color = "#000000";
         footer.style.display = 'block'
+        document.title = 'About'
         return;
       case "works":
         navImgs[2].setAttribute("src", `${svgSrc}works-on.svg`);
         navImgs[2].nextElementSibling.style.color = "#000000";
         footer.style.display = 'block'
+        document.title = 'Works'
         return;
       case "bytes":
         navImgs[3].setAttribute("src", `${svgSrc}bytes-on.svg`);
         navImgs[3].nextElementSibling.style.color = "#000000";
         footer.style.display = 'block'
+        document.title = 'Bytes'
         return;
       case "contact":
         navImgs[4].setAttribute("src", `${svgSrc}contact-on.svg`);
         navImgs[4].nextElementSibling.style.color = "#000000";
         footer.style.display = 'block'
+        document.title = 'Contact'
         return;
       default:
         return;

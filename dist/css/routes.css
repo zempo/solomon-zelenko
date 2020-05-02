@@ -50,7 +50,7 @@
     margin: 60px auto 40px; }
     @media only screen and (min-width: 900px) {
       .route h1:first-child {
-        margin: 80px auto 50px; } }
+        margin: 100px auto 80px; } }
   .route h3:nth-child(2) {
     font-weight: normal;
     margin-top: 0;
@@ -239,7 +239,7 @@
       margin: 20px auto 0px; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-1 {
-      width: 18vw; } }
+      width: 16vw; } }
 
 .about-pg .about-pic-2 {
   width: calc(140px + 3vw);
@@ -254,7 +254,7 @@
       top: 0; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-2 {
-      width: 18vw; } }
+      width: 16vw; } }
 
 .about-pg .about-pic-3 {
   width: calc(100px + 3vw);
@@ -270,10 +270,10 @@
       top: 0; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-3 {
-      width: 18vw; } }
+      width: 16vw; } }
 
 .about-pg .img-controls {
-  margin: 10px auto 50px;
+  margin: 10px auto 40px;
   width: 70%;
   position: relative; }
   @media only screen and (min-width: 900px) {

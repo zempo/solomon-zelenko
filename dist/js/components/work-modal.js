@@ -4,7 +4,7 @@ workModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   font-size: calc(20px + 2.3vw);
 }
 h2 {
@@ -31,7 +31,7 @@ h3 {
   text-align: center;
   font-weight: bold;
   font-size: calc(13px + 1.8vw);
-  margin: 5vh auto;
+  margin: 30px auto;
 }
 .tech {
   text-align: justify;
@@ -448,8 +448,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
       opacity: 1; }
     }
   ::-webkit-scrollbar {
-    width: 13px;
-    height: 13px; }
+    width: 10px;
+    height: 10px; }
   
   ::-webkit-scrollbar-button {
     width: 0px;
@@ -483,7 +483,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     color: #f7f7f7;
     margin-top: 0;
     font-size: calc(16px + 2vw);
-    margin-bottom: 15vh;
+    margin-bottom: 80px;
   }
   h2 a {
     font-size: calc(10px + .8vw);
@@ -505,10 +505,10 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     text-align: center;
   }
   h3 {
-    font-size: calc(12px + 1.8vw);
+    font-size: calc(24px + .25vw);
   }
   p {
-    font-size: calc(17px + .25vw);
+    font-size: calc(18px + .25vw);
     width: 90%;
     margin: 25px auto;
   }
@@ -516,8 +516,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     font-size: calc(12px + 1.8vw);
   }
   .tech ul {
-    width: 800px;
-    margin-left: calc(50% - 400px); 
+    width: 400px;
+    margin: 20px auto; 
     font-size: calc(19px + .25vw);
     list-style-type: "→ ";
   }
@@ -558,7 +558,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     left: 25px;
   }
   .node-content h4 {
-    font-size: calc(10px + 1vw);
+    font-size: calc(20px + .25vw);
   }
   .node-content p {
     text-indent: 40px;
@@ -705,12 +705,33 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     border-width: 15px 0 15px 15px;
     border-color: transparent transparent transparent #3d3a3a;
   }
+  p {
+    font-size: calc(19px + .25vw);
+  }
 }
 @media only screen and (min-width: 1440px) {
   .modal-content {
     height: calc(100vh - 148px); 
   }
 } 
+@media only screen and (min-width: 2000px) {
+  h1 {
+    font-size: calc(44px + .5vw);
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3, li {
+    font-size: 26px;
+  }
+  p {
+    font-size: 21px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+
+}
 </style>
 `;
 

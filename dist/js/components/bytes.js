@@ -368,7 +368,7 @@ class BytesList extends HTMLElement {
   updateBytes(updatedBytes, query) {
     let updatedTemplate = ''
     if(updatedBytes.length === 0) {
-      updatedTemplate += `<h2>No ${this.refs[query].innerHTML}-Type Bytes...</h2><h2>Yet...</h2>`
+      updatedTemplate += `<h2>No ${this.refs[query].innerHTML}...</h2><h2>For now...</h2>`
     } else {
       updatedBytes.forEach((byte, i, allBytes) => {
         if(i === 0) {

@@ -365,12 +365,14 @@ class WorksList extends HTMLElement {
 
   updateWorks(updatedWorks, query) {
     let updatedTemplate = ''
+    let queryResults = (!query || query === 'all') ? `${portfolioProjects.length} of ${portfolioProjects.length} Portfolio` : `${this.state.projects.length} ${this.refs[query].innerHTML}`
+    
     if(updatedWorks.length === 0) {
-      updatedTemplate += `<h2>No ${this.refs[query].innerHTML} Apps...</h2><h2>Yet...</h2>`
+      updatedTemplate += `<p>No ${this.refs[query].innerHTML} Apps...</p><p>Yet...</p>`
     } else {
       updatedWorks.forEach((work, i, works) => {
         if (i === 0) {
-          updatedTemplate += `<ul class="projects-list"><li class="works-list-item">
+          updatedTemplate += `<p>Showing ${queryResults} App${this.state.projects.length === 1 ? '': 's'}</p><ul class="projects-list"><li class="works-list-item">
           <h2>${work.title}</h2>
           <div class="work-preview-1">
           <div class="work-preview-2">

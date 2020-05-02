@@ -22,7 +22,7 @@
   h1:first-child {
     margin: 60px auto 40px; 
     @include mq('tablet-med') {
-      margin: 80px auto 50px; 
+      margin: 100px auto 80px; 
     }
   }
   h3:nth-child(2) {
@@ -156,7 +156,7 @@
       margin: 20px auto 0px;
     }
     @include mq('desktop') {
-      width: 18vw;
+      width: 16vw;
     }
   }
   .about-pic-2 {
@@ -171,7 +171,7 @@
       top: 0;
     }
     @include mq('desktop') {
-      width: 18vw;
+      width: 16vw;
     }
   }
   .about-pic-3 {
@@ -187,11 +187,11 @@
       top: 0;
     }
     @include mq('desktop') {
-      width: 18vw;
+      width: 16vw;
     }
   } 
   .img-controls {
-    margin: 10px auto 50px;
+    margin: 10px auto 40px;
     width: 70%;
     position: relative;
     @include mq('tablet-med') {

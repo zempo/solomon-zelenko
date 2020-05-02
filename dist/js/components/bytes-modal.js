@@ -4,7 +4,7 @@ byteModalTemplate.innerHTML = `
 h1 {
   color: #f7f7f7;
   margin-top: 0;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   font-size: calc(20px + 2.3vw);
 }
 h2 {
@@ -32,7 +32,7 @@ a {
 h3 {
   text-align: center;
   font-weight: bold;
-  font-size: calc(13px + 1.8vw);
+  font-size: calc(18px + .25vw);
   margin: 5vh auto;
 }
 .info {
@@ -352,8 +352,8 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   }
 }
   ::-webkit-scrollbar {
-    width: 13px;
-    height: 13px; }
+    width: 10px;
+    height: 10px; }
   
   ::-webkit-scrollbar-button {
     width: 0px;
@@ -400,7 +400,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
         text-align: center;
       }
       h3 {
-        font-size: calc(10px + 1.8vw);
+        font-size: calc(24px + .25vw);
       }
       p {
         font-size: calc(17px + .25vw);
@@ -467,6 +467,24 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
           opacity: 1;
         }
       }
+    }
+    @media only screen and (min-width: 2000px) {
+      h1 {
+        font-size: calc(44px + .5vw);
+      }
+      h2 {
+        font-size: 28px;
+      }
+      h3, li {
+        font-size: 26px;
+      }
+      p {
+        font-size: 21px;
+      }
+      h4 {
+        font-size: 24px;
+      }
+    
     }
 </style>
 `;
