@@ -8,7 +8,7 @@
   -moz-animation: map-get($animations, fade-in);
   -webkit-animation: map-get($animations, fade-in);
   animation: map-get($animations, fade-in);
-  padding: 0px 5vw 5vh;
+  padding: 0px 5vw 100px; 
   margin: 0 auto;
   h1, h2, h3, p, li, a, strong, span, label, input, textarea {
     &::selection {
@@ -49,13 +49,15 @@
 //  HOME
 .home-pg {
   .logo-main {
-    margin-top: 100px;
+    margin-top: calc(20vh - 35px);
     max-width: 90%;
     max-height: 250px;
-    @include mq('tablet-med') {
-      max-width: 85%;
+    @include mq('tablet') {
+      margin-top: calc(20vh - 35px);
+      max-width: 80%;
     }
-    @include mq('desktop-wide') {
+    @include mq('desktop-wide') {  
+      margin-top: calc(20vh - 40px);
       max-width: 60%;
     }
   }
@@ -120,7 +122,7 @@
     transform: translate3d(200%, 0, 0);
   }
   .btn-resume {
-    margin-bottom: 100px;
+    margin-bottom: 6vh;
   }
 }
 
@@ -191,16 +193,16 @@
     }
   } 
   .img-controls {
-    margin: 10px auto 40px;
+    margin: 20px auto 60px;
     width: 70%;
     position: relative;
     @include mq('tablet-med') {
-      width: 60%;   
-      margin: 0 auto 50px;
+      width: 65%;   
+      margin: 0px auto 80px;
       top: 0;
     } 
     @include mq('desktop') {
-      width: 55%;
+      width: 70%;
     }
     .hue-value{
       position: absolute;
@@ -579,7 +581,7 @@
       width: 100%;
       height: 100%;
       display: none;
-      padding: 0 5% 7vh; 
+      padding: 0 5% 30px; 
       @include mq('tablet-wide') {
         order: 1;
         flex-direction: none;
@@ -733,7 +735,7 @@
             @include font-size($p-font-sizes);
           }
           textarea {
-            min-height: 20vh;
+            min-height: 200px;
             font-family: $font;
           }
           .subtitle {

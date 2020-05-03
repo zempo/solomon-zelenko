@@ -81,7 +81,7 @@ const portfolioProjects = [
     tags: ['jquery']
   }, 
   {
-    title: "Portfolio",
+    title: "My Portfolio",
     code: "sol",
     pics: ["sol-1.png"],
     description: "Using Vanilla JS and SASS. I set out to create a Portfolio with all the bells and whistles",
@@ -108,7 +108,12 @@ h2::selection, p::selection {
   background: #000000;
 }
 p {
-  font-size: calc(15px + .25vw);
+  font-size: calc(16px + .5vw);
+  margin-bottom: 0px;
+}
+hr {
+  max-width: 1080px;
+  margin-bottom: 60px;
 }
 .projects-list {
  list-style-type: none;
@@ -133,7 +138,7 @@ p {
   border: 2px solid #646464;
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
-  font-family: MontSerrat,Tahoma,Arial,sans-serif;
+  font-family: Lato, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: calc(16px + .25vw); 
   line-height: 1.5em;
@@ -143,7 +148,7 @@ p {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  padding: 5px 10px; }
+  padding: 5px 8px; }
   .filter-btn:active {
     -o-transform: scale(.96);
     -webkit-transform: scale(.96);
@@ -153,7 +158,7 @@ p {
 .selected {
   background-color: #414141;
   border-color: #222222; }
-  .works-list-item {
+  .works-list-item, p, hr {
     -o-animation: fadeIn .8s;
     -moz-animation: fadeIn .8s;
     -webkit-animation: fadeIn .8s;
@@ -323,10 +328,11 @@ p {
    }
    .works-list-item {
     width: 100%;
+    max-width: 100%;
     margin: 0;
   }
   p {
-    font-size: calc(19px + .25vw);
+    font-size: calc(21px + .5vw);
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -342,7 +348,7 @@ p {
     font-size: calc(23px + .5vw);
   }
   p {
-    font-size: calc(19px + .25vw);
+    font-size: calc(21px + .5vw);
   }
   .open-item span {
     font-size: calc(20px + .5vw); 
@@ -353,7 +359,7 @@ p {
     font-size: 28px;
   }
   p {
-    font-size: 22px;
+    font-size: 25px;
   }
   .open-item span {
     font-size: 25px; 
@@ -392,14 +398,14 @@ class WorksList extends HTMLElement {
 
   updateWorks(updatedWorks, query) {
     let updatedTemplate = ''
-    let queryResults = (!query || query === 'all') ? `${portfolioProjects.length} of ${portfolioProjects.length} Portfolio` : `${this.state.projects.length} ${this.refs[query].innerHTML}`
+    let queryResults = (!query || query === 'all') ? `<strong>${portfolioProjects.length}</strong> Portfolio` : `<strong>${this.state.projects.length}</strong> ${this.refs[query].innerHTML}`
     
     if(updatedWorks.length === 0) {
-      updatedTemplate += `<p>No ${this.refs[query].innerHTML} Apps...</p><p>Yet...</p>`
+      updatedTemplate += `<p>No ${this.refs[query].innerHTML} Apps...</p>`
     } else {
       updatedWorks.forEach((work, i, works) => {
         if (i === 0) {
-          updatedTemplate += `<p>Showing ${queryResults} App${this.state.projects.length === 1 ? '': 's'}</p><ul class="projects-list"><li class="works-list-item">
+          updatedTemplate += `<p>Showing ${queryResults} App${this.state.projects.length === 1 ? '': 's'}</p><hr><ul class="projects-list"><li class="works-list-item">
           <h2>${work.title}</h2>
           <div class="work-preview-1">
           <div class="work-preview-2">

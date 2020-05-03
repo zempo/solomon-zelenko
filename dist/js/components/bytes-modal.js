@@ -1,6 +1,9 @@
 byteModalTemplate = document.createElement("template");
 byteModalTemplate.innerHTML = `
 <style>
+h3, section p, li {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
 h1 {
   color: #f7f7f7;
   margin-top: 0;

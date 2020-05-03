@@ -116,7 +116,7 @@ h2 {
   border: 2px solid #646464;
   border-width: 1px 1px 2px 1px;
   border-radius: 3px;
-  font-family: MontSerrat,Tahoma,Arial,sans-serif;
+  font-family: Lato, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: calc(16px + .25vw); 
   line-height: 1.5em;
@@ -322,8 +322,7 @@ font-size: calc(23px + .5vw);
 font-size: calc(20px + .5vw); 
 }
 .bytes-list-item {
-  max-width: 800px;
-  margin: 0 auto 7vh;
+  max-width: 100%;
 }
 } 
 @media only screen and (min-width: 2000px) {

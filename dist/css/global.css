@@ -48,6 +48,15 @@ main .btn-back svg, a {
 * {
   box-sizing: border-box; }
 
+p, a, figcaption, h3, input, textarea, select, legend {
+  font-family: Lato, Helvetica, Arial, sans-serif; }
+
+section h2 {
+  font-family: Lato, Helvetica, Arial, sans-serif; }
+
+button, footer h3 {
+  font-family: "SpartanMB"; }
+
 body,
 main {
   overflow-x: hidden;
@@ -265,12 +274,13 @@ nav {
     nav ul {
       margin: 15px 5vw; }
       nav ul a {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 550; }
         nav ul a figure img {
-          width: 42px; } }
+          width: 45px; } }
   nav ul {
     list-style-type: none;
+    margin: 19px 0;
     padding: 0;
     display: flex;
     justify-content: space-evenly; }

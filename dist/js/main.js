@@ -376,7 +376,7 @@ class Router {
       navImgs[0].setAttribute("src", `img/svgs/n-home-on.svg`);
       navImgs[0].nextElementSibling.style.color = "#000000";
       if (!window.location.hash) {
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
         this.handleNoHash(e);
       } else {
         this.onRouteChange(e);
@@ -384,8 +384,8 @@ class Router {
       }
     });
     window.addEventListener("hashchange", (e) => {
-      this.navBtns(e);
       window.scrollTo(0, 0);
+      this.navBtns(e);
       this.onRouteChange(e);
     });
     this.routeRefs = {
