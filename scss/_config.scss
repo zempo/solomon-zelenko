@@ -84,19 +84,19 @@ $h3-big-font-sizes: (
 ); 
 
 $h3-font-sizes: (
-  null: 15px,
-  map-get($breakpoints, "phablet") : calc(16px + .25vw),
-  map-get($breakpoints, "tablet") : calc(17px + .25vw),
-  map-get($breakpoints, "desktop"): calc(19px + .25vw),
-  map-get($breakpoints, "ultra-wide"): 24px
+  null: 17px,
+  map-get($breakpoints, "phablet") : calc(17px + .25vw),
+  map-get($breakpoints, "tablet") : calc(18px + .25vw),
+  map-get($breakpoints, "desktop"): calc(20px + .25vw),
+  map-get($breakpoints, "ultra-wide"): 25px
 ); 
 
 $p-font-sizes: (
-    null: 15px,
-    map-get($breakpoints, "phablet") : calc(15px + .25vw),
-    map-get($breakpoints, "tablet") : calc(16px + .25vw),
-    map-get($breakpoints, "desktop"): calc(18px + .25vw),
-    map-get($breakpoints, "ultra-wide"): 21px
+    null: 16px,
+    map-get($breakpoints, "phablet") : calc(16px + .25vw),
+    map-get($breakpoints, "tablet") : calc(17px + .25vw),
+    map-get($breakpoints, "desktop"): calc(19px + .25vw),
+    map-get($breakpoints, "ultra-wide"): 23px
 ); 
 
 $sub-font-sizes: (

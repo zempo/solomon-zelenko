@@ -93,6 +93,14 @@ h2 {
   font-weight: normal;
   margin: 10px;
 }
+p {
+  font-size: calc(16px + .5vw);
+  margin: 70px auto 0;
+}
+hr {
+  max-width: 1080px;
+  margin-bottom: 40px;
+}
 .byte-items {
   list-style-type: none;
   padding-left: 0;
@@ -136,7 +144,7 @@ h2 {
 .selected {
   background-color: #414141;
   border-color: #222222; }
-    .bytes-list-item, h2 {
+    .bytes-list-item, h2, hr, p {
       -o-animation: fadeIn .8s;
       -moz-animation: fadeIn .8s;
       -webkit-animation: fadeIn .8s;
@@ -268,6 +276,9 @@ h2 {
   h2 {
     font-size: calc(20px + 1vw);
   }
+  p {
+    font-size: calc(18px + .25vw);
+  }
   .filter-btn {
     font-size: calc(17px + .5vw); 
   }
@@ -304,7 +315,15 @@ h2 {
   .bytes-list-item {
    width: 100%;
    margin: 0;
- }
+  }
+  p {
+    font-size: calc(21px + .5vw);
+    margin: 100px auto 0;
+  }
+  hr {
+    max-width: 1080px;
+    margin-bottom: 50px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .byte-items {
@@ -313,6 +332,14 @@ h2 {
   }  
 h2 {
 font-size: calc(23px + .5vw);
+}
+p {
+  font-size: calc(21px + .5vw);
+  margin: 110px auto 0;
+}
+hr {
+  max-width: 1080px;
+  margin-bottom: 60px;
 }
 .filter-bytes {
   max-width: 750px;
@@ -331,6 +358,9 @@ h2 {
 }
 .open-byte span {
   font-size: 25px; 
+}
+p {
+  font-size: 25px;
 }
 }    
 </style><div class="filter-bytes">
@@ -366,12 +396,14 @@ class BytesList extends HTMLElement {
 
   updateBytes(updatedBytes, query) {
     let updatedTemplate = ''
+    let queryResults = (!query || query === 'all') ? `<strong>${currentBytes.length}</strong> Byte` : `<strong>${this.state.bytes.length}</strong> ${this.refs[query].innerHTML.substr(0, this.refs[query].innerHTML.length - 1)}`
+    
     if(updatedBytes.length === 0) {
-      updatedTemplate += `<h2>No ${this.refs[query].innerHTML}...</h2><h2>For now...</h2>`
+      updatedTemplate += `<p>No ${this.refs[query].innerHTML}...</p>`
     } else {
       updatedBytes.forEach((byte, i, allBytes) => {
         if(i === 0) {
-          updatedTemplate += `<ul class="byte-items"><li class="bytes-list-item">
+          updatedTemplate += `<p>Showing ${queryResults}${this.state.bytes.length === 1 ? '':'s'}</p><hr><ul class="byte-items"><li class="bytes-list-item">
           <h2>${byte.title}</h2>
           <div class="byte-preview-1">
           <div class="byte-preview-2">

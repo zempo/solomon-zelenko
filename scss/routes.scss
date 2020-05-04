@@ -19,6 +19,9 @@
   @include mq('tablet-med') {
     padding: 0 15vw;
   }
+  @include mq('ultra-wide') {
+    padding: 0 25vw;
+  }
   h1:first-child {
     margin: 60px auto 40px; 
     @include mq('tablet-med') {
@@ -338,7 +341,7 @@
       width: 100%;
       order: initial;
       margin-right: 0;
-      padding: 5% 6% 5% 6%;
+      padding: 0; 
       border: 2px solid lighten(map-get($colors, dark-2), 40%);
       border-top: 1px solid lighten(map-get($colors, dark-2), 40%);
       display: flex; 
@@ -353,7 +356,25 @@
         flex-grow: 1;
         padding: 1% 5%;
         border-radius: 8px 8px 0 0;
-        width: 33%;
+        width: calc(100% / 3);
+        position: relative;
+        left: 1px;
+        &.story-label {
+          left: 0px;
+        }
+        &.vision-label {
+          left: 0px;
+        }
+        &.vision-label::after {
+          content: " ";
+          position: absolute;
+          bottom: -2px;
+          right: -4px;
+          width: 4px;
+          height: 2px;
+          z-index: 7;
+          background: map-get($colors, dark);
+        }
         justify-content: center;
         border: 2px solid lighten(map-get($colors, dark-2), 40%);
         border-bottom: 2px solid map-get($colors, dark-2); 
@@ -393,6 +414,9 @@
         border: 2px solid map-get($colors, dark-2 );
         border-bottom: none;
         @include mq('tablet-wide') {
+          &.vision-label::after {
+            bottom: 0;
+          }
           border: 2px solid map-get($colors, dark-2 );
           border-bottom: none;  
         }
@@ -443,6 +467,7 @@
       p {
         width: 100%;
         margin: 20px auto; 
+        line-height: 1.5;
         @include font-size($p-font-sizes);
         @include mq('phone-wide') {
           width: 80%;   
@@ -572,6 +597,7 @@
     height: auto;
     width: 100%;
     margin: auto;
+    margin-top: 100px;
     max-width: 1000px;
     .form-content {
       order: initial;
@@ -637,9 +663,10 @@
           label {
             display: inline-block;
             width: 100%;
-            margin: 10px auto 15px;
+            margin: 15px auto 10px;
             text-align: left;
             position: relative;
+            font-family: $font-2;
             button {
              text-align: center;
              display: inline-block;
@@ -655,9 +682,13 @@
             &.optional::after {
               content: "Optional";
               color: darken(map-get($colors, success), 20%);
-              position: absolute;
-              right: 0;
+              display: block;
               @include font-size($p-font-sizes);
+              @include mq('phone-wide') {
+                display: inline;
+                position: absolute;
+                right: 0;
+              }
             }
             @include font-size($h3-font-sizes);
             @include mq('phablet') {
@@ -669,18 +700,22 @@
             } 
           }
           .form-wrapper-sm {
-            margin: 0 auto 1vh;
+            margin: 0 auto 10px;
             @include mq('desktop-small') {
               display: grid;
               width: 75%;
-              grid-gap: 1vw;
-              margin-bottom: 2vh;
+              grid-row-gap: 1vw;
+              gap: 1vw;
+              margin-bottom: 10px; 
               grid-template-columns: 1fr 1fr;
               grid-template-areas: "l1 l2"
               "i1 i2";
               input, label {
                 width: 100%;
                 margin: auto;
+              }
+              label {
+                margin-bottom: -10px;
               }
               & label:first-child {
                 grid-area: l1;
@@ -701,7 +736,7 @@
             border: 1px solid map-get($colors, dark-2);
             padding: 10px;
             border-radius: 5px;
-            margin-bottom: 2vh;
+            margin-bottom: 10px; 
             &:focus {
               -webkit-tap-highlight-color: map-get($colors, focus);
               color: map-get($colors, dark-2);
@@ -736,7 +771,7 @@
           }
           textarea {
             min-height: 200px;
-            font-family: $font;
+            font-family: $font-2;
           }
           .subtitle {
             margin-top: 0;
@@ -980,7 +1015,25 @@
       @include mq('tablet-wide') {
         flex-grow: 1;
         padding: 1% 4%;
-        width: 33%;
+        width: calc(100% / 3);
+        position: relative;
+        left: 1px;
+        &.hire-label {
+          left: 0;
+        }
+        &.tutor-label {
+          left: 0;
+        }
+        &.tutor-label::after {
+          content: " ";
+          position: absolute;
+          bottom: -2px;
+          right: -4px;
+          width: 4px;
+          height: 2px;
+          z-index: 3;
+          background: map-get($colors, dark);
+        }
         border-radius: 8px 8px 0 0;
         justify-content: center;
         border: 2px solid lighten(map-get($colors, dark-2), 40%);
@@ -1002,6 +1055,9 @@
         border: 2px solid map-get($colors, dark-2 );
         border-bottom: none;
         @include mq('tablet-wide') {
+          &.tutor-label::after {
+            bottom: 0;
+          }
           border: 2px solid map-get($colors, dark-2 );
           border-bottom: none; 
         }

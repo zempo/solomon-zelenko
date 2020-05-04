@@ -5,8 +5,8 @@ const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 const navImgs = document.querySelectorAll("nav a img");
 const footer = document.querySelector('footer')
-const deployedURI = 'https://solomonzelenko.cleverapps.io/api/mail'
-const localURI = 'http://localhost:5000/api/mail' 
+const deployedURI = 'https://solomonzelenko.cleverapps.io/api'
+const localURI = 'http://localhost:5000/api' 
 const API = localURI
 // MAIN EVENT LISTENERS 
 // home pg
@@ -233,9 +233,16 @@ const handleMailForms = (hire, tutor, gen) => {
     addToBody(inputs, selects, textareas, newHire)
 
     axios
-    .post(`${API}/hire`, newHire)
+    .post(`${API}/mail/hire`, newHire)
     .then(res => {
-      formNotification(status, 'Project Proposal Sent', 'Expect a reply within 24 hours!')
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        formNotification(status, 'Project Proposal Sent', 'Expect a reply within 24 hours!')
+      }, 300)
       clearForm(inputs, selects, textareas, hire)
     })
     .catch(err => {
@@ -260,9 +267,16 @@ const handleMailForms = (hire, tutor, gen) => {
 
     addToBody(inputs, selects, textareas, newTutor)
     axios
-    .post(`${API}/tutor`, newTutor)
+    .post(`${API}/mail/tutor`, newTutor)
     .then(res => { 
-      formNotification(status, 'Tutor Request Sent', `Expect a reply within 24 hours!`)
+      window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        formNotification(status, 'Tutor Request Sent', `Expect a reply within 24 hours!`)
+      , 300})
       clearForm(inputs, selects, textareas, tutor)
     }) 
     .catch(err => {
@@ -288,9 +302,16 @@ const handleMailForms = (hire, tutor, gen) => {
     addToBody(inputs, selects, textareas, newGen)
 
     axios
-    .post(`${API}/gen`, newGen)
+    .post(`${API}/mail/gen`, newGen)
     .then(res => { 
-      formNotification(status, 'Message Sent', 'Expect a reply soon!')
+      window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        formNotification(status, 'Message Sent', 'Expect a reply soon!')
+      }, 300);
       clearForm(inputs, selects, textareas)
     })
     .catch(err => {
@@ -376,7 +397,6 @@ class Router {
       navImgs[0].setAttribute("src", `img/svgs/n-home-on.svg`);
       navImgs[0].nextElementSibling.style.color = "#000000";
       if (!window.location.hash) {
-        // window.scrollTo(0, 0);
         this.handleNoHash(e);
       } else {
         this.onRouteChange(e);
@@ -427,6 +447,17 @@ class Router {
         const hireForm = document.querySelector('.hire-form')
         const tutorForm = document.querySelector('.tutor-form')
         const genForm = document.querySelector('.gen-form')
+        const timeOutput = document.querySelector('.work-hours');
+        let startTime = ''
+        let endTime = ''
+        axios
+        .get(`${API}/utils/time`)
+        .then(res => {
+          startTime = res.data.times[0]
+          endTime = res.data.times[1].substr(0, res.data.times[0].length - 1)
+          timeOutput.innerHTML = `<strong>${startTime}</strong> to <strong>${endTime}</strong>, your time.`
+        })
+        .catch(err => timeOutput.innerHTML = `<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.`)
         handleMailForms(hireForm, tutorForm, genForm)
         return;        
       default:

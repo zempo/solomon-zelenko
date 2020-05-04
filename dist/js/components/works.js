@@ -62,6 +62,18 @@ const portfolioProjects = [
     tags: ['pern']
   },
   {
+    title: "My Portfolio",
+    code: "sol",
+    pics: ["sol-1.png"],
+    description: "Built with just HTML, SCSS, & Vanilla JS. A portfolio to showcase my content, projects, and more.",
+    timeline: [{state: 'Concept', desc: "sds"}, {state: 'Research', desc: 'This'}],
+    tech: ["HTML", "CSS"],
+    libs: ["sdfdf", "sdfsf"],
+    repo: "https://github.com/zempo/solomon-zelenko",
+    live: "https://solomonzelenko.dev",
+    tags: ["vanilla"]
+  }, 
+  {
     title: "Aeropolis",
     code: 'aero',
     pics: ["aero-1.png", "aero-2.png", "aero-3.png", "aero-4.png"],
@@ -79,19 +91,7 @@ const portfolioProjects = [
     repo: "https://github.com/zempo/aeropolis",
     live: "https://zempo.github.io/Aeropolis/",
     tags: ['jquery']
-  }, 
-  {
-    title: "My Portfolio",
-    code: "sol",
-    pics: ["sol-1.png"],
-    description: "Using Vanilla JS and SASS. I set out to create a Portfolio with all the bells and whistles",
-    timeline: [{state: 'Concept', desc: "sds"}, {state: 'Research', desc: 'This'}],
-    tech: ["HTML", "CSS"],
-    libs: ["sdfdf", "sdfsf"],
-    repo: "https://github.com/zempo/solomon-zelenko",
-    live: "https://solomonzelenko.dev",
-    tags: ["vanilla"]
-  } 
+  }
 ];
  
 const worksTemplate = document.createElement('template')
@@ -109,11 +109,11 @@ h2::selection, p::selection {
 }
 p {
   font-size: calc(16px + .5vw);
-  margin-bottom: 0px;
+  margin: 70px auto 0;
 }
 hr {
   max-width: 1080px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .projects-list {
  list-style-type: none;
@@ -128,7 +128,7 @@ hr {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 500px;
-  margin: 0 auto 50px;
+  margin: 0 auto;
  }
 .filter-btn {
   box-sizing: border-box;
@@ -158,7 +158,7 @@ hr {
 .selected {
   background-color: #414141;
   border-color: #222222; }
-  .works-list-item, p, hr {
+  .works-list-item, h2, p, hr {
     -o-animation: fadeIn .8s;
     -moz-animation: fadeIn .8s;
     -webkit-animation: fadeIn .8s;
@@ -333,6 +333,11 @@ hr {
   }
   p {
     font-size: calc(21px + .5vw);
+    margin: 100px auto 0;
+  }
+  hr {
+    max-width: 1080px;
+    margin-bottom: 50px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -349,6 +354,11 @@ hr {
   }
   p {
     font-size: calc(21px + .5vw);
+    margin: 110px auto 0;
+  }
+  hr {
+    max-width: 1080px;
+    margin-bottom: 60px;
   }
   .open-item span {
     font-size: calc(20px + .5vw); 

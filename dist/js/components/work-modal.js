@@ -42,6 +42,7 @@ h3 {
   text-align: center;
   width: 100%;
   padding-bottom: 10vh;
+  list-style-type: "→ ";
 }
 p {
   font-size: calc(15px + .25vw);

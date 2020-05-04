@@ -46,6 +46,9 @@
   @media only screen and (min-width: 900px) {
     .route {
       padding: 0 15vw; } }
+  @media only screen and (min-width: 2000px) {
+    .route {
+      padding: 0 25vw; } }
   .route h1:first-child {
     margin: 60px auto 40px; }
     @media only screen and (min-width: 900px) {
@@ -404,7 +407,7 @@
     width: 100%;
     order: initial;
     margin-right: 0;
-    padding: 5% 6% 5% 6%;
+    padding: 0;
     border: 2px solid #a49f9f;
     border-top: 1px solid #a49f9f;
     display: flex;
@@ -431,10 +434,25 @@
         flex-grow: 1;
         padding: 1% 5%;
         border-radius: 8px 8px 0 0;
-        width: 33%;
+        width: calc(100% / 3);
+        position: relative;
+        left: 1px;
         justify-content: center;
         border: 2px solid #a49f9f;
-        border-bottom: 2px solid #3d3a3a; } }
+        border-bottom: 2px solid #3d3a3a; }
+        .about-pg .accordion .accordion-label.story-label {
+          left: 0px; }
+        .about-pg .accordion .accordion-label.vision-label {
+          left: 0px; }
+        .about-pg .accordion .accordion-label.vision-label::after {
+          content: " ";
+          position: absolute;
+          bottom: -2px;
+          right: -4px;
+          width: 4px;
+          height: 2px;
+          z-index: 7;
+          background: #000000; } }
     .about-pg .accordion .accordion-label .tab-open {
       display: inline; }
   .about-pg .accordion .a-content {
@@ -466,7 +484,9 @@
       @media only screen and (min-width: 1024px) {
         .about-pg .accordion input[type="radio"]:checked + label {
           border: 2px solid #3d3a3a;
-          border-bottom: none; } }
+          border-bottom: none; }
+          .about-pg .accordion input[type="radio"]:checked + label.vision-label::after {
+            bottom: 0; } }
     .about-pg .accordion input[type="radio"]:checked + label .tab-open:after {
       content: '+'; }
     .about-pg .accordion input[type="radio"]:checked + label + .accordion {
@@ -498,35 +518,36 @@
       font-style: italic;
       position: relative;
       color: #4d4d4d;
-      font-size: 15px; }
+      font-size: 16px; }
       @media screen and (min-width: 560px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(15px + .25vw); } }
+          font-size: calc(16px + .25vw); } }
       @media screen and (min-width: 768px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(16px + .25vw); } }
+          font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 1248px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(18px + .25vw); } }
+          font-size: calc(19px + .25vw); } }
       @media screen and (min-width: 2000px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: 21px; } }
+          font-size: 23px; } }
   .about-pg .accordion .story p {
     width: 100%;
     margin: 20px auto;
-    font-size: 15px; }
+    line-height: 1.5;
+    font-size: 16px; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .story p {
-        font-size: calc(15px + .25vw); } }
+        font-size: calc(16px + .25vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .story p {
-        font-size: calc(16px + .25vw); } }
+        font-size: calc(17px + .25vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .story p {
-        font-size: calc(18px + .25vw); } }
+        font-size: calc(19px + .25vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .story p {
-        font-size: 21px; } }
+        font-size: 23px; } }
     @media only screen and (min-width: 480px) {
       .about-pg .accordion .story p {
         width: 80%;
@@ -537,19 +558,19 @@
     text-align: left; }
     .about-pg .accordion .vision ol {
       list-style-position: inside;
-      font-size: 15px; }
+      font-size: 16px; }
       @media screen and (min-width: 560px) {
         .about-pg .accordion .vision ol {
-          font-size: calc(15px + .25vw); } }
+          font-size: calc(16px + .25vw); } }
       @media screen and (min-width: 768px) {
         .about-pg .accordion .vision ol {
-          font-size: calc(16px + .25vw); } }
+          font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 1248px) {
         .about-pg .accordion .vision ol {
-          font-size: calc(18px + .25vw); } }
+          font-size: calc(19px + .25vw); } }
       @media screen and (min-width: 2000px) {
         .about-pg .accordion .vision ol {
-          font-size: 21px; } }
+          font-size: 23px; } }
       .about-pg .accordion .vision ol h2 {
         text-align: left; }
     .about-pg .accordion .vision h2 {
@@ -586,19 +607,19 @@
           max-width: calc(210px + 2vw);
           margin: 10px auto; } }
   .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-    font-size: 15px; }
+    font-size: 17px; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(16px + .25vw); } }
+        font-size: calc(17px + .25vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(17px + .25vw); } }
+        font-size: calc(18px + .25vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(19px + .25vw); } }
+        font-size: calc(20px + .25vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: 24px; } }
+        font-size: 25px; } }
 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -645,6 +666,7 @@
   height: auto;
   width: 100%;
   margin: auto;
+  margin-top: 100px;
   max-width: 1000px; }
   .contact-pg .contact-forms .form-content {
     order: initial;
@@ -662,19 +684,19 @@
         padding: 0 10% 7vh; } }
     .contact-pg .contact-forms .form-content h3 {
       font-weight: bold;
-      font-size: 15px; }
+      font-size: 17px; }
       @media screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(16px + .25vw); } }
+          font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 768px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(17px + .25vw); } }
+          font-size: calc(18px + .25vw); } }
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(19px + .25vw); } }
+          font-size: calc(20px + .25vw); } }
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: 24px; } }
+          font-size: 25px; } }
     .contact-pg .contact-forms .form-content .form-controls {
       display: flex;
       width: 75%;
@@ -687,19 +709,19 @@
       margin: 6vh .1vw 0;
       border-radius: 5px;
       opacity: .9;
-      font-size: 15px; }
+      font-size: 17px; }
       @media screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(16px + .25vw); } }
+          font-size: calc(17px + .25vw); } }
       @media screen and (min-width: 768px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(17px + .25vw); } }
+          font-size: calc(18px + .25vw); } }
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(19px + .25vw); } }
+          font-size: calc(20px + .25vw); } }
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: 24px; } }
+          font-size: 25px; } }
       .contact-pg .contact-forms .form-content button:hover, .contact-pg .contact-forms .form-content button:active {
         opacity: 1; }
       .contact-pg .contact-forms .form-content button:active {
@@ -738,10 +760,11 @@
         .contact-pg .contact-forms .form-content form fieldset label {
           display: inline-block;
           width: 100%;
-          margin: 10px auto 15px;
+          margin: 15px auto 10px;
           text-align: left;
           position: relative;
-          font-size: 15px; }
+          font-family: Lato, Helvetica, Arial, sans-serif;
+          font-size: 17px; }
           .contact-pg .contact-forms .form-content form fieldset label button {
             text-align: center;
             display: inline-block;
@@ -767,33 +790,37 @@
           .contact-pg .contact-forms .form-content form fieldset label.optional::after {
             content: "Optional";
             color: #008535;
-            position: absolute;
-            right: 0;
-            font-size: 15px; }
+            display: block;
+            font-size: 16px; }
             @media screen and (min-width: 560px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(15px + .25vw); } }
+                font-size: calc(16px + .25vw); } }
             @media screen and (min-width: 768px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(16px + .25vw); } }
+                font-size: calc(17px + .25vw); } }
             @media screen and (min-width: 1248px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(18px + .25vw); } }
+                font-size: calc(19px + .25vw); } }
             @media screen and (min-width: 2000px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: 21px; } }
+                font-size: 23px; } }
+            @media only screen and (min-width: 480px) {
+              .contact-pg .contact-forms .form-content form fieldset label.optional::after {
+                display: inline;
+                position: absolute;
+                right: 0; } }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(16px + .25vw); } }
+              font-size: calc(17px + .25vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(17px + .25vw); } }
+              font-size: calc(18px + .25vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(19px + .25vw); } }
+              font-size: calc(20px + .25vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: 24px; } }
+              font-size: 25px; } }
           @media only screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset label {
               width: 90%;
@@ -802,18 +829,21 @@
             .contact-pg .contact-forms .form-content form fieldset label {
               width: 75%; } }
         .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm {
-          margin: 0 auto 1vh; }
+          margin: 0 auto 10px; }
           @media only screen and (min-width: 1150px) {
             .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm {
               display: grid;
               width: 75%;
-              grid-gap: 1vw;
-              margin-bottom: 2vh;
+              grid-row-gap: 1vw;
+              gap: 1vw;
+              margin-bottom: 10px;
               grid-template-columns: 1fr 1fr;
               grid-template-areas: "l1 l2" "i1 i2"; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input, .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
                 width: 100%;
                 margin: auto; }
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
+                margin-bottom: -10px; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label:first-child {
                 grid-area: l1; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label:nth-child(3) {
@@ -827,8 +857,8 @@
           border: 1px solid #3d3a3a;
           padding: 10px;
           border-radius: 5px;
-          margin-bottom: 2vh;
-          font-size: 15px; }
+          margin-bottom: 10px;
+          font-size: 16px; }
           .contact-pg .contact-forms .form-content form fieldset input:focus, .contact-pg .contact-forms .form-content form fieldset select:focus, .contact-pg .contact-forms .form-content form fieldset textarea:focus {
             -webkit-tap-highlight-color: #0095eb;
             color: #3d3a3a;
@@ -836,16 +866,16 @@
             padding: 14px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(15px + .25vw); } }
+              font-size: calc(16px + .25vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(16px + .25vw); } }
+              font-size: calc(17px + .25vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(18px + .25vw); } }
+              font-size: calc(19px + .25vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: 21px; } }
+              font-size: 23px; } }
           .contact-pg .contact-forms .form-content form fieldset input:last-child, .contact-pg .contact-forms .form-content form fieldset select:last-child, .contact-pg .contact-forms .form-content form fieldset textarea:last-child {
             margin-bottom: 0; }
           @media only screen and (min-width: 560px) {
@@ -865,22 +895,22 @@
         .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
           background: #fafafa;
           color: #575353;
-          font-size: 15px; }
+          font-size: 16px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(15px + .25vw); } }
+              font-size: calc(16px + .25vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(16px + .25vw); } }
+              font-size: calc(17px + .25vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(18px + .25vw); } }
+              font-size: calc(19px + .25vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: 21px; } }
+              font-size: 23px; } }
         .contact-pg .contact-forms .form-content form fieldset textarea {
           min-height: 200px;
-          font-family: "SpartanMB"; }
+          font-family: Lato, Helvetica, Arial, sans-serif; }
         .contact-pg .contact-forms .form-content form fieldset .subtitle {
           margin-top: 0;
           color: #716c6c; }
@@ -939,21 +969,21 @@
         border: 2px solid #8b8585;
         color: #fafafa;
         border-radius: 50%;
-        font-size: 15px; }
+        font-size: 17px; }
         .contact-pg .contact-forms .form-content .form-progress .step path {
           fill: #fafafa; }
         @media screen and (min-width: 560px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(16px + .25vw); } }
+            font-size: calc(17px + .25vw); } }
         @media screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(17px + .25vw); } }
+            font-size: calc(18px + .25vw); } }
         @media screen and (min-width: 1248px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(19px + .25vw); } }
+            font-size: calc(20px + .25vw); } }
         @media screen and (min-width: 2000px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: 24px; } }
+            font-size: 25px; } }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
             width: 44px;
@@ -990,19 +1020,19 @@
         top: 2px;
         right: 5px;
         color: #979292;
-        font-size: 15px; }
+        font-size: 16px; }
         @media screen and (min-width: 560px) {
           .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(15px + .25vw); } }
+            font-size: calc(16px + .25vw); } }
         @media screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(16px + .25vw); } }
+            font-size: calc(17px + .25vw); } }
         @media screen and (min-width: 1248px) {
           .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(18px + .25vw); } }
+            font-size: calc(19px + .25vw); } }
         @media screen and (min-width: 2000px) {
           .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: 21px; } }
+            font-size: 23px; } }
       @media only screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
           width: 80vw;
@@ -1119,11 +1149,26 @@
       .contact-pg .contact-forms .form-label {
         flex-grow: 1;
         padding: 1% 4%;
-        width: 33%;
+        width: calc(100% / 3);
+        position: relative;
+        left: 1px;
         border-radius: 8px 8px 0 0;
         justify-content: center;
         border: 2px solid #a49f9f;
-        border-bottom: 2px solid #3d3a3a; } }
+        border-bottom: 2px solid #3d3a3a; }
+        .contact-pg .contact-forms .form-label.hire-label {
+          left: 0; }
+        .contact-pg .contact-forms .form-label.tutor-label {
+          left: 0; }
+        .contact-pg .contact-forms .form-label.tutor-label::after {
+          content: " ";
+          position: absolute;
+          bottom: -2px;
+          right: -4px;
+          width: 4px;
+          height: 2px;
+          z-index: 3;
+          background: #000000; } }
     .contact-pg .contact-forms .form-label .form-open {
       display: inline; }
   .contact-pg .contact-forms input[type="radio"] {
@@ -1138,7 +1183,9 @@
       @media only screen and (min-width: 1024px) {
         .contact-pg .contact-forms input[type="radio"]:checked + label {
           border: 2px solid #3d3a3a;
-          border-bottom: none; } }
+          border-bottom: none; }
+          .contact-pg .contact-forms input[type="radio"]:checked + label.tutor-label::after {
+            bottom: 0; } }
     .contact-pg .contact-forms input[type="radio"]:checked + label span:after {
       content: '+'; }
     .contact-pg .contact-forms input[type="radio"]:checked + label + .contact-forms {
