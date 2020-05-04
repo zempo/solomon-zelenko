@@ -354,7 +354,7 @@
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
         flex-grow: 1;
-        padding: 1% 5%;
+        padding: 2% 4%;
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
         position: relative;
@@ -1014,7 +1014,7 @@
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
         flex-grow: 1;
-        padding: 1% 4%;
+        padding: 2% 4%;
         width: calc(100% / 3);
         position: relative;
         left: 1px;

@@ -432,7 +432,7 @@
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .accordion-label {
         flex-grow: 1;
-        padding: 1% 5%;
+        padding: 2% 4%;
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
         position: relative;
@@ -1148,7 +1148,7 @@
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-label {
         flex-grow: 1;
-        padding: 1% 4%;
+        padding: 2% 4%;
         width: calc(100% / 3);
         position: relative;
         left: 1px;
