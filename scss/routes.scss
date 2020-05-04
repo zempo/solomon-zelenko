@@ -197,7 +197,7 @@
   } 
   .img-controls {
     margin: 20px auto 60px;
-    width: 70%;
+    width: 80%;
     position: relative;
     @include mq('tablet-med') {
       width: 65%;   
@@ -251,17 +251,17 @@
       }
       &::-webkit-slider-runnable-track {
         width: 100%;
-        height: 3px;
+        height: 2px;
         cursor: pointer;
         animate: 0.2s;
-        box-shadow: 1px 1px 1px #000000;
-        background: #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
+        background: map-get($colors, dark-2);
         border-radius: 5px;
-        border: 1px solid #000000;
+        border: 1px solid map-get($colors, dark-2);
       }
       &::-webkit-slider-thumb {
-        box-shadow: 1px 1px 1px #000000;
-        border: 1.5px solid #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
+        border: 1.5px solid map-get($colors, dark-2);
         height: 23px;
         width: 44px;
         border-radius: 6px;
@@ -271,21 +271,21 @@
         margin-top: -10px;
       }
       &:focus::-webkit-slider-runnable-track {
-        background: #000000;
+        background: map-get($colors, dark-2);
       }
       &::-moz-range-track {
         width: 100%;
-        height: 5px;
+        height: 2px;
         cursor: pointer;
         animate: 0.2s;
-        box-shadow: 1px 1px 1px #000000;
-        background: #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
+        background: map-get($colors, dark-2);
         border-radius: 5px;
-        border: 1px solid #000000;
+        border: 1px solid map-get($colors, dark-2);
       }
       &::-moz-range-thumb {
-        box-shadow: 1px 1px 1px #000000;
-        border: 1px solid #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
+        border: 1px solid map-get($colors, dark-2);
         height: 23px;
         width: 44px;
         border-radius: 6px;
@@ -294,7 +294,7 @@
       }
       &::-ms-track {
         width: 100%;
-        height: 5px;
+        height: 2px;
         cursor: pointer;
         animate: 0.2s;
         background: transparent;
@@ -302,20 +302,20 @@
         color: transparent;
       }
       &::-ms-fill-lower {
-        background: #000000;
-        border: 1px solid #000000;
+        background: map-get($colors, dark-2);
+        border: 1px solid map-get($colors, dark-2);
         border-radius: 10px;
-        box-shadow: 1px 1px 1px #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
       }
       &::-ms-fill-upper {
-        background: #000000;
-        border: 1px solid #000000;
+        background: map-get($colors, dark-2);
+        border: 1px solid map-get($colors, dark-2);
         border-radius: 10px;
-        box-shadow: 1px 1px 1px #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
       }
       &::-ms-thumb {
-        box-shadow: 1px 1px 1px #000000;
-        border: 1px solid #000000;
+        box-shadow: 1px 1px 1px map-get($colors, dark-2);
+        border: 1px solid map-get($colors, dark-2);
         height: 23px;
         width: 44px;
         border-radius: 6px;
@@ -323,13 +323,13 @@
         cursor: pointer;
       }
       &:focus::-ms-fill-lower {
-        background: #000000;
+        background: map-get($colors, dark-2);
       }
       &:focus::-ms-fill-upper {
-        background: #000000;
+        background: map-get($colors, dark-2);
       }
     }
-  }
+  } 
   .accordion {
     display: flex;
     flex-wrap: wrap;
@@ -354,7 +354,7 @@
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
         flex-grow: 1;
-        padding: 2% 4%;
+        padding: 1.5% 4%;
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
         position: relative;
@@ -1014,7 +1014,7 @@
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
         flex-grow: 1;
-        padding: 2% 4%;
+        padding: 1.5% 4%;
         width: calc(100% / 3);
         position: relative;
         left: 1px;

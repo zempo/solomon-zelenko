@@ -7,7 +7,7 @@ const navImgs = document.querySelectorAll("nav a img");
 const footer = document.querySelector('footer')
 const deployedURI = 'https://solomonzelenko.cleverapps.io/api'
 const localURI = 'http://localhost:5000/api' 
-const API = localURI
+const API = deployedURI
 // MAIN EVENT LISTENERS 
 // home pg
 const handleResume = (e) => {
@@ -448,13 +448,15 @@ class Router {
         const tutorForm = document.querySelector('.tutor-form')
         const genForm = document.querySelector('.gen-form')
         const timeOutput = document.querySelector('.work-hours');
+        timeOutput.innerHTML = '<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.'
         let startTime = ''
         let endTime = ''
+        const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
         axios
-        .get(`${API}/utils/time`)
+        .get(`${API}/utils/time`, {headers: {'x-client-zone': `${clientTimezone}`}})
         .then(res => {
-          startTime = res.data.times[0]
-          endTime = res.data.times[1].substr(0, res.data.times[0].length - 1)
+          startTime = res.data.times[0] 
+          endTime = res.data.times[1]
           timeOutput.innerHTML = `<strong>${startTime}</strong> to <strong>${endTime}</strong>, your time.`
         })
         .catch(err => timeOutput.innerHTML = `<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.`)

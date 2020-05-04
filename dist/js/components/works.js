@@ -55,7 +55,7 @@ const portfolioProjects = [
       "Cloudinary",
       "AWS Image Moderation",
       "React to Print",
-      "JWT + Bcrypt.js"
+      "JWT + Bcrypt.js" 
     ],
     repo: "https://github.com/zempo/jto-client",
     live: "https://just-the-occasion.com/",
@@ -67,8 +67,8 @@ const portfolioProjects = [
     pics: ["sol-1.png"],
     description: "Built with just HTML, SCSS, & Vanilla JS. A portfolio to showcase my content, projects, and more.",
     timeline: [{state: 'Concept', desc: "sds"}, {state: 'Research', desc: 'This'}],
-    tech: ["HTML", "CSS"],
-    libs: ["sdfdf", "sdfsf"],
+    tech: ["HTML", "CSS/SCSS", "Vanilla JS", "Node.js", "Netlify (Deployment)"],
+    libs: ["Axios", "Nodemailer", "Handlebars"],
     repo: "https://github.com/zempo/solomon-zelenko",
     live: "https://solomonzelenko.dev",
     tags: ["vanilla"]
