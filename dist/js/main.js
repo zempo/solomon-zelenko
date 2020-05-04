@@ -27,6 +27,37 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
 }
 
 // Contact pg
+const getHours = (str) => {
+  let timeStr = str
+  let timeStart = timeStr.indexOf(',') + 2 
+  let timeEnd = timeStr.substr(timeStart).indexOf('M') 
+
+  if (timeStr.substr(timeStart)[0] === '0') {
+      timeStart += 1
+  }
+
+      timeStr = timeStr.substr(timeStart, timeEnd).replace(':00 ', ' ').toLowerCase()
+      return timeStr
+}
+
+const processTime = (clientTime) => {
+  const options = {
+    year: '2-digit', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    timeZone: clientTime,
+    timeZoneName: 'short'
+  }
+  const formater = new Intl.DateTimeFormat('en-US', options)
+  const startingDate = new Date("2020/04/10 15:30:00 +0000")
+  const endingDate = new Date("2020/04/10 00:30:00 +0000")
+  
+  let pacificStart = formater.format(startingDate)
+  pacificStart = getHours(pacificStart)
+  let pacificEnd = formater.format(endingDate)
+  pacificEnd = getHours(pacificEnd)
+  return [pacificStart, pacificEnd]
+}
+
 const handleMailForms = (hire, tutor, gen) => {
   const nextBtns = document.querySelectorAll(`.form-next`);
   const prevBtns = document.querySelectorAll(`.form-prev`);
@@ -449,17 +480,8 @@ class Router {
         const genForm = document.querySelector('.gen-form')
         const timeOutput = document.querySelector('.work-hours');
         timeOutput.innerHTML = '<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.'
-        let startTime = ''
-        let endTime = ''
         const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-        axios
-        .get(`${API}/utils/time`, {headers: {'x-client-zone': `${clientTimezone}`}})
-        .then(res => {
-          startTime = res.data.times[0] 
-          endTime = res.data.times[1]
-          timeOutput.innerHTML = `<strong>${startTime}</strong> to <strong>${endTime}</strong>, your time.`
-        })
-        .catch(err => timeOutput.innerHTML = `<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.`)
+        timeOutput.innerHTML = `<strong>${processTime(clientTimezone)[0]}</strong> to <strong>${processTime(clientTimezone)[1]}</strong>, your time.`
         handleMailForms(hireForm, tutorForm, genForm)
         return;        
       default:

@@ -856,6 +856,7 @@ class WorkModal extends HTMLElement {
     ${technologies(currentItem.tech)}
     </ul>
     <br>
+    <br>
     <h3>External Libraries</h3>
     <ul>
     ${technologies(currentItem.libs)}
