@@ -728,7 +728,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 } 
 @media only screen and (min-width: 2000px) {
   .item-img {
-    max-width: 90%; 
+    max-width: 85%; 
     max-height: 55vh;
   }
   h1 {

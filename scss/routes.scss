@@ -391,7 +391,7 @@
       flex-grow: 1;
       width: 100%;
       height: 100%;
-      padding: 0 5% 7vh; 
+      padding: 30px 5%; 
       display: none;
       @include mq('tablet-wide') {
         order: 1;
@@ -496,7 +496,8 @@
       .min-txt {
         font-family: $font-hand;
         text-align: center;
-        @include font-size($h2-font-sizes);
+        letter-spacing: 2px;
+        @include font-size($h2-big-font-sizes);
       }
       h2 {
         font-weight: normal;
@@ -505,7 +506,7 @@
       }
       .content-items {
         display: grid;
-        padding: 40px 10px;
+        padding: 20px 10px;
         grid-template-columns: 1fr;
         img {
           max-width: 80px;

@@ -68,6 +68,14 @@ $h1-font-sizes: (
   map-get($breakpoints, "ultra-wide"): calc(44px + .5vw)
 ); 
 
+$h2-big-font-sizes: (
+  null: 20px,
+  map-get($breakpoints, "phablet") : calc(23px + .5vw),
+  map-get($breakpoints, "tablet") : calc(23px + .5vw), 
+  map-get($breakpoints, "desktop"): calc(25px + .5vw),
+  map-get($breakpoints, "ultra-wide"): 32px
+); 
+
 $h2-font-sizes: (
   null: 18px,
   map-get($breakpoints, "phablet") : calc(21px + .5vw),

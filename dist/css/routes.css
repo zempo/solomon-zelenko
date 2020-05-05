@@ -463,7 +463,7 @@
     flex-grow: 1;
     width: 100%;
     height: 100%;
-    padding: 0 5% 7vh;
+    padding: 30px 5%;
     display: none; }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .a-content {
@@ -568,19 +568,20 @@
   .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
     font-family: "Indie Flower", cursive;
     text-align: center;
-    font-size: 18px; }
+    letter-spacing: 2px;
+    font-size: 20px; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(21px + .5vw); } }
+        font-size: calc(23px + .5vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(21px + .5vw); } }
+        font-size: calc(23px + .5vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(22px + .5vw); } }
+        font-size: calc(25px + .5vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: 28px; } }
+        font-size: 32px; } }
   .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
     font-weight: normal;
     font-family: "SpartanMB";
@@ -599,7 +600,7 @@
         font-size: 28px; } }
   .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
     display: grid;
-    padding: 40px 10px;
+    padding: 20px 10px;
     grid-template-columns: 1fr; }
     .about-pg .accordion .skills .content-items img, .about-pg .accordion .vision .content-items img {
       max-width: 80px; }

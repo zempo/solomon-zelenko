@@ -471,10 +471,18 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
           opacity: 1;
         }
       }
+      .item-img {
+        max-width: 100%; 
+        max-height: 65vh;
+      }
     }
     @media only screen and (min-width: 1440px) {
       .modal-content {
         height: calc(100vh - 157px); 
+      }
+      .item-img {
+        max-width: 90%; 
+        max-height: 60vh;
       }
     } 
     @media only screen and (min-width: 2000px) {
@@ -492,6 +500,10 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
       }
       h4 {
         font-size: 24px;
+      }
+      .item-img {
+        max-width: 85%; 
+        max-height: 60vh;
       }
     
     }
