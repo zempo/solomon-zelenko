@@ -17,7 +17,7 @@ const portfolioProjects = [
       tech: [ 
       "React.js (Hooks & Context)",
       "JWT Auth",
-      "Node.js (Express)",
+      "Node.js (Express)", 
       "PostgreSQL (With Knex)",
       "Jest (Frontend Tests)",
       "Mocha (Backend Tests)",
@@ -26,7 +26,7 @@ const portfolioProjects = [
     libs: ["Axois", "ReactPDF ", "React Resizeable", "React Hotkeys", "JWT + Bcrypt.js"],
     repo: "https://github.com/zempo/jto-client",
     live: "https://above-the-line.now.sh/",
-    tags: ['pern']
+    tags: ['pern', 'team']
   },
   {
     title: "Just the Occasion",
@@ -59,7 +59,7 @@ const portfolioProjects = [
     ],
     repo: "https://github.com/zempo/jto-client",
     live: "https://just-the-occasion.com/",
-    tags: ['pern']
+    tags: ['pern', 'solo']
   },
   {
     title: "My Portfolio",
@@ -67,7 +67,7 @@ const portfolioProjects = [
     pics: ["sol-1.png"],
     description: "Built with just HTML, SCSS, & JavaScript. A place to showcase my projects, content, and more.",
     timeline: [
-      {stage: 'Concept', desc: "sds"},
+      {stage: 'Concept', desc: "I wanted to showcase my skills with a framework-free portfolio."},
       {stage: 'Research', desc: 'This'},
       {stage: 'Client', desc: 'This'}, 
       {stage: 'Server', desc: 'This'},
@@ -77,7 +77,7 @@ const portfolioProjects = [
     libs: ["Axios", "Nodemailer", "Handlebars"],
     repo: "https://github.com/zempo/solomon-zelenko",
     live: "https://solomonzelenko.dev",
-    tags: ["vanilla"]
+    tags: ["vanilla", 'solo']
   }, 
   {
     title: "Aeropolis",
@@ -96,7 +96,7 @@ const portfolioProjects = [
     libs: ["AirVisual", "Leaflet.js", "News API", "Wikipedia API"],
     repo: "https://github.com/zempo/aeropolis",
     live: "https://zempo.github.io/Aeropolis/",
-    tags: ['jquery']
+    tags: ['jquery', 'solo']
   }
 ];
  
@@ -228,6 +228,66 @@ hr {
     -moz-border-radius-topright: 4px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+  }
+  .ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+  }
+  .ribbon::before,
+  .ribbon::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #2980b9;
+  }
+  .solo:before, .solo:after {
+    border: 5px solid #35ad2a;
+  }
+  .ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 10px 0;
+    background-color: #3498db;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: #fff;
+    font: 700 18px/1 'Lato', sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .solo span {
+    background-color: #3bbf42;
+  }
+  
+  /* top left*/
+  .ribbon {
+    top: -5px;
+    left: -5px;
+  }
+  .ribbon::before,
+  .ribbon::after {
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  .ribbon::before {
+    top: -5px;
+    right: 12px;
+    z-index: -1;
+  }
+  .ribbon::after {
+    bottom: 12px;
+    z-index: -1;
+    left: -5px;
+  }
+  .ribbon span {
+    right: -25px;
+    top: 30px;
+    transform: rotate(-45deg);
   }
   .open-item {
     background: rgba(0, 0, 0, 0);
@@ -428,6 +488,7 @@ class WorksList extends HTMLElement {
           <div class="work-preview-1">
           <div class="work-preview-2">
           <img src="img/works/${work.code + '/' + work.code}-1.png" alt="Work hero image"/>
+          <div class="ribbon ${work.tags[1]}"><span>${work.tags[1]}</span></div>
           <button class="open-item" data-item="${i}"><span>See More</span></button>
           </div>
           </div>
@@ -438,6 +499,7 @@ class WorksList extends HTMLElement {
           <div class="work-preview-1">
           <div class="work-preview-2">
           <img src="img/works/${work.code + '/' + work.code}-1.png" alt="Work hero image"/>
+          <div class="ribbon ${work.tags[1]}"><span>${work.tags[1]}</span></div>
           <button class="open-item" data-item="${i}"><span>See More</span></button>
           </div>
           </div>
@@ -448,6 +510,7 @@ class WorksList extends HTMLElement {
           <div class="work-preview-1">
           <div class="work-preview-2">
           <img src="img/works/${work.code + '/' + work.code}-1.png" alt="Work hero image"/>
+          <div class="ribbon ${work.tags[1]}"><span>${work.tags[1]}</span></div>
           <button class="open-item" data-item="${i}"><span>See More</span></button>
           </div>
           </div>

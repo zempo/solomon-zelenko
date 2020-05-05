@@ -54,21 +54,21 @@
     @media only screen and (min-width: 900px) {
       .route h1:first-child {
         margin: 100px auto 80px; } }
-  .route h3:nth-child(2) {
+  .route h2:nth-child(2) {
     font-weight: normal;
     margin-top: 0;
     font-size: 18px; }
     @media screen and (min-width: 560px) {
-      .route h3:nth-child(2) {
+      .route h2:nth-child(2) {
         font-size: calc(19px + .5vw); } }
     @media screen and (min-width: 768px) {
-      .route h3:nth-child(2) {
+      .route h2:nth-child(2) {
         font-size: calc(20px + .5vw); } }
     @media screen and (min-width: 1248px) {
-      .route h3:nth-child(2) {
+      .route h2:nth-child(2) {
         font-size: calc(21px + .5vw); } }
     @media screen and (min-width: 2000px) {
-      .route h3:nth-child(2) {
+      .route h2:nth-child(2) {
         font-size: 26px; } }
 
 .l {
@@ -407,7 +407,7 @@
     width: 100%;
     order: initial;
     margin-right: 0;
-    padding: 0;
+    padding: 3% 5%;
     border: 2px solid #a49f9f;
     border-top: 1px solid #a49f9f;
     display: flex;
@@ -470,7 +470,7 @@
         order: 1;
         flex-direction: none; } }
     .about-pg .accordion .a-content ul {
-      list-style-type: none;
+      list-style-type: "→";
       text-align: left; }
   .about-pg .accordion input[type="radio"] {
     display: none; }
@@ -557,22 +557,7 @@
     width: 100%;
     text-align: left; }
     .about-pg .accordion .vision ol {
-      list-style-position: inside;
-      font-size: 16px; }
-      @media screen and (min-width: 560px) {
-        .about-pg .accordion .vision ol {
-          font-size: calc(16px + .25vw); } }
-      @media screen and (min-width: 768px) {
-        .about-pg .accordion .vision ol {
-          font-size: calc(17px + .25vw); } }
-      @media screen and (min-width: 1248px) {
-        .about-pg .accordion .vision ol {
-          font-size: calc(19px + .25vw); } }
-      @media screen and (min-width: 2000px) {
-        .about-pg .accordion .vision ol {
-          font-size: 23px; } }
-      .about-pg .accordion .vision ol h2 {
-        text-align: left; }
+      list-style-position: inside; }
     .about-pg .accordion .vision h2 {
       text-align: center; }
     .about-pg .accordion .vision img {
@@ -580,46 +565,83 @@
       max-width: calc(50px + 1vw);
       position: relative;
       top: 10px; }
+  .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+    font-family: "Indie Flower", cursive;
+    text-align: center;
+    font-size: 18px; }
+    @media screen and (min-width: 560px) {
+      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+        font-size: calc(21px + .5vw); } }
+    @media screen and (min-width: 768px) {
+      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+        font-size: calc(21px + .5vw); } }
+    @media screen and (min-width: 1248px) {
+      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+        font-size: calc(22px + .5vw); } }
+    @media screen and (min-width: 2000px) {
+      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+        font-size: 28px; } }
   .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
-    font-weight: normal; }
+    font-weight: normal;
+    font-family: "SpartanMB";
+    font-size: 18px; }
+    @media screen and (min-width: 560px) {
+      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
+        font-size: calc(21px + .5vw); } }
+    @media screen and (min-width: 768px) {
+      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
+        font-size: calc(21px + .5vw); } }
+    @media screen and (min-width: 1248px) {
+      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
+        font-size: calc(22px + .5vw); } }
+    @media screen and (min-width: 2000px) {
+      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
+        font-size: 28px; } }
   .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
     display: grid;
     padding: 40px 10px;
     grid-template-columns: 1fr; }
+    .about-pg .accordion .skills .content-items img, .about-pg .accordion .vision .content-items img {
+      max-width: 80px; }
     .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
-      text-align: left;
-      list-style-type: none;
-      width: 170px;
+      text-align: center;
+      list-style-type: "→ ";
+      list-style-position: inside;
+      width: 100%;
       padding-left: 0;
-      margin: 20px auto; }
+      margin: 30px auto; }
       .about-pg .accordion .skills .content-items ul h2, .about-pg .accordion .skills .content-items ol h2, .about-pg .accordion .vision .content-items ul h2, .about-pg .accordion .vision .content-items ol h2 {
         margin: 20px auto; }
       .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
-        margin: 5px auto; }
-    @media only screen and (min-width: 560px) {
+        text-align: left;
+        max-width: calc(160px + .5vw);
+        margin: 5px auto;
+        font-size: 16px; }
+        @media screen and (min-width: 560px) {
+          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(16px + .25vw); } }
+        @media screen and (min-width: 768px) {
+          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(17px + .25vw); } }
+        @media screen and (min-width: 1248px) {
+          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(19px + .25vw); } }
+        @media screen and (min-width: 2000px) {
+          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+            font-size: 23px; } }
+    @media only screen and (min-width: 768px) {
       .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
         gap: 10px; }
         .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
           width: 100%;
-          text-align: justify;
-          max-width: calc(210px + 2vw);
-          margin: 10px auto; } }
-  .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-    font-size: 17px; }
-    @media screen and (min-width: 560px) {
-      .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(17px + .25vw); } }
-    @media screen and (min-width: 768px) {
-      .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(18px + .25vw); } }
-    @media screen and (min-width: 1248px) {
-      .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: calc(20px + .25vw); } }
-    @media screen and (min-width: 2000px) {
-      .about-pg .accordion .skills ul li, .about-pg .accordion .vision ul li {
-        font-size: 25px; } }
+          text-align: center;
+          margin: 20px auto; }
+          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+            text-align: left;
+            max-width: calc(210px + .5vw);
+            margin: auto; } }
 
 .filter-bytes, .filter-works {
   margin-bottom: 50px; }
@@ -1130,7 +1152,7 @@
     width: 100%;
     order: initial;
     margin-right: 0;
-    padding: 5% 6% 5% 6%;
+    padding: 3% 5%;
     border: 2px solid #a49f9f;
     border-top: 1px solid #a49f9f;
     display: flex;

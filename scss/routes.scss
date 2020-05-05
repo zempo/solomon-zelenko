@@ -28,7 +28,7 @@
       margin: 100px auto 80px; 
     }
   }
-  h3:nth-child(2) {
+  h2:nth-child(2) {
     font-weight: normal;
     margin-top: 0;
     @include font-size($h3-big-font-sizes);
@@ -341,7 +341,7 @@
       width: 100%;
       order: initial;
       margin-right: 0;
-      padding: 0; 
+      padding: 3% 5%;
       border: 2px solid lighten(map-get($colors, dark-2), 40%);
       border-top: 1px solid lighten(map-get($colors, dark-2), 40%);
       display: flex; 
@@ -398,9 +398,9 @@
         flex-direction: none;
       } 
       ul {
-        list-style-type: none; 
+        list-style-type: "→"; 
         text-align: left;
-      }
+      } 
     }
     input[type="radio"] {
       display: none;
@@ -481,10 +481,6 @@
       text-align: left;
       ol {
         list-style-position: inside;
-        @include font-size($p-font-sizes);
-        h2 {
-          text-align: left;
-        }
       }
       h2 {
         text-align: center;
@@ -497,42 +493,55 @@
       }
     }
     .skills, .vision {
+      .min-txt {
+        font-family: $font-hand;
+        text-align: center;
+        @include font-size($h2-font-sizes);
+      }
       h2 {
         font-weight: normal;
+        font-family: $font;
+        @include font-size($h2-font-sizes);
       }
       .content-items {
         display: grid;
         padding: 40px 10px;
         grid-template-columns: 1fr;
+        img {
+          max-width: 80px;
+        }
         ul, ol { 
-          text-align: left;
-          list-style-type: none;
-          width: 170px;
+          text-align: center;
+          list-style-type: "→ ";
+          list-style-position: inside;
+          width: 100%;
           padding-left: 0;
-          margin: 20px auto;
+          margin: 30px auto;
           h2 {
             margin: 20px auto;
           }
           li {
+            text-align: left;
+            max-width: calc(160px + .5vw);
             margin: 5px auto;
+            @include font-size($p-font-sizes);
           }
         }
-        @include mq('phablet') {
+        @include mq('tablet') {
           grid-template-columns: 1fr 1fr;
           grid-gap: 10px;
           gap: 10px; 
           ul, ol {
             width: 100%;
-            text-align: justify;
-            max-width: calc(210px + 2vw);
-            margin: 10px auto;
+            text-align: center;
+            margin: 20px auto; 
+            li {
+              text-align: left;
+              max-width: calc(210px + .5vw);
+              margin: auto;
+            }
           }
         } 
-      }
-      ul {
-        li {
-          @include font-size($h3-font-sizes);
-        }
       }
     }
   }
@@ -1008,7 +1017,7 @@
       width: 100%;
       order: initial;
       margin-right: 0;
-      padding: 5% 6% 5% 6%;
+      padding: 3% 5%;
       border: 2px solid lighten(map-get($colors, dark-2), 40%);
       border-top: 1px solid lighten(map-get($colors, dark-2), 40%);
       display: flex;
