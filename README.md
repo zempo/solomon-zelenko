@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3d596c7a-d6cd-4563-b734-8ee3c0819b2e/deploy-status)](https://app.netlify.com/sites/priceless-shockley-1023ef/deploys)
 
-_Live Site: [Here](https:solomonzelenko.dev)_
+_Live Site: [Here](https://solomonzelenko.dev)_
 
 ## About this Project
 
