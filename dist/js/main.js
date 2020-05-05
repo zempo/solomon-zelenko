@@ -7,7 +7,7 @@ const navImgs = document.querySelectorAll("nav a img");
 const footer = document.querySelector('footer')
 const deployedURI = 'https://solomonzelenko.cleverapps.io/api'
 const localURI = 'http://localhost:5000/api' 
-const API = deployedURI
+const API = localURI
 // MAIN EVENT LISTENERS 
 // home pg
 const handleResume = (e) => {
@@ -26,7 +26,28 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
   pic3.style.filter = `hue-rotate(${hue.value}deg)`
 }
 
-// Contact pg
+// Contact pg 
+const getContactType = (tabs, output) => {
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', e => {
+      output.classList.remove('on')
+      setTimeout(() => {
+        output.classList.add('on')
+      }, 60)
+      switch (tab.id) {
+        case 'tutor-form':
+          output.innerHTML = 'to mentor you'
+         return;
+        case 'hire-form':
+          output.innerHTML = 'to work with you'
+          return;
+        case 'gen-form':
+           output.innerHTML = 'to chat with you'
+          return;
+      }
+    })
+  })
+}
 const getHours = (str) => {
   let timeStr = str
   let timeStart = timeStr.indexOf(',') + 2 
@@ -475,14 +496,17 @@ class Router {
         byteM.style.display = 'none' 
         return;
       case 'contact': 
+        const contactTabs = document.querySelectorAll('input[type="radio"]')
+        const contactType = document.querySelector('.contact-type')
         const hireForm = document.querySelector('.hire-form')
         const tutorForm = document.querySelector('.tutor-form')
         const genForm = document.querySelector('.gen-form')
         const timeOutput = document.querySelector('.work-hours');
-        timeOutput.innerHTML = '<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST.'
+        timeOutput.innerHTML = '<strong>8:30 am</strong> to <strong>5:30 pm</strong> PST'
         const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-        timeOutput.innerHTML = `<strong>${processTime(clientTimezone)[0]}</strong> to <strong>${processTime(clientTimezone)[1]}</strong>, your time.`
+        timeOutput.innerHTML = `<strong>${processTime(clientTimezone)[0]}</strong> to <strong>${processTime(clientTimezone)[1]}</strong>, your time`
         handleMailForms(hireForm, tutorForm, genForm)
+        getContactType(contactTabs, contactType)
         return;        
       default:
         return;

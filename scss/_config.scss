@@ -31,10 +31,11 @@ $animations: (
     from-top: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-right: fromRight 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
     from-left: fromLeft 0.4s cubic-bezier(0.39, 0.575, 0.565, 1),
+    scale-left: scaleLeft 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both,
     fold-up: fold-up 0.4s linear both,
     ping: ping 0.8s ease-in-out infinite both,
     transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
-    transition-2: all .4s
+    transition-2: all .4s 
 );
 $breakpoints: (
     "phone":        400px,

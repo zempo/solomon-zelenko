@@ -591,6 +591,13 @@
       display: none;
     }
   }
+  .on {
+    display: inline-block; 
+    -o-animation: map-get($animations, scale-left);
+    -moz-animation: map-get($animations, scale-left); 
+    -webkit-animation: map-get($animations, scale-left);
+    animation: map-get($animations, scale-left);
+  } 
   .contact-forms {
     display: flex;
     flex-wrap: wrap;
@@ -647,7 +654,7 @@
         color: map-get($colors, app-white);
       }
       form {
-        margin: 8vh auto 2.5vh;
+        margin: 30px auto 10px;
         width: 100%;
         fieldset {
           display: none;
@@ -656,7 +663,7 @@
           position: relative;
           legend {
             font-weight: normal;
-            margin: 0 auto 3vh;
+            margin: 0 auto 35px;
             grid-area: legend;
             @include font-size($h2-font-sizes);
           }
@@ -788,7 +795,7 @@
       }
       .form-progress {
         display: flex;
-        margin: 0 auto 8vh;
+        margin: 5px auto 40px;
         justify-content: space-around;
         width: 100%;
         position: relative;

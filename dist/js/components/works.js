@@ -7,13 +7,13 @@ const portfolioProjects = [
       "Above the Line is your scriptwriting environment. You can create and download preformatted movie scripts.",
     timeline: [
       {stage: 'Concept',
-       desc: `Originally, I wanted to build an app that parsed tags into a string - a Mad Libs&trade; generator. However, a slight change came to mind. A friend told to me about the cost of his screenwriting software. Like Mad Libs&trade;, scripts also used specific formatting guidelines. I also knew my friend would enjoy a free screenplay editor.`},
-      {stage: 'Research', desc: `First, I sketched the wireframes, wrote user stories, and prototyped some pages in Repl.it. Next, I made a MVP of the <a href="https://stackblitz.com/edit/above-the-line-concept" target="_blank" rel="noopener noreferrer">editor component</a> on Stackblitz. Thankfully, I was able to manage <a href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noopener noreferrer">external JSON</a>, editor state, & context in the MVP. Finally, I wrote a function that would organize the 'script tags' and text into an object React PDF could parse and style.`},
-      {stage: 'MVP: Client', desc: `I wrote a dummy script and set of theme colors for testing. Then, with <a href="https://github.com/zempo/react-boiler" target="_blank" rel="noopener noreferrer">React Boilerplate</a>, I wrote my main routes, components, and utilities. However, I struggled to integrate React Resizeable and Hotkeys with my state management system. Fortunately, I was able to get client working and deployed the MVP to Zeit for feedback.`},
-      {stage: 'MVP: Server', desc: `I kept revising my data sketches until I was ready to write my SQL migrations. Because I would store my theme data in a user table, I asked a friend for some feedback on the theme colors. I ended up having to refactor my client MVP to make all themes accessible. Fortunately, with my <a href="https://github.com/zempo/node-boiler-postgres" target="_blank" rel="noopener noreferrer">Node/PostgreSQL Boilerplate</a>, the backend didn't take long to write and test. I deployed my server and database to Heroku.`},
-      {stage: 'Feedback', desc: `During this time, I was enrolled with <a href="https://www.thinkful.com/" target="_blank" re="noopener noreferrer">Thinkful</a> and had access to great feedback. There were a couple of authentication bugs, memory leaks, and style bugs - nothing too problematic. At this point, I had a better understanding of react hooks and was able to debug.`},
-      {stage: 'Production', desc: `After applying my feedback, Above the Line was complete. As a tribute to the "editor component", I used Inkscape to create a vectorized impression of it for the landing page.`},
-      {stage: 'New Insights', desc: `First and foremost, I learned how to format screenplays. These projects can teach you so much about the world. However, I felt as though my understanding of state management and the DOM was incomplete.`}],
+       desc: `A friend told to me about the cost of his screenwriting software. Something had to be done. Thankfully, scripts use specific formatting guidelines. Perhaps writers could add "tags" to their screenplay (HTML for screenplays).`},
+      {stage: 'Research', desc: `First, I wireframed the app in Repl.it and StackBlitz. I used this <a href="https://stackblitz.com/edit/above-the-line-concept" target="_blank" rel="noopener noreferrer">editor component</a> to get a sense of my state managemenet. Finally, I tested helper functions to organize the 'script tags' into an object React PDF could parse.`},
+      {stage: 'MVP: Client', desc: `With my <a href="https://github.com/zempo/react-boiler" target="_blank" rel="noopener noreferrer">React Boilerplate</a>, I wrote my routes, components, and utilities in no time. However, it took me a while to integrate React Resizeable and Hotkeys.`},
+      {stage: 'MVP: Server', desc: `In this stage, I had to rewrite my data sketches a few times. I ended up changing the data structure of the formatting engine. Fortunately, my <a href="https://github.com/zempo/node-boiler-postgres" target="_blank" rel="noopener noreferrer">Node Boilerplate</a> streamlined the process.`},
+      {stage: 'Feedback', desc: `During this time, I was enrolled with <a href="https://www.thinkful.com/" target="_blank" re="noopener noreferrer">Thinkful</a> and was given great feedback. My QA was quite thorough. There were some login bugs, memory leaks, and style bugs - nothing too problematic.`},
+      {stage: 'Production', desc: `After I applied the feedback, everything was looking green. I uploaded the production branches to my deployed client and server MVPs.`},
+      {stage: 'New Insights', desc: `First and foremost, I learned how to format screenplays. Good projects can teach you so much about the world. And, of course, I learned even more about the DOM, hooks, and state management.`}],
       tech: [ 
       "React.js (Hooks & Context)",
       "JWT Auth",
@@ -34,13 +34,13 @@ const portfolioProjects = [
     pics: ["jto-1.png", "jto-2.png", , "jto-3.png", "jto-4.png", "jto-5.png", "jto-6.png", "jto-7.png"],
     description:
       "The new social network is here. You can customize, react to, and download greeting cards in seconds.",
-    timeline: [{stage: 'Concept', desc: `When you need to get greeting card for someone, it can be a difficult process - as most options are rather limited. The goal was as follows: users should be able to customize, read, update, share, and download greeting cards. I wanted to make a social network and solve a common problem.`},
-    {stage: 'Research', desc: 'I wireframed the major routes with user stories. Next, I prototyped the routes on Repl.it. I also built a <a href="https://stackblitz.com/edit/above-the-line-concept" target="_blank" rel="noopener noreferrer">proof of concept</a> for the cards. Next, I looked for ways to moderate card content and store images. To that end, I reached out to a fellow <a href="https://www.claytonweller.com/" target="_blank" rel="noopener noreferrer">Thinkful Alumn</a> about his use of Cloudinary. Finally, I experimented with many libraries in order to download the customized cards (fonts and all).'},
-    {stage: 'MVP: Client', desc: `I created a dummy card store and finalized the semantics of the cards. I had recently finished a <a href="https://github.com/zempo/react-boiler" target="_blank" rel="noopener noreferrer">React Boilerplate</a>, so I made use of it. However, I ended up refactoring much of the code to manage authentication and context. As I built the MVP, I learned about modals, the window object, and the basics of hooks and context. Finally, I deployed the client to Netlify`},
-    {stage: 'MVP: Server', desc: `Creating the data sketches and writing the unit tests were the most challenging parts of this process. Authentication was also new to me, so I had some difficulty understanding exactly what was taking place. Creating the server took longer than I intended, but I learned quite a bit about javascript during the process. Eventually, I was able to deploy my server and database to Heroku.`},
-    {stage: 'Feedback', desc: `From <a href="https://www.thinkful.com/" target="_blank" re="noopener noreferrer">Thinkful</a>, most of my feedback related to my JSX semantics. I asked scores of friends to give me honest feedback about features and the appearance. I ended up learning more about UI/UX while touching up the project's appearance. Using Inkscape, I created the remaining vector assets.`},
-    {stage: 'Production', desc: `After working out a few bugs, my project was portfolio-ready. I update the UI once in a while - as I learn new UI principles.`},
-    {stage: 'New Insights', desc: `My first fullstack web application was a rite of passage in my coding journey. I emerged with a revised boilerplate, an understanding of ES6, a new approach to project design, and a way to create a card for any occasion.`}],
+    timeline: [{stage: 'Concept', desc: `When you need to get greeting card for someone, it can be a challenge to find the right card. There had to be a way to easily customize greeting cards and share them with friends and/or strangers.`},
+    {stage: 'Research', desc: 'I set about wireframing the app on Repl.it and paper. I also <a href="https://stackblitz.com/edit/above-the-line-concept" target="_blank" rel="noopener noreferrer">tested</a> the card animations, early on. Next, I looked for ways to moderate card content and store images. To that end, I reached out to a fellow Thinkful <a href="https://www.claytonweller.com/" target="_blank" rel="noopener noreferrer">alumn</a> about his use of Cloudinary.'},
+    {stage: 'MVP: Client', desc: `During this stage, I made use of my <a href="https://github.com/zempo/react-boiler" target="_blank" rel="noopener noreferrer">React Boilerplate</a>. However, I had to refactor it to manage authentication. As I built the MVP, I learned about modals, the window object, and advanced hooks.`},
+    {stage: 'MVP: Server', desc: `Writing the data sketches and tests took some time. Authentication was also new to me. This stage was longer than exptected, but I learned quite a bit about server-side development during the process.`},
+    {stage: 'Feedback', desc: `Around this time, I was coding with <a href="https://www.thinkful.com/" target="_blank" re="noopener noreferrer">Thinkful</a>. The feedback I was given was quite helpful. I also improved my sense of UI/UX as I asked my friends for honest feedback.`},
+    {stage: 'Production', desc: `After applying this feedback, my project was portfolio-ready.  I uploaded the production branches to my deployed client and server MVPs.`},
+    {stage: 'New Insights', desc: `My first fullstack web application was a rite of passage. I emerged with a revised boilerplate, an understanding of the shadow DOM, UI/UX knowledge, and a way to create a card for any occasion.`}],
       tech: [  
       "React.js (Hooks & Context)",
       "JWT Auth",
@@ -85,13 +85,13 @@ const portfolioProjects = [
     pics: ["aero-1.png", "aero-2.png", "aero-3.png", "aero-4.png"],
     description:
       "Aeropolis has all of the info - all in one place. See the air quality, location, health news, and wikipedia for major cities.",
-    timeline: [{stage: 'Concept', desc: `I set out to build a static site that used multiple APIs and jQuery. With my recent move to California, I had been thinking about Air Quality and how it affected me. You can look up Air Quality values, but they don't make much sense to most people. There had to be a better way to present this information!`},
-    {stage: 'Research', desc: `I made a list of the APIs I wanted to include in the project. Next, I wireframed the app on paper and referenced some previous exercises that used the fetch API (which was new to me, at the time). During this stage, my ability to read and comprehend documentation was tested (particularly with the Wikipedia API).`},
-    {stage: 'Functionality', desc: `I started out with the output containers and input forms. The goal was to first fetch the countries, then the states/provinces, then the cities, and get the city data from the other APIs. During this process, I practiced writing callback functions, turning spaghetti code into ravioli, regex, and chaining promises.`},
-    {stage: 'Styling', desc: `Above all else, I wanted my landing image to be high quality and responsive. Regular images wouldn't cut it. Using Vectr, I made the cityscape from my sketch. During this stage, I learned about viewport units, jquery tabs, and image centering. I also took my knowledge of responsive CSS and positioning to the next level. Finally, I animated the <a href="https://codepen.io/zemposPen/pen/bGNQmgX" target="_blank" re="noopener noreferrer">landing page</a>.`},
-    {stage: 'Feedback', desc: `Unfortunately, my app was not accessible. After taking a free course on accessibility, I ended up refactoring much of my code. As for the UI/UX, my mentor, reviewers, and friends liked Aeropolis.`},
+    timeline: [{stage: 'Concept', desc: `With my recent move to California, I had been thinking about Air Quality and how it affected me. You can look up Air Quality, but the values are unclear for most people. There had to be a nice way to present this information!`},
+    {stage: 'Research', desc: `First, I wireframed the app on paper and listed the APIs I needed. During this stage, my ability to comprehend documentation was tested (particularly with the Wikipedia API).`},
+    {stage: 'Functionality', desc: `I made data output containers and input forms. The plan was to fetch the countries, then the states/provinces, then the cities, and output data about the target city from other APIs. In this stage, I wrote callback functions (turing my spaghetti code into ravioli), regex, and chaining promises.`},
+    {stage: 'Styling', desc: `In this project, I wanted a high quality and responsive landing page animation. Using Vectr, I made the cityscape from one of my wireframe sketches. While styling the app, I learned about viewports, jquery tabs, and image centering.`},
+    {stage: 'Feedback', desc: `Unfortunately, my MVP was not accessible. After taking Google's accessibility course, I refactored my app. As for the overall UI/UX, my mentor, reviewers, and friends liked Aeropolis.`},
     {stage: 'Deployment', desc: `With Aeropolis styled and functional, I made a favicon and deployed the project to GitHub pages.`},
-    {stage: 'New Insights', desc: `In this project, I learned about the importance of user stories (as I nearly got lost in my own work) and accessibility. I also took my javascript and jQuery knowledge to the next level - with API integrations and callbacks.`}],
+    {stage: 'New Insights', desc: `In this project, I learned about the importance of user stories and accessibility. I also took my javascript and jQuery knowledge to the next level - with API integrations and callbacks. Finally, I decided to share my <a href="https://codepen.io/zemposPen/pen/bGNQmgX" target="_blank" re="noopener noreferrer">landing animation</a> with others.`}],
       tech: ["HTML / CSS", "jQuery", "GitHub Pages"],
     libs: ["AirVisual", "Leaflet.js", "News API", "Wikipedia API"],
     repo: "https://github.com/zempo/aeropolis",
@@ -311,7 +311,7 @@ hr {
     margin: 0 auto 10vh;
   }
   .filter-works {
-    max-width: 700px;
+    max-width: 600px;
   }
   .filter-btn {
     margin: 6px;
@@ -352,7 +352,7 @@ hr {
     gap: 30px;
   }
   .filter-works {
-    max-width: 750px;
+    max-width: 700px;
     margin: auto auto 80px;
   }
   h2 {
@@ -384,7 +384,8 @@ hr {
 </style><div class="filter-works">
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn jquery">jQuery</button>
-<button class="filter-btn vanilla">Vanilla JS</button>
+<button class="filter-btn vanilla">Vanilla js</button>
+<button class="filter-btn svelte">Svelte.js</button>
 <button class="filter-btn mobile">Mobile</button>
 <button class="filter-btn pern">PERN Stack</button>
 <button class="filter-btn mern">MERN Stack</button>
@@ -401,6 +402,7 @@ class WorksList extends HTMLElement {
     all: null,
     jquery: null,
     vanilla: null,
+    svelte: null,
     pern: null,
     mern: null,
     net: null,

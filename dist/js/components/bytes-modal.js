@@ -1,7 +1,7 @@
 byteModalTemplate = document.createElement("template");
 byteModalTemplate.innerHTML = `
 <style>
-h3, section p, li {
+section p, li {
   font-family: Lato, Helvetica, Arial, sans-serif;
 }
 h1 {
@@ -35,7 +35,7 @@ a {
 h3 {
   text-align: center;
   font-weight: bold;
-  font-size: calc(18px + .25vw);
+  font-size: calc(13px + 1.8vw);
   margin: 5vh auto;
 }
 .info {
@@ -354,36 +354,36 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     opacity: 1;
   }
 }
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px; }
-  
-  ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px; }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.3);
-    border: 2px none #000000; }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.4); }
-  
-  ::-webkit-scrollbar-thumb:active {
-    background: rgba(0, 0, 0, 0.5); }
-  
-  ::-webkit-scrollbar-track {
-    background: none;
-    border: 1px none #000000; }
-  
-  ::-webkit-scrollbar-track:hover {
-    background: none; }
-  
-  ::-webkit-scrollbar-track:active {
-    background: none; }
-  
-  ::-webkit-scrollbar-corner {
-    background: transparent; }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px; }
+
+::-webkit-scrollbar-thumb {
+  background: #8b8585;
+  border: 2px none #000000; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #716c6c; }
+
+::-webkit-scrollbar-thumb:active {
+  background: #3d3a3a; }
+
+::-webkit-scrollbar-track {
+  background: none;
+  border: 1px none #000000; }
+
+::-webkit-scrollbar-track:hover {
+  background: none; }
+
+::-webkit-scrollbar-track:active {
+  background: none; }
+
+::-webkit-scrollbar-corner {
+  background: transparent; }
 @media only screen and (min-width: 800px) {
       h1 {
         font-size: calc(16px + 2vw);
@@ -403,6 +403,7 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
         text-align: center;
       }
       h3 {
+        font-weight: bold;
         font-size: calc(24px + .25vw);
       }
       p {
@@ -471,6 +472,11 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
         }
       }
     }
+    @media only screen and (min-width: 1440px) {
+      .modal-content {
+        height: calc(100vh - 157px); 
+      }
+    } 
     @media only screen and (min-width: 2000px) {
       h1 {
         font-size: calc(44px + .5vw);
@@ -580,14 +586,19 @@ class ByteModal extends HTMLElement {
           modalContent.style.height = '80vh'
           modalContent.style.width = 'calc(80% - 10vw)'
           modalContent.style.margin = 'calc(10vh - 79px) calc(10% + 5vw)'
+          modalContent.focus()
         } else {
           toggleSize.classList.remove('big')
           toggleSize.classList.add('small')
           toggleSize.style.background = 'none' 
           toggleSize.style.border = 'none' 
-          modalContent.style.height = 'calc(100vh - 138px)'
+          modalContent.style.height = 'calc(100vh - 142px)'
           modalContent.style.width = 'calc(100% - 20px)'
-          modalContent.style.margin = '0'          
+          modalContent.style.margin = '0'
+          modalContent.focus()
+          if(window.innerWidth >= 1440) {
+            modalContent.style.height = 'calc(100vh - 157px)'
+          }          
         }
       })
       hideBtn.addEventListener('click', e => document.getElementsByTagName('byte-modal')[0].style.display = 'none')
@@ -622,6 +633,7 @@ class ByteModal extends HTMLElement {
     window.openByteModal = function(e, id) {
         document.getElementsByTagName('byte-modal')[0].style.display = 'block'
         window.currentByte = window.bytes[id]
+        document.getElementsByTagName('byte-modal')[0].focus()
         window.displayByteModal(false)
     } 
     window.updateByteItem = function(e, id, direction) {

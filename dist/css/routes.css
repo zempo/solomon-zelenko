@@ -660,6 +660,13 @@
 .contact-pg #form-content-tutor .form-prev, .contact-pg #form-content-tutor .form-submit, .contact-pg #form-content-hire .form-prev, .contact-pg #form-content-hire .form-submit {
   display: none; }
 
+.contact-pg .on {
+  display: inline-block;
+  -o-animation: scaleLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -moz-animation: scaleLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: scaleLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scaleLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
 .contact-pg .contact-forms {
   display: flex;
   flex-wrap: wrap;
@@ -733,7 +740,7 @@
       background: #3d3a3a;
       color: #fafafa; }
     .contact-pg .contact-forms .form-content form {
-      margin: 8vh auto 2.5vh;
+      margin: 30px auto 10px;
       width: 100%; }
       .contact-pg .contact-forms .form-content form fieldset {
         display: none;
@@ -742,7 +749,7 @@
         position: relative; }
         .contact-pg .contact-forms .form-content form fieldset legend {
           font-weight: normal;
-          margin: 0 auto 3vh;
+          margin: 0 auto 35px;
           grid-area: legend;
           font-size: 18px; }
           @media screen and (min-width: 560px) {
@@ -921,7 +928,7 @@
       display: block; }
     .contact-pg .contact-forms .form-content .form-progress {
       display: flex;
-      margin: 0 auto 8vh;
+      margin: 5px auto 40px;
       justify-content: space-around;
       width: 100%;
       position: relative; }

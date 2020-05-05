@@ -4,21 +4,21 @@ const currentBytes = [
     img: 'bytes/pen-1.png',
     title: "Cloudy Landing",
     link: "https://codepen.io/zemposPen/pen/bGNQmgX",
-    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. This animation is JavaScript-free! I've added borders for sizing and comments for reverse-engineering. It works in most major web and mobile browsers.`
+    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. <br><br> It works in most major browsers - and is JavaScript-Free!`
   }, 
   { 
     type: "demo",
     img: 'bytes/pen-2.png',
     title: "Great Greeting Cards",
     link: "https://codepen.io/zemposPen/pen/PowLbBd",
-    info: `This is a demo of the greeting cards in my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. It makes use of checkboxes and labels and uses no JavaScript. When hovering over the cards, they open slightly and cast a realistic shadow. It works in most major web and mobile browsers.`
+    info: `These are the greeting cards from my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> When hovering over the cards, they open slightly and cast a realistic shadow. <br><br> It works in most major browsers - and is JavaScript-Free!`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
     title: "Node Boiler (MERN)",
     link: "https://github.com/zempo/node-boiler-mongo",
-    info: `This is my other Node boilerplate for a MongoDB project. I included a sample schema and middleware.`
+    info: `This is my Node boilerplate for a MongoDB project. <br><br> I have included a sample schema and middleware.`
   },
   {
     type: "article",
@@ -26,58 +26,58 @@ const currentBytes = [
     title: "Expedite Eurekas",
     link:
       "https://medium.com/@zelenkosolomon/expedite-your-eurekas-850a2073f5de",
-    info: `I believe we can all foster creativity. Here, I've written my approach to coming up with great ideas.`
+    info: `Here, I've written my approach to coming up with great ideas. <br><br> I believe we can all foster creativity.`
     },
   {
     type: "component",
     img: 'svgs/component.svg',
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
-    info: `In my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>, I used a quotes loader. This byte would make a great utility component.`
+    info: `This is a loader utility from my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> Change the quotes, and you can add this to any project.`
   },
   {
     type: "demo",
     img: 'bytes/pen-3.png',
     title: "ATL Concept",
     link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: `Before making my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>, I tested a prototype of the editor. In this Byte, I needed a textbox to work with the React Lifecycle.`
+    info: `This is a prototype of the editor component from my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>. <br><br> There are superior react text editors, but I plan on keeping this artifact.`
   },
   {
     type: "algo",
     img: 'svgs/algo.svg',
     title: "Maze Matrices",
     link: "https://repl.it/@zempo1/Mad-Mazes",
-    info: `I review this pathfinding algorithm to stay sharp. It might prove useful in a future project.`
+    info: `I review this pathfinding algorithm to stay sharp. <br><br> It might prove useful in a future project.`
   },
   {
     type: "algo",
     img: 'svgs/algo.svg',
     title: "Memo-ize Fibonacci",
     link: "https://repl.it/@zempo1/memo",
-    info: `This algo expands upon the original Fibonacci recursive solution. I review this solution to understand memoization.`
+    info: `This algo expands upon the original Fibonacci recursive solution. <br><br> I review this solution to understand memoization.`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
     title: "React Boiler",
     link: "https://github.com/zempo/react-boilerplate",
-    info: `This is my React.js boilerplate. It comes with fontawesome, react router, context, and my favorite utility components. It might require an update, soon.`
+    info: `This is my React.js boilerplate. <br><br> It comes with fontawesome, react router, context, and my favorite utility components. <br><br> However, it might require an update soon.`
   },
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
     title: "Node Boiler (PERN)",
     link: "https://github.com/zempo/node-boiler-postgres",
-    info: `This is my Node boilerplate for a PostgreSQL project. It handles logging, security, and a starter route.`
+    info: `This is my Node boilerplate for a PostgreSQL project. <br><br> It handles logging, security, and knex set-up.`
   }, 
   {
     type: "boilerplate",
     img: 'svgs/ghub.svg',
     title: "Svelte Boiler",
     link: "https://github.com/zempo/svelte-boiler",
-    info: `This is my personal Svelte boilerplate. I found Svelte.js incredible straightforward to use. And, given the size of most major frameworks, I would like to have a smaller frontend framework in my toolkit. For this boilerplate, I included routing, animations, and state management in the project. I plan on adding utility components over time.`
+    info: `This is my personal Svelte boilerplate. <br><br> I included routing, animations, utilities, and state management in the boilerplate.`
   } 
-];
+]; 
 
 const bytesTemplate = document.createElement("template");
 bytesTemplate.innerHTML = `

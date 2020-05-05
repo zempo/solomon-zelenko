@@ -230,15 +230,15 @@ nav {
   height: 0px;
 } 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, .3);
+  background: lighten(map-get($colors, dark-2), 30%);
   border: 2px none #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, .4);
+  background: lighten(map-get($colors, dark-2), 20%);
 }
 ::-webkit-scrollbar-thumb:active {
-  background: rgba(0, 0, 0, .5);
-}
+  background: lighten(map-get($colors, dark-2), 0%);
+} 
 ::-webkit-scrollbar-track {
   background: none;
   border: 1px none #000000;
