@@ -712,13 +712,25 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   p {
     font-size: calc(19px + .25vw);
   }
+  .item-img {
+    max-width: 100%; 
+    max-height: 65vh;
+  }
 }
 @media only screen and (min-width: 1440px) {
   .modal-content {
     height: calc(100vh - 157px); 
   }
+  .item-img {
+    max-width: 90%; 
+    max-height: 60vh;
+  }
 } 
 @media only screen and (min-width: 2000px) {
+  .item-img {
+    max-width: 90%; 
+    max-height: 55vh;
+  }
   h1 {
     font-size: calc(44px + .5vw);
   }
@@ -926,6 +938,28 @@ class WorkModal extends HTMLElement {
       }
       imgBtns.forEach(el=> {
         el.addEventListener('click', e => {
+          clearInterval(runSlideShow)
+          setTimeout(() => {
+            runSlideShow = setInterval(() => {
+              for (let i = 0; i < imgBtns.length; i++) {
+                if(imgBtns[i].checked == true) {
+                  if(i < imgBtns.length - 1) {
+                    imgBtns[i].checked = false
+                    imgBtns[i + 1].checked = true
+                    let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
+                    image.setAttribute('src', `img/works/${newPic}`)
+                    return 
+                  } else {
+                    imgBtns[i].checked = false
+                    imgBtns[0].checked = true
+                    let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
+                    image.setAttribute('src', `img/works/${newPic}`)
+                    return
+                  }
+                }
+              }
+            }, 3000)
+          }, 3000)
           let dir = e.target.name 
           let pic = e.target.value
           image.setAttribute('src', `img/works/${dir + '/' + pic}`)

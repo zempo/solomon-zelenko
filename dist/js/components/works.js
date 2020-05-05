@@ -64,7 +64,7 @@ const portfolioProjects = [
   {
     title: "My Portfolio",
     code: "sol",
-    pics: ["sol-1.png"],
+    pics: ["sol-1.png", "sol-2.png", "sol-3.png", "sol-4.png", "sol-5.png", "sol-6.png", "sol-7.png"],
     description: "Built with just HTML, SCSS, & JavaScript. A place to showcase my projects, content, and more.",
     timeline: [
       {stage: 'Concept', desc: "I wanted to showcase my skills with a framework-free portfolio."},
@@ -451,8 +451,8 @@ hr {
 <button class="filter-btn all selected">Show All</button>
 <button class="filter-btn jquery">jQuery</button>
 <button class="filter-btn vanilla">Vanilla js</button>
-<button class="filter-btn svelte">Svelte.js</button>
 <button class="filter-btn mobile">Mobile</button>
+<button class="filter-btn svelte">Svelte.js</button>
 <button class="filter-btn pern">PERN Stack</button>
 <button class="filter-btn mern">MERN Stack</button>
 <button class="filter-btn net">.NET Core</button>
