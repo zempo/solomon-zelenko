@@ -26,7 +26,7 @@ const portfolioProjects = [
     libs: ["Axois", "ReactPDF ", "React Resizeable", "React Hotkeys", "JWT + Bcrypt.js"],
     repo: "https://github.com/zempo/jto-client",
     live: "https://above-the-line.now.sh/",
-    tags: ['pern', 'team']
+    tags: ['pern', 'solo']
   },
   {
     title: "Just the Occasion",
@@ -244,6 +244,9 @@ hr {
     display: block;
     border: 5px solid #2980b9;
   }
+  .team:before, .team:after {
+    border: 5px solid #7033b5;
+  }
   .solo:before, .solo:after {
     border: 5px solid #35ad2a;
   }
@@ -259,6 +262,9 @@ hr {
     text-shadow: 0 1px 1px rgba(0,0,0,.2);
     text-transform: uppercase;
     text-align: center;
+  }
+  .team span{
+    background-color: #793bbf;
   }
   .solo span {
     background-color: #3bbf42;
