@@ -292,14 +292,14 @@
   .about-pg .img-controls .hue-value {
     position: absolute;
     bottom: -10px; }
-    .about-pg .img-controls .hue-value span {
+    .about-pg .img-controls .hue-value div {
       width: 60px;
       height: 35px;
       line-height: 30px;
       text-align: center;
       background: #fff;
       color: #000;
-      font-size: 18px;
+      font-size: 17px;
       display: block;
       position: absolute;
       left: 50%;
@@ -308,8 +308,11 @@
       -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
       border: 2px solid #000;
-      border-radius: 6px; }
-      .about-pg .img-controls .hue-value span:before {
+      border-radius: 6px;
+      font-size: 18px; }
+      .about-pg .img-controls .hue-value div span {
+        font-weight: normal; }
+      .about-pg .img-controls .hue-value div:before {
         content: "";
         position: absolute;
         width: 0;

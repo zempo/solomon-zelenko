@@ -19,7 +19,7 @@ const handleResume = (e) => {
 const updateHue = (hue, hueV, pic1, pic2, pic3) => {
   let newVal = Number((hue.value - hue.min) * 100 / (hue.max - hue.min))
   let newPos = 10 - (newVal * .2)
-  hueV.innerHTML = `<span>${hue.value}&deg;</span>`
+  hueV.innerHTML = `<div><span>${Math.abs(hue.value)}&deg;</span></div>`
   hueV.style.left = `calc(${newVal}% + ${newPos}px)`
   pic1.style.filter = `hue-rotate(${hue.value}deg)`
   pic2.style.filter = `hue-rotate(${hue.value}deg)`
@@ -30,10 +30,12 @@ const updateHue = (hue, hueV, pic1, pic2, pic3) => {
 const getContactType = (tabs, output) => {
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', e => {
-      output.classList.remove('on')
-      setTimeout(() => {
-        output.classList.add('on')
-      }, 60)
+      if(window.innerWidth > 700) {
+        output.classList.remove('on')
+        setTimeout(() => {
+          output.classList.add('on')
+        }, 60)
+      }
       switch (tab.id) {
         case 'tutor-form':
           output.innerHTML = 'to mentor you'
@@ -294,7 +296,7 @@ const handleMailForms = (hire, tutor, gen) => {
       });
       setTimeout(() => {
         formNotification(status, 'Project Proposal Sent', 'Expect a reply within 24 hours!')
-      }, 300)
+      }, 500)
       clearForm(inputs, selects, textareas, hire)
     })
     .catch(err => {
@@ -328,7 +330,7 @@ const handleMailForms = (hire, tutor, gen) => {
       });
       setTimeout(() => {
         formNotification(status, 'Tutor Request Sent', `Expect a reply within 24 hours!`)
-      , 300})
+      , 500})
       clearForm(inputs, selects, textareas, tutor)
     }) 
     .catch(err => {
@@ -363,7 +365,7 @@ const handleMailForms = (hire, tutor, gen) => {
       });
       setTimeout(() => {
         formNotification(status, 'Message Sent', 'Expect a reply soon!')
-      }, 300);
+      }, 500);
       clearForm(inputs, selects, textareas)
     })
     .catch(err => {
@@ -398,7 +400,9 @@ TextCarousel.prototype.tick = function () {
   var fullTxt = this.toRotate[i];
 
   if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    setTimeout(() => {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    }, 300)
   } else {
     this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
@@ -408,7 +412,7 @@ TextCarousel.prototype.tick = function () {
   var delta = 300 - Math.random() * 100;
 
   if (this.isDeleting) {
-    delta /= 2;
+    delta /= 1.3;
   }
 
   if (!this.isDeleting && this.txt === fullTxt) {

@@ -210,14 +210,14 @@
     .hue-value{
       position: absolute;
       bottom: -10px;
-      span{
+      div {
         width: 60px;
         height: 35px;
         line-height: 30px;
         text-align: center;
         background: #fff;
         color: #000;
-        font-size: 18px;
+        font-size: 17px;
         display: block;
         position: absolute;
         left: 50%;
@@ -227,6 +227,10 @@
         transform: translate(-50%, 0);
         border: 2px solid #000;
         border-radius: 6px;
+        font-size: 18px;
+        span {
+          font-weight: normal;
+        }
         &:before{
           content: "";
           position: absolute;
@@ -488,7 +492,7 @@
       img {
         margin: 20px auto;
         max-width: calc(50px + 1vw);
-        position: relative;
+        position: relative; 
         top: 10px;
       }
     }
