@@ -7,7 +7,7 @@ const navImgs = document.querySelectorAll("nav a img");
 const footer = document.querySelector('footer')
 const deployedURI = 'https://solomonzelenko.cleverapps.io/api'
 const localURI = 'http://localhost:5000/api' 
-const API = localURI
+const API = deployedURI
 // MAIN EVENT LISTENERS 
 // home pg
 const handleResume = (e) => {
