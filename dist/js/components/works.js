@@ -252,7 +252,7 @@ hr {
     border: 5px solid #7033b5;
   }
   .solo:before, .solo:after {
-    border: 5px solid #35ad2a;
+    border: 5px solid #029c40;
   }
   .ribbon span {
     position: absolute;
@@ -263,6 +263,7 @@ hr {
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
     color: #fff;
     font: 700 18px/1 'Lato', sans-serif;
+    letter-spacing: 2px;
     text-shadow: 0 1px 1px rgba(0,0,0,.2);
     text-transform: uppercase;
     text-align: center;
@@ -271,13 +272,13 @@ hr {
     background-color: #793bbf;
   }
   .solo span {
-    background-color: #3bbf42;
-  }
+    background-color: #00B349;
+  } 
   
   /* top left*/
   .ribbon {
-    top: -5px;
-    left: -5px;
+    top: -4px;
+    left: -4px;
   }
   .ribbon::before,
   .ribbon::after {
@@ -285,18 +286,21 @@ hr {
     border-left-color: transparent;
   }
   .ribbon::before {
-    top: -5px;
+    top: -6px;
     right: 12px;
     z-index: -1;
   }
   .ribbon::after {
     bottom: 12px;
     z-index: -1;
-    left: -5px;
+    left: -6px;
   }
   .ribbon span {
     right: -25px;
     top: 30px;
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
   .open-item {

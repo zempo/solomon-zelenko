@@ -102,7 +102,7 @@ footer {
   text-align: center;
   background: map-get($colors, dark-2 );
   color: map-get($colors, app-white );
-  margin-top: 15vh;
+  margin-top: 200px;
   h2 {
     font-weight: normal;
   }
@@ -112,12 +112,12 @@ footer {
     color: darken(map-get($colors, app-white ), 10%);
     @include font-size($h3-font-sizes);
     &:last-child {
-      padding-bottom: calc(80px + 7vh);
+      padding-bottom: 140px;
     }
   }
   .icons-list {
   width: 100%;
-  padding: 7vh 0 5vh;
+  padding: 100px 0 60px;
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;

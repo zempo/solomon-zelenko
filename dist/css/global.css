@@ -223,7 +223,7 @@ footer {
   text-align: center;
   background: #3d3a3a;
   color: #fafafa;
-  margin-top: 15vh; }
+  margin-top: 200px; }
   footer h2 {
     font-weight: normal; }
   footer p {
@@ -244,10 +244,10 @@ footer {
       footer p {
         font-size: 25px; } }
     footer p:last-child {
-      padding-bottom: calc(80px + 7vh); }
+      padding-bottom: 140px; }
   footer .icons-list {
     width: 100%;
-    padding: 7vh 0 5vh;
+    padding: 100px 0 60px;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly; }
