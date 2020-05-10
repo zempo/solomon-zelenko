@@ -188,6 +188,7 @@ hr {
     color: #f7f7f7;
     display: inline-block;
     vertical-align: center;
+    text-align: center;
     position: absolute;
     top: 5px;
     right: 6px;
