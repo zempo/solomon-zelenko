@@ -134,9 +134,14 @@ hr {
   margin: 0 auto 7vh;
 }
 .filter-bytes, .filter-works {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 500px;
   margin: 0 auto;
  }
@@ -393,11 +398,13 @@ hr {
 }
 @media only screen and (min-width: 1000px) { 
   .projects-list {
+    display: -ms-grid;
     display: grid;
-    width: 100%
+    width: 100%;
     list-style-type: none;
     padding-left: 0;
     margin: auto;
+    -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     gap: 20px;

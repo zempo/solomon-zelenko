@@ -335,29 +335,40 @@
     }
   } 
   .accordion {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     height: auto;
     width: 100%;
     margin: 100px auto 0;
     max-width: 1000px;
     .accordion-label {
       width: 100%;
-      order: initial;
+      -webkit-box-ordinal-group: initial;
+          -ms-flex-order: initial;
+              order: initial;
       margin-right: 0;
       padding: 3% 5%;
       border: 2px solid lighten(map-get($colors, dark-2), 40%);
       border-top: 1px solid lighten(map-get($colors, dark-2), 40%);
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex; 
       cursor: pointer;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       &:nth-child(2) {
         border-top: 2px solid lighten(map-get($colors, dark-2), 40%);
         border-radius: 8px 8px 0 0;
       }
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         padding: 1.5% 4%;
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
@@ -379,7 +390,9 @@
           z-index: 7;
           background: map-get($colors, dark);
         }
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         border: 2px solid lighten(map-get($colors, dark-2), 40%);
         border-bottom: 2px solid map-get($colors, dark-2); 
       } 
@@ -389,17 +402,29 @@
     }
     .a-content {
       text-align: justify;
+      -webkit-box-ordinal-group: initial;
+          -ms-flex-order: initial;
+              order: initial;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       order: initial;
-      flex-direction: column;
-      order: initial;
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       width: 100%;
       height: 100%;
       padding: 30px 5%; 
       display: none;
       @include mq('tablet-wide') {
-        order: 1;
-        flex-direction: none;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: none;
+                    flex-direction: none;
       } 
       ul {
         list-style-type: "→"; 
@@ -432,6 +457,8 @@
         border: none;
       }
       &:checked + label + .a-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         border: 2px solid map-get($colors, dark);
         border-top: none;
@@ -613,25 +640,40 @@
     animation: map-get($animations, scale-left);
   } 
   .contact-forms {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     height: auto;
     width: 100%;
     margin: auto;
     margin-top: 100px;
     max-width: 1000px;
     .form-content {
+      -webkit-box-ordinal-group: initial;
+          -ms-flex-order: initial;
+              order: initial;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       order: initial;
-      flex-direction: column;
-      order: initial;
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       width: 100%;
       height: 100%;
       display: none;
       padding: 0 5% 30px; 
       @include mq('tablet-wide') {
-        order: 1;
-        flex-direction: none;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: none;
+                flex-direction: none;
         padding: 0 10% 7vh; 
       } 
       h3 {
@@ -639,10 +681,14 @@
       @include font-size($h3-font-sizes);
       }
       .form-controls {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 75%;
         margin: auto;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
       }
       button {
         @extend %btn;
@@ -723,13 +769,16 @@
           .form-wrapper-sm {
             margin: 0 auto 10px;
             @include mq('desktop-small') {
+              display: -ms-grid;
               display: grid;
               width: 75%;
               grid-row-gap: 1vw;
               gap: 1vw;
               margin-bottom: 10px; 
+              -ms-grid-columns: 1fr 1vw 1fr; 
               grid-template-columns: 1fr 1fr;
-              grid-template-areas: "l1 l2"
+              -ms-grid-rows: auto 1vw auto;
+                  grid-template-areas: "l1 l2"
               "i1 i2";
               input, label {
                 width: 100%;
@@ -808,9 +857,12 @@
         display: block;
       }
       .form-progress {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 5px auto 40px;
-        justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         width: 100%;
         position: relative;
         &::before {
@@ -893,8 +945,12 @@
         margin: 3vh 0 -2vh;
         border: 0px solid map-get($colors, dark-2);
         border-radius: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         position: fixed;
         top: 0px;
@@ -1020,21 +1076,29 @@
     }
     .form-label {
       width: 100%;
-      order: initial;
+      -webkit-box-ordinal-group: initial;
+          -ms-flex-order: initial;
+              order: initial;
       margin-right: 0;
       padding: 3% 5%;
       border: 2px solid lighten(map-get($colors, dark-2), 40%);
       border-top: 1px solid lighten(map-get($colors, dark-2), 40%);
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       cursor: pointer;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       &:nth-child(2) {
         border-top: 2px solid lighten(map-get($colors, dark-2), 40%);
         border-radius: 8px 8px 0 0;
       }
       @include font-size($h2-font-sizes);
       @include mq('tablet-wide') {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         padding: 1.5% 4%;
         width: calc(100% / 3);
         position: relative;
@@ -1056,7 +1120,9 @@
           background: map-get($colors, dark);
         }
         border-radius: 8px 8px 0 0;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         border: 2px solid lighten(map-get($colors, dark-2), 40%);
         border-bottom: 2px solid map-get($colors, dark-2); 
       } 
@@ -1090,6 +1156,8 @@
         border: none;
       }
       &:checked + label + .form-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         border: 2px solid map-get($colors, dark);
         border-top: none;

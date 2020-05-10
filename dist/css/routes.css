@@ -400,7 +400,10 @@
       background: #3d3a3a; }
 
 .about-pg .accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   height: auto;
   width: 100%;
@@ -408,13 +411,19 @@
   max-width: 1000px; }
   .about-pg .accordion .accordion-label {
     width: 100%;
+    -webkit-box-ordinal-group: initial;
+    -ms-flex-order: initial;
     order: initial;
     margin-right: 0;
     padding: 3% 5%;
     border: 2px solid #a49f9f;
     border-top: 1px solid #a49f9f;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     cursor: pointer;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 18px; }
     .about-pg .accordion .accordion-label:nth-child(2) {
@@ -434,12 +443,16 @@
         font-size: 28px; } }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .accordion-label {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
         flex-grow: 1;
         padding: 1.5% 4%;
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
         position: relative;
         left: 1px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         border: 2px solid #a49f9f;
         border-bottom: 2px solid #3d3a3a; }
@@ -460,9 +473,16 @@
       display: inline; }
   .about-pg .accordion .a-content {
     text-align: justify;
+    -webkit-box-ordinal-group: initial;
+    -ms-flex-order: initial;
     order: initial;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     order: initial;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     width: 100%;
     height: 100%;
@@ -470,7 +490,12 @@
     display: none; }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .a-content {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
         order: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: none;
         flex-direction: none; } }
     .about-pg .accordion .a-content ul {
       list-style-type: "→";
@@ -495,6 +520,8 @@
     .about-pg .accordion input[type="radio"]:checked + label + .accordion {
       border: none; }
     .about-pg .accordion input[type="radio"]:checked + label + .a-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       border: 2px solid #000000;
       border-top: none;
@@ -694,7 +721,10 @@
   animation: scaleLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 
 .contact-pg .contact-forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   height: auto;
   width: 100%;
@@ -702,9 +732,16 @@
   margin-top: 100px;
   max-width: 1000px; }
   .contact-pg .contact-forms .form-content {
+    -webkit-box-ordinal-group: initial;
+    -ms-flex-order: initial;
     order: initial;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     order: initial;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     width: 100%;
     height: 100%;
@@ -712,7 +749,12 @@
     padding: 0 5% 30px; }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-content {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
         order: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: none;
         flex-direction: none;
         padding: 0 10% 7vh; } }
     .contact-pg .contact-forms .form-content h3 {
@@ -731,9 +773,13 @@
         .contact-pg .contact-forms .form-content h3 {
           font-size: 25px; } }
     .contact-pg .contact-forms .form-content .form-controls {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       width: 75%;
       margin: auto;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
       justify-content: flex-end; }
     .contact-pg .contact-forms .form-content button {
       background: #fafafa;
@@ -865,12 +911,15 @@
           margin: 0 auto 10px; }
           @media only screen and (min-width: 1150px) {
             .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm {
+              display: -ms-grid;
               display: grid;
               width: 75%;
               grid-row-gap: 1vw;
               gap: 1vw;
               margin-bottom: 10px;
+              -ms-grid-columns: 1fr 1vw 1fr;
               grid-template-columns: 1fr 1fr;
+              -ms-grid-rows: auto 1vw auto;
               grid-template-areas: "l1 l2" "i1 i2"; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input, .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
                 width: 100%;
@@ -953,8 +1002,11 @@
     .contact-pg .contact-forms .form-content .active-form-step {
       display: block; }
     .contact-pg .contact-forms .form-content .form-progress {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       margin: 5px auto 40px;
+      -ms-flex-pack: distribute;
       justify-content: space-around;
       width: 100%;
       position: relative; }
@@ -1037,7 +1089,11 @@
       margin: 3vh 0 -2vh;
       border: 0px solid #3d3a3a;
       border-radius: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
       justify-content: flex-start;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       position: fixed;
@@ -1154,13 +1210,19 @@
     outline: 2px solid #ff5a91; }
   .contact-pg .contact-forms .form-label {
     width: 100%;
+    -webkit-box-ordinal-group: initial;
+    -ms-flex-order: initial;
     order: initial;
     margin-right: 0;
     padding: 3% 5%;
     border: 2px solid #a49f9f;
     border-top: 1px solid #a49f9f;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     cursor: pointer;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 18px; }
     .contact-pg .contact-forms .form-label:nth-child(2) {
@@ -1180,12 +1242,16 @@
         font-size: 28px; } }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-label {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
         flex-grow: 1;
         padding: 1.5% 4%;
         width: calc(100% / 3);
         position: relative;
         left: 1px;
         border-radius: 8px 8px 0 0;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         border: 2px solid #a49f9f;
         border-bottom: 2px solid #3d3a3a; }
@@ -1224,6 +1290,8 @@
     .contact-pg .contact-forms input[type="radio"]:checked + label + .contact-forms {
       border: none; }
     .contact-pg .contact-forms input[type="radio"]:checked + label + .form-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       border: 2px solid #000000;
       border-top: none;

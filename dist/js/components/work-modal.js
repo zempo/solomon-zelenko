@@ -137,7 +137,7 @@ br {
   display: inline-block;
   vertical-align: center;
   position: absolute;
-  font-weight:bold;
+  font-weight:normal;
   top: -37px;
   right: 0px;
   height: 30px;
@@ -483,6 +483,9 @@ transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
     ::-webkit-scrollbar-corner {
       background: transparent; }
 @media only screen and (min-width: 800px) {
+  .close-modal {
+    font-weight:bold;
+  }
   h1 {
     color: #f7f7f7;
     margin-top: 0;
