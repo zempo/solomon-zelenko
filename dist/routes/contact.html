@@ -1,231 +1,352 @@
 <div class="route contact-pg">
   <h1>Let's get in touch!</h1>
-  <h2> From <span class="work-hours"></span> <br> <br> I'd be happy <span class="contact-type on">to chat with you</span></h2>
-    <section class="contact-forms">
-      <input type="radio" class="contact-radio" id="hire-form" name="form-tabs" />
-      <label class="form-label hire-label" for="hire-form">
-        For Hire
-        <span class="form-open"></span>
-      </label>
-      <section id="form-content-hire" class="form-content">
-        <form class="hire-form">
-          <div class="form-progress">
-            <span id="step-1" class="step step-active">1</span>
-            <span id="step-2" class="step">2</span>
-            <span id="step-3" class="step">3</span>
-          </div>
-          <fieldset class="form-step active-form-step" id="hire-step-1">
-            <legend>Create Your Profile</legend>
-            <div class="form-wrapper-sm">
-              <label for="name_hire"> 
-                What's your name?
-              </label>
-              <input type="text" placeholder="Ruby Ellis" name="name_hire" id="name_hire" required>
-              <label for="email_hire">
-                What's your email?
-              </label>
-              <input type="email" name="email_hire" id="email_hire" placeholder="ruby@jewelry.org" required>
-            </div>
-            <label for="refer_hire" class="optional">
-              How did you hear about me?
-            </label>
-            <input type="text" name="refer_hire" id="refer_hire" class="optional-item" placeholder="eg. Google, YouTube, referred by...etc" />  
-            <label for="contact_hire">
-              How might we best communicate? 
-            </label>
-            <select name="contact_hire" id="contact_hire" required>
-              <option value="" disabled selected>Please Select</option>
-              <option value="phone">Phone</option>
-              <option value="email">Email</option>
-              <option value="person" disabled>In Person</option>
-              <option value="hangouts">Google Hangouts</option>
-              <option value="skype">Skype</option>
-              <option value="zoom">Zoom</option>
-            </select>          
-          </fieldset> 
-          <fieldset class="form-step" id="hire-step-2"> 
-            <legend>Describe Your Brand</legend> 
-            <label for="industry_hire">
-              What's your industry?
-            </label>
-            <input type="text" name="industry_hire" id="industry_hire" placeholder="eg. retail, entertainment, etc..." required>
-            <label for="story_hire">What's your story?</label>
-            <textarea
-             name="story_hire"
-             id="story_hire"
-             required
-             placeholder="Ruby Makes Jewelry is a small retailer located in Idyllwild, CA. Since 1967, we've proudly served our community. Our jewelers have decades of experience repairing, crafting, and selling precious jewels for any budget."></textarea>
-            <label for="fall_short_hire">Where does your brand fall short?</label>
-            <textarea
-             name="fall_short_hire"
-             id="fall_short_hire"
-             required
-             placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. The current Word Press site is also slow (which we need to fix to sell our products online). We are also short-staffed."></textarea>
-            <label for="accomplish_hire">What will our new site accomplish?</label>
-            <textarea
-             name="accomplish_hire"
-             id="accomplish_hire"
-             required
-             placeholder="Our new site should be fast, look better, and make it easy to post videos/manage online orders. Finally, we want to hire jewelry apprentices through our site."></textarea>  
-          </fieldset>  
-          <fieldset class="form-step" id="hire-step-3">
-            <legend>Draft Project Proposal</legend>
-            <label for="budget_hire">
-              What's your budget? <br>
-            <button class="file-btn project-guide">View Hire FAQ</button>
-            </label>               
-            <input type="text" name="budget_hire" class="optional-item" placeholder="$400" id="budget_hire">
-            <label for="current_site_hire" class="optional">
-              What's your current website?
-            </label>
-            <input type="url" name="current_site_hire" id="current_site_hire" placeholder="eg. https://ruby-makes-jewelry.com" />
-            <label for="completion_hire">
-              Ideal completion date? <br>
-            <button class="file-btn project-guide">View Hire FAQ</button> 
-            </label>              
-            <select name="completion_hire" id="completion_hire">
-              <option value="" disabled selected>Please Select</option>
-              <option value="asap">As soon as possible</option>
-              <option value="1_month">In 1 Month</option>
-              <option value="2_months">In 2 Months</option>
-              <option value="3_months">In 3 Months</option>
-              <option value="4_months">In 4 Months</option>
-              <option value="unsure">Unsure/TBD</option>
-            </select>
-          </fieldset>
-          <div class="hire-status"></div> 
-          <button class="form-prev">Previous</button>
-          <button class="form-next">Next</button>
-          <button type="submit" class="form-submit">Send Project Proposal</button>
-        </form>
-      </section>
-      <input type="radio" class="contact-radio" id="tutor-form" name="form-tabs" />
-      <label class="form-label tutor-label" for="tutor-form">
-        For Tutoring
-        <span class="form-open"></span>
-      </label>      
-      <section id="form-content-tutor" class="form-content">
-        <form class="tutor-form">
-          <div class="form-progress">
-            <span id="step-1" class="step step-active">1</span>
-            <span id="step-2" class="step">2</span>
-            <span id="step-3" class="step">3</span>
-          </div>
-          <fieldset class="form-step active-form-step" id="tutor-step-1">
-            <legend>Create Your Profile</legend>
-            <div class="form-wrapper-sm">
-              <label for="name_tutor">
-                What's your name?
-              </label> 
-              <input type="text" placeholder="Sam Barlow" name="name_tutor" required id="name_tutor">
-              <label for="email_tutor">
-                What's your email?
-              </label>
-              <input type="email" name="email_tutor" id="email_tutor" required placeholder="sammy-bee@gmail.com">
-            </div>
-            <label for="refer_tutor" class="optional">How did you hear about me?</label>
-            <input type="text" name="refer_tutor" id="refer_tutor" class="optional-item" placeholder="eg. Google, YouTube, referred by...etc" />    
-            <label for="contact_tutor">
-              How shall we meet?
-            </label> 
-            <select type="text" name="contact_tutor" id="contact_tutor" required>
-              <option value="" disabled selected>Please Select</option>
-              <option value="phone">Phone</option>
-              <option value="person" disabled>In Person</option>
-              <option value="hangouts">Google Hangouts</option>
-              <option value="skype">Skype</option>
-              <option value="zoom">Zoom</option>
-            </select>        
-          </fieldset> 
-          <fieldset class="form-step" id="tutor-step-2">
-            <legend>Find Your Learning Style</legend> 
-            <p class="subtitle">Based on the <a href="https://vark-learn.com/the-vark-questionnaire/" target="_blank" rel="noopener noreferrer">VARK Questionnaire</a>.</p>
-            <label for="style_1_tutor">When learning a new game, which method would you prefer?</label>
-            <select name="style_1_tutor" id="style_1_tutor" required>
-              <option value="" disabled selected>Please choose a strategy</option>
-              <option value="instructions">Reading written instructions</option> 
-              <option value="diagrams">Looking at diagrams (if available) before playing</option>
-              <option value="verbal">Listening to someone explain the game</option>
-              <option value="observe">Watching someone else play</option>     
-            </select>
-            <label for="style_2_tutor">After you solve a difficult problem, how do you apply the knowledge?</label>
-            <select name="style_2_tutor" id="style_2_tutor" required>
-              <option value="" disabled selected>Please choose a strategy</option>
-              <option value="bookmark">I bookmark it</option>     
-              <option value="write">I write it down</option>
-              <option value="use">I use it somewhere else</option>
-              <option value="forget">I usually move on</option>  
-            </select>
-            <label for="style_3_tutor">What do you usually do when you get stuck?</label>
-            <textarea name="style_3_tutor" id="style_3_tutor" required placeholder="I practice duck-debugging"></textarea>             
-          </fieldset>
-          <fieldset class="form-step" id="tutor-step-3">
-            <legend>Build Your Lesson Plan</legend>
-            <label for="subject_tutor">
-              Which subject shall we study? <br> 
-              <button class="file-btn tutor-guide">Open Tutor FAQ</button>
+  <h2>
+    From <span class="work-hours"></span> <br />
+    <br />
+    I'd be happy <span class="contact-type on">to chat with you</span>
+  </h2>
+  <section class="contact-forms">
+    <input type="radio" class="contact-radio" id="hire-form" name="form-tabs" />
+    <label class="form-label hire-label" for="hire-form">
+      For Hire
+      <span class="form-open"></span>
+    </label>
+    <section id="form-content-hire" class="form-content">
+      <form class="hire-form">
+        <div class="form-progress">
+          <span id="step-1" class="step step-active">1</span>
+          <span id="step-2" class="step">2</span>
+          <span id="step-3" class="step">3</span>
+        </div>
+        <fieldset class="form-step active-form-step" id="hire-step-1">
+          <legend>Create Your Profile</legend>
+          <div class="form-wrapper-sm">
+            <label for="name_hire">
+              What's your name?
             </label>
             <input
-             type="text"
-             id="subject_tutor"
-             name="subject_tutor"
-             required
-             placeholder="eg. Data Structures, CSS, React.js, etc...">
-            <label for="experience_tutor">
-              When did you start coding?
-            </label>
-            <input
-             type="text"
-             id="experience_tutor"
-             name="experience_tutor"
-             required
-             placeholder="eg. just started, 2 months, etc...">
-            <label for="strengths_tutor">
-              What are your coding strengths?
-            </label>
-            <textarea
-             name="strengths_tutor"
-             id="strengths_tutor"
-             required
-             placeholder="I am great with vanilla JavaScript. I usually write clean, functional code."></textarea>
-             <label for="blindspots_tutor">
-               What are your coding blind spots?
-             </label>
-             <textarea
-              name="blindspots_tutor"
-              id="blindspots_tutor"
+              type="text"
+              placeholder="Ruby Ellis"
+              name="name_hire"
+              id="name_hire"
               required
-              placeholder="I struggle with CSS. I don't really know which fonts to use or how to center things. I use bootstrap, but I'd like to get better at styling."></textarea>
-          </fieldset>
-          <div class="tutor-status"></div>
-          <button class="form-prev">Previous</button>
-          <button class="form-next">Next</button>
-          <button type="submit" class="form-submit">Code with Solomon</button>           
-        </form>
-      </section>
-      <input type="radio" class="contact-radio" id="gen-form" name="form-tabs" checked />
-      <label class="form-label" for="gen-form">
-        To Chat
-        <span class="form-open"></span>
-      </label>      
-      <section id="form-content-gen" class="form-content">
-        <form class="gen-form">
-          <fieldset class="form-step active-form-step">
-            <legend>New Message</legend>
-            <div class="form-wrapper-sm">
-              <label for="name_gen">What's your name?</label>
-              <input type="text" name="name_gen" id="name_gen" required placeholder="Ron Recruiter">
-              <label for="email_gen">What's your email?</label>
-              <input type="email" name="email_gen" id="email_gen" required placeholder="ronald781@yahoo.com">
-            </div>
-            <label for="subject_gen">What would you like to talk about?</label>
-            <input type="text" name="subject_gen" id="subject_gen" required placeholder="eg. Collabs, Work, etc...">
-            <label for="story_gen">Write your message here:</label> 
-            <textarea name="story_gen" id="story_gen" required></textarea>
-          </fieldset>
-          <div class="gen-status"></div>
-          <button type="submit" class="form-submit">Message Solomon</button>  
-        </form> 
-      </section>
+            />
+            <label for="email_hire">
+              What's your email?
+            </label>
+            <input
+              type="email"
+              name="email_hire"
+              id="email_hire"
+              placeholder="ruby@jewelry.org"
+              required
+            />
+          </div>
+          <label for="refer_hire" class="optional">
+            How did you hear about me?
+          </label>
+          <input
+            type="text"
+            name="refer_hire"
+            id="refer_hire"
+            class="optional-item"
+            placeholder="eg. Google, YouTube, referred by...etc"
+          />
+          <label for="contact_hire">
+            How might we best communicate?
+          </label>
+          <select name="contact_hire" id="contact_hire" required>
+            <option value="" disabled selected>Please Select</option>
+            <option value="phone">Phone</option>
+            <option value="email">Email</option>
+            <option value="person" disabled>In Person</option>
+            <option value="hangouts">Google Hangouts</option>
+            <option value="skype">Skype</option>
+            <option value="zoom">Zoom</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-step" id="hire-step-2">
+          <legend>Describe Your Brand</legend>
+          <label for="industry_hire">
+            What's your industry?
+          </label>
+          <input
+            type="text"
+            name="industry_hire"
+            id="industry_hire"
+            placeholder="eg. retail, entertainment, etc..."
+            required
+          />
+          <label for="story_hire">What's your story?</label>
+          <textarea
+            name="story_hire"
+            id="story_hire"
+            required
+            placeholder="Ruby Makes Jewelry is a small retailer located in Idyllwild, CA. Since 1967, we've proudly served our community. Our jewelers have decades of experience repairing, crafting, and selling precious jewels for any budget."
+          ></textarea>
+          <label for="fall_short_hire">Where does your brand fall short?</label>
+          <textarea
+            name="fall_short_hire"
+            id="fall_short_hire"
+            required
+            placeholder="Right now, ruby-makes-jewelry.com doesn't look good on mobile. The current Word Press site is also slow (which we need to fix to sell our products online). We are also short-staffed."
+          ></textarea>
+          <label for="accomplish_hire"
+            >What will our new site accomplish?</label
+          >
+          <textarea
+            name="accomplish_hire"
+            id="accomplish_hire"
+            required
+            placeholder="Our new site should be fast, look better, and make it easy to post videos/manage online orders. Finally, we want to hire jewelry apprentices through our site."
+          ></textarea>
+        </fieldset>
+        <fieldset class="form-step" id="hire-step-3">
+          <legend>Draft Project Proposal</legend>
+          <label for="budget_hire">
+            What's your budget? <br />
+            <button class="file-btn project-guide">View Hire FAQ</button>
+          </label>
+          <input
+            type="text"
+            name="budget_hire"
+            class="optional-item"
+            placeholder="$400"
+            id="budget_hire"
+          />
+          <label for="current_site_hire" class="optional">
+            What's your current website?
+          </label>
+          <input
+            type="url"
+            name="current_site_hire"
+            id="current_site_hire"
+            placeholder="eg. https://ruby-makes-jewelry.com"
+          />
+          <label for="completion_hire">
+            Ideal completion date? <br />
+            <button class="file-btn project-guide">View Hire FAQ</button>
+          </label>
+          <select name="completion_hire" id="completion_hire">
+            <option value="" disabled selected>Please Select</option>
+            <option value="asap">As soon as possible</option>
+            <option value="1_month">In 1 Month</option>
+            <option value="2_months">In 2 Months</option>
+            <option value="3_months">In 3 Months</option>
+            <option value="4_months">In 4 Months</option>
+            <option value="unsure">Unsure/TBD</option>
+          </select>
+        </fieldset>
+        <div class="hire-status"></div>
+        <button class="form-prev">Previous</button>
+        <button class="form-next">Next</button>
+        <button type="submit" class="form-submit">Send Project Proposal</button>
+      </form>
     </section>
+    <input
+      type="radio"
+      class="contact-radio"
+      id="tutor-form"
+      name="form-tabs"
+    />
+    <label class="form-label tutor-label" for="tutor-form">
+      For Tutoring
+      <span class="form-open"></span>
+    </label>
+    <section id="form-content-tutor" class="form-content">
+      <form class="tutor-form">
+        <div class="form-progress">
+          <span id="step-1" class="step step-active">1</span>
+          <span id="step-2" class="step">2</span>
+          <span id="step-3" class="step">3</span>
+        </div>
+        <fieldset class="form-step active-form-step" id="tutor-step-1">
+          <legend>Create Your Profile</legend>
+          <div class="form-wrapper-sm">
+            <label for="name_tutor">
+              What's your name?
+            </label>
+            <input
+              type="text"
+              placeholder="Sam Barlow"
+              name="name_tutor"
+              required
+              id="name_tutor"
+            />
+            <label for="email_tutor">
+              What's your email?
+            </label>
+            <input
+              type="email"
+              name="email_tutor"
+              id="email_tutor"
+              required
+              placeholder="sammy-bee@gmail.com"
+            />
+          </div>
+          <label for="refer_tutor" class="optional"
+            >How did you hear about me?</label
+          >
+          <input
+            type="text"
+            name="refer_tutor"
+            id="refer_tutor"
+            class="optional-item"
+            placeholder="eg. Google, YouTube, referred by...etc"
+          />
+          <label for="contact_tutor">
+            How shall we meet?
+          </label>
+          <select type="text" name="contact_tutor" id="contact_tutor" required>
+            <option value="" disabled selected>Please Select</option>
+            <option value="phone">Phone</option>
+            <option value="person" disabled>In Person</option>
+            <option value="hangouts">Google Hangouts</option>
+            <option value="skype">Skype</option>
+            <option value="zoom">Zoom</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-step" id="tutor-step-2">
+          <legend>Find Your Learning Style</legend>
+          <p class="subtitle">
+            Based on the
+            <a
+              href="https://vark-learn.com/the-vark-questionnaire/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >VARK Questionnaire</a
+            >.
+          </p>
+          <label for="style_1_tutor"
+            >When learning a new game, which method would you prefer?</label
+          >
+          <select name="style_1_tutor" id="style_1_tutor" required>
+            <option value="" disabled selected>Please choose a strategy</option>
+            <option value="instructions">Reading written instructions</option>
+            <option value="diagrams"
+              >Looking at diagrams (if available) before playing</option
+            >
+            <option value="verbal"
+              >Listening to someone explain the game</option
+            >
+            <option value="observe">Watching someone else play</option>
+          </select>
+          <label for="style_2_tutor"
+            >After you solve a difficult problem, how do you apply the
+            knowledge?</label
+          >
+          <select name="style_2_tutor" id="style_2_tutor" required>
+            <option value="" disabled selected>Please choose a strategy</option>
+            <option value="bookmark">I bookmark it</option>
+            <option value="write">I write it down</option>
+            <option value="use">I use it somewhere else</option>
+            <option value="forget">I usually move on</option>
+          </select>
+          <label for="style_3_tutor"
+            >What do you usually do when you get stuck?</label
+          >
+          <textarea
+            name="style_3_tutor"
+            id="style_3_tutor"
+            required
+            placeholder="I practice duck-debugging"
+          ></textarea>
+        </fieldset>
+        <fieldset class="form-step" id="tutor-step-3">
+          <legend>Build Your Lesson Plan</legend>
+          <label for="subject_tutor">
+            Which subject shall we study? <br />
+            <button class="file-btn tutor-guide">Open Tutor FAQ</button>
+          </label>
+          <input
+            type="text"
+            id="subject_tutor"
+            name="subject_tutor"
+            required
+            placeholder="eg. Data Structures, CSS, React.js, etc..."
+          />
+          <label for="experience_tutor">
+            When did you start coding?
+          </label>
+          <input
+            type="text"
+            id="experience_tutor"
+            name="experience_tutor"
+            required
+            placeholder="eg. just started, 2 months, etc..."
+          />
+          <label for="strengths_tutor">
+            What are your coding strengths?
+          </label>
+          <textarea
+            name="strengths_tutor"
+            id="strengths_tutor"
+            required
+            placeholder="I am great with vanilla JavaScript. I usually write clean, functional code."
+          ></textarea>
+          <label for="blindspots_tutor">
+            What are your coding blind spots?
+          </label>
+          <textarea
+            name="blindspots_tutor"
+            id="blindspots_tutor"
+            required
+            placeholder="I struggle with CSS. I don't really know which fonts to use or how to center things. I use bootstrap, but I'd like to get better at styling."
+          ></textarea>
+        </fieldset>
+        <div class="tutor-status"></div>
+        <button class="form-prev">Previous</button>
+        <button class="form-next">Next</button>
+        <button type="submit" class="form-submit">Code with Solomon</button>
+      </form>
+    </section>
+    <input
+      type="radio"
+      class="contact-radio"
+      id="gen-form"
+      name="form-tabs"
+      checked
+    />
+    <label class="form-label" for="gen-form">
+      To Chat
+      <span class="form-open"></span>
+    </label>
+    <section id="form-content-gen" class="form-content">
+      <form class="gen-form">
+        <fieldset class="form-step active-form-step">
+          <legend>New Message</legend>
+          <div class="form-wrapper-sm">
+            <label for="name_gen">What's your name?</label>
+            <input
+              type="text"
+              name="name_gen"
+              id="name_gen"
+              required
+              placeholder="Ron Recruiter"
+            />
+            <label for="email_gen">What's your email?</label>
+            <input
+              type="email"
+              name="email_gen"
+              id="email_gen"
+              required
+              placeholder="ronald781@yahoo.com"
+            />
+          </div>
+          <label for="subject_gen">What would you like to talk about?</label>
+          <input
+            type="text"
+            name="subject_gen"
+            id="subject_gen"
+            required
+            placeholder="eg. Collabs, Work, etc..."
+          />
+          <label for="story_gen">Write your message here:</label>
+          <textarea name="story_gen" id="story_gen" required></textarea>
+        </fieldset>
+        <div class="gen-status"></div>
+        <button type="submit" class="form-submit">Message Solomon</button>
+      </form>
+    </section>
+  </section>
 </div>

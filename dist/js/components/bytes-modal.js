@@ -27,7 +27,7 @@ h2 a {
   -o-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
   transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
-}
+} 
 a {
   color: black;
   font-weight: bold;
@@ -521,7 +521,7 @@ class ByteModal extends HTMLElement {
   }
 
   updateByteModal(currentItem, direction) {
-    let pgClass = direction
+    let pgClass = direction;
     let updatedTemplate = `
     <div class="byte-modal" id="modal">
     <div class="modal-content opened">
@@ -545,7 +545,9 @@ class ByteModal extends HTMLElement {
     ></path>
     </svg></button>
     <div class="modal-pg ${pgClass}"> 
-    <div class="img-container ${currentItem.type === 'demo' ? 'dark-bg': 'light-bg'}">
+    <div class="img-container ${
+      currentItem.type === "demo" ? "dark-bg" : "light-bg"
+    }">
     <h1>${currentItem.title}</h1>
     <h2>
     <a href="${currentItem.link}" target="_blank" rel="noopener noreferrer">
@@ -553,7 +555,9 @@ class ByteModal extends HTMLElement {
     View this Byte
     </a>
     </h2>
-    <img class="item-img" src="img/${currentItem.img}" alt="${currentItem.title} image"/>
+    <img class="item-img" src="img/${currentItem.img}" alt="${
+      currentItem.title
+    } image"/>
     </div>
     <section class="info">
     <h3>About this Byte</h3>
@@ -562,100 +566,112 @@ class ByteModal extends HTMLElement {
     </div>
     </div>
     </div> 
-    `
-    return updatedTemplate
+    `;
+    return updatedTemplate;
   }
 
   displayByteModal(opened, direction) {
     const fetchByte = async (byte) => {
-      window.byteShadow.innerHTML = ''
+      window.byteShadow.innerHTML = "";
       try {
-        const getbyte = await window.updateByteModal(byte, direction)
+        const getbyte = await window.updateByteModal(byte, direction);
 
-        window.byteShadow.innerHTML = window.byteStatic 
-        window.byteShadow.innerHTML += getbyte 
-        return byteShadow
+        window.byteShadow.innerHTML = window.byteStatic;
+        window.byteShadow.innerHTML += getbyte;
+        return byteShadow;
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-    } 
-    
-    fetchByte(window.currentByte).then(res => {
-      let modal = res.querySelector('#modal')
-      let modalContent = res.querySelector('.modal-content')
-          if(opened) {
-           modalContent.classList.remove('opened') 
+    };
+
+    fetchByte(window.currentByte).then((res) => {
+      let modal = res.querySelector("#modal");
+      let modalContent = res.querySelector(".modal-content");
+      if (opened) {
+        modalContent.classList.remove("opened");
+      }
+      let toggleSize = res.querySelector(".resize-modal");
+      let closeBtn = res.querySelector(".close-modal");
+      let hideBtn = res.querySelector(".hide-modal");
+      let currentByteId = window.bytes
+        .map((el) => el.title)
+        .indexOf(window.currentByte.title);
+      let fwd = res.querySelector(".modal-fwd");
+      let back = res.querySelector(".modal-back");
+      toggleSize.addEventListener("click", (e) => {
+        if (toggleSize.classList[1] === "small") {
+          toggleSize.classList.remove("small");
+          toggleSize.classList.add("big");
+          toggleSize.style.background = "#3d3a3a";
+          toggleSize.style.border = "2px solid #f7f7f7";
+          modalContent.style.height = "80vh";
+          modalContent.style.width = "calc(80% - 10vw)";
+          modalContent.style.margin = "calc(10vh - 79px) calc(10% + 5vw)";
+          modalContent.focus();
+        } else {
+          toggleSize.classList.remove("big");
+          toggleSize.classList.add("small");
+          toggleSize.style.background = "none";
+          toggleSize.style.border = "none";
+          modalContent.style.height = "calc(100vh - 142px)";
+          modalContent.style.width = "calc(100% - 20px)";
+          modalContent.style.margin = "0";
+          modalContent.focus();
+          if (window.innerWidth >= 1440) {
+            modalContent.style.height = "calc(100vh - 157px)";
           }
-      let toggleSize = res.querySelector('.resize-modal')
-      let closeBtn = res.querySelector('.close-modal')
-      let hideBtn = res.querySelector('.hide-modal')
-      let currentByteId = window.bytes.map(el => el.title).indexOf(window.currentByte.title)
-      let fwd = res.querySelector('.modal-fwd')
-      let back = res.querySelector('.modal-back')
-      toggleSize.addEventListener('click', e => {
-        if(toggleSize.classList[1] === 'small') {
-          toggleSize.classList.remove('small')
-          toggleSize.classList.add('big')
-          toggleSize.style.background = '#3d3a3a'
-          toggleSize.style.border = '2px solid #f7f7f7'
-          modalContent.style.height = '80vh'
-          modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(10vh - 79px) calc(10% + 5vw)'
-          modalContent.focus()
+        }
+      });
+      hideBtn.addEventListener(
+        "click",
+        (e) =>
+          (document.getElementsByTagName("byte-modal")[0].style.display =
+            "none")
+      );
+      closeBtn.addEventListener(
+        "click",
+        (e) =>
+          (document.getElementsByTagName("byte-modal")[0].style.display =
+            "none")
+      );
+      modal.addEventListener("click", (e) => {
+        if (e.target == modal) {
+          document.getElementsByTagName("byte-modal")[0].style.display = "none";
+        }
+      });
+      fwd.addEventListener("click", (e) => {
+        if (window.bytes.length === currentByteId + 1) {
+          window.updateByteItem(e, 0, "modal-r");
         } else {
-          toggleSize.classList.remove('big')
-          toggleSize.classList.add('small')
-          toggleSize.style.background = 'none' 
-          toggleSize.style.border = 'none' 
-          modalContent.style.height = 'calc(100vh - 142px)'
-          modalContent.style.width = 'calc(100% - 20px)'
-          modalContent.style.margin = '0'
-          modalContent.focus()
-          if(window.innerWidth >= 1440) {
-            modalContent.style.height = 'calc(100vh - 157px)'
-          }          
+          window.updateByteItem(e, currentByteId + 1, "modal-r");
         }
-      })
-      hideBtn.addEventListener('click', e => document.getElementsByTagName('byte-modal')[0].style.display = 'none')
-      closeBtn.addEventListener('click', e => document.getElementsByTagName('byte-modal')[0].style.display = 'none')
-      modal.addEventListener('click', e => {
-        if(e.target == modal) {
-        document.getElementsByTagName('byte-modal')[0].style.display = 'none'
-        }
-      })
-      fwd.addEventListener('click', e => {
-        if(window.bytes.length === currentByteId + 1) {
-          window.updateByteItem(e, 0, 'modal-r')
+      });
+      back.addEventListener("click", (e) => {
+        if (currentByteId === 0) {
+          window.updateByteItem(e, window.bytes.length - 1, "modal-l");
         } else {
-          window.updateByteItem(e, currentByteId + 1, 'modal-r')
+          window.updateByteItem(e, currentByteId - 1, "modal-l");
         }
-      })
-      back.addEventListener('click', e => {
-        if(currentByteId === 0) {
-          window.updateByteItem(e, window.bytes.length - 1, 'modal-l')
-        } else {
-          window.updateByteItem(e, currentByteId - 1, 'modal-l')
-        }
-      })
-    })
+      });
+    });
   }
-  
+
   connectedCallback() {
-    window.displayByteModal = this.displayByteModal
-    window.updateByteModal = this.updateByteModal
-    window.byteShadow = this.shadowRoot
-    window.byteStatic = byteModalTemplate.innerHTML
-    window.openByteModal = function(e, id) {
-        document.getElementsByTagName('byte-modal')[0].style.display = 'block'
-        window.currentByte = window.bytes[id]
-        document.getElementsByTagName('byte-modal')[0].focus()
-        window.displayByteModal(false)
-    } 
-    window.updateByteItem = function(e, id, direction) {
-      window.currentByte = window.bytes[id]
-      window.displayByteModal(true, direction)
-    }
+    window.displayByteModal = this.displayByteModal;
+    window.updateByteModal = this.updateByteModal;
+    window.byteShadow = this.shadowRoot;
+    window.byteStatic = byteModalTemplate.innerHTML;
+    window.openByteModal = function (e, id) {
+      document.getElementsByTagName("byte-modal")[0].style.display = "block";
+      window.currentByte = window.bytes[id];
+      document.getElementsByTagName("byte-modal")[0].focus();
+      window.displayByteModal(false);
+    };
+    window.updateByteItem = function (e, id, direction) {
+      window.currentByte = window.bytes[id];
+      window.displayByteModal(true, direction);
+    };
   }
-}  
+}
 
 window.customElements.define("byte-modal", ByteModal);

@@ -1,83 +1,83 @@
 const currentBytes = [
   {
     type: "demo",
-    img: 'bytes/pen-1.png',
+    img: "bytes/pen-1.png",
     title: "Cloudy Landing",
     link: "https://codepen.io/zemposPen/pen/bGNQmgX",
-    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. <br><br> It works in most major browsers - and is JavaScript-Free!`
-  }, 
-  { 
+    info: `This is the landing animation from my <a href="https://zempo.github.io/Aeropolis/" target="_blank" re="noopener noreferrer">Aeropolis</a> project. <br><br> It works in most major browsers - and is JavaScript-Free!`,
+  },
+  {
     type: "demo",
-    img: 'bytes/pen-2.png',
+    img: "bytes/pen-2.png",
     title: "Great Greeting Cards",
     link: "https://codepen.io/zemposPen/pen/PowLbBd",
-    info: `These are the greeting cards from my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> When hovering over the cards, they open slightly and cast a realistic shadow. <br><br> It works in most major browsers - and is JavaScript-Free!`
+    info: `These are the greeting cards from my project, <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> When hovering over the cards, they open slightly and cast a realistic shadow. <br><br> It works in most major browsers - and is JavaScript-Free!`,
   },
   {
     type: "boilerplate",
-    img: 'svgs/ghub.svg',
+    img: "svgs/ghub.svg",
     title: "Node Boiler (MERN)",
     link: "https://github.com/zempo/node-boiler-mongo",
-    info: `This is my Node boilerplate for a MongoDB project. <br><br> I have included a sample schema and middleware.`
+    info: `This is my Node boilerplate for a MongoDB project. <br><br> I have included a sample schema and middleware.`,
   },
   {
     type: "article",
-    img: 'svgs/article.svg',
+    img: "svgs/article.svg",
     title: "Expedite Eurekas",
     link:
       "https://medium.com/@zelenkosolomon/expedite-your-eurekas-850a2073f5de",
-    info: `Here, I've written my approach to coming up with great ideas. <br><br> I believe we can all foster creativity.`
-    },
+    info: `Here, I've written my approach to coming up with great ideas. <br><br> I believe we can all foster creativity.`,
+  },
   {
     type: "component",
-    img: 'svgs/component.svg',
+    img: "svgs/component.svg",
     title: "React Quotes Loader",
     link: "https://stackblitz.com/edit/quote-loader",
-    info: `This is a loader utility from my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> Change the quotes, and you can add this to any project.`
+    info: `This is a loader utility from my project,  <a href="https://just-the-occasion.com/" target="_blank" re="noopener noreferrer">Just the Occasion</a>. <br><br> Change the quotes, and you can add this to any project.`,
   },
   {
     type: "demo",
-    img: 'bytes/pen-3.png',
+    img: "bytes/pen-3.png",
     title: "ATL Concept",
     link: "https://stackblitz.com/edit/above-the-line-concept",
-    info: `This is a prototype of the editor component from my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>. <br><br> There are superior react text editors, but I plan on keeping this artifact.`
+    info: `This is a prototype of the editor component from my project, <a href="https://above-the-line.now.sh/" target="_blank" re="noopener noreferrer">Above the Line</a>. <br><br> There are superior react text editors, but I plan on keeping this artifact.`,
   },
   {
     type: "algo",
-    img: 'svgs/algo.svg',
+    img: "svgs/algo.svg",
     title: "Maze Matrices",
     link: "https://repl.it/@zempo1/Mad-Mazes",
-    info: `I review this pathfinding algorithm to stay sharp. <br><br> It might prove useful in a future project.`
+    info: `I review this pathfinding algorithm to stay sharp. <br><br> It might prove useful in a future project.`,
   },
   {
     type: "algo",
-    img: 'svgs/algo.svg',
+    img: "svgs/algo.svg",
     title: "Memo-ize Fibonacci",
     link: "https://repl.it/@zempo1/memo",
-    info: `This algo expands upon the original Fibonacci recursive solution. <br><br> I review this solution to understand memoization.`
+    info: `This algo expands upon the original Fibonacci recursive solution. <br><br> I review this solution to understand memoization.`,
   },
   {
     type: "boilerplate",
-    img: 'svgs/ghub.svg',
+    img: "svgs/ghub.svg",
     title: "React Boiler",
     link: "https://github.com/zempo/react-boilerplate",
-    info: `This is my React.js boilerplate. <br><br> It comes with fontawesome, react router, context, and my favorite utility components. <br><br> However, it might require an update soon.`
+    info: `This is my React.js boilerplate. <br><br> It comes with fontawesome, react router, context, and my favorite utility components. <br><br> However, it might require an update soon.`,
   },
   {
     type: "boilerplate",
-    img: 'svgs/ghub.svg',
+    img: "svgs/ghub.svg",
     title: "Node Boiler (PERN)",
     link: "https://github.com/zempo/node-boiler-postgres",
-    info: `This is my Node boilerplate for a PostgreSQL project. <br><br> It handles logging, security, and knex set-up.`
-  }, 
+    info: `This is my Node boilerplate for a PostgreSQL project. <br><br> It handles logging, security, and knex set-up.`,
+  },
   {
     type: "boilerplate",
-    img: 'svgs/ghub.svg',
+    img: "svgs/ghub.svg",
     title: "Svelte Boiler",
     link: "https://github.com/zempo/svelte-boiler",
-    info: `This is my personal Svelte boilerplate. <br><br> I included routing, animations, utilities, and state management in the boilerplate.`
-  } 
-]; 
+    info: `This is my personal Svelte boilerplate. <br><br> I included routing, animations, utilities, and state management in the boilerplate.`,
+  },
+];
 
 const bytesTemplate = document.createElement("template");
 bytesTemplate.innerHTML = `
@@ -394,24 +394,31 @@ class BytesList extends HTMLElement {
       boilerplate: null,
       component: null,
       npm: null,
-      demo: null
-    }
+      demo: null,
+    };
     this.state = {
-      static: '',
-      bytes: []
-    }
+      static: "",
+      bytes: [],
+    };
   }
 
   updateBytes(updatedBytes, query) {
-    let updatedTemplate = ''
-    let queryResults = (!query || query === 'all') ? `<strong>${currentBytes.length}</strong> Byte` : `<strong>${this.state.bytes.length}</strong> ${this.refs[query].innerHTML.substr(0, this.refs[query].innerHTML.length - 1)}`
-    
-    if(updatedBytes.length === 0) {
-      updatedTemplate += `<p>No ${this.refs[query].innerHTML}...</p>`
+    let updatedTemplate = "";
+    let queryResults =
+      !query || query === "all"
+        ? `<strong>${currentBytes.length}</strong> Byte`
+        : `<strong>${this.state.bytes.length}</strong> ${this.refs[
+            query
+          ].innerHTML.substr(0, this.refs[query].innerHTML.length - 1)}`;
+
+    if (updatedBytes.length === 0) {
+      updatedTemplate += `<p>No ${this.refs[query].innerHTML}...</p>`;
     } else {
       updatedBytes.forEach((byte, i, allBytes) => {
-        if(i === 0) {
-          updatedTemplate += `<p>Showing ${queryResults}${this.state.bytes.length === 1 ? '':'s'}</p><hr><ul class="byte-items"><li class="bytes-list-item">
+        if (i === 0) {
+          updatedTemplate += `<p>Showing ${queryResults}${
+            this.state.bytes.length === 1 ? "" : "s"
+          }</p><hr><ul class="byte-items"><li class="bytes-list-item">
           <h2>${byte.title}</h2>
           <div class="byte-preview-1">
           <div class="byte-preview-2">
@@ -419,7 +426,7 @@ class BytesList extends HTMLElement {
           <button class="open-byte" data-item="${i}"><span>See More</span></button>
           </div>
           </div>
-          </li>`          
+          </li>`;
         } else if (i === allBytes.length - 1) {
           updatedTemplate += `<li class="bytes-list-item">
           <h2>${byte.title}</h2>
@@ -429,7 +436,7 @@ class BytesList extends HTMLElement {
           <button class="open-byte" data-item="${i}"><span>See More</span></button>
           </div>
           </div>
-          </li></ul>`  
+          </li></ul>`;
         } else {
           updatedTemplate += `<li class="bytes-list-item">
           <h2>${byte.title}</h2>
@@ -439,95 +446,101 @@ class BytesList extends HTMLElement {
           <button class="open-byte" data-item="${i}"><span>See More</span></button>
           </div>
           </div>
-          </li>`
+          </li>`;
         }
-      }) 
+      });
     }
-    return updatedTemplate
+    return updatedTemplate;
   }
   filterBytes(e) {
-    const query = e.target.classList[1]
-    this.refs[query].classList.add('selected')
+    const query = e.target.classList[1];
+    this.refs[query].classList.add("selected");
     for (const [_, ref] of Object.entries(this.refs)) {
-      if(ref.classList[1] !== query) {
-        ref.classList.remove('selected')
-      }
-    } 
-    const runSort = async () => {
-      let shadow = this.shadowRoot
-      try {
-        const sortedBytes = await this.sortBy(query)
-        this.state.bytes = sortedBytes
-        window.bytes = sortedBytes
-        const newTemplate = await this.updateBytes(sortedBytes, query)
-        if(newTemplate) { 
-         shadow.innerHTML = this.state.static
-         shadow.innerHTML += newTemplate
-         return shadow
-        }
-      } catch (err) {
-        console.log(err)
+      if (ref.classList[1] !== query) {
+        ref.classList.remove("selected");
       }
     }
-    
-    runSort().then(res => {
-      res.querySelector('.all').classList.remove('selected')
-      res.querySelector(`.${query}`).classList.add('selected')
-      let searchButtons = res.querySelectorAll('.filter-bytes button')
-      let itemButtons = res.querySelectorAll('.open-byte')
-      searchButtons.forEach(el => {
-        this.refs[el.classList[1]] = el
-        el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML : 'all'} bytes`)
-        el.addEventListener('click', e => this.filterBytes(e))
-      }) 
-      itemButtons.forEach(el => {
-        let itemId = el.getAttribute('data-item')
-        el.addEventListener('click', e => window.openByteModal(e, itemId))
-      })
-    })
-  } 
+    const runSort = async () => {
+      let shadow = this.shadowRoot;
+      try {
+        const sortedBytes = await this.sortBy(query);
+        this.state.bytes = sortedBytes;
+        window.bytes = sortedBytes;
+        const newTemplate = await this.updateBytes(sortedBytes, query);
+        if (newTemplate) {
+          shadow.innerHTML = this.state.static;
+          shadow.innerHTML += newTemplate;
+          return shadow;
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    runSort().then((res) => {
+      res.querySelector(".all").classList.remove("selected");
+      res.querySelector(`.${query}`).classList.add("selected");
+      let searchButtons = res.querySelectorAll(".filter-bytes button");
+      let itemButtons = res.querySelectorAll(".open-byte");
+      searchButtons.forEach((el) => {
+        this.refs[el.classList[1]] = el;
+        el.setAttribute(
+          "title",
+          `See ${el.classList[1] !== "all" ? el.innerHTML : "all"} bytes`
+        );
+        el.addEventListener("click", (e) => this.filterBytes(e));
+      });
+      itemButtons.forEach((el) => {
+        let itemId = el.getAttribute("data-item");
+        el.addEventListener("click", (e) => window.openByteModal(e, itemId));
+      });
+    });
+  }
 
   sortBy(query) {
-    let toFilter = currentBytes
-    if(query !== 'all') {
-      toFilter = toFilter.filter(byte => byte.type === query)
-      return toFilter
+    let toFilter = currentBytes;
+    if (query !== "all") {
+      toFilter = toFilter.filter((byte) => byte.type === query);
+      return toFilter;
     } else {
-      return toFilter
+      return toFilter;
     }
   }
 
   connectedCallback() {
     const fetchBytes = async (bytes) => {
-      let shadow = this.shadowRoot
-      shadow.innerHTML = ''
-      this.state.static = bytesTemplate.innerHTML
-      this.state.bytes = bytes
-      window.bytes = this.state.bytes
+      let shadow = this.shadowRoot;
+      shadow.innerHTML = "";
+      this.state.static = bytesTemplate.innerHTML;
+      this.state.bytes = bytes;
+      window.bytes = this.state.bytes;
       try {
-        const getBytes = await this.updateBytes(bytes)
+        const getBytes = await this.updateBytes(bytes);
 
-        shadow.innerHTML = this.state.static
-        shadow.innerHTML += getBytes 
-        return shadow
+        shadow.innerHTML = this.state.static;
+        shadow.innerHTML += getBytes;
+        return shadow;
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-    }
+    };
 
-    fetchBytes(currentBytes).then(res => {
-      let searchButtons = res.querySelectorAll('.filter-bytes button')
-      let byteButtons = res.querySelectorAll('.open-byte')
-      searchButtons.forEach(el => {
-        this.refs[el.classList[1]] = el
-        el.setAttribute('title', `See ${el.classList[1] !== 'all' ? el.innerHTML + 's' : 'bytes'}`)
-        el.addEventListener('click', e => this.filterBytes(e))
-      })
-      byteButtons.forEach(el => {
-        let itemId = el.getAttribute('data-item')
-        el.addEventListener('click', e => window.openByteModal(e, itemId))
-      }) 
-    })
+    fetchBytes(currentBytes).then((res) => {
+      let searchButtons = res.querySelectorAll(".filter-bytes button");
+      let byteButtons = res.querySelectorAll(".open-byte");
+      searchButtons.forEach((el) => {
+        this.refs[el.classList[1]] = el;
+        el.setAttribute(
+          "title",
+          `See ${el.classList[1] !== "all" ? el.innerHTML + "s" : "bytes"}`
+        );
+        el.addEventListener("click", (e) => this.filterBytes(e));
+      });
+      byteButtons.forEach((el) => {
+        let itemId = el.getAttribute("data-item");
+        el.addEventListener("click", (e) => window.openByteModal(e, itemId));
+      });
+    });
   }
 }
 window.customElements.define("bytes-list", BytesList);

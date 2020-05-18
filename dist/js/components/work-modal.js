@@ -18,7 +18,7 @@ a {
   font-weight: bold;
 }
 h2 a {
-  color: #f7f7f7;
+  color: #f7f7f7; 
   font-weight: normal;
   text-decoration: none; 
   font-size: calc(10px + 1.8vw);
@@ -763,9 +763,9 @@ class WorkModal extends HTMLElement {
   }
 
   updateWorkModal(currentItem, direction) {
-    let pgClass = direction
+    let pgClass = direction;
     const timeline = (nodes) => {
-      let output = ''
+      let output = "";
       for (let i = 0; i < nodes.length; i++) {
         if (i === nodes.length - 1) {
           output += `<div class="node node-left">
@@ -773,7 +773,7 @@ class WorkModal extends HTMLElement {
           <h4>${nodes[i].stage}</h4>
           <p>${nodes[i].desc}</p>
           </div>
-          </div>`
+          </div>`;
         } else {
           output += `<div class="node node-left">
           <div class="node-content">
@@ -786,22 +786,22 @@ class WorkModal extends HTMLElement {
           <h4>${nodes[i + 1].stage}</h4>
           <p>${nodes[i + 1].desc}</p>
           </div>
-          </div>`
-          i++
+          </div>`;
+          i++;
         }
       }
-      return output
-    }
+      return output;
+    };
     const technologies = (arr) => {
-      let output = ''
+      let output = "";
       for (let i = 0; i < arr.length; i++) {
-        output += `<li>${arr[i]}</li>`
+        output += `<li>${arr[i]}</li>`;
       }
-      return output
-    }
-    let descBreak = currentItem.description.indexOf('.');
+      return output;
+    };
+    let descBreak = currentItem.description.indexOf(".");
     let tagline = currentItem.description.substr(0, descBreak + 1);
-    let goal = currentItem.description.substr(descBreak + 1)
+    let goal = currentItem.description.substr(descBreak + 1);
     let updatedTemplate = `
     <div class="work-modal" id="modal">
     <div class="modal-content opened">
@@ -833,25 +833,33 @@ class WorkModal extends HTMLElement {
      Visit the Website</a>
     <br> 
     <br> 
-    <a href="${currentItem.repo}" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
+    <a href="${
+      currentItem.repo
+    }" target="_blank" rel="noopener noreferrer"><span class="icon">&#10000;</span> Read the Code</a>
     </h2>
     <a href="${currentItem.live}" target="_blank" rel="noopener noreferrer">
-    <img src="img/works/${currentItem.code + '/' + currentItem.code}-1.png" class="item-img" alt="${currentItem.title} image"/>
+    <img src="img/works/${
+      currentItem.code + "/" + currentItem.code
+    }-1.png" class="item-img" alt="${currentItem.title} image"/>
     </a>    
     <div class="img-controls">
     ${currentItem.pics.map((pic, i) => {
       if (i === 0) {
         return `
-        <label class="pic-control" data-pos=${currentItem.code + '/' + pic}>
-        <input type="radio" id="${pic}" name="${currentItem.code}" checked value="${pic}">
+        <label class="pic-control" data-pos=${currentItem.code + "/" + pic}>
+        <input type="radio" id="${pic}" name="${
+          currentItem.code
+        }" checked value="${pic}">
         <span class="checkmark"></span>
-        </label>`
+        </label>`;
       } else {
         return `
-        <label class="pic-control" data-pos=${currentItem.code + '/' + pic}>
-        <input type="radio" id="${pic}" name="${currentItem.code}" value="${pic}">
+        <label class="pic-control" data-pos=${currentItem.code + "/" + pic}>
+        <input type="radio" id="${pic}" name="${
+          currentItem.code
+        }" value="${pic}">
         <span class="checkmark"></span>
-        </label>`
+        </label>`;
       }
     })} 
     </div>
@@ -884,163 +892,173 @@ class WorkModal extends HTMLElement {
     </div>
     </div>
     </div> 
-    `
-    return updatedTemplate
+    `;
+    return updatedTemplate;
   }
 
   displayWorkModal(opened, direction) {
     const fetchWork = async (work) => {
-      window.workShadow.innerHTML = ''
+      window.workShadow.innerHTML = "";
       try {
-        const getWork = await window.updateWorkModal(work, direction)
+        const getWork = await window.updateWorkModal(work, direction);
 
-        window.workShadow.innerHTML = window.static
-        window.workShadow.innerHTML += getWork 
-        return workShadow
+        window.workShadow.innerHTML = window.static;
+        window.workShadow.innerHTML += getWork;
+        return workShadow;
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-    } 
-    
-    fetchWork(window.currentWork).then(res => {
-      let modal = res.querySelector('#modal')
-      let modalContent = res.querySelector('.modal-content')
-          if(opened) {
-           modalContent.classList.remove('opened') 
-          }
-      let toggleSize = res.querySelector('.resize-modal')
-      let closeBtn = res.querySelector('.close-modal')
-      let hideBtn = res.querySelector('.hide-modal')
-      let currentWorkId = window.projects.map(el => el.title).indexOf(window.currentWork.title)
-      let fwd = res.querySelector('.modal-fwd');
-      let back = res.querySelector('.modal-back');
-      let image = res.querySelector('.img-container img');
-      let imgBtns = res.querySelectorAll('.pic-control input');
+    };
+
+    fetchWork(window.currentWork).then((res) => {
+      let modal = res.querySelector("#modal");
+      let modalContent = res.querySelector(".modal-content");
+      if (opened) {
+        modalContent.classList.remove("opened");
+      }
+      let toggleSize = res.querySelector(".resize-modal");
+      let closeBtn = res.querySelector(".close-modal");
+      let hideBtn = res.querySelector(".hide-modal");
+      let currentWorkId = window.projects
+        .map((el) => el.title)
+        .indexOf(window.currentWork.title);
+      let fwd = res.querySelector(".modal-fwd");
+      let back = res.querySelector(".modal-back");
+      let image = res.querySelector(".img-container img");
+      let imgBtns = res.querySelectorAll(".pic-control input");
       let runSlideShow = setInterval(() => {
         for (let i = 0; i < imgBtns.length; i++) {
-          if(imgBtns[i].checked == true) {
-            if(i < imgBtns.length - 1) {
-              imgBtns[i].checked = false
-              imgBtns[i + 1].checked = true
-              let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              return 
+          if (imgBtns[i].checked == true) {
+            if (i < imgBtns.length - 1) {
+              imgBtns[i].checked = false;
+              imgBtns[i + 1].checked = true;
+              let newPic = imgBtns[i + 1].parentElement.getAttribute(
+                "data-pos"
+              );
+              image.setAttribute("src", `img/works/${newPic}`);
+              return;
             } else {
-              imgBtns[i].checked = false
-              imgBtns[0].checked = true
-              let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-              image.setAttribute('src', `img/works/${newPic}`)
-              return
+              imgBtns[i].checked = false;
+              imgBtns[0].checked = true;
+              let newPic = imgBtns[0].parentElement.getAttribute("data-pos");
+              image.setAttribute("src", `img/works/${newPic}`);
+              return;
             }
           }
         }
-      }, 3000)
-      document.querySelector('header').addEventListener('click', e => clearInterval(runSlideShow))
-      window.onhashchange = e => {
-        clearInterval(runSlideShow)
-      }
-      imgBtns.forEach(el=> {
-        el.addEventListener('click', e => {
-          clearInterval(runSlideShow)
+      }, 3000);
+      document
+        .querySelector("header")
+        .addEventListener("click", (e) => clearInterval(runSlideShow));
+      window.onhashchange = (e) => {
+        clearInterval(runSlideShow);
+      };
+      imgBtns.forEach((el) => {
+        el.addEventListener("click", (e) => {
+          clearInterval(runSlideShow);
           setTimeout(() => {
             runSlideShow = setInterval(() => {
               for (let i = 0; i < imgBtns.length; i++) {
-                if(imgBtns[i].checked == true) {
-                  if(i < imgBtns.length - 1) {
-                    imgBtns[i].checked = false
-                    imgBtns[i + 1].checked = true
-                    let newPic = imgBtns[i + 1].parentElement.getAttribute('data-pos')
-                    image.setAttribute('src', `img/works/${newPic}`)
-                    return 
+                if (imgBtns[i].checked == true) {
+                  if (i < imgBtns.length - 1) {
+                    imgBtns[i].checked = false;
+                    imgBtns[i + 1].checked = true;
+                    let newPic = imgBtns[i + 1].parentElement.getAttribute(
+                      "data-pos"
+                    );
+                    image.setAttribute("src", `img/works/${newPic}`);
+                    return;
                   } else {
-                    imgBtns[i].checked = false
-                    imgBtns[0].checked = true
-                    let newPic = imgBtns[0].parentElement.getAttribute('data-pos')
-                    image.setAttribute('src', `img/works/${newPic}`)
-                    return
+                    imgBtns[i].checked = false;
+                    imgBtns[0].checked = true;
+                    let newPic = imgBtns[0].parentElement.getAttribute(
+                      "data-pos"
+                    );
+                    image.setAttribute("src", `img/works/${newPic}`);
+                    return;
                   }
                 }
               }
-            }, 3000)
-          }, 3000)
-          let dir = e.target.name 
-          let pic = e.target.value
-          image.setAttribute('src', `img/works/${dir + '/' + pic}`)
-        })
-      })
-      toggleSize.addEventListener('click', e => {
-        if(toggleSize.classList[1] === 'small') {
-          toggleSize.classList.remove('small')
-          toggleSize.classList.add('big')
-          toggleSize.style.background = '#3d3a3a'
-          toggleSize.style.border = '2px solid #f7f7f7'
-          modalContent.style.height = '80vh'
-          modalContent.style.width = 'calc(80% - 10vw)'
-          modalContent.style.margin = 'calc(10vh - 75px) calc(10% + 5vw)' 
-          modalContent.focus()
+            }, 3000);
+          }, 3000);
+          let dir = e.target.name;
+          let pic = e.target.value;
+          image.setAttribute("src", `img/works/${dir + "/" + pic}`);
+        });
+      });
+      toggleSize.addEventListener("click", (e) => {
+        if (toggleSize.classList[1] === "small") {
+          toggleSize.classList.remove("small");
+          toggleSize.classList.add("big");
+          toggleSize.style.background = "#3d3a3a";
+          toggleSize.style.border = "2px solid #f7f7f7";
+          modalContent.style.height = "80vh";
+          modalContent.style.width = "calc(80% - 10vw)";
+          modalContent.style.margin = "calc(10vh - 75px) calc(10% + 5vw)";
+          modalContent.focus();
         } else {
-          toggleSize.classList.remove('big')
-          toggleSize.classList.add('small')
-          toggleSize.style.background = 'none' 
-          toggleSize.style.border = 'none'
-          modalContent.style.height = 'calc(100vh - 142px)'
-          modalContent.style.width = 'calc(100% - 20px)'
-          modalContent.style.margin = '0'
-          modalContent.focus()
-          if(window.innerWidth >= 1440) {
-            modalContent.style.height = 'calc(100vh - 157px)'
+          toggleSize.classList.remove("big");
+          toggleSize.classList.add("small");
+          toggleSize.style.background = "none";
+          toggleSize.style.border = "none";
+          modalContent.style.height = "calc(100vh - 142px)";
+          modalContent.style.width = "calc(100% - 20px)";
+          modalContent.style.margin = "0";
+          modalContent.focus();
+          if (window.innerWidth >= 1440) {
+            modalContent.style.height = "calc(100vh - 157px)";
           }
         }
-      })
-      hideBtn.addEventListener('click', e => {
-        clearInterval(runSlideShow)
-        document.getElementsByTagName('work-modal')[0].style.display = 'none'
-      })
-      closeBtn.addEventListener('click', e => {
-        clearInterval(runSlideShow)
-        document.getElementsByTagName('work-modal')[0].style.display = 'none'
-    })
-      modal.addEventListener('click', e => {
-        if(e.target == modal) {
-        clearInterval(runSlideShow)
-          document.getElementsByTagName('work-modal')[0].style.display = 'none'
+      });
+      hideBtn.addEventListener("click", (e) => {
+        clearInterval(runSlideShow);
+        document.getElementsByTagName("work-modal")[0].style.display = "none";
+      });
+      closeBtn.addEventListener("click", (e) => {
+        clearInterval(runSlideShow);
+        document.getElementsByTagName("work-modal")[0].style.display = "none";
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target == modal) {
+          clearInterval(runSlideShow);
+          document.getElementsByTagName("work-modal")[0].style.display = "none";
         }
-      })
-      fwd.addEventListener('click', e => {
-        clearInterval(runSlideShow)
-        if(window.projects.length === currentWorkId + 1) {
-          window.updateWorkItem(e, 0, 'modal-r')
+      });
+      fwd.addEventListener("click", (e) => {
+        clearInterval(runSlideShow);
+        if (window.projects.length === currentWorkId + 1) {
+          window.updateWorkItem(e, 0, "modal-r");
         } else {
-          window.updateWorkItem(e, currentWorkId + 1, 'modal-r')
+          window.updateWorkItem(e, currentWorkId + 1, "modal-r");
         }
-      })
-      back.addEventListener('click', e => {
-        clearInterval(runSlideShow)
-        if(currentWorkId === 0) {
-          window.updateWorkItem(e, window.projects.length - 1, 'modal-l')
+      });
+      back.addEventListener("click", (e) => {
+        clearInterval(runSlideShow);
+        if (currentWorkId === 0) {
+          window.updateWorkItem(e, window.projects.length - 1, "modal-l");
         } else {
-          window.updateWorkItem(e, currentWorkId - 1, 'modal-l')
+          window.updateWorkItem(e, currentWorkId - 1, "modal-l");
         }
-      })
-    })
+      });
+    });
   }
-  
+
   connectedCallback() {
-    window.displayWorkModal = this.displayWorkModal
-    window.updateWorkModal = this.updateWorkModal
-    window.workShadow = this.shadowRoot
-    window.static = workModalTemplate.innerHTML
-    window.openModal = function(e, id) {
-      document.getElementsByTagName('work-modal')[0].style.display = 'block'
-      window.currentWork = window.projects[id]
-      document.getElementsByTagName('work-modal')[0].focus()
-      window.displayWorkModal(false)
-    } 
-    window.updateWorkItem = function(e, id, direction) {
-      window.currentWork = window.projects[id]
-      window.displayWorkModal(true, direction)
-    }
+    window.displayWorkModal = this.displayWorkModal;
+    window.updateWorkModal = this.updateWorkModal;
+    window.workShadow = this.shadowRoot;
+    window.static = workModalTemplate.innerHTML;
+    window.openModal = function (e, id) {
+      document.getElementsByTagName("work-modal")[0].style.display = "block";
+      window.currentWork = window.projects[id];
+      document.getElementsByTagName("work-modal")[0].focus();
+      window.displayWorkModal(false);
+    };
+    window.updateWorkItem = function (e, id, direction) {
+      window.currentWork = window.projects[id];
+      window.displayWorkModal(true, direction);
+    };
   }
-} 
+}
 
 window.customElements.define("work-modal", WorkModal);
