@@ -1,15 +1,22 @@
-@import 'config';
-@import 'utils';
-* { 
+@import "config";
+@import "utils";
+* {
   box-sizing: border-box;
 }
-p, a, figcaption, h3, input, textarea, select {
+p,
+a,
+figcaption,
+h3,
+input,
+textarea,
+select {
   font-family: $font-2;
 }
 section h2 {
   font-family: $font-2;
-} 
-button, footer h3 {
+}
+button,
+footer h3 {
   font-family: $font;
 }
 body,
@@ -20,7 +27,7 @@ main {
   font-family: $font;
   margin: 0;
   padding: 0;
-  background: map-get($colors, app-white );
+  background: map-get($colors, app-white);
   h1 {
     @include font-size($h1-font-sizes);
   }
@@ -31,123 +38,127 @@ main {
     @include font-size($p-font-sizes);
   }
   .btn-fwd {
-    right:calc(15px + 3vw);
-    @include mq('desktop-wide') {
-      right:calc(10px + 6vw);
-    } 
-  } 
-  .btn-back { 
-    left:calc(15px + 3vw);
-    @include mq('desktop-wide') {
-      left:calc(10px + 6vw);
-    } 
+    right: calc(15px + 3vw);
+    @include mq("desktop-wide") {
+      right: calc(10px + 6vw);
+    }
+  }
+  .btn-back {
+    left: calc(15px + 3vw);
+    @include mq("desktop-wide") {
+      left: calc(10px + 6vw);
+    }
   }
   .btn-fwd,
-  .btn-back { 
+  .btn-back {
     @extend %btn;
-    position: fixed; 
+    position: fixed;
     display: none;
     font-size: 0;
     padding: 0;
-    top: calc(50vh - 30px - .5vw);
-    width:calc(65px + .25vw);
-    height:calc(65px + .25vw);
+    top: calc(50vh - 30px - 0.5vw);
+    width: calc(60px + 0.25vw);
+    height: calc(60px + 0.25vw);
     z-index: 2;
-    outline: none; 
+    outline: none;
     background: rgb(0, 0, 0);
-    border: 1px solid map-get($colors, dark-2 );
+    border: 1px solid map-get($colors, dark-2);
     border-radius: 50%;
-    @include mq('tablet-wide') {
+    @include mq("tablet-wide") {
       display: block;
-    } 
-    @include mq('tablet-wide') { 
-      max-width: calc(65px + .25vw);
-    } 
+    }
+    @include mq("tablet-wide") {
+      max-width: calc(62px + 0.25vw);
+    }
     svg {
       @extend %btn;
-      background: map-get($colors, dark-2 );
+      background: map-get($colors, dark-2);
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(65px + .25vw);
-      height: calc(65px + .25vw);
+      width: calc(55px + 0.25vw);
+      height: calc(55px + 0.25vw);
     }
     path {
-      fill: lighten(map-get($colors, app-white ), 10%);
+      fill: lighten(map-get($colors, app-white), 10%);
     }
     &:active:not([disabled]),
     &:hover:not([disabled]) {
-      svg, path {
+      svg,
+      path {
         -moz-transition: map-get($animations, transition-1);
         -o-transition: map-get($animations, transition-1);
         -webkit-transition: map-get($animations, transition-1);
         transition: map-get($animations, transition-1);
       }
       svg {
-        background: map-get($colors, dark );
+        background: map-get($colors, dark);
       }
       path {
-        fill: map-get($colors, app-white ); 
+        fill: map-get($colors, app-white);
       }
     }
   }
-  
+
   #container {
     text-align: center;
-    background: map-get($colors, app-white );
+    background: map-get($colors, app-white);
     min-height: 100vh;
   }
 }
 footer {
   display: none;
   text-align: center;
-  background: map-get($colors, dark-2 );
-  color: map-get($colors, app-white );
+  background: map-get($colors, dark-2);
+  color: map-get($colors, app-white);
   margin-top: 200px;
   h2 {
     font-weight: normal;
+    @include font-size($h1-font-sizes);
+    margin: 20px auto 0px;
+    word-spacing: 10px;
   }
-  p {
-    font-weight: 400;
+  h3 {
+    font-weight: 300;
     font-style: italic;
-    color: darken(map-get($colors, app-white ), 10%);
-    @include font-size($h3-font-sizes);
+    color: darken(map-get($colors, app-white), 20%);
+    @include font-size($p-font-sizes);
     &:last-child {
       padding-bottom: 140px;
     }
   }
   .icons-list {
-  width: 100%;
-  padding: 100px 0 60px;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  @include mq('tablet') {
-    width: 70%;
-    margin-left: 15%;
-  } 
-  img {
-    width: calc(35px + 1.8vw);
-    text-decoration: none;
+    width: 100%;
+    padding: 100px 0 60px;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    @include mq("tablet") {
+      width: 70%;
+      margin-left: 15%;
+    }
+    img {
+      width: calc(35px + 1.3vw);
+      text-decoration: none;
+    }
   }
-}
 }
 a {
   @extend %btn;
   font-weight: bold;
   color: map-get($colors, "dark");
-} 
+}
 nav {
   position: fixed;
   bottom: 0;
   z-index: 5;
-  width: 100%; 
-  background: map-get($colors, app-white );
+  width: 100%;
+  background: map-get($colors, app-white);
   box-shadow: 0px -3px 6px -5px rgba(51, 51, 51, 0.4);
-  @include mq('desktop-wide') {
+  @include mq("desktop-wide") {
     ul {
       width: 80vw;
       margin: 15px auto;
@@ -163,8 +174,8 @@ nav {
         }
       }
     }
-  }  
-  @include mq('ultra-wide') {
+  }
+  @include mq("ultra-wide") {
     ul {
       margin: 15px auto;
       width: 70vw;
@@ -179,8 +190,8 @@ nav {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   a {
     width: 25%;
@@ -211,8 +222,8 @@ nav {
   left: 0;
   z-index: 1;
   width: 100vw;
-  height: 100vh; 
-  background-color: map-get($colors, app-white );
+  height: 100vh;
+  background-color: map-get($colors, app-white);
   .load-icon {
     position: absolute;
     width: 80px;
@@ -228,7 +239,7 @@ nav {
     -webkit-animation: map-get($animations, ping);
     animation: map-get($animations, ping);
   }
-} 
+}
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -236,7 +247,7 @@ nav {
 ::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
-} 
+}
 ::-webkit-scrollbar-thumb {
   background: lighten(map-get($colors, dark-2), 30%);
   border: 2px none #000000;
@@ -246,7 +257,7 @@ nav {
 }
 ::-webkit-scrollbar-thumb:active {
   background: lighten(map-get($colors, dark-2), 0%);
-} 
+}
 ::-webkit-scrollbar-track {
   background: none;
   border: 1px none #000000;

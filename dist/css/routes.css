@@ -40,7 +40,17 @@
   animation: fadeIn 0.8s;
   padding: 0px 5vw 100px;
   margin: 0 auto; }
-  .route h1::selection, .route h2::selection, .route h3::selection, .route p::selection, .route li::selection, .route a::selection, .route strong::selection, .route span::selection, .route label::selection, .route input::selection, .route textarea::selection {
+  .route h1::selection,
+  .route h2::selection,
+  .route h3::selection,
+  .route p::selection,
+  .route li::selection,
+  .route a::selection,
+  .route strong::selection,
+  .route span::selection,
+  .route label::selection,
+  .route input::selection,
+  .route textarea::selection {
     color: #fafafa;
     background: #000000; }
   @media only screen and (min-width: 900px) {
@@ -50,6 +60,7 @@
     .route {
       padding: 0 25vw; } }
   .route h1:first-child {
+    font-weight: normal;
     margin: 60px auto 40px; }
     @media only screen and (min-width: 900px) {
       .route h1:first-child {
@@ -57,19 +68,19 @@
   .route h2:nth-child(2) {
     font-weight: normal;
     margin-top: 0;
-    font-size: 18px; }
+    font-size: 17px; }
     @media screen and (min-width: 560px) {
       .route h2:nth-child(2) {
-        font-size: calc(19px + 0.5vw); } }
+        font-size: calc(18px + 0.5vw); } }
     @media screen and (min-width: 768px) {
       .route h2:nth-child(2) {
-        font-size: calc(20px + 0.5vw); } }
+        font-size: calc(19px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
       .route h2:nth-child(2) {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(20px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
       .route h2:nth-child(2) {
-        font-size: 26px; } }
+        font-size: 25px; } }
 
 .l {
   -moz-animation: fromLeft 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -94,43 +105,43 @@
   @media only screen and (min-width: 1440px) {
     .home-pg .logo-main {
       margin-top: calc(20vh - 40px);
-      max-width: 60%; } }
+      max-width: 750px; } }
 
 .home-pg .big-h {
   font-size: calc(26px + 1vw);
   font-weight: normal; }
   @media screen and (min-width: 400px) {
     .home-pg .big-h {
-      font-size: calc(26px + 1.5vw); } }
+      font-size: calc(26px + 0.5vw); } }
   @media screen and (min-width: 560px) {
     .home-pg .big-h {
-      font-size: calc(30px + 2vw); } }
+      font-size: calc(28px + 1vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .big-h {
-      font-size: calc(31px + 2vw); } }
+      font-size: calc(30px + 1vw); } }
   @media screen and (min-width: 1248px) {
     .home-pg .big-h {
-      font-size: calc(34px + 1vw); } }
+      font-size: calc(32px + 1vw); } }
   @media screen and (min-width: 2000px) {
     .home-pg .big-h {
-      font-size: calc(40px + 1vw); } }
+      font-size: calc(40px + 0.5vw); } }
 
 .home-pg .min-txt {
   font-family: "Indie Flower", cursive;
   font-weight: 300;
-  font-size: 24px; }
+  font-size: 20px; }
   @media screen and (min-width: 560px) {
     .home-pg .min-txt {
-      font-size: calc(27px + 0.5vw); } }
+      font-size: calc(25px + 0.5vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .min-txt {
-      font-size: calc(27px + 1vw); } }
+      font-size: calc(25px + 1vw); } }
   @media screen and (min-width: 1248px) {
     .home-pg .min-txt {
-      font-size: calc(30px + 1vw); } }
+      font-size: calc(28px + 1vw); } }
   @media screen and (min-width: 2000px) {
     .home-pg .min-txt {
-      font-size: calc(44px + 0.5vw); } }
+      font-size: calc(35px + 0.5vw); } }
   @media only screen and (min-width: 1024px) {
     .home-pg .min-txt {
       display: none; } }
@@ -144,23 +155,23 @@
   position: relative;
   border: 2px solid black;
   font-weight: normal;
-  font-size: 18px; }
+  font-size: 17px; }
   @media screen and (min-width: 560px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(21px + 0.5vw); } }
+      font-size: calc(18px + 0.5vw); } }
   @media screen and (min-width: 768px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(21px + 0.5vw); } }
+      font-size: calc(19px + 0.5vw); } }
   @media screen and (min-width: 1248px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: calc(22px + 0.5vw); } }
+      font-size: calc(20px + 0.5vw); } }
   @media screen and (min-width: 2000px) {
     .home-pg .btn-resume,
     .home-pg .btn-contact {
-      font-size: 28px; } }
+      font-size: 26px; } }
   .home-pg .btn-resume::before,
   .home-pg .btn-contact::before {
     content: attr(data-text);
@@ -186,9 +197,9 @@
     transform: translate3d(0, 0, 0); }
   .home-pg .btn-resume:hover > span,
   .home-pg .btn-contact:hover > span {
-    -moz-transition: transform .4s;
-    -o-transition: transform .4s;
-    -webkit-transition: transform .4s;
+    -moz-transition: transform 0.4s;
+    -o-transition: transform 0.4s;
+    -webkit-transition: transform 0.4s;
     transition: transform 0.4s; }
 
 .home-pg .btn-resume::before {
@@ -205,25 +216,29 @@
 .about-pg .min-txt {
   font-family: "Indie Flower", cursive;
   font-weight: 300;
-  font-size: 18px; }
+  font-size: 17px; }
   @media screen and (min-width: 560px) {
     .about-pg .min-txt {
-      font-size: calc(21px + 0.5vw); } }
+      font-size: calc(18px + 0.5vw); } }
   @media screen and (min-width: 768px) {
     .about-pg .min-txt {
-      font-size: calc(21px + 0.5vw); } }
+      font-size: calc(19px + 0.5vw); } }
   @media screen and (min-width: 1248px) {
     .about-pg .min-txt {
-      font-size: calc(22px + 0.5vw); } }
+      font-size: calc(20px + 0.5vw); } }
   @media screen and (min-width: 2000px) {
     .about-pg .min-txt {
-      font-size: 28px; } }
+      font-size: 26px; } }
 
-.about-pg .about-pic-1, .about-pg .about-pic-2, .about-pg .about-pic-3 {
+.about-pg .about-pic-1,
+.about-pg .about-pic-2,
+.about-pg .about-pic-3 {
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 50%; }
   @media only screen and (min-width: 900px) {
-    .about-pg .about-pic-1, .about-pg .about-pic-2, .about-pg .about-pic-3 {
+    .about-pg .about-pic-1,
+    .about-pg .about-pic-2,
+    .about-pg .about-pic-3 {
       margin: 20px; } }
 
 @media only screen and (min-width: 900px) {
@@ -235,16 +250,17 @@
   position: relative; }
   @media only screen and (min-width: 560px) {
     .about-pg .about-pic-1 {
-      width: calc(270px + 14vw); } }
+      width: calc(270px + 8vw); } }
   @media only screen and (min-width: 900px) {
     .about-pg .about-pic-1 {
-      width: 22vw;
+      width: 25vw;
       position: relative;
       top: -3vw;
       margin: 20px auto 0px; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-1 {
-      width: 16vw; } }
+      width: 16vw;
+      max-width: 280px; } }
 
 .about-pg .about-pic-2 {
   width: calc(140px + 3vw);
@@ -252,14 +268,15 @@
   top: 10px; }
   @media only screen and (min-width: 560px) {
     .about-pg .about-pic-2 {
-      width: calc(180px + 12vw); } }
+      width: calc(180px + 8vw); } }
   @media only screen and (min-width: 900px) {
     .about-pg .about-pic-2 {
-      width: 22vw;
+      width: 25vw;
       top: 0; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-2 {
-      width: 16vw; } }
+      width: 16vw;
+      max-width: 280px; } }
 
 .about-pg .about-pic-3 {
   width: calc(100px + 3vw);
@@ -267,24 +284,26 @@
   top: 16px; }
   @media only screen and (min-width: 560px) {
     .about-pg .about-pic-3 {
-      width: calc(90px + 12vw);
+      width: calc(90px + 8vw);
       top: calc(10px + 2vw); } }
   @media only screen and (min-width: 900px) {
     .about-pg .about-pic-3 {
-      width: 22vw;
+      width: 25vw;
       top: 0; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .about-pic-3 {
-      width: 16vw; } }
+      width: 16vw;
+      max-width: 280px; } }
 
 .about-pg .img-controls {
-  margin: 20px auto 60px;
+  margin: 20px auto 50px;
   width: 80%;
   position: relative; }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 1248px) {
     .about-pg .img-controls {
-      width: 65%;
-      margin: 0px auto 80px;
+      width: 100%;
+      max-width: 760px;
+      margin: 0px auto 50px;
       top: 0; } }
   @media only screen and (min-width: 1248px) {
     .about-pg .img-controls {
@@ -299,7 +318,7 @@
       text-align: center;
       background: #fff;
       color: #000;
-      font-size: 17px;
+      font-size: 15px;
       display: block;
       position: absolute;
       left: 50%;
@@ -310,6 +329,18 @@
       border: 2px solid #000;
       border-radius: 6px;
       font-size: 18px; }
+      @media screen and (min-width: 560px) {
+        .about-pg .img-controls .hue-value div {
+          font-size: calc(15px + 0.25vw); } }
+      @media screen and (min-width: 768px) {
+        .about-pg .img-controls .hue-value div {
+          font-size: calc(16px + 0.25vw); } }
+      @media screen and (min-width: 1248px) {
+        .about-pg .img-controls .hue-value div {
+          font-size: calc(18px + 0.25vw); } }
+      @media screen and (min-width: 2000px) {
+        .about-pg .img-controls .hue-value div {
+          font-size: 22px; } }
       .about-pg .img-controls .hue-value div span {
         font-weight: normal; }
       .about-pg .img-controls .hue-value div:before {
@@ -324,13 +355,13 @@
         left: 50%;
         margin-left: -5px;
         margin-top: 1px; }
-  .about-pg .img-controls input[type=range] {
+  .about-pg .img-controls input[type="range"] {
     -webkit-appearance: none;
     margin: 10px 0;
     width: 100%; }
-    .about-pg .img-controls input[type=range]:focus {
+    .about-pg .img-controls input[type="range"]:focus {
       outline: none; }
-    .about-pg .img-controls input[type=range]::-webkit-slider-runnable-track {
+    .about-pg .img-controls input[type="range"]::-webkit-slider-runnable-track {
       width: 100%;
       height: 2px;
       cursor: pointer;
@@ -339,19 +370,19 @@
       background: #3d3a3a;
       border-radius: 5px;
       border: 1px solid #3d3a3a; }
-    .about-pg .img-controls input[type=range]::-webkit-slider-thumb {
+    .about-pg .img-controls input[type="range"]::-webkit-slider-thumb {
       box-shadow: 1px 1px 1px #3d3a3a;
       border: 1.5px solid #3d3a3a;
       height: 23px;
       width: 44px;
       border-radius: 6px;
-      background: #FFFFFF;
+      background: #ffffff;
       cursor: pointer;
       -webkit-appearance: none;
       margin-top: -10px; }
-    .about-pg .img-controls input[type=range]:focus::-webkit-slider-runnable-track {
+    .about-pg .img-controls input[type="range"]:focus::-webkit-slider-runnable-track {
       background: #3d3a3a; }
-    .about-pg .img-controls input[type=range]::-moz-range-track {
+    .about-pg .img-controls input[type="range"]::-moz-range-track {
       width: 100%;
       height: 2px;
       cursor: pointer;
@@ -360,15 +391,15 @@
       background: #3d3a3a;
       border-radius: 5px;
       border: 1px solid #3d3a3a; }
-    .about-pg .img-controls input[type=range]::-moz-range-thumb {
+    .about-pg .img-controls input[type="range"]::-moz-range-thumb {
       box-shadow: 1px 1px 1px #3d3a3a;
       border: 1px solid #3d3a3a;
       height: 23px;
       width: 44px;
       border-radius: 6px;
-      background: #FFFFFF;
+      background: #ffffff;
       cursor: pointer; }
-    .about-pg .img-controls input[type=range]::-ms-track {
+    .about-pg .img-controls input[type="range"]::-ms-track {
       width: 100%;
       height: 2px;
       cursor: pointer;
@@ -376,27 +407,27 @@
       background: transparent;
       border-color: transparent;
       color: transparent; }
-    .about-pg .img-controls input[type=range]::-ms-fill-lower {
+    .about-pg .img-controls input[type="range"]::-ms-fill-lower {
       background: #3d3a3a;
       border: 1px solid #3d3a3a;
       border-radius: 10px;
       box-shadow: 1px 1px 1px #3d3a3a; }
-    .about-pg .img-controls input[type=range]::-ms-fill-upper {
+    .about-pg .img-controls input[type="range"]::-ms-fill-upper {
       background: #3d3a3a;
       border: 1px solid #3d3a3a;
       border-radius: 10px;
       box-shadow: 1px 1px 1px #3d3a3a; }
-    .about-pg .img-controls input[type=range]::-ms-thumb {
+    .about-pg .img-controls input[type="range"]::-ms-thumb {
       box-shadow: 1px 1px 1px #3d3a3a;
       border: 1px solid #3d3a3a;
       height: 23px;
       width: 44px;
       border-radius: 6px;
-      background: #FFFFFF;
+      background: #ffffff;
       cursor: pointer; }
-    .about-pg .img-controls input[type=range]:focus::-ms-fill-lower {
+    .about-pg .img-controls input[type="range"]:focus::-ms-fill-lower {
       background: #3d3a3a; }
-    .about-pg .img-controls input[type=range]:focus::-ms-fill-upper {
+    .about-pg .img-controls input[type="range"]:focus::-ms-fill-upper {
       background: #3d3a3a; }
 
 .about-pg .accordion {
@@ -407,7 +438,7 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
-  margin: 100px auto 0;
+  margin: 60px auto 0;
   max-width: 1000px; }
   .about-pg .accordion .accordion-label {
     width: 100%;
@@ -425,22 +456,22 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-size: 18px; }
+    font-size: 17px; }
     .about-pg .accordion .accordion-label:nth-child(2) {
       border-top: 2px solid #a49f9f;
       border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(18px + 0.5vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(19px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .accordion-label {
-        font-size: calc(22px + 0.5vw); } }
+        font-size: calc(20px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .accordion-label {
-        font-size: 28px; } }
+        font-size: 26px; } }
     @media only screen and (min-width: 1024px) {
       .about-pg .accordion .accordion-label {
         -webkit-box-flex: 1;
@@ -450,7 +481,7 @@
         border-radius: 8px 8px 0 0;
         width: calc(100% / 3);
         position: relative;
-        left: 1px;
+        left: 0px;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
@@ -516,7 +547,7 @@
           .about-pg .accordion input[type="radio"]:checked + label.vision-label::after {
             bottom: 0; } }
     .about-pg .accordion input[type="radio"]:checked + label .tab-open:after {
-      content: '+'; }
+      content: "+"; }
     .about-pg .accordion input[type="radio"]:checked + label + .accordion {
       border: none; }
     .about-pg .accordion input[type="radio"]:checked + label + .a-content {
@@ -548,36 +579,36 @@
       font-style: italic;
       position: relative;
       color: #4d4d4d;
-      font-size: 16px; }
+      font-size: 15px; }
       @media screen and (min-width: 560px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(16px + 0.25vw); } }
+          font-size: calc(15px + 0.25vw); } }
       @media screen and (min-width: 768px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(17px + 0.25vw); } }
+          font-size: calc(16px + 0.25vw); } }
       @media screen and (min-width: 1248px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: calc(19px + 0.25vw); } }
+          font-size: calc(18px + 0.25vw); } }
       @media screen and (min-width: 2000px) {
         .about-pg .accordion .story figure figcaption {
-          font-size: 23px; } }
+          font-size: 22px; } }
   .about-pg .accordion .story p {
     width: 100%;
     margin: 20px auto;
     line-height: 1.5;
-    font-size: 16px; }
+    font-size: 15px; }
     @media screen and (min-width: 560px) {
       .about-pg .accordion .story p {
-        font-size: calc(16px + 0.25vw); } }
+        font-size: calc(15px + 0.25vw); } }
     @media screen and (min-width: 768px) {
       .about-pg .accordion .story p {
-        font-size: calc(17px + 0.25vw); } }
+        font-size: calc(16px + 0.25vw); } }
     @media screen and (min-width: 1248px) {
       .about-pg .accordion .story p {
-        font-size: calc(19px + 0.25vw); } }
+        font-size: calc(18px + 0.25vw); } }
     @media screen and (min-width: 2000px) {
       .about-pg .accordion .story p {
-        font-size: 23px; } }
+        font-size: 22px; } }
     @media only screen and (min-width: 480px) {
       .about-pg .accordion .story p {
         width: 80%;
@@ -595,92 +626,135 @@
       max-width: calc(50px + 1vw);
       position: relative;
       top: 10px; }
-  .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
+  .about-pg .accordion .skills .min-txt,
+  .about-pg .accordion .vision .min-txt {
     font-family: "Indie Flower", cursive;
     text-align: center;
     letter-spacing: 2px;
-    font-size: 20px; }
+    font-size: 19px; }
     @media screen and (min-width: 560px) {
-      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(23px + 0.5vw); } }
+      .about-pg .accordion .skills .min-txt,
+      .about-pg .accordion .vision .min-txt {
+        font-size: calc(21px + 0.5vw); } }
     @media screen and (min-width: 768px) {
-      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(23px + 0.5vw); } }
+      .about-pg .accordion .skills .min-txt,
+      .about-pg .accordion .vision .min-txt {
+        font-size: calc(22px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
-      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: calc(25px + 0.5vw); } }
+      .about-pg .accordion .skills .min-txt,
+      .about-pg .accordion .vision .min-txt {
+        font-size: calc(24px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
-      .about-pg .accordion .skills .min-txt, .about-pg .accordion .vision .min-txt {
-        font-size: 32px; } }
-  .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
+      .about-pg .accordion .skills .min-txt,
+      .about-pg .accordion .vision .min-txt {
+        font-size: 28px; } }
+  .about-pg .accordion .skills h2,
+  .about-pg .accordion .vision h2 {
     font-weight: normal;
     font-family: "SpartanMB";
-    font-size: 18px; }
+    font-size: 17px; }
     @media screen and (min-width: 560px) {
-      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
-        font-size: calc(21px + 0.5vw); } }
+      .about-pg .accordion .skills h2,
+      .about-pg .accordion .vision h2 {
+        font-size: calc(18px + 0.5vw); } }
     @media screen and (min-width: 768px) {
-      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
-        font-size: calc(21px + 0.5vw); } }
+      .about-pg .accordion .skills h2,
+      .about-pg .accordion .vision h2 {
+        font-size: calc(19px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
-      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
-        font-size: calc(22px + 0.5vw); } }
+      .about-pg .accordion .skills h2,
+      .about-pg .accordion .vision h2 {
+        font-size: calc(20px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
-      .about-pg .accordion .skills h2, .about-pg .accordion .vision h2 {
-        font-size: 28px; } }
-  .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
+      .about-pg .accordion .skills h2,
+      .about-pg .accordion .vision h2 {
+        font-size: 26px; } }
+  .about-pg .accordion .skills .content-items,
+  .about-pg .accordion .vision .content-items {
     display: grid;
     padding: 20px 10px;
     grid-template-columns: 1fr; }
-    .about-pg .accordion .skills .content-items img, .about-pg .accordion .vision .content-items img {
+    .about-pg .accordion .skills .content-items img,
+    .about-pg .accordion .vision .content-items img {
       max-width: 80px; }
-    .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
+    .about-pg .accordion .skills .content-items ul,
+    .about-pg .accordion .skills .content-items ol,
+    .about-pg .accordion .vision .content-items ul,
+    .about-pg .accordion .vision .content-items ol {
       text-align: center;
       list-style-type: "→ ";
       list-style-position: inside;
       width: 100%;
       padding-left: 0;
       margin: 30px auto; }
-      .about-pg .accordion .skills .content-items ul h2, .about-pg .accordion .skills .content-items ol h2, .about-pg .accordion .vision .content-items ul h2, .about-pg .accordion .vision .content-items ol h2 {
+      .about-pg .accordion .skills .content-items ul h2,
+      .about-pg .accordion .skills .content-items ol h2,
+      .about-pg .accordion .vision .content-items ul h2,
+      .about-pg .accordion .vision .content-items ol h2 {
         margin: 20px auto; }
-      .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+      .about-pg .accordion .skills .content-items ul li,
+      .about-pg .accordion .skills .content-items ol li,
+      .about-pg .accordion .vision .content-items ul li,
+      .about-pg .accordion .vision .content-items ol li {
         text-align: left;
-        max-width: calc(160px + .5vw);
+        max-width: calc(160px + 0.5vw);
         margin: 5px auto;
-        font-size: 16px; }
+        font-size: 15px; }
         @media screen and (min-width: 560px) {
-          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
-            font-size: calc(16px + 0.25vw); } }
+          .about-pg .accordion .skills .content-items ul li,
+          .about-pg .accordion .skills .content-items ol li,
+          .about-pg .accordion .vision .content-items ul li,
+          .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(15px + 0.25vw); } }
         @media screen and (min-width: 768px) {
-          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
-            font-size: calc(17px + 0.25vw); } }
+          .about-pg .accordion .skills .content-items ul li,
+          .about-pg .accordion .skills .content-items ol li,
+          .about-pg .accordion .vision .content-items ul li,
+          .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(16px + 0.25vw); } }
         @media screen and (min-width: 1248px) {
-          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
-            font-size: calc(19px + 0.25vw); } }
+          .about-pg .accordion .skills .content-items ul li,
+          .about-pg .accordion .skills .content-items ol li,
+          .about-pg .accordion .vision .content-items ul li,
+          .about-pg .accordion .vision .content-items ol li {
+            font-size: calc(18px + 0.25vw); } }
         @media screen and (min-width: 2000px) {
-          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
-            font-size: 23px; } }
+          .about-pg .accordion .skills .content-items ul li,
+          .about-pg .accordion .skills .content-items ol li,
+          .about-pg .accordion .vision .content-items ul li,
+          .about-pg .accordion .vision .content-items ol li {
+            font-size: 22px; } }
     @media only screen and (min-width: 768px) {
-      .about-pg .accordion .skills .content-items, .about-pg .accordion .vision .content-items {
+      .about-pg .accordion .skills .content-items,
+      .about-pg .accordion .vision .content-items {
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
         gap: 10px; }
-        .about-pg .accordion .skills .content-items ul, .about-pg .accordion .skills .content-items ol, .about-pg .accordion .vision .content-items ul, .about-pg .accordion .vision .content-items ol {
+        .about-pg .accordion .skills .content-items ul,
+        .about-pg .accordion .skills .content-items ol,
+        .about-pg .accordion .vision .content-items ul,
+        .about-pg .accordion .vision .content-items ol {
           width: 100%;
           text-align: center;
           margin: 20px auto; }
-          .about-pg .accordion .skills .content-items ul li, .about-pg .accordion .skills .content-items ol li, .about-pg .accordion .vision .content-items ul li, .about-pg .accordion .vision .content-items ol li {
+          .about-pg .accordion .skills .content-items ul li,
+          .about-pg .accordion .skills .content-items ol li,
+          .about-pg .accordion .vision .content-items ul li,
+          .about-pg .accordion .vision .content-items ol li {
             text-align: left;
-            max-width: calc(210px + .5vw);
+            max-width: calc(210px + 0.5vw);
             margin: auto; } }
 
-.filter-bytes, .filter-works {
+.filter-bytes,
+.filter-works {
   margin-bottom: 50px; }
 
-.works-list, .bytes-list {
+.works-list,
+.bytes-list {
   list-style-type: none;
   padding-left: 0; }
-  .works-list .filter-works .filter-btn, .bytes-list .filter-works .filter-btn {
+  .works-list .filter-works .filter-btn,
+  .bytes-list .filter-works .filter-btn {
     box-sizing: border-box;
     display: inline-block;
     color: #fafafa;
@@ -688,9 +762,9 @@
     border: 1px solid #646464;
     border-width: 1px 1px 2px 1px;
     border-radius: 3px;
-    font-family: MontSerrat,Tahoma,Arial,sans-serif;
+    font-family: MontSerrat, Tahoma, Arial, sans-serif;
     font-weight: 700;
-    font-size: .9em;
+    font-size: 0.9em;
     line-height: 1.5em;
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     margin: 3px;
@@ -699,18 +773,27 @@
     position: relative;
     overflow: hidden;
     padding: 6px 5px; }
-  .works-list .filter-works .selected, .bytes-list .filter-works .selected {
+  .works-list .filter-works .selected,
+  .bytes-list .filter-works .selected {
     background-color: #414141;
     border-color: #222222; }
-  .works-list .work-info, .works-list .byte-info, .bytes-list .work-info, .bytes-list .byte-info {
+  .works-list .work-info,
+  .works-list .byte-info,
+  .bytes-list .work-info,
+  .bytes-list .byte-info {
     list-style-type: none;
     padding-left: 0; }
-  .works-list .work-preview-1, .bytes-list .work-preview-1 {
+  .works-list .work-preview-1,
+  .bytes-list .work-preview-1 {
     width: 100%; }
-    .works-list .work-preview-1 img, .bytes-list .work-preview-1 img {
+    .works-list .work-preview-1 img,
+    .bytes-list .work-preview-1 img {
       width: 100%; }
 
-.contact-pg #form-content-tutor .form-prev, .contact-pg #form-content-tutor .form-submit, .contact-pg #form-content-hire .form-prev, .contact-pg #form-content-hire .form-submit {
+.contact-pg #form-content-tutor .form-prev,
+.contact-pg #form-content-tutor .form-submit,
+.contact-pg #form-content-hire .form-prev,
+.contact-pg #form-content-hire .form-submit {
   display: none; }
 
 .contact-pg .on {
@@ -759,19 +842,19 @@
         padding: 0 10% 7vh; } }
     .contact-pg .contact-forms .form-content h3 {
       font-weight: bold;
-      font-size: 17px; }
+      font-size: 15px; }
       @media screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(17px + 0.25vw); } }
+          font-size: calc(16px + 0.25vw); } }
       @media screen and (min-width: 768px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(18px + 0.25vw); } }
+          font-size: calc(17px + 0.25vw); } }
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: calc(20px + 0.25vw); } }
+          font-size: calc(19px + 0.25vw); } }
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content h3 {
-          font-size: 25px; } }
+          font-size: 24px; } }
     .contact-pg .contact-forms .form-content .form-controls {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -785,22 +868,23 @@
       background: #fafafa;
       border: 2px solid #3d3a3a;
       padding: 10px 35px;
-      margin: 6vh .1vw 0;
+      margin: 6vh 0.1vw 0;
       border-radius: 5px;
-      opacity: .9;
+      opacity: 0.9;
+      font-weight: normal;
       font-size: 17px; }
       @media screen and (min-width: 560px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(17px + 0.25vw); } }
+          font-size: calc(18px + 0.5vw); } }
       @media screen and (min-width: 768px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(18px + 0.25vw); } }
+          font-size: calc(19px + 0.5vw); } }
       @media screen and (min-width: 1248px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: calc(20px + 0.25vw); } }
+          font-size: calc(20px + 0.5vw); } }
       @media screen and (min-width: 2000px) {
         .contact-pg .contact-forms .form-content button {
-          font-size: 25px; } }
+          font-size: 26px; } }
       .contact-pg .contact-forms .form-content button:hover, .contact-pg .contact-forms .form-content button:active {
         opacity: 1; }
       .contact-pg .contact-forms .form-content button:active {
@@ -808,7 +892,8 @@
         -webkit-transform: scale(0.96);
         -moz-transform: scale(0.96);
         transform: scale(0.96); }
-    .contact-pg .contact-forms .form-content .form-submit, .contact-pg .contact-forms .form-content .form-next {
+    .contact-pg .contact-forms .form-content .form-submit,
+    .contact-pg .contact-forms .form-content .form-next {
       background: #3d3a3a;
       color: #fafafa; }
     .contact-pg .contact-forms .form-content form {
@@ -823,19 +908,19 @@
           font-weight: normal;
           margin: 0 auto 35px;
           grid-area: legend;
-          font-size: 18px; }
+          font-size: 17px; }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(21px + 0.5vw); } }
+              font-size: calc(18px + 0.5vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(21px + 0.5vw); } }
+              font-size: calc(19px + 0.5vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: calc(22px + 0.5vw); } }
+              font-size: calc(20px + 0.5vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset legend {
-              font-size: 28px; } }
+              font-size: 26px; } }
         .contact-pg .contact-forms .form-content form fieldset label {
           display: inline-block;
           width: 100%;
@@ -843,7 +928,7 @@
           text-align: left;
           position: relative;
           font-family: Lato, Helvetica, Arial, sans-serif;
-          font-size: 17px; }
+          font-size: 15px; }
           .contact-pg .contact-forms .form-content form fieldset label button {
             text-align: center;
             display: inline-block;
@@ -870,19 +955,19 @@
             content: "Optional";
             color: #008535;
             display: block;
-            font-size: 16px; }
+            font-size: 15px; }
             @media screen and (min-width: 560px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(16px + 0.25vw); } }
+                font-size: calc(15px + 0.25vw); } }
             @media screen and (min-width: 768px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(17px + 0.25vw); } }
+                font-size: calc(16px + 0.25vw); } }
             @media screen and (min-width: 1248px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: calc(19px + 0.25vw); } }
+                font-size: calc(18px + 0.25vw); } }
             @media screen and (min-width: 2000px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
-                font-size: 23px; } }
+                font-size: 22px; } }
             @media only screen and (min-width: 480px) {
               .contact-pg .contact-forms .form-content form fieldset label.optional::after {
                 display: inline;
@@ -890,16 +975,16 @@
                 right: 0; } }
           @media screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(17px + 0.25vw); } }
+              font-size: calc(16px + 0.25vw); } }
           @media screen and (min-width: 768px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(18px + 0.25vw); } }
+              font-size: calc(17px + 0.25vw); } }
           @media screen and (min-width: 1248px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: calc(20px + 0.25vw); } }
+              font-size: calc(19px + 0.25vw); } }
           @media screen and (min-width: 2000px) {
             .contact-pg .contact-forms .form-content form fieldset label {
-              font-size: 25px; } }
+              font-size: 24px; } }
           @media only screen and (min-width: 560px) {
             .contact-pg .contact-forms .form-content form fieldset label {
               width: 90%;
@@ -921,7 +1006,8 @@
               grid-template-columns: 1fr 1fr;
               -ms-grid-rows: auto 1vw auto;
               grid-template-areas: "l1 l2" "i1 i2"; }
-              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input, .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input,
+              .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
                 width: 100%;
                 margin: auto; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm label {
@@ -934,38 +1020,56 @@
                 grid-area: i1; }
               .contact-pg .contact-forms .form-content form fieldset .form-wrapper-sm input:last-child {
                 grid-area: i2; } }
-        .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+        .contact-pg .contact-forms .form-content form fieldset input,
+        .contact-pg .contact-forms .form-content form fieldset select,
+        .contact-pg .contact-forms .form-content form fieldset textarea {
           width: 100%;
           border: 1px solid #3d3a3a;
           padding: 10px;
           border-radius: 5px;
           margin-bottom: 10px;
-          font-size: 16px; }
-          .contact-pg .contact-forms .form-content form fieldset input:focus, .contact-pg .contact-forms .form-content form fieldset select:focus, .contact-pg .contact-forms .form-content form fieldset textarea:focus {
+          font-size: 15px; }
+          .contact-pg .contact-forms .form-content form fieldset input:focus,
+          .contact-pg .contact-forms .form-content form fieldset select:focus,
+          .contact-pg .contact-forms .form-content form fieldset textarea:focus {
             -webkit-tap-highlight-color: #0095eb;
             color: #3d3a3a;
             border: 2px solid #0095eb;
             padding: 14px; }
           @media screen and (min-width: 560px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(16px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(15px + 0.25vw); } }
           @media screen and (min-width: 768px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(17px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(16px + 0.25vw); } }
           @media screen and (min-width: 1248px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(19px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(18px + 0.25vw); } }
           @media screen and (min-width: 2000px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: 23px; } }
-          .contact-pg .contact-forms .form-content form fieldset input:last-child, .contact-pg .contact-forms .form-content form fieldset select:last-child, .contact-pg .contact-forms .form-content form fieldset textarea:last-child {
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: 22px; } }
+          .contact-pg .contact-forms .form-content form fieldset input:last-child,
+          .contact-pg .contact-forms .form-content form fieldset select:last-child,
+          .contact-pg .contact-forms .form-content form fieldset textarea:last-child {
             margin-bottom: 0; }
           @media only screen and (min-width: 560px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
               width: 90%;
               padding: 12px; } }
           @media only screen and (min-width: 1024px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset select, .contact-pg .contact-forms .form-content form fieldset textarea {
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset select,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
               width: 75%;
               padding: 15px; } }
         .contact-pg .contact-forms .form-content form fieldset select {
@@ -974,22 +1078,27 @@
           cursor: pointer; }
           .contact-pg .contact-forms .form-content form fieldset select:focus {
             color: #fafafa; }
-        .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
+        .contact-pg .contact-forms .form-content form fieldset input,
+        .contact-pg .contact-forms .form-content form fieldset textarea {
           background: #fafafa;
           color: #575353;
-          font-size: 16px; }
+          font-size: 15px; }
           @media screen and (min-width: 560px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(16px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(15px + 0.25vw); } }
           @media screen and (min-width: 768px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(17px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(16px + 0.25vw); } }
           @media screen and (min-width: 1248px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: calc(19px + 0.25vw); } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: calc(18px + 0.25vw); } }
           @media screen and (min-width: 2000px) {
-            .contact-pg .contact-forms .form-content form fieldset input, .contact-pg .contact-forms .form-content form fieldset textarea {
-              font-size: 23px; } }
+            .contact-pg .contact-forms .form-content form fieldset input,
+            .contact-pg .contact-forms .form-content form fieldset textarea {
+              font-size: 22px; } }
         .contact-pg .contact-forms .form-content form fieldset textarea {
           min-height: 200px;
           font-family: Lato, Helvetica, Arial, sans-serif; }
@@ -1017,7 +1126,7 @@
         left: calc(100% / 6);
         height: 4px;
         top: 14px;
-        z-index: .8;
+        z-index: 0.8;
         background: #8b8585; }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress::before {
@@ -1030,7 +1139,7 @@
         right: calc(100% / 6);
         height: 4px;
         top: 14px;
-        z-index: .8;
+        z-index: 0.8;
         background: #8b8585; }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress::after {
@@ -1054,21 +1163,21 @@
         border: 2px solid #8b8585;
         color: #fafafa;
         border-radius: 50%;
-        font-size: 17px; }
+        font-size: 15px; }
         .contact-pg .contact-forms .form-content .form-progress .step path {
           fill: #fafafa; }
         @media screen and (min-width: 560px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(17px + 0.25vw); } }
+            font-size: calc(16px + 0.25vw); } }
         @media screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(18px + 0.25vw); } }
+            font-size: calc(17px + 0.25vw); } }
         @media screen and (min-width: 1248px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: calc(20px + 0.25vw); } }
+            font-size: calc(19px + 0.25vw); } }
         @media screen and (min-width: 2000px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
-            font-size: 25px; } }
+            font-size: 24px; } }
         @media only screen and (min-width: 768px) {
           .contact-pg .contact-forms .form-content .form-progress .step {
             width: 44px;
@@ -1082,7 +1191,9 @@
       background: #3d3a3a; }
     .contact-pg .contact-forms .form-content .form-progress-end::after {
       background: #3d3a3a; }
-    .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+    .contact-pg .contact-forms .form-content .gen-status,
+    .contact-pg .contact-forms .form-content .tutor-status,
+    .contact-pg .contact-forms .form-content .hire-status {
       height: auto;
       padding: 5px;
       width: 85vw;
@@ -1100,7 +1211,9 @@
       top: 0px;
       left: 7.5vw;
       z-index: 3; }
-      .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
+      .contact-pg .contact-forms .form-content .gen-status::after,
+      .contact-pg .contact-forms .form-content .tutor-status::after,
+      .contact-pg .contact-forms .form-content .hire-status::after {
         content: "x";
         cursor: pointer;
         position: absolute;
@@ -1109,40 +1222,63 @@
         top: 2px;
         right: 5px;
         color: #979292;
-        font-size: 16px; }
+        font-size: 15px; }
         @media screen and (min-width: 560px) {
-          .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(16px + 0.25vw); } }
+          .contact-pg .contact-forms .form-content .gen-status::after,
+          .contact-pg .contact-forms .form-content .tutor-status::after,
+          .contact-pg .contact-forms .form-content .hire-status::after {
+            font-size: calc(15px + 0.25vw); } }
         @media screen and (min-width: 768px) {
-          .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(17px + 0.25vw); } }
+          .contact-pg .contact-forms .form-content .gen-status::after,
+          .contact-pg .contact-forms .form-content .tutor-status::after,
+          .contact-pg .contact-forms .form-content .hire-status::after {
+            font-size: calc(16px + 0.25vw); } }
         @media screen and (min-width: 1248px) {
-          .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: calc(19px + 0.25vw); } }
+          .contact-pg .contact-forms .form-content .gen-status::after,
+          .contact-pg .contact-forms .form-content .tutor-status::after,
+          .contact-pg .contact-forms .form-content .hire-status::after {
+            font-size: calc(18px + 0.25vw); } }
         @media screen and (min-width: 2000px) {
-          .contact-pg .contact-forms .form-content .gen-status::after, .contact-pg .contact-forms .form-content .tutor-status::after, .contact-pg .contact-forms .form-content .hire-status::after {
-            font-size: 23px; } }
+          .contact-pg .contact-forms .form-content .gen-status::after,
+          .contact-pg .contact-forms .form-content .tutor-status::after,
+          .contact-pg .contact-forms .form-content .hire-status::after {
+            font-size: 22px; } }
       @media only screen and (min-width: 560px) {
-        .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+        .contact-pg .contact-forms .form-content .gen-status,
+        .contact-pg .contact-forms .form-content .tutor-status,
+        .contact-pg .contact-forms .form-content .hire-status {
           width: 80vw;
           left: 10vw; } }
       @media only screen and (min-width: 1024px) {
-        .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+        .contact-pg .contact-forms .form-content .gen-status,
+        .contact-pg .contact-forms .form-content .tutor-status,
+        .contact-pg .contact-forms .form-content .hire-status {
           width: 60vw;
           left: 20vw; } }
       @media only screen and (min-width: 1248px) {
-        .contact-pg .contact-forms .form-content .gen-status, .contact-pg .contact-forms .form-content .tutor-status, .contact-pg .contact-forms .form-content .hire-status {
+        .contact-pg .contact-forms .form-content .gen-status,
+        .contact-pg .contact-forms .form-content .tutor-status,
+        .contact-pg .contact-forms .form-content .hire-status {
           width: 700px;
           left: calc(50vw - 350px); } }
-      .contact-pg .contact-forms .form-content .gen-status:empty, .contact-pg .contact-forms .form-content .tutor-status:empty, .contact-pg .contact-forms .form-content .hire-status:empty {
+      .contact-pg .contact-forms .form-content .gen-status:empty,
+      .contact-pg .contact-forms .form-content .tutor-status:empty,
+      .contact-pg .contact-forms .form-content .hire-status:empty {
         height: 0;
         width: 0;
         margin: 0;
         padding: 0;
         border: none; }
-      .contact-pg .contact-forms .form-content .gen-status:empty::after, .contact-pg .contact-forms .form-content .tutor-status:empty::after, .contact-pg .contact-forms .form-content .hire-status:empty::after {
+      .contact-pg .contact-forms .form-content .gen-status:empty::after,
+      .contact-pg .contact-forms .form-content .tutor-status:empty::after,
+      .contact-pg .contact-forms .form-content .hire-status:empty::after {
         display: none; }
-      .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
+      .contact-pg .contact-forms .form-content .gen-status .success,
+      .contact-pg .contact-forms .form-content .gen-status .err,
+      .contact-pg .contact-forms .form-content .tutor-status .success,
+      .contact-pg .contact-forms .form-content .tutor-status .err,
+      .contact-pg .contact-forms .form-content .hire-status .success,
+      .contact-pg .contact-forms .form-content .hire-status .err {
         font-size: 30px;
         height: 40px;
         width: 40px;
@@ -1159,41 +1295,79 @@
         margin: auto 8px;
         border: 1px solid rgba(0, 0, 0, 0);
         border-radius: 50%; }
-        .contact-pg .contact-forms .form-content .gen-status .success path, .contact-pg .contact-forms .form-content .gen-status .err path, .contact-pg .contact-forms .form-content .tutor-status .success path, .contact-pg .contact-forms .form-content .tutor-status .err path, .contact-pg .contact-forms .form-content .hire-status .success path, .contact-pg .contact-forms .form-content .hire-status .err path {
+        .contact-pg .contact-forms .form-content .gen-status .success path,
+        .contact-pg .contact-forms .form-content .gen-status .err path,
+        .contact-pg .contact-forms .form-content .tutor-status .success path,
+        .contact-pg .contact-forms .form-content .tutor-status .err path,
+        .contact-pg .contact-forms .form-content .hire-status .success path,
+        .contact-pg .contact-forms .form-content .hire-status .err path {
           fill: #fafafa; }
         @media only screen and (min-width: 560px) {
-          .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
+          .contact-pg .contact-forms .form-content .gen-status .success,
+          .contact-pg .contact-forms .form-content .gen-status .err,
+          .contact-pg .contact-forms .form-content .tutor-status .success,
+          .contact-pg .contact-forms .form-content .tutor-status .err,
+          .contact-pg .contact-forms .form-content .hire-status .success,
+          .contact-pg .contact-forms .form-content .hire-status .err {
             height: 45px;
             width: 45px;
             margin: auto 12px; }
-            .contact-pg .contact-forms .form-content .gen-status .success svg, .contact-pg .contact-forms .form-content .gen-status .err svg, .contact-pg .contact-forms .form-content .tutor-status .success svg, .contact-pg .contact-forms .form-content .tutor-status .err svg, .contact-pg .contact-forms .form-content .hire-status .success svg, .contact-pg .contact-forms .form-content .hire-status .err svg {
+            .contact-pg .contact-forms .form-content .gen-status .success svg,
+            .contact-pg .contact-forms .form-content .gen-status .err svg,
+            .contact-pg .contact-forms .form-content .tutor-status .success svg,
+            .contact-pg .contact-forms .form-content .tutor-status .err svg,
+            .contact-pg .contact-forms .form-content .hire-status .success svg,
+            .contact-pg .contact-forms .form-content .hire-status .err svg {
               width: 28px;
               height: 28px; } }
         @media only screen and (min-width: 1024px) {
-          .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .success, .contact-pg .contact-forms .form-content .hire-status .err {
+          .contact-pg .contact-forms .form-content .gen-status .success,
+          .contact-pg .contact-forms .form-content .gen-status .err,
+          .contact-pg .contact-forms .form-content .tutor-status .success,
+          .contact-pg .contact-forms .form-content .tutor-status .err,
+          .contact-pg .contact-forms .form-content .hire-status .success,
+          .contact-pg .contact-forms .form-content .hire-status .err {
             height: 53px;
             width: 53px;
             margin: auto 15px; }
-            .contact-pg .contact-forms .form-content .gen-status .success svg, .contact-pg .contact-forms .form-content .gen-status .err svg, .contact-pg .contact-forms .form-content .tutor-status .success svg, .contact-pg .contact-forms .form-content .tutor-status .err svg, .contact-pg .contact-forms .form-content .hire-status .success svg, .contact-pg .contact-forms .form-content .hire-status .err svg {
+            .contact-pg .contact-forms .form-content .gen-status .success svg,
+            .contact-pg .contact-forms .form-content .gen-status .err svg,
+            .contact-pg .contact-forms .form-content .tutor-status .success svg,
+            .contact-pg .contact-forms .form-content .tutor-status .err svg,
+            .contact-pg .contact-forms .form-content .hire-status .success svg,
+            .contact-pg .contact-forms .form-content .hire-status .err svg {
               width: 31px;
               height: 31px; } }
-      .contact-pg .contact-forms .form-content .gen-status .msg, .contact-pg .contact-forms .form-content .tutor-status .msg, .contact-pg .contact-forms .form-content .hire-status .msg {
+      .contact-pg .contact-forms .form-content .gen-status .msg,
+      .contact-pg .contact-forms .form-content .tutor-status .msg,
+      .contact-pg .contact-forms .form-content .hire-status .msg {
         justify-self: center;
         text-align: left;
         max-width: calc(95% - 75px); }
-        .contact-pg .contact-forms .form-content .gen-status .msg p, .contact-pg .contact-forms .form-content .tutor-status .msg p, .contact-pg .contact-forms .form-content .hire-status .msg p {
+        .contact-pg .contact-forms .form-content .gen-status .msg p,
+        .contact-pg .contact-forms .form-content .tutor-status .msg p,
+        .contact-pg .contact-forms .form-content .hire-status .msg p {
           margin: 0; }
-        .contact-pg .contact-forms .form-content .gen-status .msg p:first-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child, .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
+        .contact-pg .contact-forms .form-content .gen-status .msg p:first-child,
+        .contact-pg .contact-forms .form-content .tutor-status .msg p:first-child,
+        .contact-pg .contact-forms .form-content .hire-status .msg p:first-child {
           text-transform: uppercase;
           letter-spacing: 1.5px; }
-        .contact-pg .contact-forms .form-content .gen-status .msg p:last-child, .contact-pg .contact-forms .form-content .tutor-status .msg p:last-child, .contact-pg .contact-forms .form-content .hire-status .msg p:last-child {
+        .contact-pg .contact-forms .form-content .gen-status .msg p:last-child,
+        .contact-pg .contact-forms .form-content .tutor-status .msg p:last-child,
+        .contact-pg .contact-forms .form-content .hire-status .msg p:last-child {
           color: #3d3a3a;
-          opacity: .8; }
-      .contact-pg .contact-forms .form-content .gen-status .success, .contact-pg .contact-forms .form-content .tutor-status .success, .contact-pg .contact-forms .form-content .hire-status .success {
+          opacity: 0.8; }
+      .contact-pg .contact-forms .form-content .gen-status .success,
+      .contact-pg .contact-forms .form-content .tutor-status .success,
+      .contact-pg .contact-forms .form-content .hire-status .success {
         background: #00eb5e; }
-      .contact-pg .contact-forms .form-content .gen-status .err, .contact-pg .contact-forms .form-content .tutor-status .err, .contact-pg .contact-forms .form-content .hire-status .err {
+      .contact-pg .contact-forms .form-content .gen-status .err,
+      .contact-pg .contact-forms .form-content .tutor-status .err,
+      .contact-pg .contact-forms .form-content .hire-status .err {
         background: #ff5a91; }
-    .contact-pg .contact-forms .form-content .success-status, .contact-pg .contact-forms .form-content .err-status {
+    .contact-pg .contact-forms .form-content .success-status,
+    .contact-pg .contact-forms .form-content .err-status {
       -o-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
       -moz-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
       -webkit-animation: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -1224,22 +1398,22 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-size: 18px; }
+    font-size: 17px; }
     .contact-pg .contact-forms .form-label:nth-child(2) {
       border-top: 2px solid #a49f9f;
       border-radius: 8px 8px 0 0; }
     @media screen and (min-width: 560px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(18px + 0.5vw); } }
     @media screen and (min-width: 768px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(19px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
       .contact-pg .contact-forms .form-label {
-        font-size: calc(22px + 0.5vw); } }
+        font-size: calc(20px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
       .contact-pg .contact-forms .form-label {
-        font-size: 28px; } }
+        font-size: 26px; } }
     @media only screen and (min-width: 1024px) {
       .contact-pg .contact-forms .form-label {
         -webkit-box-flex: 1;
@@ -1248,7 +1422,7 @@
         padding: 1.5% 4%;
         width: calc(100% / 3);
         position: relative;
-        left: 1px;
+        left: 0px;
         border-radius: 8px 8px 0 0;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1286,7 +1460,7 @@
           .contact-pg .contact-forms input[type="radio"]:checked + label.tutor-label::after {
             bottom: 0; } }
     .contact-pg .contact-forms input[type="radio"]:checked + label span:after {
-      content: '+'; }
+      content: "+"; }
     .contact-pg .contact-forms input[type="radio"]:checked + label + .contact-forms {
       border: none; }
     .contact-pg .contact-forms input[type="radio"]:checked + label + .form-content {

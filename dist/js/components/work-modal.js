@@ -8,6 +8,7 @@ h1 {
   color: #f7f7f7;
   margin-top: 0;
   margin-bottom: 60px;
+  font-weight: normal;
   font-size: calc(20px + 2.3vw);
 }
 h2 {

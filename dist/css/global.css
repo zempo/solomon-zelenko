@@ -48,13 +48,20 @@ main .btn-back svg, a {
 * {
   box-sizing: border-box; }
 
-p, a, figcaption, h3, input, textarea, select {
+p,
+a,
+figcaption,
+h3,
+input,
+textarea,
+select {
   font-family: Lato, Helvetica, Arial, sans-serif; }
 
 section h2 {
   font-family: Lato, Helvetica, Arial, sans-serif; }
 
-button, footer h3 {
+button,
+footer h3 {
   font-family: "SpartanMB"; }
 
 body,
@@ -68,61 +75,61 @@ main {
   background: #fafafa; }
   body h1,
   main h1 {
-    font-size: 24px; }
+    font-size: 20px; }
     @media screen and (min-width: 560px) {
       body h1,
       main h1 {
-        font-size: calc(27px + 0.5vw); } }
+        font-size: calc(25px + 0.5vw); } }
     @media screen and (min-width: 768px) {
       body h1,
       main h1 {
-        font-size: calc(27px + 1vw); } }
+        font-size: calc(25px + 1vw); } }
     @media screen and (min-width: 1248px) {
       body h1,
       main h1 {
-        font-size: calc(30px + 1vw); } }
+        font-size: calc(28px + 1vw); } }
     @media screen and (min-width: 2000px) {
       body h1,
       main h1 {
-        font-size: calc(44px + 0.5vw); } }
+        font-size: calc(35px + 0.5vw); } }
   body h2,
   main h2 {
-    font-size: 18px; }
+    font-size: 17px; }
     @media screen and (min-width: 560px) {
       body h2,
       main h2 {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(18px + 0.5vw); } }
     @media screen and (min-width: 768px) {
       body h2,
       main h2 {
-        font-size: calc(21px + 0.5vw); } }
+        font-size: calc(19px + 0.5vw); } }
     @media screen and (min-width: 1248px) {
       body h2,
       main h2 {
-        font-size: calc(22px + 0.5vw); } }
+        font-size: calc(20px + 0.5vw); } }
     @media screen and (min-width: 2000px) {
       body h2,
       main h2 {
-        font-size: 28px; } }
+        font-size: 26px; } }
   body p,
   main p {
-    font-size: 16px; }
+    font-size: 15px; }
     @media screen and (min-width: 560px) {
+      body p,
+      main p {
+        font-size: calc(15px + 0.25vw); } }
+    @media screen and (min-width: 768px) {
       body p,
       main p {
         font-size: calc(16px + 0.25vw); } }
-    @media screen and (min-width: 768px) {
-      body p,
-      main p {
-        font-size: calc(17px + 0.25vw); } }
     @media screen and (min-width: 1248px) {
       body p,
       main p {
-        font-size: calc(19px + 0.25vw); } }
+        font-size: calc(18px + 0.25vw); } }
     @media screen and (min-width: 2000px) {
       body p,
       main p {
-        font-size: 23px; } }
+        font-size: 22px; } }
   body .btn-fwd,
   main .btn-fwd {
     right: calc(15px + 3vw); }
@@ -145,9 +152,9 @@ main {
     display: none;
     font-size: 0;
     padding: 0;
-    top: calc(50vh - 30px - .5vw);
-    width: calc(65px + .25vw);
-    height: calc(65px + .25vw);
+    top: calc(50vh - 30px - 0.5vw);
+    width: calc(60px + 0.25vw);
+    height: calc(60px + 0.25vw);
     z-index: 2;
     outline: none;
     background: black;
@@ -164,7 +171,7 @@ main {
       body .btn-back,
       main .btn-fwd,
       main .btn-back {
-        max-width: calc(65px + .25vw); } }
+        max-width: calc(62px + 0.25vw); } }
     body .btn-fwd svg,
     body .btn-back svg,
     main .btn-fwd svg,
@@ -172,14 +179,16 @@ main {
       background: #3d3a3a;
       border: 0px solid rgba(150, 150, 150, 0);
       border-radius: 50%;
-      width: calc(65px + .25vw);
-      height: calc(65px + .25vw); }
+      width: calc(55px + 0.25vw);
+      height: calc(55px + 0.25vw); }
     body .btn-fwd path,
     body .btn-back path,
     main .btn-fwd path,
     main .btn-back path {
       fill: white; }
-    body .btn-fwd:active:not([disabled]) svg, body .btn-fwd:active:not([disabled]) path, body .btn-fwd:hover:not([disabled]) svg, body .btn-fwd:hover:not([disabled]) path,
+    body .btn-fwd:active:not([disabled]) svg,
+    body .btn-fwd:active:not([disabled]) path, body .btn-fwd:hover:not([disabled]) svg,
+    body .btn-fwd:hover:not([disabled]) path,
     body .btn-back:active:not([disabled]) svg,
     body .btn-back:active:not([disabled]) path,
     body .btn-back:hover:not([disabled]) svg,
@@ -225,25 +234,40 @@ footer {
   color: #fafafa;
   margin-top: 200px; }
   footer h2 {
-    font-weight: normal; }
-  footer p {
-    font-weight: 400;
-    font-style: italic;
-    color: #e1e1e1;
-    font-size: 17px; }
+    font-weight: normal;
+    font-size: 20px;
+    margin: 20px auto 0px;
+    word-spacing: 10px; }
     @media screen and (min-width: 560px) {
-      footer p {
-        font-size: calc(17px + 0.25vw); } }
+      footer h2 {
+        font-size: calc(25px + 0.5vw); } }
     @media screen and (min-width: 768px) {
-      footer p {
-        font-size: calc(18px + 0.25vw); } }
+      footer h2 {
+        font-size: calc(25px + 1vw); } }
     @media screen and (min-width: 1248px) {
-      footer p {
-        font-size: calc(20px + 0.25vw); } }
+      footer h2 {
+        font-size: calc(28px + 1vw); } }
     @media screen and (min-width: 2000px) {
-      footer p {
-        font-size: 25px; } }
-    footer p:last-child {
+      footer h2 {
+        font-size: calc(35px + 0.5vw); } }
+  footer h3 {
+    font-weight: 300;
+    font-style: italic;
+    color: #c7c7c7;
+    font-size: 15px; }
+    @media screen and (min-width: 560px) {
+      footer h3 {
+        font-size: calc(15px + 0.25vw); } }
+    @media screen and (min-width: 768px) {
+      footer h3 {
+        font-size: calc(16px + 0.25vw); } }
+    @media screen and (min-width: 1248px) {
+      footer h3 {
+        font-size: calc(18px + 0.25vw); } }
+    @media screen and (min-width: 2000px) {
+      footer h3 {
+        font-size: 22px; } }
+    footer h3:last-child {
       padding-bottom: 140px; }
   footer .icons-list {
     width: 100%;
@@ -260,7 +284,7 @@ footer {
         width: 70%;
         margin-left: 15%; } }
     footer .icons-list img {
-      width: calc(35px + 1.8vw);
+      width: calc(35px + 1.3vw);
       text-decoration: none; }
 
 a {

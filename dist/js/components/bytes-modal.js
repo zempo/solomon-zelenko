@@ -7,6 +7,7 @@ section p, li {
 h1 {
   color: #f7f7f7;
   margin-top: 0;
+  font-weight: normal;
   margin-bottom: 80px;
   font-size: calc(20px + 2.3vw);
 }
@@ -15,7 +16,7 @@ h2 {
 }
 h2 a {
   color: #f7f7f7;
-  font-weight: bold;
+  font-weight: normal;
   text-decoration: none;
   background: #3d3a3a;
   padding: 10px 20px;
