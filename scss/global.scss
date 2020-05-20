@@ -61,7 +61,7 @@ main {
     height: calc(60px + 0.25vw);
     z-index: 2;
     outline: none;
-    background: rgb(0, 0, 0);
+    background: map-get($colors, dark-2);
     border: 1px solid map-get($colors, dark-2);
     border-radius: 50%;
     @include mq("tablet-wide") {
@@ -110,7 +110,7 @@ footer {
   text-align: center;
   background: map-get($colors, dark-2);
   color: map-get($colors, app-white);
-  margin-top: 200px;
+  margin-top: 80px;
   h2 {
     font-weight: normal;
     @include font-size($h1-font-sizes);
@@ -128,8 +128,8 @@ footer {
   }
   .icons-list {
     width: 100%;
-    padding: 100px 0 60px;
     list-style-type: none;
+    padding: 30px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -137,6 +137,7 @@ footer {
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
     @include mq("tablet") {
+      padding: 100px 0 60px;
       width: 70%;
       margin-left: 15%;
     }

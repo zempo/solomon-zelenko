@@ -38,7 +38,7 @@
   -moz-animation: fadeIn 0.8s;
   -webkit-animation: fadeIn 0.8s;
   animation: fadeIn 0.8s;
-  padding: 0px 5vw 100px;
+  padding: 0px 5vw 50px;
   margin: 0 auto; }
   .route h1::selection,
   .route h2::selection,
@@ -129,7 +129,7 @@
 .home-pg .min-txt {
   font-family: "Indie Flower", cursive;
   font-weight: 300;
-  font-size: 20px; }
+  font-size: 23px; }
   @media screen and (min-width: 560px) {
     .home-pg .min-txt {
       font-size: calc(25px + 0.5vw); } }
