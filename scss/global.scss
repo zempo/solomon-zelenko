@@ -64,10 +64,8 @@ main {
     background: map-get($colors, dark-2);
     border: 1px solid map-get($colors, dark-2);
     border-radius: 50%;
-    @include mq("tablet-wide") {
+    @include mq("tablet") {
       display: block;
-    }
-    @include mq("tablet-wide") {
       max-width: calc(62px + 0.25vw);
     }
     svg {

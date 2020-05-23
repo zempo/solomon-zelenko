@@ -160,17 +160,12 @@ main {
     background: #3d3a3a;
     border: 1px solid #3d3a3a;
     border-radius: 50%; }
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 768px) {
       body .btn-fwd,
       body .btn-back,
       main .btn-fwd,
       main .btn-back {
-        display: block; } }
-    @media only screen and (min-width: 1024px) {
-      body .btn-fwd,
-      body .btn-back,
-      main .btn-fwd,
-      main .btn-back {
+        display: block;
         max-width: calc(62px + 0.25vw); } }
     body .btn-fwd svg,
     body .btn-back svg,
