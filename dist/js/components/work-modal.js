@@ -185,8 +185,8 @@ button {
   padding: 0;
   position: fixed; 
   bottom: calc(50vh - .5vw - 74px);
-  width: calc(60px + 1vw);
-  height: calc(60px + 1vw);
+  width: calc(60px + 0.25vw);
+  height: calc(60px + 0.25vw);
   z-index: 6;
   outline: none;
   background: #f7f7f7;
@@ -206,8 +206,8 @@ opacity: 1;
 transition: all 0.4s cubic-bezier(0.75, 0, 0.125, 1);
 }
 .modal-fwd svg, .modal-back svg {
-  width: calc(60px + 1vw);
-  height: calc(60px + 1vw); }
+  width: calc(55px + 0.25vw);
+  height: calc(55px + 0.25vw); }
   .modal-back {
     left: calc(5px + 1vw); } 
   .modal-fwd {
