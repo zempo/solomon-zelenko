@@ -111,13 +111,12 @@ footer {
   margin-top: 80px;
   h2 {
     font-weight: normal;
-    @include font-size($h1-font-sizes);
+    @include font-size($h2-font-sizes);
     margin: 20px auto 0px;
     word-spacing: 10px;
   }
   h3 {
     font-weight: 300;
-    font-style: italic;
     color: darken(map-get($colors, app-white), 20%);
     @include font-size($p-font-sizes);
     &:last-child {

@@ -1,6 +1,7 @@
 // GLOBAL REFS
 const App = document.getElementById("container");
 const loader = document.getElementById("loading");
+let loading = false;
 const backBtn = document.querySelector(".btn-back");
 const frontBtn = document.querySelector(".btn-fwd");
 const navImgs = document.querySelectorAll("nav a img");
@@ -672,7 +673,6 @@ class Router {
 
     if (contentURI === "routes/.html") {
       fetch("routes/home.html")
-        // to-do: event is also firing as a hashchange, make sure to account for this
         .then((r) => r.text())
         .then((content) => {
           const slot = document.getElementById("container");
