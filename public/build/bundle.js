@@ -43,9 +43,6 @@ var app = (function () {
     function text(data) {
         return document.createTextNode(data);
     }
-    function space() {
-        return text(' ');
-    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -318,11 +315,6 @@ var app = (function () {
     	let t0;
     	let t1;
     	let t2;
-    	let t3;
-    	let p;
-    	let t4;
-    	let a;
-    	let t6;
 
     	const block = {
     		c: function create() {
@@ -331,19 +323,10 @@ var app = (function () {
     			t0 = text("Hello ");
     			t1 = text(/*name*/ ctx[0]);
     			t2 = text("!");
-    			t3 = space();
-    			p = element("p");
-    			t4 = text("Visit the\n    ");
-    			a = element("a");
-    			a.textContent = "Svelte tutorial";
-    			t6 = text("\n    to learn how to build Svelte apps.");
-    			attr_dev(h1, "class", "svelte-enbr97");
-    			add_location(h1, file, 21, 2, 382);
-    			attr_dev(a, "href", "https://svelte.dev/tutorial");
-    			add_location(a, file, 24, 4, 429);
-    			add_location(p, file, 22, 2, 407);
-    			attr_dev(main, "class", "svelte-enbr97");
-    			add_location(main, file, 20, 0, 373);
+    			attr_dev(h1, "class", "svelte-1o08hki");
+    			add_location(h1, file, 20, 2, 411);
+    			attr_dev(main, "class", "svelte-1o08hki");
+    			add_location(main, file, 19, 0, 402);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -354,11 +337,6 @@ var app = (function () {
     			append_dev(h1, t0);
     			append_dev(h1, t1);
     			append_dev(h1, t2);
-    			append_dev(main, t3);
-    			append_dev(main, p);
-    			append_dev(p, t4);
-    			append_dev(p, a);
-    			append_dev(p, t6);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);

@@ -15,21 +15,13 @@
       font-family: Inter, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
       font-size: 4em;
       font-weight: 700;
-    }
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
+      @include mq("tablet") {
+        color: map-get($colors, success);
+      }
     }
   }
 </style>
 
 <main>
   <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
 </main>
