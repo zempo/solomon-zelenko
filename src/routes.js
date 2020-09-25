@@ -3,7 +3,7 @@ import { wrap } from "svelte-spa-router/wrap";
 import Home from "./routes/Home.svelte";
 import About from "./routes/About.svelte";
 import Loading from "./tools/utils/Loading.svelte";
-import NotFound from "./routes/NotFound.svelte";
+import NotFound from "./tools/utils/NotFound.svelte";
 
 // <!-- to-do: add pulsing logo loader,
 // check if it takes too long
@@ -34,7 +34,7 @@ export default {
   // wrap bytes and snippets
   "/blog/:slug": wrap({
     asyncComponent: () =>
-      import("./routes/Bytes.svelte").then((component) => {
+      import("./routes/Blog.svelte").then((component) => {
         return new Promise((resolve) => {
           // Wait .5 seconds before returning
           setTimeout(() => resolve(component), 500);

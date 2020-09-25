@@ -23,5 +23,6 @@
   </nav>
 </header>
 <main>
-  <Router {routes} restoreScrollState={true} />
+  <!-- restoreScrollState={true} -->
+  <Router {routes} />
 </main>

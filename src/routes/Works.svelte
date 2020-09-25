@@ -4,8 +4,8 @@
 </script>
 
 <style type="text/scss">
-  @import "scss/config";
-  @import "scss/Main.scss";
+  @import "../scss/config";
+  @import "../scss/Main.scss";
 </style>
 
 <svelte:head>
