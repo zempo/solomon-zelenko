@@ -1,0 +1,36 @@
+@import "config";
+
+h1 {
+  font-family: $fontPrimary;
+  @include font-size($h1-font-sizes);
+}
+h2 {
+  font-family: $fontPrimary;
+  @include font-size($h2-font-sizes);
+}
+h3,
+button {
+  font-family: $fontSecondary;
+  @include font-size($h3-font-sizes);
+}
+
+li,
+p {
+  font-family: $fontSecondary;
+  @include font-size($p-font-sizes);
+}
+
+code {
+  font-family: $fontCode;
+  @include font-size($sub-font-sizes);
+}
+
+.marker {
+  font-family: $fontHandwriting;
+}
+
+@media (prefers-reduced-motion) {
+  .animation {
+    animation-name: dissolve;
+  }
+}

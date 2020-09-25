@@ -1,27 +1,27 @@
 <script>
-  export let name;
+  import Router from "svelte-spa-router";
+  import routes from "./routes.js";
 </script>
 
 <style type="text/scss">
   @import "scss/config";
+  @import "scss/Main.scss";
 
   main {
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
-    h1 {
-      color: map-get($colors, focus);
-      font-family: Inter, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
-      font-size: 4em;
-      font-weight: 700;
-      @include mq("tablet") {
-        color: map-get($colors, success);
-      }
-    }
   }
 </style>
 
+<header>
+  <nav>
+    <a href="#/">Home</a>
+    <a href="#/about">About</a>
+    <a href="#/works">Works</a>
+    <a href="#/blog">Bytes & Snippets</a>
+    <a href="#/support">support</a>
+  </nav>
+</header>
 <main>
-  <h1>Hello {name}!</h1>
+  <Router {routes} restoreScrollState={true} />
 </main>

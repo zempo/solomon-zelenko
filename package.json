@@ -16,8 +16,12 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "front-matter": "^4.0.2",
+    "fs": "0.0.1-security",
+    "marked": "^1.1.1",
     "node-sass": "^4.14.1",
     "sirv-cli": "^1.0.0",
-    "svelte-preprocess": "^4.3.0"
+    "svelte-preprocess": "^4.3.0",
+    "svelte-spa-router": "^3.0.2"
   }
 }
