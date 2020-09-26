@@ -4,13 +4,15 @@
   const links = [
     ["./index", "home"],
     ["./about", "about"],
-    ["./works", "works"],
     ["./blog", "blog"],
+    ["./works", "works"],
     ["./merch", "merch"],
     ["./contact", "contact"]
   ];
 
   // add privacy policy?
+  // demonstrate an understanding of a proper website business
+
   //
 </script>
 

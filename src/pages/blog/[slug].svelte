@@ -8,4 +8,5 @@
   <p>Dummy text: {i} for {slug}.</p>
 {/each}
 
-<a href={$url(`${slug}/delete`)}>Delete</a>
+<!-- in case I want to specify another path, reference type/id folder -->
+<!-- <a href={$url(`${slug}/delete`)}>Delete</a> -->

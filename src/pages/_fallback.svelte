@@ -7,7 +7,7 @@
     ["./works", "works"],
     ["./blog", "blog"],
     ["./merch", "merch"],
-    ["./help", "help"]
+    ["./contact", "contact"]
   ];
 </script>
 
@@ -15,7 +15,7 @@
   @import "../scss/config";
   @import "../scss/Main.scss";
   .err-nav {
-    padding-top: 2rem;
+    margin-top: 1rem;
     ul {
       text-transform: capitalize;
       li {
@@ -23,6 +23,10 @@
         display: inline-block;
       }
     }
+  }
+
+  p {
+    line-height: 3;
   }
 </style>
 
@@ -33,9 +37,7 @@
     <strong>{$route.leftover}</strong>
     page...
   </p>
-  <br />
-  <p>Would these links cheer you up?</p>
-
+  <p>Would any of these links cheer you up?</p>
   <nav class="err-nav" role="navigation">
     <ul>
       {#each links as [path, name]}

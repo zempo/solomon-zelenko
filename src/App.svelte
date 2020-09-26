@@ -8,6 +8,4 @@
   @import "./scss/Main.scss";
 </style>
 
-<main>
-  <Router {routes} />
-</main>
+<Router {routes} />

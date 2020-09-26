@@ -2,7 +2,11 @@
 title: "Introducting Bytes & Snippets"
 date: "September 24th, 2020"
 tags: "introduction,update,dear readers,welcome"
-slug: "introducing_bytes_and_snippets"
+summary: |
+  Welcome to my tech blog, "Snippets.md"
+  I look forward to sharing useful snippets of advice and code.
+  Let's commit, compile, and google - one markdown file at a time.
+layout: blog
 ---
 
 # Introducing Bytes & Snippets
@@ -11,7 +15,7 @@ slug: "introducing_bytes_and_snippets"
 console.log('Hello, Readers');
 ```
 
-Welcome to my Tech blog "Bytes and Snippets".
+Welcome to my tech blog "Snippets.md".
 I look forward to sharing my thoughts with you.
 
 <!-- Each markdown file will be nested in a standardized class -->
