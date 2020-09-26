@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import { url, isActive, route } from "@sveltech/routify";
 
   const links = [
@@ -30,7 +31,7 @@
   }
 </style>
 
-<section class="pg err-pg">
+<section class="pg err-pg" in:fade={{ duration: 500 }}>
   <h1 class="marker">Oops!</h1>
   <p>
     I can't find the
