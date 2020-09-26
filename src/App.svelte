@@ -1,28 +1,13 @@
 <script>
-  import Router from "svelte-spa-router";
-  import routes from "./routes.js";
+  import { Router } from "@sveltech/routify";
+  import { routes } from "@sveltech/routify/tmp/routes";
 </script>
 
 <style type="text/scss">
-  @import "scss/config";
-  @import "scss/Main.scss";
-
-  main {
-    text-align: center;
-    margin: 0 auto;
-  }
+  @import "./scss/config";
+  @import "./scss/Main.scss";
 </style>
 
-<header>
-  <nav>
-    <a href="#/">Home</a>
-    <a href="#/about">About</a>
-    <a href="#/works">Works</a>
-    <a href="#/blog">Bytes & Snippets</a>
-    <a href="#/support">support</a>
-  </nav>
-</header>
 <main>
-  <!-- restoreScrollState={true} -->
   <Router {routes} />
 </main>

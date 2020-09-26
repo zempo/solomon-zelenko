@@ -1,6 +1,7 @@
 ---
 title: "Introducting Bytes & Snippets"
 date: "September 24th, 2020"
+tags: "introduction,update,dear readers,welcome"
 slug: "introducing_bytes_and_snippets"
 ---
 

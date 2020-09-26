@@ -1,13 +1,26 @@
 @import "config";
 
+strong {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+ul {
+  padding-left: 0;
+}
+
 h1 {
   font-family: $fontPrimary;
+  line-height: 1.25;
+  margin-bottom: 1rem;
   @include font-size($h1-font-sizes);
 }
+
 h2 {
   font-family: $fontPrimary;
   @include font-size($h2-font-sizes);
 }
+
 h3,
 button {
   font-family: $fontSecondary;
@@ -17,6 +30,7 @@ button {
 li,
 p {
   font-family: $fontSecondary;
+  line-height: 1.75;
   @include font-size($p-font-sizes);
 }
 
@@ -27,6 +41,10 @@ code {
 
 .marker {
   font-family: $fontHandwriting;
+}
+
+.pg {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion) {

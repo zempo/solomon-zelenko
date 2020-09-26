@@ -1,0 +1,2 @@
+import{S as s,i as e,s as t,e as a,o as n,b as o,d as i,n as c,g as l}from"./main-2b033e7f.js";function r(s){let e,t,r;return{c(){e=a("h1"),e.textContent="This is index (home)!",t=n(),r=a("p"),r.textContent="We are using Routify.",o(e,"class","svelte-9dozca"),o(r,"class","svelte-9dozca")},m(s,a){i(s,e,a),i(s,t,a),i(s,r,a)},p:c,i:c,o:c,d(s){s&&l(e),s&&l(t),s&&l(r)}}}export default class extends s{constructor(s){super(),e(this,s,null,r,t,{})}}
+//# sourceMappingURL=index-8cb4f8e1.js.map
