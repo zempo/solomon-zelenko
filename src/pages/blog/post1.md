@@ -1,25 +1,27 @@
 ---
-title: My first Post
-published: 2020-06-21T21:36:59.459Z
+title: Introducting Bytes & Snippets
+published: 2020-09-28T21:36:59.459Z
+updated: 2020-09-28T21:36:59.459Z
 author: Solomon Zelenko
+categories: news
 summary: |
-  Lorem markdownum, laude, superesse vires. Nisi iuveni, celsior.    
-  Est ut erat. Cum Iovis ut donavi petitos et, at fugit vincemur ubi: a dixit
-  credit, eras Aesone.
+  Welcome to my tech blog, "Bytes & Snippets"
+  I look forward sharing my .
+  Here are some useful bytes and snippets from my journey in tech.
 layout: blog
 ---
 
-#### Anchor links using remark-slug
+#### Outline
 
 - [{title}](#title)
-- [Nunc sed](#nunc-sed)
+- [Blog Topics](#blog-topics)
 - [Lamina puppe reddid](#lamina-puppe-reddidit)
 
 ---
 
 # {title}
 
-## Nunc sed
+## Blog Topics
 
 Lorem markdownum, laude, superesse vires. Nisi iuveni, celsior.
 

@@ -1,16 +1,22 @@
 <script>
-  import { url } from "@sveltech/routify";
+  import { url, route } from "@sveltech/routify";
 </script>
 
-<style>
-
+<style type="text/scss">
+  @import "../scss/config";
+  @import "../scss/Main.scss";
 </style>
 
-<div class="e404">
-  <div class="huge">404</div>
-  <div class="big">
-    Page not found.
-    <!-- link to the parent folder of _fallback.svelte -->
-    <a href={$url('../')}>Go back</a>
-  </div>
-</div>
+<section class="pg err-pg">
+  <h1 class="marker">Oops</h1>
+  <p>
+    I don't have a
+    <strong>{$route.leftover}</strong>
+    page, right now.
+  </p>
+  <p>
+    Let's
+    <a href={$url('../')}>go back</a>
+    ?
+  </p>
+</section>

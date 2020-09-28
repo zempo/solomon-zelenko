@@ -2,7 +2,7 @@
   import { url, layout } from "@sveltech/routify";
   import marked from "marked";
 
-  const posts = $layout.parent.children
+  const works = $layout.parent.children
     .filter(c => c.meta["frontmatter"])
     .sort((a, b) =>
       b.meta["frontmatter"].published.localeCompare(
@@ -11,20 +11,22 @@
     );
 </script>
 
+<style>
+
+</style>
+
 <section class="pg blog-pg">
-  <h1>Bytes & Snippets</h1>
+  <h1>What does Solomon build?</h1>
   <h2 class="sub-h2">
-    Welcome to my
-    <strong>blog</strong>
+    I build responsive apps with all the
+    <strong>works</strong>
   </h2>
 
-  <!-- then, add categories menu & search bar, here -->
-
-  <ul class="blog-posts">
-    {#each posts as { meta, path }}
-      <li class="blog-preview">
+  <ul class="works">
+    {#each works as { meta, path }}
+      <li class="work">
         <a class="title" href={$url(path)}>{meta.frontmatter.title}</a>
-        {@html marked(meta.frontmatter.summary)}
+        {@html marked(meta.frontmatter.overview)}
       </li>
     {/each}
   </ul>

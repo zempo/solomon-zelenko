@@ -1,7 +1,15 @@
+<script>
+  // preview content on main page
+</script>
+
 <style type="text/scss">
   @import "../scss/config";
   @import "../scss/Main.scss";
 </style>
+
+<svelte:head>
+  <title>Solomon Zelenko</title>
+</svelte:head>
 
 <section class="pg home-pg">
   <h1>Solomon Zelenko</h1>
