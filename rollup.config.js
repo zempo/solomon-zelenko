@@ -1,101 +1,46 @@
-import svelte from "rollup-plugin-svelte";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
-import { routify } from "@sveltech/routify";
-// sass to css
-import postcss from "rollup-plugin-postcss";
-//sass
-import autoPreprocess from "svelte-preprocess";
+import { createRollupConfigs } from "./scripts/base.config.js";
+import slug from "remark-slug";
+import { mdsvex } from "mdsvex";
+import preprocess from "svelte-preprocess";
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default {
-  input: "src/main.js",
-  /*
-  output: {
-    sourcemap: true,
-    format: 'iife',
-    name: 'app',
-    file: 'public/build/bundle.js'
+export const config = {
+  staticDir: "static",
+  distDir: "dist",
+  buildDir: `dist/build`,
+  serve: !production,
+  production,
+  rollupWrapper: (cfg) => cfg,
+  svelteWrapper: (svelte) => {
+    svelte.preprocess = [
+      preprocess(),
+      mdsvex({
+        remarkPlugins: [slug],
+        layout: {
+          blog: "src/components/Card.svelte",
+        },
+        extension: "md",
+      }),
+    ];
+    svelte.extensions = [".svelte", ".md"];
+    return svelte;
   },
-  */
-  output: {
-    sourcemap: true,
-    format: "esm",
-    name: "app",
-    dir: "public/bundle",
-  },
-  plugins: [
-    routify({
-      singleBuild: production,
-      dynamicImports: true,
-    }),
-    svelte({
-      // enable run-time checks when not in production
-      dev: !production,
-      // we'll extract any component CSS out into
-      // a separate file - better for performance
-      css: (css) => {
-        css.write("public/build/bundle.css");
-      },
-      preprocess: autoPreprocess(),
-      emitCss: true,
-    }),
-    postcss({
-      extract: true,
-      minimize: true,
-      use: [
-        [
-          "sass",
-          {
-            includePaths: ["./src"],
-          },
-        ],
-      ],
-    }),
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
-    commonjs(),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
+  swWrapper: (cfg) => cfg,
 };
 
-function serve() {
-  let started = false;
+const configs = createRollupConfigs(config);
 
-  return {
-    writeBundle() {
-      if (!started) {
-        started = true;
+export default configs;
 
-        require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        });
-      }
-    },
-  };
-}
+/** wrapper example 1 */
+// svelteWrapper: (cfg, ctx) => ({
+//   ...cfg,
+//   preprocess: mdsvex({ extension: '.md' }),
+// })
+
+/** wrapper example 2 */
+// rollupWrapper: cfg => {
+//   cfg.plugins = [...cfg.plugins, myPlugin()]
+//   return cfg
+// }

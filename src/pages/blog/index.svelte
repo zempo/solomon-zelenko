@@ -1,30 +1,25 @@
 <script>
-  // import { blogPosts } from "../../global/functions/getFiles.js";
-  import { fade } from "svelte/transition";
-  import { url } from "@sveltech/routify";
+  import { url, layout } from "@sveltech/routify";
+  import marked from "marked";
+
+  const posts = $layout.parent.children
+    .filter(c => c.meta["frontmatter"])
+    .sort((a, b) =>
+      b.meta["frontmatter"].published.localeCompare(
+        a.meta["frontmatter"].published
+      )
+    );
 </script>
 
-<style type="text/scss">
-  @import "../../scss/config";
-  @import "../../scss/Main.scss";
-</style>
+<section class="pg blog-pg">
+  <h1>Blog</h1>
 
-<svelte:head>
-  <title>Blog</title>
-</svelte:head>
-
-<section class="pg blog-pg" in:fade={{ duration: 500 }}>
-  <h1>Snippets.md</h1>
-  <p>Perspective && Markdown</p>
-  <ul>
-    <li>
-      <a href={$url('blog/foo')}>Foo</a>
-    </li>
-    <li>
-      <a href={$url('blog/bar')}>Bar</a>
-    </li>
-    <li>
-      <a href={$url('blog/lum')}>Lum</a>
-    </li>
+  <ul class="posts">
+    {#each posts as { meta, path }}
+      <li class="card">
+        <a class="title" href={$url(path)}>{meta.frontmatter.title}</a>
+        {@html marked(meta.frontmatter.summary)}
+      </li>
+    {/each}
   </ul>
 </section>

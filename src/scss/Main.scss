@@ -1,11 +1,5 @@
 @import "config";
 
-.container {
-  min-height: 100vh;
-  background: map-get($colors, app-white);
-  // change background based on class
-}
-
 strong {
   font-weight: bold;
   text-transform: capitalize;
@@ -54,12 +48,19 @@ code {
   font-family: $fontHandwriting;
 }
 
+.app {
+  min-height: 100vh;
+  background: map-get($colors, app-white);
+  // change background based on class
+}
+
 .pg {
   text-align: center;
 }
 
-@media (prefers-reduced-motion) {
-  .animation {
-    animation-name: dissolve;
-  }
-}
+// Reduced motion queries
+// @media (prefers-reduced-motion) {
+//   .animation {
+//     animation-name: dissolve;
+//   }
+// }

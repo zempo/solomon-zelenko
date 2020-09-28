@@ -1,15 +1,17 @@
 <script>
-  import Nav from "../Nav.svelte";
+  import { metatags, page } from "@sveltech/routify";
+  import Navigation from "./_navigation.svelte";
+  import SrcOnGithub from "../components/SrcOnGithub.svelte";
+
+  $: metatags.title = `SZ - ${$page.title}`;
+  metatags.description = "Description coming soon...";
 </script>
 
-<style type="text/scss">
-  @import "../scss/config";
-  @import "../scss/Main.scss";
-</style>
-
-<div class="container">
-  <Nav />
+<div class="app">
+  <Navigation />
   <main>
     <slot />
   </main>
 </div>
+
+<!-- <SrcOnGithub /> -->

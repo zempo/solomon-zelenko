@@ -1,11 +1,6 @@
 <script>
   import { Router } from "@sveltech/routify";
-  import { routes } from "@sveltech/routify/tmp/routes";
+  import { routes } from "../.routify/routes";
 </script>
-
-<style type="text/scss">
-  @import "./scss/config";
-  @import "./scss/Main.scss";
-</style>
 
 <Router {routes} />
