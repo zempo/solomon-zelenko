@@ -1,11 +1,11 @@
 
 /**
  * @sveltech/routify 1.9.9
- * File generated Tue Sep 29 2020 01:13:51 GMT-0700 (Pacific Daylight Time)
+ * File generated Tue Sep 29 2020 14:59:37 GMT-0700 (Pacific Daylight Time)
  */
 
 export const __version = "1.9.9"
-export const __timestamp = "2020-09-29T08:13:51.539Z"
+export const __timestamp = "2020-09-29T21:59:37.682Z"
 
 //buildRoutes
 import { buildClientTree } from "@sveltech/routify/runtime/buildRoutes"
@@ -230,13 +230,13 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "post1.md",
-          "filepath": "/blog/post1.md",
+          "file": "post1.svx",
+          "filepath": "/blog/post1.svx",
           "name": "post1",
-          "ext": "md",
+          "ext": "svx",
           "badExt": false,
-          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post1.md",
-          "importPath": "../src/pages/blog/post1.md",
+          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post1.svx",
+          "importPath": "../src/pages/blog/post1.svx",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -266,18 +266,18 @@ export const _tree = {
           },
           "path": "/blog/post1",
           "id": "_blog_post1",
-          "component": () => import('../src/pages/blog/post1.md').then(m => m.default)
+          "component": () => import('../src/pages/blog/post1.svx').then(m => m.default)
         },
         {
           "isFile": true,
           "isDir": false,
-          "file": "post2.md",
-          "filepath": "/blog/post2.md",
+          "file": "post2.svx",
+          "filepath": "/blog/post2.svx",
           "name": "post2",
-          "ext": "md",
+          "ext": "svx",
           "badExt": false,
-          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post2.md",
-          "importPath": "../src/pages/blog/post2.md",
+          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post2.svx",
+          "importPath": "../src/pages/blog/post2.svx",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
@@ -300,7 +300,7 @@ export const _tree = {
           },
           "path": "/blog/post2",
           "id": "_blog_post2",
-          "component": () => import('../src/pages/blog/post2.md').then(m => m.default)
+          "component": () => import('../src/pages/blog/post2.svx').then(m => m.default)
         }
       ],
       "isLayout": false,
@@ -444,13 +444,13 @@ export const _tree = {
         {
           "isFile": true,
           "isDir": false,
-          "file": "index.md",
-          "filepath": "/about/index.md",
+          "file": "index.svx",
+          "filepath": "/about/index.svx",
           "name": "index",
-          "ext": "md",
+          "ext": "svx",
           "badExt": false,
-          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/about/index.md",
-          "importPath": "../src/pages/about/index.md",
+          "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/about/index.svx",
+          "importPath": "../src/pages/about/index.svx",
           "isLayout": false,
           "isReset": false,
           "isIndex": true,
@@ -466,7 +466,7 @@ export const _tree = {
           },
           "path": "/about/index",
           "id": "_about_index",
-          "component": () => import('../src/pages/about/index.md').then(m => m.default)
+          "component": () => import('../src/pages/about/index.svx').then(m => m.default)
         }
       ],
       "isLayout": false,

@@ -1,0 +1,16 @@
+<style type="text/scss">
+  @import "../../scss/config";
+  @import "../../scss/utils";
+
+  h1 {
+    @extend %header1;
+  }
+  h2 {
+    @extend %header2;
+  }
+</style>
+
+# Who is Solomon?
+
+## I am a Software Engineer living in Irvine, CA
+

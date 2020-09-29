@@ -8,6 +8,16 @@ summary: |
 layout: blog
 ---
 
+<style type="text/scss">
+  @import "../../scss/config";
+  @import "../../scss/utils";
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    @include font-size($p-font-sizes);
+  }
+</style>
+
 # {title}
 
 ## Origine medias morari non humo accepit flammas

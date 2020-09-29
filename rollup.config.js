@@ -21,10 +21,10 @@ export const config = {
           blog: "src/components/BlogPost.svelte",
           works: "src/components/WorksPost.svelte",
         },
-        extension: "md",
+        extension: "svx",
       }),
     ];
-    svelte.extensions = [".svelte", ".md"];
+    svelte.extensions = [".svelte", ".md", ".svx"];
     return svelte;
   },
   swWrapper: (cfg) => cfg,

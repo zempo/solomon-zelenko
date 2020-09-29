@@ -6,7 +6,7 @@
 
 <style type="text/scss">
   @import "../scss/config";
-  @import "../scss/Main.scss";
+  @import "../scss/Nav.scss";
 </style>
 
 <header>

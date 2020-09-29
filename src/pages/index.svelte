@@ -1,10 +1,23 @@
 <script>
-  // preview content on main page
+  const codesAnimation = () => {
+    return "Things";
+  };
 </script>
 
 <style type="text/scss">
   @import "../scss/config";
-  @import "../scss/Main.scss";
+  @import "../scss/utils";
+
+  .pg {
+    @extend %page;
+    h1 {
+      @extend %header1;
+    }
+    h2 {
+      @extend %header2;
+    }
+    // TODO list some content
+  }
 </style>
 
 <svelte:head>
@@ -12,16 +25,8 @@
 </svelte:head>
 
 <section class="pg home-pg">
-  <h1>Solomon Zelenko</h1>
-  <code>npx @sveltech/routify init --branch blog</code>
-
-  <ul class="checks">
-    <li>☑ Markdown with mdsvex</li>
-    <li>☑ PostCSS</li>
-    <li>☑ Auto generated navigation</li>
-    <li>☑ Auto generated page titles</li>
-    <li>☑ 100% Lighthouse score</li>
-  </ul>
+  <h1>Solomon</h1>
+  <h2>Codes {codesAnimation()}</h2>
 </section>
 
 <!-- routify:options index=10 -->

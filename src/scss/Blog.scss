@@ -1,0 +1,27 @@
+@import "config";
+@import "utils";
+
+h1 {
+  @extend %header1;
+}
+h2 {
+  @extend %header2;
+}
+h3 {
+  @extend %header3;
+}
+p {
+  @extend %paragraph;
+}
+ul {
+  @extend %list1;
+  &:first-of-type {
+    @extend %overview;
+    a {
+      @extend %bloglink;
+    }
+  }
+}
+code .string {
+  @include font-size($p-font-sizes);
+}

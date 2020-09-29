@@ -13,7 +13,21 @@
 
 <style type="text/scss">
   @import "../../scss/config";
-  @import "../../scss/Main.scss";
+  @import "../../scss/utils.scss";
+
+  .pg {
+    @extend %page;
+    h1 {
+      @extend %header1;
+    }
+    h2 {
+      @extend %header2;
+    }
+    ul {
+      // TODO, make content list utility
+      @extend %list1;
+    }
+  }
 </style>
 
 <section class="pg blog-pg">

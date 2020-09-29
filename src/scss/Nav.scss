@@ -1,0 +1,13 @@
+@import "config";
+@import "utils";
+
+header {
+  background: map-get($colors, app-white);
+}
+
+// Reduced motion queries
+// @media (prefers-reduced-motion) {
+//   .animation {
+//     animation-name: dissolve;
+//   }
+// }

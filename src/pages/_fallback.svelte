@@ -5,7 +5,17 @@
 
 <style type="text/scss">
   @import "../scss/config";
-  @import "../scss/Main.scss";
+  @import "../scss/utils";
+
+  .pg {
+    @extend %page;
+    h1 {
+      @extend %header1;
+    }
+    p {
+      @extend %paragraph;
+    }
+  }
 </style>
 
 <section class="pg err-pg">

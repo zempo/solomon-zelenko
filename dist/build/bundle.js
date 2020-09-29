@@ -3402,13 +3402,13 @@ var routify_app = (function () {
             {
               "isFile": true,
               "isDir": false,
-              "file": "post1.md",
-              "filepath": "/blog/post1.md",
+              "file": "post1.svx",
+              "filepath": "/blog/post1.svx",
               "name": "post1",
-              "ext": "md",
+              "ext": "svx",
               "badExt": false,
-              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post1.md",
-              "importPath": "../src/pages/blog/post1.md",
+              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post1.svx",
+              "importPath": "../src/pages/blog/post1.svx",
               "isLayout": false,
               "isReset": false,
               "isIndex": false,
@@ -3443,13 +3443,13 @@ var routify_app = (function () {
             {
               "isFile": true,
               "isDir": false,
-              "file": "post2.md",
-              "filepath": "/blog/post2.md",
+              "file": "post2.svx",
+              "filepath": "/blog/post2.svx",
               "name": "post2",
-              "ext": "md",
+              "ext": "svx",
               "badExt": false,
-              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post2.md",
-              "importPath": "../src/pages/blog/post2.md",
+              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/blog/post2.svx",
+              "importPath": "../src/pages/blog/post2.svx",
               "isLayout": false,
               "isReset": false,
               "isIndex": false,
@@ -3616,13 +3616,13 @@ var routify_app = (function () {
             {
               "isFile": true,
               "isDir": false,
-              "file": "index.md",
-              "filepath": "/about/index.md",
+              "file": "index.svx",
+              "filepath": "/about/index.svx",
               "name": "index",
-              "ext": "md",
+              "ext": "svx",
               "badExt": false,
-              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/about/index.md",
-              "importPath": "../src/pages/about/index.md",
+              "absolutePath": "/home/solomon/Desktop/PROJECTS/fullstack/solomon/client/src/pages/about/index.svx",
+              "importPath": "../src/pages/about/index.svx",
               "isLayout": false,
               "isReset": false,
               "isIndex": true,
@@ -3801,18 +3801,17 @@ var routify_app = (function () {
     			a = element("a");
     			t7 = text("go back");
     			t8 = text("\n    ?");
-    			attr_dev(h1, "class", "marker svelte-c14tev");
-    			add_location(h1, file$2, 115, 2, 2777);
-    			attr_dev(strong, "class", "svelte-c14tev");
-    			add_location(strong, file$2, 118, 4, 2835);
-    			attr_dev(p0, "class", "svelte-c14tev");
-    			add_location(p0, file$2, 116, 2, 2808);
+    			attr_dev(h1, "class", "marker svelte-1d1fci8");
+    			add_location(h1, file$2, 55, 2, 1493);
+    			add_location(strong, file$2, 58, 4, 1551);
+    			attr_dev(p0, "class", "svelte-1d1fci8");
+    			add_location(p0, file$2, 56, 2, 1524);
     			attr_dev(a, "href", a_href_value = /*$url*/ ctx[1]("../"));
-    			add_location(a, file$2, 123, 4, 2918);
-    			attr_dev(p1, "class", "svelte-c14tev");
-    			add_location(p1, file$2, 121, 2, 2900);
-    			attr_dev(section, "class", "pg err-pg svelte-c14tev");
-    			add_location(section, file$2, 114, 0, 2747);
+    			add_location(a, file$2, 63, 4, 1634);
+    			attr_dev(p1, "class", "svelte-1d1fci8");
+    			add_location(p1, file$2, 61, 2, 1616);
+    			attr_dev(section, "class", "pg err-pg svelte-1d1fci8");
+    			add_location(section, file$2, 54, 0, 1463);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3907,7 +3906,7 @@ var routify_app = (function () {
     	return child_ctx;
     }
 
-    // (118:4) {#each $layout.parent.children as { path, title }}
+    // (13:4) {#each $layout.parent.children as { path, title }}
     function create_each_block$2(ctx) {
     	let a;
     	let t_value = /*title*/ ctx[4] + "";
@@ -3920,7 +3919,7 @@ var routify_app = (function () {
     			t = text(t_value);
     			attr_dev(a, "href", a_href_value = /*$url*/ ctx[1](/*path*/ ctx[3]));
     			toggle_class(a, "active", /*$isActive*/ ctx[2](/*path*/ ctx[3]));
-    			add_location(a, file$3, 118, 6, 2859);
+    			add_location(a, file$3, 13, 6, 270);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -3946,7 +3945,7 @@ var routify_app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(118:4) {#each $layout.parent.children as { path, title }}",
+    		source: "(13:4) {#each $layout.parent.children as { path, title }}",
     		ctx
     	});
 
@@ -3973,8 +3972,9 @@ var routify_app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(nav, file$3, 116, 2, 2792);
-    			add_location(header, file$3, 115, 0, 2781);
+    			add_location(nav, file$3, 11, 2, 203);
+    			attr_dev(header, "class", "svelte-1c2yjt6");
+    			add_location(header, file$3, 10, 0, 192);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4303,16 +4303,23 @@ var routify_app = (function () {
     function create_fragment$8(ctx) {
     	let section;
     	let h1;
+    	let t1;
+    	let h2;
 
     	const block = {
     		c: function create() {
     			section = element("section");
     			h1 = element("h1");
     			h1.textContent = "Let's get in touch!";
-    			attr_dev(h1, "class", "svelte-c14tev");
-    			add_location(h1, file$6, 114, 2, 2712);
-    			attr_dev(section, "class", "pg contact-pg svelte-c14tev");
-    			add_location(section, file$6, 113, 0, 2678);
+    			t1 = space();
+    			h2 = element("h2");
+    			h2.textContent = `I am available from ${/*getTime*/ ctx[0]()}, your time`;
+    			attr_dev(h1, "class", "svelte-wwkty2");
+    			add_location(h1, file$6, 60, 2, 1632);
+    			attr_dev(h2, "class", "svelte-wwkty2");
+    			add_location(h2, file$6, 61, 2, 1663);
+    			attr_dev(section, "class", "pg contact-pg svelte-wwkty2");
+    			add_location(section, file$6, 59, 0, 1598);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4320,6 +4327,8 @@ var routify_app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
     			append_dev(section, h1);
+    			append_dev(section, t1);
+    			append_dev(section, h2);
     		},
     		p: noop,
     		i: noop,
@@ -4340,16 +4349,22 @@ var routify_app = (function () {
     	return block;
     }
 
-    function instance$8($$self, $$props) {
+    function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Contact", slots, []);
+
+    	const getTime = () => {
+    		return "8 to 8";
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Contact> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	$$self.$capture_state = () => ({ getTime });
+    	return [getTime];
     }
 
     class Contact extends SvelteComponentDev {
@@ -4365,7 +4380,7 @@ var routify_app = (function () {
     		});
     	}
     }
-    Contact.$compile = {"vars":[]};
+    Contact.$compile = {"vars":[{"name":"getTime","export_name":null,"injected":false,"module":false,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false}]};
 
     var index = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -4381,63 +4396,24 @@ var routify_app = (function () {
     	let section;
     	let h1;
     	let t2;
-    	let code;
-    	let t4;
-    	let ul;
-    	let li0;
-    	let t6;
-    	let li1;
-    	let t8;
-    	let li2;
-    	let t10;
-    	let li3;
-    	let t12;
-    	let li4;
+    	let h2;
 
     	const block = {
     		c: function create() {
     			t0 = space();
     			section = element("section");
     			h1 = element("h1");
-    			h1.textContent = "Solomon Zelenko";
+    			h1.textContent = "Solomon";
     			t2 = space();
-    			code = element("code");
-    			code.textContent = "npx @sveltech/routify init --branch blog";
-    			t4 = space();
-    			ul = element("ul");
-    			li0 = element("li");
-    			li0.textContent = "☑ Markdown with mdsvex";
-    			t6 = space();
-    			li1 = element("li");
-    			li1.textContent = "☑ PostCSS";
-    			t8 = space();
-    			li2 = element("li");
-    			li2.textContent = "☑ Auto generated navigation";
-    			t10 = space();
-    			li3 = element("li");
-    			li3.textContent = "☑ Auto generated page titles";
-    			t12 = space();
-    			li4 = element("li");
-    			li4.textContent = "☑ 100% Lighthouse score";
+    			h2 = element("h2");
+    			h2.textContent = `Codes ${/*codesAnimation*/ ctx[0]()}`;
     			document.title = "Solomon Zelenko";
-    			attr_dev(h1, "class", "svelte-c14tev");
-    			add_location(h1, file$7, 118, 2, 2805);
-    			attr_dev(code, "class", "svelte-c14tev");
-    			add_location(code, file$7, 119, 2, 2832);
-    			attr_dev(li0, "class", "svelte-c14tev");
-    			add_location(li0, file$7, 122, 4, 2913);
-    			attr_dev(li1, "class", "svelte-c14tev");
-    			add_location(li1, file$7, 123, 4, 2949);
-    			attr_dev(li2, "class", "svelte-c14tev");
-    			add_location(li2, file$7, 124, 4, 2972);
-    			attr_dev(li3, "class", "svelte-c14tev");
-    			add_location(li3, file$7, 125, 4, 3013);
-    			attr_dev(li4, "class", "svelte-c14tev");
-    			add_location(li4, file$7, 126, 4, 3055);
-    			attr_dev(ul, "class", "checks svelte-c14tev");
-    			add_location(ul, file$7, 121, 2, 2889);
-    			attr_dev(section, "class", "pg home-pg svelte-c14tev");
-    			add_location(section, file$7, 117, 0, 2774);
+    			attr_dev(h1, "class", "svelte-wwkty2");
+    			add_location(h1, file$7, 64, 2, 1699);
+    			attr_dev(h2, "class", "svelte-wwkty2");
+    			add_location(h2, file$7, 65, 2, 1718);
+    			attr_dev(section, "class", "pg home-pg svelte-wwkty2");
+    			add_location(section, file$7, 63, 0, 1668);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4447,18 +4423,7 @@ var routify_app = (function () {
     			insert_dev(target, section, anchor);
     			append_dev(section, h1);
     			append_dev(section, t2);
-    			append_dev(section, code);
-    			append_dev(section, t4);
-    			append_dev(section, ul);
-    			append_dev(ul, li0);
-    			append_dev(ul, t6);
-    			append_dev(ul, li1);
-    			append_dev(ul, t8);
-    			append_dev(ul, li2);
-    			append_dev(ul, t10);
-    			append_dev(ul, li3);
-    			append_dev(ul, t12);
-    			append_dev(ul, li4);
+    			append_dev(section, h2);
     		},
     		p: noop,
     		i: noop,
@@ -4480,16 +4445,22 @@ var routify_app = (function () {
     	return block;
     }
 
-    function instance$9($$self, $$props) {
+    function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Pages", slots, []);
+
+    	const codesAnimation = () => {
+    		return "Things";
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Pages> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	$$self.$capture_state = () => ({ codesAnimation });
+    	return [codesAnimation];
     }
 
     class Pages extends SvelteComponentDev {
@@ -4505,7 +4476,7 @@ var routify_app = (function () {
     		});
     	}
     }
-    Pages.$compile = {"vars":[]};
+    Pages.$compile = {"vars":[{"name":"codesAnimation","export_name":null,"injected":false,"module":false,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false}]};
 
     var index$1 = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -7305,7 +7276,7 @@ var routify_app = (function () {
     	return child_ctx;
     }
 
-    // (164:4) {#each posts as { meta, path }}
+    // (128:4) {#each posts as { meta, path }}
     function create_each_block$3(ctx) {
     	let li;
     	let a;
@@ -7326,10 +7297,10 @@ var routify_app = (function () {
     			t2 = space();
     			attr_dev(a, "class", "title");
     			attr_dev(a, "href", a_href_value = /*$url*/ ctx[0](/*path*/ ctx[4]));
-    			add_location(a, file$8, 165, 8, 4140);
+    			add_location(a, file$8, 129, 8, 3609);
     			html_tag = new HtmlTag(t2);
-    			attr_dev(li, "class", "blog-preview svelte-c14tev");
-    			add_location(li, file$8, 164, 6, 4106);
+    			attr_dev(li, "class", "blog-preview svelte-bnyt5n");
+    			add_location(li, file$8, 128, 6, 3575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7353,7 +7324,7 @@ var routify_app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(164:4) {#each posts as { meta, path }}",
+    		source: "(128:4) {#each posts as { meta, path }}",
     		ctx
     	});
 
@@ -7394,16 +7365,15 @@ var routify_app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-c14tev");
-    			add_location(h1, file$8, 127, 2, 3102);
-    			attr_dev(strong, "class", "svelte-c14tev");
-    			add_location(strong, file$8, 157, 4, 3950);
-    			attr_dev(h2, "class", "sub-h2 svelte-c14tev");
-    			add_location(h2, file$8, 155, 2, 3908);
-    			attr_dev(ul, "class", "blog-posts svelte-c14tev");
-    			add_location(ul, file$8, 162, 2, 4040);
-    			attr_dev(section, "class", "pg blog-pg svelte-c14tev");
-    			add_location(section, file$8, 126, 0, 3071);
+    			attr_dev(h1, "class", "svelte-bnyt5n");
+    			add_location(h1, file$8, 91, 2, 2571);
+    			add_location(strong, file$8, 121, 4, 3419);
+    			attr_dev(h2, "class", "sub-h2 svelte-bnyt5n");
+    			add_location(h2, file$8, 119, 2, 3377);
+    			attr_dev(ul, "class", "blog-posts svelte-bnyt5n");
+    			add_location(ul, file$8, 126, 2, 3509);
+    			attr_dev(section, "class", "pg blog-pg svelte-bnyt5n");
+    			add_location(section, file$8, 90, 0, 2540);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7528,8 +7498,8 @@ var routify_app = (function () {
     		c: function create() {
     			article = element("article");
     			if (default_slot) default_slot.c();
-    			attr_dev(article, "class", "blog-post");
-    			add_location(article, file$9, 0, 0, 0);
+    			attr_dev(article, "class", "blog-post svelte-1porwbs");
+    			add_location(article, file$9, 7, 0, 131);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7607,12 +7577,12 @@ var routify_app = (function () {
     }
     BlogPost.$compile = {"vars":[]};
 
-    /* src/pages/blog/post1.md generated by Svelte v3.28.0 */
-    const file$a = "src/pages/blog/post1.md";
+    /* src/pages/blog/post1.svx generated by Svelte v3.28.0 */
+    const file$a = "src/pages/blog/post1.svx";
 
-    // (10:0) <Layout_MDSVEX_DEFAULT {...metadata}>
+    // (133:0) <Layout_MDSVEX_DEFAULT {...metadata}>
     function create_default_slot$1(ctx) {
-    	let h4;
+    	let h3;
     	let t1;
     	let ul0;
     	let li0;
@@ -7623,139 +7593,95 @@ var routify_app = (function () {
     	let t5;
     	let li2;
     	let a2;
-    	let t6;
-    	let hr;
     	let t7;
-    	let h1;
+    	let li3;
+    	let a3;
     	let t9;
+    	let hr;
+    	let t10;
+    	let h1;
+    	let t12;
     	let pre;
 
     	let raw_value = `<code class="language-javascript"><span class="token comment">// TODO - Avoid cliche intros</span>
 <span class="token comment">// Such as "Hello, World", or something silly like that...</span>
-<span class="token comment">//</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello, Readers"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>` + "";
 
-    	let t10;
-    	let p0;
-    	let t12;
+    	let t13;
     	let h20;
-    	let t14;
-    	let p1;
     	let t15;
-    	let strong0;
+    	let p0;
+    	let t16;
+    	let br0;
     	let t17;
-    	let strong1;
+    	let br1;
+    	let t18;
     	let t19;
-    	let em0;
-    	let t21;
-    	let em1;
-    	let t23;
-    	let t24;
-    	let p2;
-    	let t25;
-    	let strong2;
-    	let t27;
-    	let t28;
-    	let p3;
-    	let t30;
-    	let ul1;
-    	let li3;
-    	let input0;
-    	let t31;
-    	let t32;
-    	let li4;
-    	let input1;
-    	let t33;
-    	let t34;
-    	let li5;
-    	let input2;
-    	let t35;
-    	let t36;
-    	let li6;
-    	let input3;
-    	let t37;
-    	let t38;
-    	let li7;
-    	let input4;
-    	let t39;
-    	let t40;
-    	let li8;
-    	let input5;
-    	let t41;
-    	let t42;
-    	let li9;
-    	let input6;
-    	let t43;
-    	let t44;
     	let h21;
-    	let t46;
-    	let p4;
-    	let t48;
+    	let t21;
     	let h22;
+    	let t23;
+    	let p1;
+    	let t24;
+    	let strong0;
+    	let t26;
+    	let br2;
+    	let t27;
+    	let strong1;
+    	let t29;
+    	let em0;
+    	let t31;
+    	let br3;
+    	let t32;
+    	let em1;
+    	let t34;
+    	let t35;
+    	let p2;
+    	let t36;
+    	let br4;
+    	let t37;
+    	let strong2;
+    	let t39;
+    	let br5;
+    	let t40;
+    	let t41;
+    	let ul1;
+    	let li4;
+    	let input0;
+    	let t42;
+    	let t43;
+    	let li5;
+    	let input1;
+    	let t44;
+    	let t45;
+    	let li6;
+    	let input2;
+    	let t46;
+    	let t47;
+    	let li7;
+    	let input3;
+    	let t48;
+    	let t49;
+    	let li8;
+    	let input4;
     	let t50;
-    	let p5;
     	let t51;
-    	let em2;
+    	let li9;
+    	let input5;
+    	let t52;
     	let t53;
-    	let a3;
-    	let t55;
-    	let em3;
-    	let t57;
-    	let strong3;
-    	let t59;
-    	let em4;
-    	let t61;
-    	let t62;
-    	let ol;
     	let li10;
-    	let t64;
-    	let li11;
-    	let t66;
-    	let li12;
-    	let t68;
-    	let li13;
-    	let t70;
-    	let li14;
-    	let t72;
-    	let li15;
-    	let t74;
+    	let input6;
+    	let t54;
+    	let t55;
     	let h23;
-    	let t76;
-    	let p6;
-    	let t77;
-    	let strong4;
-    	let t79;
-    	let t80;
-    	let ul2;
-    	let li16;
-    	let t82;
-    	let li17;
-    	let t84;
-    	let li18;
-    	let t86;
-    	let li19;
-    	let t88;
-    	let li20;
-    	let t90;
-    	let h24;
-    	let t92;
-    	let p7;
-    	let a4;
-    	let t94;
-    	let em5;
-    	let t96;
-    	let em6;
-    	let t98;
-    	let t99;
-    	let p8;
-    	let t100;
-    	let strong5;
-    	let t102;
+    	let t57;
+    	let p3;
 
     	const block = {
     		c: function create() {
-    			h4 = element("h4");
-    			h4.textContent = "Page Contents";
+    			h3 = element("h3");
+    			h3.textContent = "Page Contents";
     			t1 = space();
     			ul0 = element("ul");
     			li0 = element("li");
@@ -7764,281 +7690,210 @@ console<span class="token punctuation">.</span><span class="token function">log<
     			t3 = space();
     			li1 = element("li");
     			a1 = element("a");
-    			a1.textContent = "About the Author";
+    			a1.textContent = "Overview";
     			t5 = space();
     			li2 = element("li");
     			a2 = element("a");
-    			t6 = space();
-    			hr = element("hr");
+    			a2.textContent = "Why Bytes & Snippets?";
     			t7 = space();
+    			li3 = element("li");
+    			a3 = element("a");
+    			a3.textContent = "About the Author";
+    			t9 = space();
+    			hr = element("hr");
+    			t10 = space();
     			h1 = element("h1");
     			h1.textContent = `${title}`;
-    			t9 = space();
-    			pre = element("pre");
-    			t10 = space();
-    			p0 = element("p");
-    			p0.textContent = "Welcome to my Tech Blog,\nEnjoy a series of musings, tutorials, and snippets!\nMay each click bring you joy - and me, some extra income";
     			t12 = space();
+    			pre = element("pre");
+    			t13 = space();
     			h20 = element("h2");
-    			h20.textContent = "About the Author";
-    			t14 = space();
+    			h20.textContent = "Overview";
+    			t15 = space();
+    			p0 = element("p");
+    			t16 = text("Welcome to my Tech Blog.");
+    			br0 = element("br");
+    			t17 = text("\nEnjoy a series of musings, tutorials, and snippets!");
+    			br1 = element("br");
+    			t18 = text("\nMay each click bring you joy - and me, some extra income.");
+    			t19 = space();
+    			h21 = element("h2");
+    			h21.textContent = "Why Bytes & Snippets?";
+    			t21 = space();
+    			h22 = element("h2");
+    			h22.textContent = "About the Author";
+    			t23 = space();
     			p1 = element("p");
-    			t15 = text("Solomon is a human with over ");
+    			t24 = text("Solomon is a human with over ");
     			strong0 = element("strong");
     			strong0.textContent = "25 years";
-    			t17 = text(" of life experience,\nOf these, he has spent ");
+    			t26 = text(" of life experience.");
+    			br2 = element("br");
+    			t27 = text("\nHe has spent ");
     			strong1 = element("strong");
     			strong1.textContent = "~5387 hours";
-    			t19 = text(" coding && conversing with a Rubber Duck - aptly named ");
+    			t29 = text(" debugging with a Rubber Duck - named ");
     			em0 = element("em");
     			em0.textContent = "Mr. Waddles";
-    			t21 = text(".\nHe presently lives with his chosen family in ");
+    			t31 = text(".");
+    			br3 = element("br");
+    			t32 = text("\nHe presently lives with his chosen family in ");
     			em1 = element("em");
     			em1.textContent = "Irvine, CA, USA";
-    			t23 = text(".");
-    			t24 = space();
+    			t34 = text(".");
+    			t35 = space();
     			p2 = element("p");
-    			t25 = text("At this point, you might have guessed that he is a Software Engineer.\nYou would be partially correct - about ");
+    			t36 = text("At this point, you might have guessed that he is a Software Engineer.");
+    			br4 = element("br");
+    			t37 = text("\nYou would be partially correct - about ");
     			strong2 = element("strong");
     			strong2.textContent = "22.42%";
-    			t27 = text(", to be exact.");
-    			t28 = space();
-    			p3 = element("p");
-    			p3.textContent = "He also exhibits these traits:";
-    			t30 = space();
+    			t39 = text(", to be exact.");
+    			br5 = element("br");
+    			t40 = text("\nHowever, he also exhibits these traits:");
+    			t41 = space();
     			ul1 = element("ul");
-    			li3 = element("li");
-    			input0 = element("input");
-    			t31 = text(" Baking Bread");
-    			t32 = space();
     			li4 = element("li");
-    			input1 = element("input");
-    			t33 = text(" Writing Satire");
-    			t34 = space();
+    			input0 = element("input");
+    			t42 = text(" Baking Bread");
+    			t43 = space();
     			li5 = element("li");
-    			input2 = element("input");
-    			t35 = text(" Voiceover (Podcast & Commercial)");
-    			t36 = space();
+    			input1 = element("input");
+    			t44 = text(" Writing Satire");
+    			t45 = space();
     			li6 = element("li");
-    			input3 = element("input");
-    			t37 = text(" Anti-Racism & Multiculturalism");
-    			t38 = space();
+    			input2 = element("input");
+    			t46 = text(" Voiceover (Podcast & Commercial)");
+    			t47 = space();
     			li7 = element("li");
-    			input4 = element("input");
-    			t39 = text(" Mental Health Advocacy");
-    			t40 = space();
+    			input3 = element("input");
+    			t48 = text(" Anti-Racism & Multiculturalism");
+    			t49 = space();
     			li8 = element("li");
-    			input5 = element("input");
-    			t41 = text(" Long walks on the beach");
-    			t42 = space();
+    			input4 = element("input");
+    			t50 = text(" Mental Health Advocacy");
+    			t51 = space();
     			li9 = element("li");
-    			input6 = element("input");
-    			t43 = text(" Short walks on the beach");
-    			t44 = space();
-    			h21 = element("h2");
-    			h21.textContent = "What?";
-    			t46 = space();
-    			p4 = element("p");
-    			p4.textContent = "Est ut erat. Cum Iovis ut donavi petitos et, at fugit vincemur ubi: a dixit\ncredit, eras Aesone.";
-    			t48 = space();
-    			h22 = element("h2");
-    			h22.textContent = "Why?";
-    			t50 = space();
-    			p5 = element("p");
-    			t51 = text("Hunc est senectae vires iterum longusque: quis astu nec tamen cognataque solamen\nignes in illa, Pandione. Favilla resto verba; hostem auditi, est plura ");
-    			em2 = element("em");
-    			em2.textContent = "canos\nsuper Iovi";
-    			t53 = text(" sub vocem. Blandita fulmineis candidus Nam sedet mersisque nec non\nduo tetenderat putat. ");
-    			a3 = element("a");
-    			a3.textContent = "Sentiet est meque";
-    			t55 = text(" adversi\ninfelix coryli membraque ");
-    			em3 = element("em");
-    			em3.textContent = "exegit sacerdos quercus";
-    			t57 = text(" spumeus ");
-    			strong3 = element("strong");
-    			strong3.textContent = "interea";
-    			t59 = text("! Meque\n");
-    			em4 = element("em");
-    			em4.textContent = "taurorum et venit";
-    			t61 = text(".");
-    			t62 = space();
-    			ol = element("ol");
+    			input5 = element("input");
+    			t52 = text(" Long walks on the beach");
+    			t53 = space();
     			li10 = element("li");
-    			li10.textContent = "Genitas in nullae fidem";
-    			t64 = space();
-    			li11 = element("li");
-    			li11.textContent = "Quod dolore haud fraudate";
-    			t66 = space();
-    			li12 = element("li");
-    			li12.textContent = "Quoque sorores arripit";
-    			t68 = space();
-    			li13 = element("li");
-    			li13.textContent = "Credit fecit coniunx";
-    			t70 = space();
-    			li14 = element("li");
-    			li14.textContent = "Sicaniam sagax et esse proposita egit furta";
-    			t72 = space();
-    			li15 = element("li");
-    			li15.textContent = "Tamen cutem sacrificos humi";
-    			t74 = space();
+    			input6 = element("input");
+    			t54 = text(" Short walks on the beach");
+    			t55 = space();
     			h23 = element("h2");
-    			h23.textContent = "Sola mea amantior";
-    			t76 = space();
-    			p6 = element("p");
-    			t77 = text("A inquit absumere inclusum quoque. Mane audiri, ille ");
-    			strong4 = element("strong");
-    			strong4.textContent = "trepidos";
-    			t79 = text(" cui, fore\ntincta salus movebatur, dixit. Tempore coniuge Pellaeis. Phaethon toto, his est\nanguigenae imperio raptam; plagas! Longa cunctaque arma, tamen odorato subibat\nperspicit hostem, illi cum, est aureus flumina lumine?");
-    			t80 = space();
-    			ul2 = element("ul");
-    			li16 = element("li");
-    			li16.textContent = "Diro mentis axem mediis tergo oppida";
-    			t82 = space();
-    			li17 = element("li");
-    			li17.textContent = "Constitit cuius";
-    			t84 = space();
-    			li18 = element("li");
-    			li18.textContent = "Aether dum terunt sit exstitit altera imbres";
-    			t86 = space();
-    			li19 = element("li");
-    			li19.textContent = "Vidit unum litora tenus fudi Pallas Troezen";
-    			t88 = space();
-    			li20 = element("li");
-    			li20.textContent = "Ego taedas potentem";
-    			t90 = space();
-    			h24 = element("h2");
-    			h24.textContent = "Procrin modo concreta animorum tandem aras";
-    			t92 = space();
-    			p7 = element("p");
-    			a4 = element("a");
-    			a4.textContent = "Vellera viroque";
-    			t94 = text(" iter quae crinale offensa;\nmora, mihi offensaque. Unus ");
-    			em5 = element("em");
-    			em5.textContent = "nec";
-    			t96 = text(" caede raptam ");
-    			em6 = element("em");
-    			em6.textContent = "nomen";
-    			t98 = text(" constitit aequora est!");
-    			t99 = space();
-    			p8 = element("p");
-    			t100 = text("Esto est mox te ista licebit mille supposita de Aeacon sedisti quantum. Rapiunt\nsterilique victi, ecce cum sumit mihi nulla, et ");
-    			strong5 = element("strong");
-    			strong5.textContent = "corpore sua";
-    			t102 = text(".");
-    			attr_dev(h4, "id", "page-contents");
-    			add_location(h4, file$a, 10, 0, 709);
+    			h23.textContent = "B";
+    			t57 = space();
+    			p3 = element("p");
+    			p3.textContent = "Est ut erat. Cum Iovis ut donavi petitos et, at fugit vincemur ubi: a dixit\ncredit, eras Aesone.";
+    			attr_dev(h3, "id", "page-contents");
+    			attr_dev(h3, "class", "svelte-1ru2q6x");
+    			add_location(h3, file$a, 134, 0, 4228);
     			attr_dev(a0, "href", "#title");
-    			add_location(a0, file$a, 12, 4, 760);
-    			add_location(li0, file$a, 12, 0, 756);
-    			attr_dev(a1, "href", "#about-the-author");
-    			add_location(a1, file$a, 13, 4, 798);
-    			add_location(li1, file$a, 13, 0, 794);
-    			attr_dev(a2, "href", "#why?");
-    			add_location(a2, file$a, 14, 4, 856);
-    			add_location(li2, file$a, 14, 0, 852);
-    			add_location(ul0, file$a, 11, 0, 751);
-    			add_location(hr, file$a, 16, 0, 888);
+    			attr_dev(a0, "class", "svelte-1ru2q6x");
+    			add_location(a0, file$a, 136, 4, 4279);
+    			attr_dev(li0, "class", "svelte-1ru2q6x");
+    			add_location(li0, file$a, 136, 0, 4275);
+    			attr_dev(a1, "href", "#overview");
+    			attr_dev(a1, "class", "svelte-1ru2q6x");
+    			add_location(a1, file$a, 137, 4, 4317);
+    			attr_dev(li1, "class", "svelte-1ru2q6x");
+    			add_location(li1, file$a, 137, 0, 4313);
+    			attr_dev(a2, "href", "#why-bytes-&-snippets?");
+    			attr_dev(a2, "class", "svelte-1ru2q6x");
+    			add_location(a2, file$a, 138, 4, 4359);
+    			attr_dev(li2, "class", "svelte-1ru2q6x");
+    			add_location(li2, file$a, 138, 0, 4355);
+    			attr_dev(a3, "href", "#about-the-author");
+    			attr_dev(a3, "class", "svelte-1ru2q6x");
+    			add_location(a3, file$a, 139, 4, 4427);
+    			attr_dev(li3, "class", "svelte-1ru2q6x");
+    			add_location(li3, file$a, 139, 0, 4423);
+    			attr_dev(ul0, "class", "svelte-1ru2q6x");
+    			add_location(ul0, file$a, 135, 0, 4270);
+    			add_location(hr, file$a, 141, 0, 4487);
     			attr_dev(h1, "id", "title");
-    			add_location(h1, file$a, 17, 0, 893);
+    			attr_dev(h1, "class", "svelte-1ru2q6x");
+    			add_location(h1, file$a, 142, 0, 4492);
     			attr_dev(pre, "class", "language-javascript");
-    			add_location(pre, file$a, 18, 0, 921);
-    			add_location(p0, file$a, 22, 0, 1465);
-    			attr_dev(h20, "id", "about-the-author");
-    			add_location(h20, file$a, 25, 0, 1606);
-    			add_location(strong0, file$a, 26, 32, 1686);
-    			add_location(strong1, file$a, 27, 23, 1755);
-    			add_location(em0, file$a, 27, 106, 1838);
-    			add_location(em1, file$a, 28, 45, 1905);
-    			add_location(p1, file$a, 26, 0, 1654);
-    			add_location(strong2, file$a, 30, 39, 2047);
-    			add_location(p2, file$a, 29, 0, 1935);
-    			add_location(p3, file$a, 31, 0, 2089);
+    			add_location(pre, file$a, 143, 0, 4520);
+    			attr_dev(h20, "id", "overview");
+    			attr_dev(h20, "class", "svelte-1ru2q6x");
+    			add_location(h20, file$a, 146, 0, 5026);
+    			add_location(br0, file$a, 147, 27, 5085);
+    			add_location(br1, file$a, 148, 51, 5141);
+    			attr_dev(p0, "class", "svelte-1ru2q6x");
+    			add_location(p0, file$a, 147, 0, 5058);
+    			attr_dev(h21, "id", "why-bytes--snippets");
+    			attr_dev(h21, "class", "svelte-1ru2q6x");
+    			add_location(h21, file$a, 150, 0, 5208);
+    			attr_dev(h22, "id", "about-the-author");
+    			attr_dev(h22, "class", "svelte-1ru2q6x");
+    			add_location(h22, file$a, 151, 0, 5264);
+    			add_location(strong0, file$a, 152, 32, 5344);
+    			add_location(br2, file$a, 152, 77, 5389);
+    			add_location(strong1, file$a, 153, 13, 5407);
+    			add_location(em0, file$a, 153, 79, 5473);
+    			add_location(br3, file$a, 153, 100, 5494);
+    			add_location(em1, file$a, 154, 45, 5544);
+    			attr_dev(p1, "class", "svelte-1ru2q6x");
+    			add_location(p1, file$a, 152, 0, 5312);
+    			add_location(br4, file$a, 155, 72, 5646);
+    			add_location(strong2, file$a, 156, 39, 5690);
+    			add_location(br5, file$a, 156, 76, 5727);
+    			attr_dev(p2, "class", "svelte-1ru2q6x");
+    			add_location(p2, file$a, 155, 0, 5574);
     			attr_dev(input0, "type", "checkbox");
     			input0.checked = true;
     			input0.disabled = true;
-    			add_location(input0, file$a, 33, 27, 2186);
-    			attr_dev(li3, "class", "task-list-item");
-    			add_location(li3, file$a, 33, 0, 2159);
+    			add_location(input0, file$a, 159, 27, 5835);
+    			attr_dev(li4, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li4, file$a, 159, 0, 5808);
     			attr_dev(input1, "type", "checkbox");
     			input1.checked = true;
     			input1.disabled = true;
-    			add_location(input1, file$a, 34, 27, 2272);
-    			attr_dev(li4, "class", "task-list-item");
-    			add_location(li4, file$a, 34, 0, 2245);
+    			add_location(input1, file$a, 160, 27, 5921);
+    			attr_dev(li5, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li5, file$a, 160, 0, 5894);
     			attr_dev(input2, "type", "checkbox");
     			input2.checked = true;
     			input2.disabled = true;
-    			add_location(input2, file$a, 35, 27, 2360);
-    			attr_dev(li5, "class", "task-list-item");
-    			add_location(li5, file$a, 35, 0, 2333);
+    			add_location(input2, file$a, 161, 27, 6009);
+    			attr_dev(li6, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li6, file$a, 161, 0, 5982);
     			attr_dev(input3, "type", "checkbox");
     			input3.checked = true;
     			input3.disabled = true;
-    			add_location(input3, file$a, 36, 27, 2466);
-    			attr_dev(li6, "class", "task-list-item");
-    			add_location(li6, file$a, 36, 0, 2439);
+    			add_location(input3, file$a, 162, 27, 6115);
+    			attr_dev(li7, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li7, file$a, 162, 0, 6088);
     			attr_dev(input4, "type", "checkbox");
     			input4.checked = true;
     			input4.disabled = true;
-    			add_location(input4, file$a, 37, 27, 2570);
-    			attr_dev(li7, "class", "task-list-item");
-    			add_location(li7, file$a, 37, 0, 2543);
+    			add_location(input4, file$a, 163, 27, 6219);
+    			attr_dev(li8, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li8, file$a, 163, 0, 6192);
     			attr_dev(input5, "type", "checkbox");
     			input5.disabled = true;
-    			add_location(input5, file$a, 38, 27, 2666);
-    			attr_dev(li8, "class", "task-list-item");
-    			add_location(li8, file$a, 38, 0, 2639);
+    			add_location(input5, file$a, 164, 27, 6315);
+    			attr_dev(li9, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li9, file$a, 164, 0, 6288);
     			attr_dev(input6, "type", "checkbox");
     			input6.checked = true;
     			input6.disabled = true;
-    			add_location(input6, file$a, 39, 27, 2755);
-    			attr_dev(li9, "class", "task-list-item");
-    			add_location(li9, file$a, 39, 0, 2728);
-    			attr_dev(ul1, "class", "contains-task-list");
-    			add_location(ul1, file$a, 32, 0, 2127);
-    			attr_dev(h21, "id", "what");
-    			add_location(h21, file$a, 41, 0, 2832);
-    			add_location(p4, file$a, 42, 0, 2857);
-    			attr_dev(h22, "id", "why");
-    			add_location(h22, file$a, 44, 0, 2961);
-    			add_location(em2, file$a, 46, 71, 3139);
-    			attr_dev(a3, "href", "http://excessere-ipsa.org/");
-    			attr_dev(a3, "rel", "nofollow");
-    			add_location(a3, file$a, 48, 22, 3254);
-    			add_location(em3, file$a, 52, 25, 3366);
-    			add_location(strong3, file$a, 52, 66, 3407);
-    			add_location(em4, file$a, 53, 0, 3439);
-    			add_location(p5, file$a, 45, 0, 2984);
-    			add_location(li10, file$a, 55, 0, 3476);
-    			add_location(li11, file$a, 56, 0, 3509);
-    			add_location(li12, file$a, 57, 0, 3544);
-    			add_location(li13, file$a, 58, 0, 3576);
-    			add_location(li14, file$a, 59, 0, 3606);
-    			add_location(li15, file$a, 60, 0, 3659);
-    			add_location(ol, file$a, 54, 0, 3471);
-    			attr_dev(h23, "id", "sola-mea-amantior");
-    			add_location(h23, file$a, 62, 0, 3702);
-    			add_location(strong4, file$a, 63, 56, 3808);
-    			add_location(p6, file$a, 63, 0, 3752);
-    			add_location(li16, file$a, 68, 0, 4067);
-    			add_location(li17, file$a, 69, 0, 4113);
-    			add_location(li18, file$a, 70, 0, 4138);
-    			add_location(li19, file$a, 71, 0, 4192);
-    			add_location(li20, file$a, 72, 0, 4245);
-    			add_location(ul2, file$a, 67, 0, 4062);
-    			attr_dev(h24, "id", "procrin-modo-concreta-animorum-tandem-aras");
-    			add_location(h24, file$a, 74, 0, 4280);
-    			attr_dev(a4, "href", "http://illi.io/consulat-sed.html");
-    			attr_dev(a4, "rel", "nofollow");
-    			add_location(a4, file$a, 77, 3, 4386);
-    			add_location(em5, file$a, 78, 28, 4519);
-    			add_location(em6, file$a, 78, 54, 4545);
-    			add_location(p7, file$a, 77, 0, 4383);
-    			add_location(strong5, file$a, 80, 48, 4718);
-    			add_location(p8, file$a, 79, 0, 4587);
+    			add_location(input6, file$a, 165, 27, 6404);
+    			attr_dev(li10, "class", "task-list-item svelte-1ru2q6x");
+    			add_location(li10, file$a, 165, 0, 6377);
+    			attr_dev(ul1, "class", "contains-task-list svelte-1ru2q6x");
+    			add_location(ul1, file$a, 158, 0, 5776);
+    			attr_dev(h23, "id", "b");
+    			attr_dev(h23, "class", "svelte-1ru2q6x");
+    			add_location(h23, file$a, 167, 0, 6481);
+    			attr_dev(p3, "class", "svelte-1ru2q6x");
+    			add_location(p3, file$a, 168, 0, 6499);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, h4, anchor);
+    			insert_dev(target, h3, anchor);
     			insert_dev(target, t1, anchor);
     			insert_dev(target, ul0, anchor);
     			append_dev(ul0, li0);
@@ -8049,175 +7904,116 @@ console<span class="token punctuation">.</span><span class="token function">log<
     			append_dev(ul0, t5);
     			append_dev(ul0, li2);
     			append_dev(li2, a2);
-    			insert_dev(target, t6, anchor);
-    			insert_dev(target, hr, anchor);
-    			insert_dev(target, t7, anchor);
-    			insert_dev(target, h1, anchor);
+    			append_dev(ul0, t7);
+    			append_dev(ul0, li3);
+    			append_dev(li3, a3);
     			insert_dev(target, t9, anchor);
+    			insert_dev(target, hr, anchor);
+    			insert_dev(target, t10, anchor);
+    			insert_dev(target, h1, anchor);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, pre, anchor);
     			pre.innerHTML = raw_value;
-    			insert_dev(target, t10, anchor);
-    			insert_dev(target, p0, anchor);
-    			insert_dev(target, t12, anchor);
+    			insert_dev(target, t13, anchor);
     			insert_dev(target, h20, anchor);
-    			insert_dev(target, t14, anchor);
-    			insert_dev(target, p1, anchor);
-    			append_dev(p1, t15);
-    			append_dev(p1, strong0);
-    			append_dev(p1, t17);
-    			append_dev(p1, strong1);
-    			append_dev(p1, t19);
-    			append_dev(p1, em0);
-    			append_dev(p1, t21);
-    			append_dev(p1, em1);
-    			append_dev(p1, t23);
-    			insert_dev(target, t24, anchor);
-    			insert_dev(target, p2, anchor);
-    			append_dev(p2, t25);
-    			append_dev(p2, strong2);
-    			append_dev(p2, t27);
-    			insert_dev(target, t28, anchor);
-    			insert_dev(target, p3, anchor);
-    			insert_dev(target, t30, anchor);
-    			insert_dev(target, ul1, anchor);
-    			append_dev(ul1, li3);
-    			append_dev(li3, input0);
-    			append_dev(li3, t31);
-    			append_dev(ul1, t32);
-    			append_dev(ul1, li4);
-    			append_dev(li4, input1);
-    			append_dev(li4, t33);
-    			append_dev(ul1, t34);
-    			append_dev(ul1, li5);
-    			append_dev(li5, input2);
-    			append_dev(li5, t35);
-    			append_dev(ul1, t36);
-    			append_dev(ul1, li6);
-    			append_dev(li6, input3);
-    			append_dev(li6, t37);
-    			append_dev(ul1, t38);
-    			append_dev(ul1, li7);
-    			append_dev(li7, input4);
-    			append_dev(li7, t39);
-    			append_dev(ul1, t40);
-    			append_dev(ul1, li8);
-    			append_dev(li8, input5);
-    			append_dev(li8, t41);
-    			append_dev(ul1, t42);
-    			append_dev(ul1, li9);
-    			append_dev(li9, input6);
-    			append_dev(li9, t43);
-    			insert_dev(target, t44, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, p0, anchor);
+    			append_dev(p0, t16);
+    			append_dev(p0, br0);
+    			append_dev(p0, t17);
+    			append_dev(p0, br1);
+    			append_dev(p0, t18);
+    			insert_dev(target, t19, anchor);
     			insert_dev(target, h21, anchor);
-    			insert_dev(target, t46, anchor);
-    			insert_dev(target, p4, anchor);
-    			insert_dev(target, t48, anchor);
+    			insert_dev(target, t21, anchor);
     			insert_dev(target, h22, anchor);
-    			insert_dev(target, t50, anchor);
-    			insert_dev(target, p5, anchor);
-    			append_dev(p5, t51);
-    			append_dev(p5, em2);
-    			append_dev(p5, t53);
-    			append_dev(p5, a3);
-    			append_dev(p5, t55);
-    			append_dev(p5, em3);
-    			append_dev(p5, t57);
-    			append_dev(p5, strong3);
-    			append_dev(p5, t59);
-    			append_dev(p5, em4);
-    			append_dev(p5, t61);
-    			insert_dev(target, t62, anchor);
-    			insert_dev(target, ol, anchor);
-    			append_dev(ol, li10);
-    			append_dev(ol, t64);
-    			append_dev(ol, li11);
-    			append_dev(ol, t66);
-    			append_dev(ol, li12);
-    			append_dev(ol, t68);
-    			append_dev(ol, li13);
-    			append_dev(ol, t70);
-    			append_dev(ol, li14);
-    			append_dev(ol, t72);
-    			append_dev(ol, li15);
-    			insert_dev(target, t74, anchor);
+    			insert_dev(target, t23, anchor);
+    			insert_dev(target, p1, anchor);
+    			append_dev(p1, t24);
+    			append_dev(p1, strong0);
+    			append_dev(p1, t26);
+    			append_dev(p1, br2);
+    			append_dev(p1, t27);
+    			append_dev(p1, strong1);
+    			append_dev(p1, t29);
+    			append_dev(p1, em0);
+    			append_dev(p1, t31);
+    			append_dev(p1, br3);
+    			append_dev(p1, t32);
+    			append_dev(p1, em1);
+    			append_dev(p1, t34);
+    			insert_dev(target, t35, anchor);
+    			insert_dev(target, p2, anchor);
+    			append_dev(p2, t36);
+    			append_dev(p2, br4);
+    			append_dev(p2, t37);
+    			append_dev(p2, strong2);
+    			append_dev(p2, t39);
+    			append_dev(p2, br5);
+    			append_dev(p2, t40);
+    			insert_dev(target, t41, anchor);
+    			insert_dev(target, ul1, anchor);
+    			append_dev(ul1, li4);
+    			append_dev(li4, input0);
+    			append_dev(li4, t42);
+    			append_dev(ul1, t43);
+    			append_dev(ul1, li5);
+    			append_dev(li5, input1);
+    			append_dev(li5, t44);
+    			append_dev(ul1, t45);
+    			append_dev(ul1, li6);
+    			append_dev(li6, input2);
+    			append_dev(li6, t46);
+    			append_dev(ul1, t47);
+    			append_dev(ul1, li7);
+    			append_dev(li7, input3);
+    			append_dev(li7, t48);
+    			append_dev(ul1, t49);
+    			append_dev(ul1, li8);
+    			append_dev(li8, input4);
+    			append_dev(li8, t50);
+    			append_dev(ul1, t51);
+    			append_dev(ul1, li9);
+    			append_dev(li9, input5);
+    			append_dev(li9, t52);
+    			append_dev(ul1, t53);
+    			append_dev(ul1, li10);
+    			append_dev(li10, input6);
+    			append_dev(li10, t54);
+    			insert_dev(target, t55, anchor);
     			insert_dev(target, h23, anchor);
-    			insert_dev(target, t76, anchor);
-    			insert_dev(target, p6, anchor);
-    			append_dev(p6, t77);
-    			append_dev(p6, strong4);
-    			append_dev(p6, t79);
-    			insert_dev(target, t80, anchor);
-    			insert_dev(target, ul2, anchor);
-    			append_dev(ul2, li16);
-    			append_dev(ul2, t82);
-    			append_dev(ul2, li17);
-    			append_dev(ul2, t84);
-    			append_dev(ul2, li18);
-    			append_dev(ul2, t86);
-    			append_dev(ul2, li19);
-    			append_dev(ul2, t88);
-    			append_dev(ul2, li20);
-    			insert_dev(target, t90, anchor);
-    			insert_dev(target, h24, anchor);
-    			insert_dev(target, t92, anchor);
-    			insert_dev(target, p7, anchor);
-    			append_dev(p7, a4);
-    			append_dev(p7, t94);
-    			append_dev(p7, em5);
-    			append_dev(p7, t96);
-    			append_dev(p7, em6);
-    			append_dev(p7, t98);
-    			insert_dev(target, t99, anchor);
-    			insert_dev(target, p8, anchor);
-    			append_dev(p8, t100);
-    			append_dev(p8, strong5);
-    			append_dev(p8, t102);
+    			insert_dev(target, t57, anchor);
+    			insert_dev(target, p3, anchor);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h4);
+    			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(ul0);
-    			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(hr);
-    			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(pre);
+    			if (detaching) detach_dev(hr);
     			if (detaching) detach_dev(t10);
-    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(pre);
+    			if (detaching) detach_dev(t13);
     			if (detaching) detach_dev(h20);
-    			if (detaching) detach_dev(t14);
-    			if (detaching) detach_dev(p1);
-    			if (detaching) detach_dev(t24);
-    			if (detaching) detach_dev(p2);
-    			if (detaching) detach_dev(t28);
-    			if (detaching) detach_dev(p3);
-    			if (detaching) detach_dev(t30);
-    			if (detaching) detach_dev(ul1);
-    			if (detaching) detach_dev(t44);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t19);
     			if (detaching) detach_dev(h21);
-    			if (detaching) detach_dev(t46);
-    			if (detaching) detach_dev(p4);
-    			if (detaching) detach_dev(t48);
+    			if (detaching) detach_dev(t21);
     			if (detaching) detach_dev(h22);
-    			if (detaching) detach_dev(t50);
-    			if (detaching) detach_dev(p5);
-    			if (detaching) detach_dev(t62);
-    			if (detaching) detach_dev(ol);
-    			if (detaching) detach_dev(t74);
+    			if (detaching) detach_dev(t23);
+    			if (detaching) detach_dev(p1);
+    			if (detaching) detach_dev(t35);
+    			if (detaching) detach_dev(p2);
+    			if (detaching) detach_dev(t41);
+    			if (detaching) detach_dev(ul1);
+    			if (detaching) detach_dev(t55);
     			if (detaching) detach_dev(h23);
-    			if (detaching) detach_dev(t76);
-    			if (detaching) detach_dev(p6);
-    			if (detaching) detach_dev(t80);
-    			if (detaching) detach_dev(ul2);
-    			if (detaching) detach_dev(t90);
-    			if (detaching) detach_dev(h24);
-    			if (detaching) detach_dev(t92);
-    			if (detaching) detach_dev(p7);
-    			if (detaching) detach_dev(t99);
-    			if (detaching) detach_dev(p8);
+    			if (detaching) detach_dev(t57);
+    			if (detaching) detach_dev(p3);
     		}
     	};
 
@@ -8225,7 +8021,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(10:0) <Layout_MDSVEX_DEFAULT {...metadata}>",
+    		source: "(133:0) <Layout_MDSVEX_DEFAULT {...metadata}>",
     		ctx
     	});
 
@@ -8267,7 +8063,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     			? get_spread_update(layout_mdsvex_default_spread_levels, [get_spread_object(metadata)])
     			: {};
 
-    			if (dirty & /*$$scope*/ 1) {
+    			if (dirty & /*$$scope*/ 2) {
     				layout_mdsvex_default_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8305,7 +8101,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     	"author": "Solomon Zelenko",
     	"category": "news",
     	"tags": ["mental health", "tech", "lifestyle"],
-    	"summary": "Welcome to my Tech Blog, \nEnjoy a series of musings, tutorials, and snippets\nMay each click bring you joy - and me, some extra income!\n",
+    	"summary": "Welcome to my Tech Blog. \nEnjoy a series of musings, tutorials, and snippets!\nMay each click bring you joy - and me, some extra income.\n",
     	"layout": "blog"
     };
 
@@ -8314,6 +8110,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     function instance$d($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Post1", slots, []);
+    	let num = 42;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -8330,8 +8127,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		tags,
     		summary,
     		layout: layout$1,
-    		Layout_MDSVEX_DEFAULT: BlogPost
+    		Layout_MDSVEX_DEFAULT: BlogPost,
+    		num
     	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("num" in $$props) num = $$props.num;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
 
     	return [];
     }
@@ -8349,7 +8155,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		});
     	}
     }
-    Post1.$compile = {"vars":[{"name":"metadata","export_name":"metadata","injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false},{"name":"title","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false},{"name":"published","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"updated","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"author","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"category","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"tags","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"summary","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"layout","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"Layout_MDSVEX_DEFAULT","export_name":null,"injected":false,"module":false,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false}]};
+    Post1.$compile = {"vars":[{"name":"metadata","export_name":"metadata","injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false},{"name":"title","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false},{"name":"published","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"updated","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"author","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"category","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"tags","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"summary","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"layout","export_name":null,"injected":false,"module":true,"mutated":false,"reassigned":false,"referenced":false,"writable":false,"referenced_from_script":false},{"name":"Layout_MDSVEX_DEFAULT","export_name":null,"injected":false,"module":false,"mutated":false,"reassigned":false,"referenced":true,"writable":false,"referenced_from_script":false},{"name":"num","export_name":null,"injected":false,"module":false,"mutated":false,"reassigned":false,"referenced":false,"writable":true,"referenced_from_script":false}]};
 
     var post1 = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -8357,24 +8163,26 @@ console<span class="token punctuation">.</span><span class="token function">log<
         metadata: metadata
     });
 
-    /* src/pages/blog/post2.md generated by Svelte v3.28.0 */
-    const file$b = "src/pages/blog/post2.md";
+    /* src/pages/blog/post2.svx generated by Svelte v3.28.0 */
+    const file$b = "src/pages/blog/post2.svx";
 
     // (10:0) <Layout_MDSVEX_DEFAULT {...metadata}>
     function create_default_slot$2(ctx) {
-    	let h1;
+    	let style;
     	let t1;
-    	let h20;
+    	let h1;
     	let t3;
-    	let p0;
+    	let h20;
     	let t5;
+    	let p0;
+    	let t7;
     	let blockquote;
     	let p1;
-    	let t7;
-    	let h21;
     	let t9;
-    	let p2;
+    	let h21;
     	let t11;
+    	let p2;
+    	let t13;
     	let pre;
 
     	let raw_value = `<code class="language-javascript">mmsMulticasting <span class="token operator">/=</span> <span class="token function">thickExif</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">+</span> ioScroll<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -8388,305 +8196,314 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> southbridgeVaporware <span class="token operator">=</span> <span class="token function">volume_hibernate_title</span><span class="token punctuation">(</span><span class="token function">android_pmu</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> icio<span class="token punctuation">)</span><span class="token punctuation">,</span>
         server<span class="token punctuation">)</span> <span class="token operator">+</span> cmyk_typeface<span class="token punctuation">;</span></code>` + "";
 
-    	let t12;
-    	let h22;
     	let t14;
+    	let h22;
+    	let t16;
     	let p3;
-    	let t15;
-    	let strong0;
     	let t17;
-    	let em0;
+    	let strong0;
     	let t19;
-    	let strong1;
+    	let em0;
     	let t21;
-    	let em1;
+    	let strong1;
     	let t23;
-    	let t24;
+    	let em1;
+    	let t25;
+    	let t26;
     	let ol;
     	let li0;
-    	let t26;
-    	let li1;
     	let t28;
-    	let li2;
+    	let li1;
     	let t30;
-    	let li3;
+    	let li2;
     	let t32;
-    	let li4;
+    	let li3;
     	let t34;
-    	let h23;
+    	let li4;
     	let t36;
+    	let h23;
+    	let t38;
     	let p4;
-    	let t37;
-    	let em2;
     	let t39;
-    	let t40;
+    	let em2;
+    	let t41;
+    	let t42;
     	let ul;
     	let li5;
-    	let t42;
-    	let li6;
     	let t44;
-    	let li7;
+    	let li6;
     	let t46;
-    	let li8;
+    	let li7;
     	let t48;
-    	let li9;
+    	let li8;
     	let t50;
+    	let li9;
+    	let t52;
     	let p5;
-    	let t51;
-    	let strong2;
     	let t53;
-    	let em3;
+    	let strong2;
     	let t55;
-    	let em4;
+    	let em3;
     	let t57;
-    	let a;
+    	let em4;
     	let t59;
-    	let em5;
+    	let a;
     	let t61;
+    	let em5;
+    	let t63;
 
     	const block = {
     		c: function create() {
+    			style = element("style");
+    			style.textContent = "code[class*=\"language-\"],\npre[class*=\"language-\"] {\n  font-size: calc(1rem + 0.15vw); }\n  @media screen and (min-width: 560px) {\n    code[class*=\"language-\"],\n    pre[class*=\"language-\"] {\n      font-size: calc(1.2rem + 0.15vw); } }\n  @media screen and (min-width: 768px) {\n    code[class*=\"language-\"],\n    pre[class*=\"language-\"] {\n      font-size: calc(1.3rem + 0.15vw); } }\n  @media screen and (min-width: 1248px) {\n    code[class*=\"language-\"],\n    pre[class*=\"language-\"] {\n      font-size: calc(1.4rem + 0.15vw); } }\n  @media screen and (min-width: 2000px) {\n    code[class*=\"language-\"],\n    pre[class*=\"language-\"] {\n      font-size: calc(1.6rem + 0.15vw); } }";
+    			t1 = space();
     			h1 = element("h1");
     			h1.textContent = `${title$1}`;
-    			t1 = space();
+    			t3 = space();
     			h20 = element("h2");
     			h20.textContent = "Origine medias morari non humo accepit flammas";
-    			t3 = space();
+    			t5 = space();
     			p0 = element("p");
     			p0.textContent = "Lorem markdownum molem fremebundus virtus labores in dextro leves haut parvumque\nora. Latus deos ducem, satis ossa, sceptri nemus est est iudicium mensas; vel.";
-    			t5 = space();
+    			t7 = space();
     			blockquote = element("blockquote");
     			p1 = element("p");
     			p1.textContent = "Nova nubigenas, non non versantes Perimelen curru, sed virginibus, solvit\ndares sanguine, per. Summe quod conplexus dolentem meus setius. In vitibus est\nbelli mare tuaque tura cumulum sacerdos urbes concursibus.";
-    			t7 = space();
+    			t9 = space();
     			h21 = element("h2");
     			h21.textContent = "Nato suam hinc iugum ocior";
-    			t9 = space();
+    			t11 = space();
     			p2 = element("p");
     			p2.textContent = "In relinque praerupit faciem. Et restant multisque nomine? Sed Oriente sed hanc\ntuas sit, iam mutua, in exit non corpore novit receptus, hac me?";
-    			t11 = space();
+    			t13 = space();
     			pre = element("pre");
-    			t12 = space();
+    			t14 = space();
     			h22 = element("h2");
     			h22.textContent = "Pariter nox legit locus faces longo inquit";
-    			t14 = space();
+    			t16 = space();
     			p3 = element("p");
-    			t15 = text("Sol ");
+    			t17 = text("Sol ");
     			strong0 = element("strong");
     			strong0.textContent = "fecit nos et";
-    			t17 = text(" reddat in deceptus melior. Ante et ");
+    			t19 = text(" reddat in deceptus melior. Ante et ");
     			em0 = element("em");
     			em0.textContent = "vere non";
-    			t19 = text(" tuque, nam\nmaternae eodem est illo diro ");
+    			t21 = text(" tuque, nam\nmaternae eodem est illo diro ");
     			strong1 = element("strong");
     			strong1.textContent = "volat";
-    			t21 = text(". Eadem in quae in ferarum nepoti\nauxilioque cunctis, discrimine haut. Sub aurea restabat Ausoniis ora quid\ncunctari, si subvolat sunt; huic et gravitate ");
+    			t23 = text(". Eadem in quae in ferarum nepoti\nauxilioque cunctis, discrimine haut. Sub aurea restabat Ausoniis ora quid\ncunctari, si subvolat sunt; huic et gravitate ");
     			em1 = element("em");
     			em1.textContent = "irasci dignatus";
-    			t23 = text(" stabula. Subibis\nlugebat rex nexilibus superis vires proscindere erat erraverit fletumque, dedit\nmedio maneas suam.");
-    			t24 = space();
+    			t25 = text(" stabula. Subibis\nlugebat rex nexilibus superis vires proscindere erat erraverit fletumque, dedit\nmedio maneas suam.");
+    			t26 = space();
     			ol = element("ol");
     			li0 = element("li");
     			li0.textContent = "Rhodope aether pervenientia ora venistis et neque";
-    			t26 = space();
+    			t28 = space();
     			li1 = element("li");
     			li1.textContent = "Aras fuit pallada magnanimo";
-    			t28 = space();
+    			t30 = space();
     			li2 = element("li");
     			li2.textContent = "Indoluit circumdata aequora favoni";
-    			t30 = space();
+    			t32 = space();
     			li3 = element("li");
     			li3.textContent = "Obstrepuere fieri capillis ex sonat";
-    			t32 = space();
+    			t34 = space();
     			li4 = element("li");
     			li4.textContent = "Hic tibi dixit et inane qualem";
-    			t34 = space();
+    			t36 = space();
     			h23 = element("h2");
     			h23.textContent = "Corpora adspergine alas sumpsitque";
-    			t36 = space();
+    			t38 = space();
     			p4 = element("p");
-    			t37 = text("Vidit puduit caestibus caerulei arte procul in ira nihil misceri ");
+    			t39 = text("Vidit puduit caestibus caerulei arte procul in ira nihil misceri ");
     			em2 = element("em");
     			em2.textContent = "flammas";
-    			t39 = text("? Est\nappellat. Averna fraxinus, in duarum manesque crudelis corpore sententia et\nExigit fidae: sororem falsi. Quaeritis aliquem.");
-    			t40 = space();
+    			t41 = text("? Est\nappellat. Averna fraxinus, in duarum manesque crudelis corpore sententia et\nExigit fidae: sororem falsi. Quaeritis aliquem.");
+    			t42 = space();
     			ul = element("ul");
     			li5 = element("li");
     			li5.textContent = "Genitor nocuit ferrum miratur Simois";
-    			t42 = space();
+    			t44 = space();
     			li6 = element("li");
     			li6.textContent = "Si in hostiliter coepit Phoebus";
-    			t44 = space();
+    			t46 = space();
     			li7 = element("li");
     			li7.textContent = "Huic origo defrenato adituque signa posset";
-    			t46 = space();
+    			t48 = space();
     			li8 = element("li");
     			li8.textContent = "In terret pater sive herbas caput habeoque";
-    			t48 = space();
+    			t50 = space();
     			li9 = element("li");
     			li9.textContent = "Iuncta de tenuit iubebat quae";
-    			t50 = space();
+    			t52 = space();
     			p5 = element("p");
-    			t51 = text("Dextra in genus ");
+    			t53 = text("Dextra in genus ");
     			strong2 = element("strong");
     			strong2.textContent = "sedebat passa";
-    			t53 = text(". Exierat ulciscitur ");
+    			t55 = text(". Exierat ulciscitur ");
     			em3 = element("em");
     			em3.textContent = "furor";
-    			t55 = text(" sed nec prolem\nmaioris aura Aurora, arcana utque tarde inclusas? Intremuere sanguine gradus sic\nes, iter ");
+    			t57 = text(" sed nec prolem\nmaioris aura Aurora, arcana utque tarde inclusas? Intremuere sanguine gradus sic\nes, iter ");
     			em4 = element("em");
     			em4.textContent = "magnis nuper";
-    			t57 = text(" este, Graium! Exiguo Polymestora nequiquam munere tractu\ncornua suis ");
+    			t59 = text(" este, Graium! Exiguo Polymestora nequiquam munere tractu\ncornua suis ");
     			a = element("a");
     			a.textContent = "Pandion saepe";
-    			t59 = text(" animum dea, refert\n");
+    			t61 = text(" animum dea, refert\n");
     			em5 = element("em");
     			em5.textContent = "tellure";
-    			t61 = text(" sceleratae.");
+    			t63 = text(" sceleratae.");
+    			attr_dev(style, "type", "text/scss");
+    			add_location(style, file$b, 10, 0, 473);
     			attr_dev(h1, "id", "title");
-    			add_location(h1, file$b, 10, 0, 473);
+    			add_location(h1, file$b, 30, 0, 1176);
     			attr_dev(h20, "id", "origine-medias-morari-non-humo-accepit-flammas");
-    			add_location(h20, file$b, 11, 0, 501);
-    			add_location(p0, file$b, 14, 0, 612);
-    			add_location(p1, file$b, 17, 0, 792);
-    			add_location(blockquote, file$b, 16, 0, 779);
+    			add_location(h20, file$b, 31, 0, 1204);
+    			add_location(p0, file$b, 34, 0, 1315);
+    			add_location(p1, file$b, 37, 0, 1495);
+    			add_location(blockquote, file$b, 36, 0, 1482);
     			attr_dev(h21, "id", "nato-suam-hinc-iugum-ocior");
-    			add_location(h21, file$b, 21, 0, 1025);
-    			add_location(p2, file$b, 22, 0, 1093);
+    			add_location(h21, file$b, 41, 0, 1728);
+    			add_location(p2, file$b, 42, 0, 1796);
     			attr_dev(pre, "class", "language-javascript");
-    			add_location(pre, file$b, 24, 0, 1245);
+    			add_location(pre, file$b, 44, 0, 1948);
     			attr_dev(h22, "id", "pariter-nox-legit-locus-faces-longo-inquit");
-    			add_location(h22, file$b, 34, 0, 3950);
-    			add_location(strong0, file$b, 37, 7, 4060);
-    			add_location(em0, file$b, 37, 72, 4125);
-    			add_location(strong1, file$b, 38, 29, 4183);
-    			add_location(em1, file$b, 40, 46, 4359);
-    			add_location(p3, file$b, 37, 0, 4053);
-    			add_location(li0, file$b, 44, 0, 4509);
-    			add_location(li1, file$b, 45, 0, 4568);
-    			add_location(li2, file$b, 46, 0, 4605);
-    			add_location(li3, file$b, 47, 0, 4649);
-    			add_location(li4, file$b, 48, 0, 4694);
-    			add_location(ol, file$b, 43, 0, 4504);
+    			add_location(h22, file$b, 54, 0, 4653);
+    			add_location(strong0, file$b, 57, 7, 4763);
+    			add_location(em0, file$b, 57, 72, 4828);
+    			add_location(strong1, file$b, 58, 29, 4886);
+    			add_location(em1, file$b, 60, 46, 5062);
+    			add_location(p3, file$b, 57, 0, 4756);
+    			add_location(li0, file$b, 64, 0, 5212);
+    			add_location(li1, file$b, 65, 0, 5271);
+    			add_location(li2, file$b, 66, 0, 5308);
+    			add_location(li3, file$b, 67, 0, 5352);
+    			add_location(li4, file$b, 68, 0, 5397);
+    			add_location(ol, file$b, 63, 0, 5207);
     			attr_dev(h23, "id", "corpora-adspergine-alas-sumpsitque");
-    			add_location(h23, file$b, 50, 0, 4740);
-    			add_location(em2, file$b, 51, 68, 4892);
-    			add_location(p4, file$b, 51, 0, 4824);
-    			add_location(li5, file$b, 55, 0, 5047);
-    			add_location(li6, file$b, 56, 0, 5093);
-    			add_location(li7, file$b, 57, 0, 5134);
-    			add_location(li8, file$b, 58, 0, 5186);
-    			add_location(li9, file$b, 59, 0, 5238);
-    			add_location(ul, file$b, 54, 0, 5042);
-    			add_location(strong2, file$b, 61, 19, 5302);
-    			add_location(em3, file$b, 61, 70, 5353);
-    			add_location(em4, file$b, 63, 9, 5473);
+    			add_location(h23, file$b, 70, 0, 5443);
+    			add_location(em2, file$b, 71, 68, 5595);
+    			add_location(p4, file$b, 71, 0, 5527);
+    			add_location(li5, file$b, 75, 0, 5750);
+    			add_location(li6, file$b, 76, 0, 5796);
+    			add_location(li7, file$b, 77, 0, 5837);
+    			add_location(li8, file$b, 78, 0, 5889);
+    			add_location(li9, file$b, 79, 0, 5941);
+    			add_location(ul, file$b, 74, 0, 5745);
+    			add_location(strong2, file$b, 81, 19, 6005);
+    			add_location(em3, file$b, 81, 70, 6056);
+    			add_location(em4, file$b, 83, 9, 6176);
     			attr_dev(a, "href", "http://ubi-ubi.org/potitur");
     			attr_dev(a, "rel", "nofollow");
-    			add_location(a, file$b, 64, 12, 5564);
-    			add_location(em5, file$b, 68, 0, 5658);
-    			add_location(p5, file$b, 61, 0, 5283);
+    			add_location(a, file$b, 84, 12, 6267);
+    			add_location(em5, file$b, 88, 0, 6361);
+    			add_location(p5, file$b, 81, 0, 5986);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, h1, anchor);
+    			insert_dev(target, style, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, h20, anchor);
+    			insert_dev(target, h1, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, p0, anchor);
+    			insert_dev(target, h20, anchor);
     			insert_dev(target, t5, anchor);
+    			insert_dev(target, p0, anchor);
+    			insert_dev(target, t7, anchor);
     			insert_dev(target, blockquote, anchor);
     			append_dev(blockquote, p1);
-    			insert_dev(target, t7, anchor);
-    			insert_dev(target, h21, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, p2, anchor);
+    			insert_dev(target, h21, anchor);
     			insert_dev(target, t11, anchor);
+    			insert_dev(target, p2, anchor);
+    			insert_dev(target, t13, anchor);
     			insert_dev(target, pre, anchor);
     			pre.innerHTML = raw_value;
-    			insert_dev(target, t12, anchor);
-    			insert_dev(target, h22, anchor);
     			insert_dev(target, t14, anchor);
+    			insert_dev(target, h22, anchor);
+    			insert_dev(target, t16, anchor);
     			insert_dev(target, p3, anchor);
-    			append_dev(p3, t15);
-    			append_dev(p3, strong0);
     			append_dev(p3, t17);
-    			append_dev(p3, em0);
+    			append_dev(p3, strong0);
     			append_dev(p3, t19);
-    			append_dev(p3, strong1);
+    			append_dev(p3, em0);
     			append_dev(p3, t21);
-    			append_dev(p3, em1);
+    			append_dev(p3, strong1);
     			append_dev(p3, t23);
-    			insert_dev(target, t24, anchor);
+    			append_dev(p3, em1);
+    			append_dev(p3, t25);
+    			insert_dev(target, t26, anchor);
     			insert_dev(target, ol, anchor);
     			append_dev(ol, li0);
-    			append_dev(ol, t26);
-    			append_dev(ol, li1);
     			append_dev(ol, t28);
-    			append_dev(ol, li2);
+    			append_dev(ol, li1);
     			append_dev(ol, t30);
-    			append_dev(ol, li3);
+    			append_dev(ol, li2);
     			append_dev(ol, t32);
+    			append_dev(ol, li3);
+    			append_dev(ol, t34);
     			append_dev(ol, li4);
-    			insert_dev(target, t34, anchor);
-    			insert_dev(target, h23, anchor);
     			insert_dev(target, t36, anchor);
+    			insert_dev(target, h23, anchor);
+    			insert_dev(target, t38, anchor);
     			insert_dev(target, p4, anchor);
-    			append_dev(p4, t37);
-    			append_dev(p4, em2);
     			append_dev(p4, t39);
-    			insert_dev(target, t40, anchor);
+    			append_dev(p4, em2);
+    			append_dev(p4, t41);
+    			insert_dev(target, t42, anchor);
     			insert_dev(target, ul, anchor);
     			append_dev(ul, li5);
-    			append_dev(ul, t42);
-    			append_dev(ul, li6);
     			append_dev(ul, t44);
-    			append_dev(ul, li7);
+    			append_dev(ul, li6);
     			append_dev(ul, t46);
-    			append_dev(ul, li8);
+    			append_dev(ul, li7);
     			append_dev(ul, t48);
+    			append_dev(ul, li8);
+    			append_dev(ul, t50);
     			append_dev(ul, li9);
-    			insert_dev(target, t50, anchor);
+    			insert_dev(target, t52, anchor);
     			insert_dev(target, p5, anchor);
-    			append_dev(p5, t51);
-    			append_dev(p5, strong2);
     			append_dev(p5, t53);
-    			append_dev(p5, em3);
+    			append_dev(p5, strong2);
     			append_dev(p5, t55);
-    			append_dev(p5, em4);
+    			append_dev(p5, em3);
     			append_dev(p5, t57);
-    			append_dev(p5, a);
+    			append_dev(p5, em4);
     			append_dev(p5, t59);
-    			append_dev(p5, em5);
+    			append_dev(p5, a);
     			append_dev(p5, t61);
+    			append_dev(p5, em5);
+    			append_dev(p5, t63);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h1);
+    			if (detaching) detach_dev(style);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(h20);
+    			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(h20);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(blockquote);
+    			if (detaching) detach_dev(p0);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(h21);
+    			if (detaching) detach_dev(blockquote);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(p2);
+    			if (detaching) detach_dev(h21);
     			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(p2);
+    			if (detaching) detach_dev(t13);
     			if (detaching) detach_dev(pre);
-    			if (detaching) detach_dev(t12);
-    			if (detaching) detach_dev(h22);
     			if (detaching) detach_dev(t14);
+    			if (detaching) detach_dev(h22);
+    			if (detaching) detach_dev(t16);
     			if (detaching) detach_dev(p3);
-    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(t26);
     			if (detaching) detach_dev(ol);
-    			if (detaching) detach_dev(t34);
-    			if (detaching) detach_dev(h23);
     			if (detaching) detach_dev(t36);
+    			if (detaching) detach_dev(h23);
+    			if (detaching) detach_dev(t38);
     			if (detaching) detach_dev(p4);
-    			if (detaching) detach_dev(t40);
+    			if (detaching) detach_dev(t42);
     			if (detaching) detach_dev(ul);
-    			if (detaching) detach_dev(t50);
+    			if (detaching) detach_dev(t52);
     			if (detaching) detach_dev(p5);
     		}
     	};
@@ -8920,7 +8737,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     	return child_ctx;
     }
 
-    // (131:4) {#each works as { meta, path }}
+    // (95:4) {#each works as { meta, path }}
     function create_each_block$4(ctx) {
     	let li;
     	let a;
@@ -8941,10 +8758,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
     			t2 = space();
     			attr_dev(a, "class", "title");
     			attr_dev(a, "href", a_href_value = /*$url*/ ctx[0](/*path*/ ctx[4]));
-    			add_location(a, file$c, 132, 8, 3221);
+    			add_location(a, file$c, 96, 8, 2690);
     			html_tag = new HtmlTag(t2);
-    			attr_dev(li, "class", "work svelte-c14tev");
-    			add_location(li, file$c, 131, 6, 3195);
+    			attr_dev(li, "class", "work svelte-bnyt5n");
+    			add_location(li, file$c, 95, 6, 2664);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -8968,7 +8785,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(131:4) {#each works as { meta, path }}",
+    		source: "(95:4) {#each works as { meta, path }}",
     		ctx
     	});
 
@@ -9009,16 +8826,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-c14tev");
-    			add_location(h1, file$c, 123, 2, 2999);
-    			attr_dev(strong, "class", "svelte-c14tev");
-    			add_location(strong, file$c, 126, 4, 3100);
-    			attr_dev(h2, "class", "sub-h2 svelte-c14tev");
-    			add_location(h2, file$c, 124, 2, 3035);
-    			attr_dev(ul, "class", "works svelte-c14tev");
-    			add_location(ul, file$c, 129, 2, 3134);
-    			attr_dev(section, "class", "pg blog-pg svelte-c14tev");
-    			add_location(section, file$c, 122, 0, 2968);
+    			attr_dev(h1, "class", "svelte-bnyt5n");
+    			add_location(h1, file$c, 87, 2, 2468);
+    			add_location(strong, file$c, 90, 4, 2569);
+    			attr_dev(h2, "class", "sub-h2 svelte-bnyt5n");
+    			add_location(h2, file$c, 88, 2, 2504);
+    			attr_dev(ul, "class", "works svelte-bnyt5n");
+    			add_location(ul, file$c, 93, 2, 2603);
+    			attr_dev(section, "class", "pg blog-pg svelte-bnyt5n");
+    			add_location(section, file$c, 86, 0, 2437);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9218,26 +9034,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
         'default': Layout$3
     });
 
-    /* src/pages/about/index.md generated by Svelte v3.28.0 */
+    /* src/pages/about/index.svx generated by Svelte v3.28.0 */
 
-    const file$d = "src/pages/about/index.md";
+    const file$d = "src/pages/about/index.svx";
 
     function create_fragment$i(ctx) {
     	let h1;
     	let t1;
-    	let h3;
+    	let h2;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Why hello!";
+    			h1.textContent = "Who is Solomon?";
     			t1 = space();
-    			h3 = element("h3");
-    			h3.textContent = "I’m written in markdown";
-    			attr_dev(h1, "id", "why-hello");
-    			add_location(h1, file$d, 1, 0, 1);
-    			attr_dev(h3, "id", "im-written-in-markdown");
-    			add_location(h3, file$d, 2, 0, 36);
+    			h2 = element("h2");
+    			h2.textContent = "I am a Software Engineer living in Irvine, CA";
+    			attr_dev(h1, "id", "who-is-solomon");
+    			attr_dev(h1, "class", "svelte-7b8di0");
+    			add_location(h1, file$d, 45, 0, 1327);
+    			attr_dev(h2, "id", "i-am-a-software-engineer-living-in-irvine-ca");
+    			attr_dev(h2, "class", "svelte-7b8di0");
+    			add_location(h2, file$d, 46, 0, 1372);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9245,7 +9063,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, h3, anchor);
+    			insert_dev(target, h2, anchor);
     		},
     		p: noop,
     		i: noop,
@@ -9253,7 +9071,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(h3);
+    			if (detaching) detach_dev(h2);
     		}
     	};
 

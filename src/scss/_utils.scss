@@ -1,0 +1,92 @@
+@import "config";
+
+%header1 {
+  text-align: center;
+  font-family: $fontPrimary;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  @include font-size($h1-font-sizes);
+}
+
+%header2 {
+  text-align: center;
+  font-family: $fontPrimary;
+  line-height: 2;
+  @include font-size($h2-font-sizes);
+}
+
+%header3 {
+  text-align: left;
+  font-family: $fontSecondary;
+  margin: 0;
+  line-height: 1.25;
+  @include font-size($h3-font-sizes);
+}
+
+%marker {
+  font-family: $fontHandwriting;
+  @include font-size($h3-font-sizes);
+}
+
+%paragraph {
+  font-family: $fontSecondary;
+  line-height: 1.75;
+  @include font-size($p-font-sizes);
+}
+
+%btnprimary {
+  font-family: $fontSecondary;
+  line-height: 1.75;
+  @include font-size($h3-font-sizes);
+}
+
+%btnsecondary {
+  font-family: $fontSecondary;
+  line-height: 1.75;
+  @include font-size($h3-font-sizes);
+}
+
+%navlink {
+  text-decoration: none;
+}
+
+%bloglink {
+  text-decoration: none;
+}
+
+%list1 {
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    font-family: $fontSecondary;
+    line-height: 1.75;
+    @include font-size($p-font-sizes);
+  }
+}
+
+%overview {
+  margin-top: 0;
+  width: 100%;
+  li {
+    display: block;
+  }
+}
+
+%page {
+  text-align: center;
+  margin: 1rem auto;
+  width: 90%;
+  @include mq("tablet") {
+    max-width: 1200px;
+  }
+}
+
+%blogpage {
+  text-align: center;
+  margin: 1rem auto;
+  width: 85%;
+  @include mq("tablet") {
+    max-width: 900px;
+  }
+}
