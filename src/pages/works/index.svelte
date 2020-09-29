@@ -11,8 +11,9 @@
     );
 </script>
 
-<style>
-
+<style type="text/scss">
+  @import "../../scss/config";
+  @import "../../scss/Main.scss";
 </style>
 
 <section class="pg blog-pg">

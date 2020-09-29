@@ -1,7 +1,7 @@
 <script>
   import { layout, url, isActive } from "@sveltech/routify";
 
-  console.log(layout.parent.children);
+  // console.log(layout.parent.children);
 </script>
 
 <style type="text/scss">

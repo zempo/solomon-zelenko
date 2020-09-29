@@ -1,4 +1,5 @@
 <script>
+  // eslint-disable
   import { url, route } from "@sveltech/routify";
 </script>
 

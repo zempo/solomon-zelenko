@@ -1,56 +1,63 @@
 ---
-title: Introducting Bytes & Snippets
+title: Introducing Bytes & Snippets
 published: 2020-09-28T21:36:59.459Z
 updated: 2020-09-28T21:36:59.459Z
 author: Solomon Zelenko
-categories: news
+category: "news"
+tags: ["mental health", "tech", "lifestyle"]
 summary: |
-  Welcome to my tech blog, "Bytes & Snippets"
-  I look forward sharing my .
-  Here are some useful bytes and snippets from my journey in tech.
+  Welcome to my Tech Blog, 
+  Enjoy a series of musings, tutorials, and snippets
+  May each click bring you joy - and me, some extra income!
 layout: blog
 ---
 
-#### Outline
+#### Page Contents
 
 - [{title}](#title)
-- [Blog Topics](#blog-topics)
-- [Lamina puppe reddid](#lamina-puppe-reddidit)
+- [About the Author](#about-the-author)
+- [](#why?)
 
 ---
 
 # {title}
 
-## Blog Topics
-
-Lorem markdownum, laude, superesse vires. Nisi iuveni, celsior.
-
 ```javascript
-var internic_codec = hub_cycle_post;
-matrixWebsite(
-  basebandSharewareMashup(
-    sipRdramNumber.icf.ipPrimaryPeripheral(crm_column, 2, integer),
-    sli_wireless_type
-  )
-);
-if (overwriteCmykUser + syntaxToken) {
-  cache = w;
-} else {
-  software_ipod_wired(
-    -3,
-    switchRootBus.vdu_mini_bookmark.bar(rtfSpamSnow, bit, -2),
-    50
-  );
-  file(keyboard + 4, spreadsheetFileDesktop(disk, bit, output));
-}
+// TODO - Avoid cliche intros
+// Such as "Hello, World", or something silly like that...
+//
+console.log("Hello, Readers");
 ```
 
-## Lamina puppe reddidit
+Welcome to my Tech Blog,
+Enjoy a series of musings, tutorials, and snippets!
+May each click bring you joy - and me, some extra income
+
+## About the Author
+
+Solomon is a human with over **25 years** of life experience,
+Of these, he has spent **~5387 hours** coding && conversing with a Rubber Duck - aptly named _Mr. Waddles_.
+He presently lives with his chosen family in _Irvine, CA, USA_.
+
+At this point, you might have guessed that he is a Software Engineer.
+You would be partially correct - about **22.42%**, to be exact.
+
+He also exhibits these traits:
+
+- [x] Baking Bread
+- [x] Writing Satire
+- [x] Voiceover (Podcast & Commercial)
+- [x] Anti-Racism & Multiculturalism
+- [x] Mental Health Advocacy
+- [ ] Long walks on the beach
+- [x] Short walks on the beach
+
+## What?
 
 Est ut erat. Cum Iovis ut donavi petitos et, at fugit vincemur ubi: a dixit
 credit, eras Aesone.
 
-## Decimo Peleu
+## Why?
 
 Hunc est senectae vires iterum longusque: quis astu nec tamen cognataque solamen
 ignes in illa, Pandione. Favilla resto verba; hostem auditi, est plura _canos
