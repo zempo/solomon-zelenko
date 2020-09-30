@@ -1,14 +1,18 @@
 @import "config";
 
 %homeheader {
-  text-align: center;
+  text-align: right;
   font-family: $fontPrimary;
+  color: map-get($colors, app-red-darker);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 0;
   margin-bottom: 5vh;
-  @include font-size($bigh-font-sizes);
+  text-transform: lowercase;
+  position: relative;
+  @include font-size($h1-font-sizes);
   @include mq("desktop") {
-    line-height: 2;
+    line-height: 0.5;
+    position: relative;
   }
 }
 
@@ -47,7 +51,9 @@
 
 %marker {
   font-family: $fontHandwriting;
-  @include font-size($h3-font-sizes);
+  letter-spacing: 0.4rem;
+  word-spacing: 0.2rem;
+  @include font-size($bigh-font-sizes);
 }
 
 %paragraph {
@@ -70,7 +76,19 @@
 }
 
 %navlink {
+  display: inline-block;
+  font-family: $fontPrimary;
   text-decoration: none;
+  text-transform: capitalize;
+  line-height: 1.5;
+  color: rgba($color: map-get($colors, app-txt), $alpha: 0.7);
+  font-weight: 400;
+  &.active,
+  &:hover,
+  &:focus {
+    color: rgba($color: map-get($colors, app-dark-light), $alpha: 1);
+  }
+  @include font-size($h3-font-sizes);
 }
 
 %bloglink {
@@ -111,14 +129,8 @@
 %homepage {
   text-align: center;
   min-height: 100vh;
-  padding: 2rem 2vw;
-  background: map-get($colors, app-white);
-  @include mq("tablet") {
-    padding: 2rem 2.5vw;
-  }
-  @include mq("desktop") {
-    padding: 2rem 0;
-  }
+  padding: 0;
+  background: map-get($colors, app-gray-light);
 }
 
 %blogpage {

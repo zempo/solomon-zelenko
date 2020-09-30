@@ -1,7 +1,21 @@
 <script>
   import { layout, url, isActive } from "@sveltech/routify";
 
-  // console.log(layout.parent.children);
+  const mainLinks = [
+    { path: "/about", title: "about" },
+    { path: "/blog", title: "blog" },
+    { path: "/works", title: "works" },
+    { path: "/merch", title: "merch" },
+    { path: "/contact", title: "contact" }
+  ];
+
+  const footerLinks = [
+    { path: "/about", title: "about" },
+    { path: "/blog", title: "blog" },
+    { path: "/works", title: "works" },
+    { path: "/merch", title: "merch" },
+    { path: "/contact", title: "contact" }
+  ];
 </script>
 
 <style type="text/scss">
@@ -10,10 +24,17 @@
 </style>
 
 <header>
-  <nav>
-    {#each $layout.parent.children as { path, title }}
-      <a href={$url(path)} class:active={$isActive(path)}>{title}</a>
-    {/each}
+  <nav role="navigation">
+    <a class:active={$isActive('/index')} id="home-link" href={$url('/index')}>
+      solomon zelenko
+    </a>
+    <ul class="main-links">
+      {#each mainLinks as { path, title }}
+        <li>
+          <a href={$url(path)} class:active={$isActive(path)}>{title}</a>
+        </li>
+      {/each}
+    </ul>
   </nav>
 </header>
 

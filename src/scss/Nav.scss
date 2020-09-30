@@ -2,7 +2,37 @@
 @import "utils";
 
 header {
-  background: map-get($colors, app-white);
+  background: map-get($colors, app-gray-lighter);
+  color: map-get($colors, app-txt);
+  width: 100%;
+  #home-link {
+    display: inline-block;
+    @extend %navlink;
+    @include mq("desktop") {
+      width: 19%;
+      text-align: center;
+    }
+  }
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0;
+    &.main-links {
+      @include mq("desktop") {
+        width: 79%;
+        text-align: right;
+        a {
+          padding: 0 0.75rem;
+        }
+      }
+      li {
+        display: inline-block;
+        a {
+          @extend %navlink;
+        }
+      }
+    }
+  }
 }
 
 // Reduced motion queries

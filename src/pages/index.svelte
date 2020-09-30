@@ -1,6 +1,6 @@
 <script>
-  let Logo = 'svgs/Logo.svg'
-  let Hero = 'images/assets/hero-img.png'
+  let Logo = "svgs/Logo.svg";
+  let Hero = "images/assets/hero-img.png";
 
   const codesAnimation = () => {
     return "Things";
@@ -14,45 +14,54 @@
   .pg {
     @extend %homepage;
     header {
-      background: map-get($colors, app-yellow);
-          @include mq('desktop') {
-            display: flex;
-            justify-content: center;
-            flex-direction: row-reverse;
-            padding-top: 25vh;
+      // border: 1rem solid map-get($colors, app-gray-med);
+      // border-radius: 0.5rem;
+      // box-shadow: inset -1px 2px 2px map-get($colors, app-dark-light),
+      //   0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12),
+      //   0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+      background: map-get($colors, app-gray-lighter);
+      overflow: hidden;
+      @include mq("desktop") {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        padding: 10vh 2rem 0;
       }
-    figure {
-      width: 100%;
-      text-align: center;
-      margin: auto;
-      padding: 10vh 0 0;
-      @include mq('tablet') {
-        padding: 15vh 0 0;
-      }
-      @include mq('desktop') {
-        padding: 0 auto;
-        width: 55%;
-        position: relative;
-        top: -25vh;
-      }
-      img {
+      .wrapper {
+        width: 100%;
+        text-align: center;
         margin: auto;
-        width: 90%;
+        padding: 10vh 0 0;
+        figure {
+          max-width: 550px;
+          text-align: right;
+          img {
+            margin: auto;
+            width: 100%;
+          }
+        }
+        @include mq("tablet") {
+          padding: 15vh 0 0;
+        }
+        @include mq("desktop") {
+          padding: 0 auto;
+          width: 50%;
+          position: relative;
+          top: -20vh;
+        }
       }
-    }
-    figcaption {
-      @extend %homeheader;
-    }
-    .sol-img {
-      margin: 5vh auto 0;
-      width: 80%;
-      max-width: 600px;
-      max-height: auto;  
-      @include mq('desktop') {
-        margin: 0 auto;
-        width: 45%;
-        max-width: 45%;
+      figcaption {
+        @extend %homeheader;
       }
+      .sol-img {
+        margin: 5vh auto 0;
+        width: 80%;
+        max-width: 600px;
+        @include mq("desktop") {
+          margin: 0 auto;
+          width: 50%;
+          max-width: 700px;
+        }
       }
     }
 
@@ -66,16 +75,15 @@
 
 <section class="pg home-pg">
   <header role="banner" aria-label="Hero Image">
-    <figure>
-    <img src={Logo} alt="Solomon">
-    <figcaption>Codes {codesAnimation()}</figcaption>
-    </figure>
-    <img
-      class="sol-img"
-      src={Hero}
-      alt="Solomon striking a dramatic pose" />
+    <div class="wrapper">
+      <figure>
+        <img src={Logo} alt="Solomon" />
+        <figcaption>Codes {codesAnimation()}</figcaption>
+      </figure>
+    </div>
+    <img class="sol-img" src={Hero} alt="Solomon striking a dramatic pose" />
   </header>
-</section> 
+</section>
 
 <!-- routify:options index=10 -->
 <!-- routify:options title="home" -->
