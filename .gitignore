@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+/dist
 /dist/bundle
 /dist/build
 /.routify

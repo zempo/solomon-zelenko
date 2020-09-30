@@ -12,22 +12,24 @@ $colors: (
   success: rgb(0, 235, 94),
   err: rgb(194, 34, 87),
   focus: rgb(0, 149, 235),
-  blue: #18323c,
-  blue-med: #164953,
-  blue-light: #1a4a53,
-  blue-wild: #2d4963,
-  red: #c8605e,
-  red-light: #dd7b65,
-  peach: #edc3b9,
-  skyblue: #6e90a3,
-  skyblue-med: #93bec7,
-  skyblue-light: #c6dada,
-  green: #19ab88,
-  brown: #46383c,
-  brown-light: #584b35,
+  app-blue: #18323c,
+  app-blue-med: #164953,
+  app-blue-light: #1a4a53,
+  app-blue-wild: #2d4963,
+  app-red: #c8605e,
+  app-red-light: #dd7b65,
+  app-peach: #edc3b9,
+  app-skyblue: #6e90a3,
+  app-skyblue-med: #93bec7,
+  app-skyblue-light: #c6dada,
+  app-green: #19ab88,
+  app-brown: #46383c,
+  app-brown-light: #584b35,
   app-purple: #915ea0,
   app-gray: #9aa5b4,
+  app-gray-light: #b4c0d1,
   app-gray-dark: #2a2f3b,
+  app-yellow: rgba(231, 198, 146, 0.91),
 );
 $animations: (
   expand-down: expand-down 0.45s ease-in both,
@@ -53,6 +55,24 @@ $breakpoints: (
   "desktop": 1248px,
   "desktop-wide": 1440px,
   "ultra-wide": 2000px,
+);
+
+$bigh-font-sizes: (
+  null: calc(1.9rem + 0.25vw),
+  map-get($breakpoints, "phone-wide"): calc(2rem + 0.25vw),
+  map-get($breakpoints, "phablet"): calc(2.8rem + 0.25vw),
+  map-get($breakpoints, "tablet"): calc(3.2rem + 0.25vw),
+  map-get($breakpoints, "desktop"): calc(4rem + 0.25vw),
+  map-get($breakpoints, "ultra-wide"): calc(4rem + 0.25vw),
+);
+
+$h1-font-sizes: (
+  null: calc(1.9rem + 0.25vw),
+  map-get($breakpoints, "phone-wide"): calc(2rem + 0.25vw),
+  map-get($breakpoints, "phablet"): calc(2.4rem + 0.25vw),
+  map-get($breakpoints, "tablet"): calc(2.8rem + 0.25vw),
+  map-get($breakpoints, "desktop"): calc(3.2rem + 0.25vw),
+  map-get($breakpoints, "ultra-wide"): calc(4rem + 0.25vw),
 );
 
 $h1-font-sizes: (

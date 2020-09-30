@@ -1,5 +1,26 @@
 @import "config";
 
+%homeheader {
+  text-align: center;
+  font-family: $fontPrimary;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 5vh;
+  @include font-size($bigh-font-sizes);
+  @include mq("desktop") {
+    line-height: 2;
+  }
+}
+
+%header1 {
+  text-align: center;
+  font-family: $fontPrimary;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  @include font-size($h1-font-sizes);
+}
+
 %header1 {
   text-align: center;
   font-family: $fontPrimary;
@@ -76,6 +97,7 @@
 
 %page {
   text-align: center;
+  min-height: 100vh;
   padding: 2rem 2vw;
   background: map-get($colors, app-white);
   @include mq("tablet") {
@@ -83,6 +105,19 @@
   }
   @include mq("desktop") {
     padding: 2rem calc(50% - 600px);
+  }
+}
+
+%homepage {
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem 2vw;
+  background: map-get($colors, app-white);
+  @include mq("tablet") {
+    padding: 2rem 2.5vw;
+  }
+  @include mq("desktop") {
+    padding: 2rem 0;
   }
 }
 
