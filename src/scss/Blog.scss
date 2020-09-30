@@ -2,25 +2,44 @@
 @import "utils";
 
 h1 {
-  @extend %header1;
+  @extend %header2;
 }
 h2 {
   @extend %header2;
 }
 h3 {
   @extend %header3;
+  &:first-of-type {
+    text-align: center;
+  }
+}
+h2,
+p,
+ul {
+  text-align: left;
+  width: 85%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+pre,
+figure {
+  width: 88%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  @include font-size($p-font-sizes);
 }
 p {
   @extend %paragraph;
 }
 ul {
   @extend %list1;
-  &:first-of-type {
-    @extend %overview;
-    a {
-      @extend %bloglink;
-    }
-  }
+  //   &:first-of-type {
+  //     text-align: center;
+  //     @extend %overview;
+  //     a {
+  //       @extend %bloglink;
+  //     }
+  //   }
 }
 code .string {
   @include font-size($p-font-sizes);

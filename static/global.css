@@ -109,6 +109,7 @@ section {
   display: block;
 }
 body {
+  background: #f8f9fa;
   line-height: 1;
 }
 ol,

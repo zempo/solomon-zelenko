@@ -3,8 +3,10 @@ title: Introducing Bytes & Snippets
 published: 2020-09-28T21:36:59.459Z
 updated: 2020-09-28T21:36:59.459Z
 author: Solomon Zelenko
-category: "news"
-tags: ["mental health", "tech", "lifestyle"]
+category: news
+tags: ['blog update']
+color: '#19ab88'
+thumbnail: none
 summary: |
   Welcome to my Tech Blog. 
   Enjoy a series of musings, tutorials, and snippets!
@@ -12,22 +14,19 @@ summary: |
 layout: blog
 ---
 <script>
-let num = 42;
+  import Head from './utils/Head.svelte';
+  
+  let headInfo = {
+    title,
+    thumbnail,
+    color
+  };
 </script>
 <style type="text/scss">
   @import "../../scss/Blog.scss";
 </style>
 
-### Page Contents
-
-- [{title}](#title)
-- [Overview](#overview)
-- [Why Bytes & Snippets?](#why-bytes-&-snippets?)
-- [About the Author](#about-the-author)
-
----
-
-# {title}
+<Head {...headInfo} />
 
 ```javascript
 // TODO - Avoid cliche intros
@@ -45,12 +44,12 @@ May each click bring you joy - and me, some extra income.
 
 ## About the Author
 
-Solomon is a human with over **25 years** of life experience.<br>
-He has spent **~5387 hours** debugging with a Rubber Duck - named _Mr. Waddles_.<br>
+Solomon is a human with over **25 years** of life experience.
+He has spent **~5387 hours** debugging with a Rubber Duck - named _Mr. Waddles_.
 He presently lives with his chosen family in _Irvine, CA, USA_.
 
-At this point, you might have guessed that he is a Software Engineer.<br>
-You would be partially correct - about **22.42%**, to be exact.<br>
+At this point, you might have guessed that he is a Software Engineer.
+You would be partially correct - about **22.42%**, to be exact.
 However, he also exhibits these traits:
 
 - [x] Baking Bread
@@ -60,8 +59,3 @@ However, he also exhibits these traits:
 - [x] Mental Health Advocacy
 - [ ] Long walks on the beach
 - [x] Short walks on the beach
-
-## B
-
-Est ut erat. Cum Iovis ut donavi petitos et, at fugit vincemur ubi: a dixit
-credit, eras Aesone.

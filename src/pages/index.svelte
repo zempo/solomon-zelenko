@@ -10,8 +10,12 @@
 
   .pg {
     @extend %page;
-    h1 {
-      @extend %header1;
+    figure {
+      text-align: center;
+      img {
+        margin: auto;
+        max-width: 500px;
+      }
     }
     h2 {
       @extend %header2;
@@ -25,8 +29,16 @@
 </svelte:head>
 
 <section class="pg home-pg">
-  <h1>Solomon</h1>
-  <h2>Codes {codesAnimation()}</h2>
+  <header role="banner">
+    <figure>
+      <img src="https://i.imgur.com/l7nuNN8.png" alt="Solomon" />
+    </figure>
+    <h2>Codes {codesAnimation()}</h2>
+    <img
+      class="sol-img"
+      src="https://i.imgur.com/l7nuNN8.png"
+      alt="Solomon striking a dramatic pose" />
+  </header>
 </section>
 
 <!-- routify:options index=10 -->
