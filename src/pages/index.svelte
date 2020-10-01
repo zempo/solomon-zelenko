@@ -33,7 +33,7 @@
         margin: auto;
         padding: 10vh 0 0;
         figure {
-          max-width: 550px;
+          max-width: 90%;
           text-align: right;
           img {
             margin: auto;
@@ -42,12 +42,19 @@
         }
         @include mq("tablet") {
           padding: 15vh 0 0;
+          figure {
+            max-width: 80%;
+          }
         }
         @include mq("desktop") {
           padding: 0 auto;
           width: 50%;
           position: relative;
           top: -20vh;
+          figure {
+            max-width: 500px;
+            margin: auto;
+          }
         }
       }
       figcaption {
