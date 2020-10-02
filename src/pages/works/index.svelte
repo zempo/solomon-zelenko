@@ -17,6 +17,9 @@
 
   .pg {
     @extend %page;
+    .pg-header {
+      @extend %pageheader;
+    }
     h1 {
       @extend %header1;
     }
@@ -31,11 +34,13 @@
 </style>
 
 <section class="pg blog-pg">
-  <h1>What does Solomon build?</h1>
-  <h2 class="sub-h2">
-    I build responsive apps with all the
-    <strong>works</strong>
-  </h2>
+  <header class="pg-header">
+    <h1>What does Solomon build?</h1>
+    <h2 class="sub-h2">
+      I build responsive apps with all the
+      <strong>works</strong>
+    </h2>
+  </header>
 
   <ul class="works">
     {#each works as { meta, path }}

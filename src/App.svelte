@@ -3,9 +3,9 @@
   import { routes } from "../.routify/routes";
 </script>
 
-<style global>
+<!-- <style global>
   @import "../static/global.css";
   @import "https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-okaidia.min.css";
-</style>
+</style> -->
 
 <Router {routes} />

@@ -1,7 +1,5 @@
 <script>
-  const getTime = () => {
-    return "8 to 8";
-  };
+
 </script>
 
 <style type="text/scss">
@@ -22,10 +20,10 @@
   }
 </style>
 
-<section class="pg contact-pg">
+<section class="pg about-pg">
   <header class="pg-header">
-    <h1>Let's get in touch!</h1>
-    <h2>I am available from {getTime()}, your time</h2>
+    <h1>Who is Solomon?</h1>
+    <h2>I am a Software Engineer living in Irvine, CA</h2>
   </header>
   <!-- 
       Possibilities

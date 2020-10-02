@@ -13,6 +13,7 @@
   @include mq("desktop") {
     line-height: 0.5;
     position: relative;
+    margin-bottom: auto;
   }
 }
 
@@ -22,15 +23,7 @@
   line-height: 1.25;
   margin-bottom: 1rem;
   font-weight: 800;
-  @include font-size($h1-font-sizes);
-}
-
-%header1 {
-  text-align: center;
-  font-family: $fontPrimary;
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  font-weight: 800;
+  color: map-get($colors, app-txt);
   @include font-size($h1-font-sizes);
 }
 
@@ -39,6 +32,7 @@
   font-family: $fontPrimary;
   line-height: 2;
   font-weight: 400;
+  color: map-get($colors, app-txt);
   @include font-size($h2-font-sizes);
 }
 
@@ -47,6 +41,10 @@
   font-family: $fontSecondary;
   line-height: 1.25;
   @include font-size($h3-font-sizes);
+}
+
+%lightheader {
+  color: map-get($colors, app-white);
 }
 
 %marker {
@@ -76,17 +74,26 @@
 }
 
 %navlink {
+  cursor: pointer;
   display: inline-block;
   font-family: $fontPrimary;
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1.5;
   color: rgba($color: map-get($colors, app-txt), $alpha: 0.7);
+  -moz-transition: map-get($animations, transition-1);
+  -o-transition: map-get($animations, transition-1);
+  -webkit-transition: map-get($animations, transition-1);
+  transition: map-get($animations, transition-1);
   font-weight: 400;
   &.active,
   &:hover,
   &:focus {
     color: rgba($color: map-get($colors, app-dark-light), $alpha: 1);
+    -moz-transition: map-get($animations, transition-1);
+    -o-transition: map-get($animations, transition-1);
+    -webkit-transition: map-get($animations, transition-1);
+    transition: map-get($animations, transition-1);
   }
   @include font-size($h3-font-sizes);
 }
@@ -113,22 +120,38 @@
   }
 }
 
+%pageheader {
+  padding: 10rem 2rem 6rem;
+  @include mq("tablet") {
+    padding: 11rem 2rem 7rem;
+  }
+  @include mq("tablet-wide") {
+    padding: 12rem 2rem 7rem;
+  }
+  @include mq("desktop") {
+    padding: 14rem 2rem 13rem;
+  }
+}
+
 %page {
   text-align: center;
-  min-height: 100vh;
+  min-height: 150vh;
   padding: 2rem 2vw;
   background: map-get($colors, app-white);
   @include mq("tablet") {
     padding: 2rem 2.5vw;
   }
+  @include mq("tablet-wide") {
+    padding: 10rem 2.5vw;
+  }
   @include mq("desktop") {
-    padding: 2rem calc(50% - 600px);
+    padding: 10rem calc(50% - 600px);
   }
 }
 
 %homepage {
   text-align: center;
-  min-height: 100vh;
+  min-height: 150vh;
   padding: 0;
   background: map-get($colors, app-gray-light);
 }

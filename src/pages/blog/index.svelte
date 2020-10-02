@@ -21,6 +21,9 @@
 
   .pg {
     @extend %page;
+    .pg-header {
+      @extend %pageheader;
+    }
     h1 {
       @extend %header1;
     }
@@ -35,7 +38,13 @@
 </style>
 
 <section class="pg blog-pg">
-  <h1>Bytes & Snippets</h1>
+  <header class="pg-header">
+    <h1>Bytes & Snippets</h1>
+    <h2>
+      Welcome to my
+      <strong>blog</strong>
+    </h2>
+  </header>
   <!-- categories 
     Reference
 
@@ -62,11 +71,6 @@
     https://medium.com/search?q=this
     Reference
  -->
-
-  <h2 class="sub-h2">
-    Welcome to my
-    <strong>blog</strong>
-  </h2>
 
   <!-- then, add categories menu & search bar, here -->
 

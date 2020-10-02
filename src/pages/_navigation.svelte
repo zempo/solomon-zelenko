@@ -23,7 +23,7 @@
   @import "../scss/Nav.scss";
 </style>
 
-<header>
+<header class="app-header">
   <nav role="navigation">
     <a class:active={$isActive('/index')} id="home-link" href={$url('/index')}>
       solomon zelenko

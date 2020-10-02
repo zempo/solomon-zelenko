@@ -1,8 +1,7 @@
 <style type="text/scss">
   @import "../scss/config";
   .blog-post {
-    margin: 1rem auto;
-    scroll-behavior: smooth;
+    margin: auto;
   }
 </style>
 

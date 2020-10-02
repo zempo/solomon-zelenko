@@ -1,10 +1,22 @@
 @import "config";
 @import "utils";
 
-header {
-  background: map-get($colors, app-gray-lighter);
-  color: map-get($colors, app-txt);
+.app-header {
+  background: map-get($colors, app-red-dark);
+  color: map-get($colors, app-white);
   width: 100%;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  @include mq("tablet-wide") {
+    background: rgba($color: map-get($colors, app-white), $alpha: 0);
+    position: absolute;
+    top: 0;
+    bottom: unset;
+    left: 0;
+  }
   #home-link {
     display: inline-block;
     @extend %navlink;

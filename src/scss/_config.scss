@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-
 $fontPrimary: Inter, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
 $fontSecondary: "Nunito", sans-serif;
 $fontHandwriting: "Permanent Marker", cursive;
@@ -11,7 +9,7 @@ $colors: (
   app-white-dark: #f2f2f2,
   app-dark: #1a1a1a,
   app-dark-light: #2f2f2f,
-  app-txt: #4c4443,
+  app-txt: #302e2f,
   null: rgba(0, 0, 0, 0),
   modal-white: #f7f7f7,
   success: #00eb5e,
@@ -54,7 +52,7 @@ $animations: (
   fold-up: fold-up 0.4s linear both,
   ping: ping 0.8s ease-in-out infinite both,
   transition-1: all 0.4s cubic-bezier(0.75, 0, 0.125, 1),
-  transition-2: all 0.4s,
+  transition-2: all 0.4s ease-in,
 );
 $breakpoints: (
   "phone": 400px,
