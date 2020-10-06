@@ -1,12 +1,13 @@
 $fontPrimary: Inter, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
 $fontSecondary: "Nunito", sans-serif;
+$fontLogo: "Roboto Slab", serif;
 $fontHandwriting: "Permanent Marker", cursive;
 $fontCode: "Ubuntu Mono", monospace;
 
 $colors: (
   app-white: #f8f9fa,
   app-white-med: #f6f6f6,
-  app-white-dark: #f2f2f2,
+  app-light: #fdf6da,
   app-dark: #1a1a1a,
   app-dark-light: #2f2f2f,
   app-txt: #302e2f,
@@ -15,8 +16,6 @@ $colors: (
   success: #00eb5e,
   err: #c22257,
   focus: #0095eb,
-  landing-dark: #b1d9e4,
-  landing-light: #c7e2ed,
   app-red: #c8605e,
   app-red-light: #dd7b65,
   app-red-dark: #9f4847,
@@ -41,6 +40,11 @@ $colors: (
   app-gray: #adb2bd,
   app-gray-med: #9aa5b4,
   app-gray-dark: #2a2f3b,
+  app-silver: #7f7774,
+  app-silver-med: #504a49,
+  app-silver-dark: #413938,
+  app-mocha: #46271d,
+  app-mocha-dark: #210501,
 );
 $animations: (
   expand-down: expand-down 0.45s ease-in both,
@@ -69,12 +73,12 @@ $breakpoints: (
 );
 
 $bigh-font-sizes: (
-  null: calc(1.9rem + 0.25vw),
-  map-get($breakpoints, "phone-wide"): calc(2rem + 0.25vw),
-  map-get($breakpoints, "phablet"): calc(2.8rem + 0.25vw),
-  map-get($breakpoints, "tablet"): calc(3.2rem + 0.25vw),
-  map-get($breakpoints, "desktop"): calc(4rem + 0.25vw),
-  map-get($breakpoints, "ultra-wide"): calc(4rem + 0.25vw),
+  null: calc(2.5rem + 0.25vw),
+  map-get($breakpoints, "phone-wide"): calc(2.8rem + 0.25vw),
+  map-get($breakpoints, "phablet"): calc(3.5rem + 0.25vw),
+  map-get($breakpoints, "tablet"): calc(4.5rem + 0.25vw),
+  map-get($breakpoints, "desktop"): calc(5rem + 0.25vw),
+  map-get($breakpoints, "ultra-wide"): calc(6rem + 0.25vw),
 );
 
 $h1-font-sizes: (

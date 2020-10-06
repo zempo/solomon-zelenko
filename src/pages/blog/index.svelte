@@ -23,6 +23,7 @@
     @extend %page;
     .pg-header {
       @extend %pageheader;
+      background: map-get($colors, app-blue);
     }
     h1 {
       @extend %header1;

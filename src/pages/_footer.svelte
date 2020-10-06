@@ -1,24 +1,10 @@
 <script>
   import { layout, url, isActive } from "@sveltech/routify";
 
-  const mainLinks = [
-    { path: "/about", title: "about" },
-    { path: "/blog", title: "blog" },
-    { path: "/works", title: "works" },
-    { path: "/merch", title: "merch" },
-    { path: "/contact", title: "contact" }
-  ];
-
-  const mobileLinks = [
-    { path: "/index", title: "home" },
-    { path: "/about", title: "about" },
-    { path: "/blog", title: "blog" },
-    { path: "/works", title: "works" },
-    { path: "/merch", title: "merch" },
-    { path: "/contact", title: "contact" }
-  ];
+  const entities = ["&trade;", "&copy;"];
 
   const footerLinks = [
+    { path: "/index", title: "home" },
     { path: "/about", title: "about" },
     { path: "/blog", title: "blog" },
     { path: "/works", title: "works" },
@@ -29,30 +15,25 @@
 
 <style type="text/scss">
   @import "../scss/config";
-  @import "../scss/Nav.scss";
+  @import "../scss/Footer.scss";
 </style>
 
-<header class="app-header">
+<footer class="app-footer">
+  <h1>solomon zelenko</h1>
+  <h2>
+    code your vision
+    {@html entities[0]}
+  </h2>
   <nav role="navigation">
-    <a class:active={$isActive('/index')} id="home-link" href={$url('/index')}>
-      solomon zelenko
-    </a>
-    <ul class="main-links">
-      {#each mainLinks as { path, title }}
-        <li>
-          <a href={$url(path)} class:active={$isActive(path)}>{title}</a>
-        </li>
-      {/each}
-    </ul>
-    <ul class="mobile-links">
-      {#each mobileLinks as { path, title }}
+    <ul class="footer-links">
+      {#each footerLinks as { path, title }}
         <li>
           <a href={$url(path)} class:active={$isActive(path)}>{title}</a>
         </li>
       {/each}
     </ul>
   </nav>
-</header>
+</footer>
 
 <!-- <header> -->
 <!-- to do: toggle mobile nav with screen width hook, 

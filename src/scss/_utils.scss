@@ -1,16 +1,33 @@
 @import "config";
 
+%homeheaderbig {
+  text-align: right;
+  font-family: $fontLogo;
+  color: map-get($colors, app-light);
+  font-weight: 400;
+  line-height: 2.5;
+  // margin-bottom: 5vh;
+  text-transform: lowercase;
+  position: relative;
+  @include font-size($bigh-font-sizes);
+  @include mq("tablet-wide") {
+    line-height: 1.65;
+    position: relative;
+    margin-bottom: auto;
+  }
+}
+
 %homeheader {
   text-align: right;
-  font-family: $fontPrimary;
-  color: map-get($colors, app-red-darker);
-  font-weight: 400;
+  font-family: $fontSecondary;
+  color: map-get($colors, app-light);
+  font-weight: 300;
   line-height: 0;
   margin-bottom: 5vh;
   text-transform: lowercase;
   position: relative;
   @include font-size($h1-font-sizes);
-  @include mq("desktop") {
+  @include mq("tablet-wide") {
     line-height: 0.5;
     position: relative;
     margin-bottom: auto;
@@ -80,7 +97,6 @@
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1.5;
-  color: rgba($color: map-get($colors, app-txt), $alpha: 0.7);
   -moz-transition: map-get($animations, transition-1);
   -o-transition: map-get($animations, transition-1);
   -webkit-transition: map-get($animations, transition-1);
@@ -89,7 +105,6 @@
   &.active,
   &:hover,
   &:focus {
-    color: rgba($color: map-get($colors, app-dark-light), $alpha: 1);
     -moz-transition: map-get($animations, transition-1);
     -o-transition: map-get($animations, transition-1);
     -webkit-transition: map-get($animations, transition-1);
@@ -153,7 +168,7 @@
   text-align: center;
   min-height: 150vh;
   padding: 0;
-  background: map-get($colors, app-gray-light);
+  background: map-get($colors, app-white);
 }
 
 %blogpage {
