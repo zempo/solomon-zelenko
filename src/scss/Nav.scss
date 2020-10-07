@@ -30,6 +30,8 @@
   #home-link {
     display: inline-block;
     @extend %navlink;
+    @include mq("desktop-wide") {
+    }
     @include mq("desktop") {
       width: 19%;
       text-align: center;
