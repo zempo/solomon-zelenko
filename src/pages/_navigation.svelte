@@ -17,14 +17,6 @@
     { path: "/merch", title: "merch" },
     { path: "/contact", title: "contact" }
   ];
-
-  const footerLinks = [
-    { path: "/about", title: "about" },
-    { path: "/blog", title: "blog" },
-    { path: "/works", title: "works" },
-    { path: "/merch", title: "merch" },
-    { path: "/contact", title: "contact" }
-  ];
 </script>
 
 <style type="text/scss">
