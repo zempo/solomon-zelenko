@@ -1,13 +1,14 @@
 @import "config";
 
 %homeheaderbig {
-  text-align: right;
+  text-align: center;
   font-family: $fontLogo;
   color: map-get($colors, app-light);
   font-weight: 400;
-  line-height: 2.5;
+  line-height: 1;
   // margin-bottom: 5vh;
   text-transform: lowercase;
+  letter-spacing: calc(1px + 0.1vw);
   position: relative;
   @include font-size($bigh-font-sizes);
   @include mq("tablet-wide") {
@@ -18,7 +19,7 @@
 }
 
 %homeheader {
-  text-align: right;
+  text-align: center;
   font-family: $fontSecondary;
   color: map-get($colors, app-light);
   font-weight: 300;

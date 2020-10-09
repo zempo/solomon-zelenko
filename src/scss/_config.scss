@@ -73,8 +73,8 @@ $breakpoints: (
 );
 
 $bigh-font-sizes: (
-  null: calc(2.5rem + 0.25vw),
-  map-get($breakpoints, "phone-wide"): calc(2.8rem + 0.25vw),
+  null: calc(3.1rem + 0.25vw),
+  map-get($breakpoints, "phone-wide"): calc(3.3rem + 0.25vw),
   map-get($breakpoints, "phablet"): calc(3.5rem + 0.25vw),
   map-get($breakpoints, "tablet"): calc(4.5rem + 0.25vw),
   map-get($breakpoints, "desktop"): calc(5rem + 0.25vw),

@@ -106,7 +106,7 @@
         <img src={Logo} alt="Solomon" />
         <figcaption>Codes {codesAnimation()}</figcaption>
       </figure> -->
-      <h1>so|_omon</h1>
+      <h1>So|_omon</h1>
       <h2>codes {codesAnimation()}</h2>
     </div>
     <img class="sol-img" src={Hero} alt="Solomon striking a dramatic pose" />

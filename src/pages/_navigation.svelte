@@ -2,20 +2,21 @@
   import { layout, url, isActive } from "@sveltech/routify";
 
   const mainLinks = [
-    { path: "/about", title: "about" },
-    { path: "/blog", title: "blog" },
-    { path: "/works", title: "works" },
-    { path: "/merch", title: "merch" },
-    { path: "/contact", title: "contact" }
+    { path: "/about", title: "a" },
+    { path: "/blog", title: "b" },
+    { path: "/works", title: "w" },
+    { path: "/merch", title: "m" },
+    { path: "/contact", title: "c" }
   ];
 
+  // for mobile, add contact info to footer of each page
+  // add contact button on landing
   const mobileLinks = [
-    { path: "/index", title: "home" },
     { path: "/about", title: "about" },
     { path: "/blog", title: "blog" },
+    { path: "/index", title: "home" },
     { path: "/works", title: "works" },
-    { path: "/merch", title: "merch" },
-    { path: "/contact", title: "contact" }
+    { path: "/merch", title: "merch" }
   ];
 </script>
 
@@ -27,7 +28,7 @@
 <header class="app-header">
   <nav role="navigation">
     <a class:active={$isActive('/index')} id="home-link" href={$url('/index')}>
-      solomon zelenko
+      O|_O
     </a>
     <ul class="main-links">
       {#each mainLinks as { path, title }}

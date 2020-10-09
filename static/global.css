@@ -522,17 +522,17 @@ pre[class*="language-"] {
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(48, 46, 47, 0.5);
+  background: rgba(80, 74, 73, 0.7);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(48, 46, 47, 1);
+  background: rgba(80, 74, 73, 1);
 }
 ::-webkit-scrollbar-thumb:active {
-  background: rgb(65, 61, 61);
+  background: rgb(80, 74, 73);
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0.02);
   border: 1px solid transparent;
 }
 ::-webkit-scrollbar-track:hover {

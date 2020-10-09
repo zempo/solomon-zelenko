@@ -22,18 +22,19 @@
   @include mq("tablet-wide") {
     box-shadow: none;
     // background: rgba($color: map-get($colors, app-light), $alpha: 0);
+    width: auto;
+    // max-width: 50px;
+    padding: 1rem 1rem 0;
     height: 100vh;
     top: 0;
     bottom: unset;
     left: 0;
   }
   #home-link {
-    display: inline-block;
+    display: none;
     @extend %navlink;
-    @include mq("desktop-wide") {
-    }
-    @include mq("desktop") {
-      width: 19%;
+    @include mq("tablet-wide") {
+      display: inline-block;
       text-align: center;
     }
   }
@@ -41,14 +42,31 @@
     display: inline-block;
     list-style-type: none;
     padding-left: 0;
+    &.mobile-links {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      li {
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        a {
+          @extend %navlink;
+        }
+      }
+      @include mq("tablet-wide") {
+        display: none;
+      }
+    }
     &.main-links {
+      display: none;
+      text-align: center;
       @include mq("tablet-wide") {
         display: flex;
         flex-direction: column;
       }
       @include mq("desktop") {
-        width: 79%;
-        text-align: right;
         a {
           padding: 0 0.75rem;
         }
