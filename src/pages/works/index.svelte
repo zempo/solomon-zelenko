@@ -2,13 +2,20 @@
   import { url, layout } from "@sveltech/routify";
   import marked from "marked";
 
-  const works = $layout.parent.children
-    .filter(c => c.meta["frontmatter"])
-    .sort((a, b) =>
-      b.meta["frontmatter"].published.localeCompare(
-        a.meta["frontmatter"].published
-      )
-    );
+  const works = [
+    {
+      title: "Above the Line",
+      path: "atl",
+      content: `# Hello World`,
+      summary: "Build using technology"
+    },
+    {
+      title: "Just the Occasion",
+      path: "jto",
+      content: `# Hello World`,
+      summary: "Build using technology"
+    }
+  ];
 </script>
 
 <style type="text/scss">
@@ -43,10 +50,10 @@
   </header>
 
   <ul class="works">
-    {#each works as { meta, path }}
+    {#each works as { title, path, content, summary }}
       <li class="work">
-        <a class="title" href={$url(path)}>{meta.frontmatter.title}</a>
-        {@html marked(meta.frontmatter.overview)}
+        <a class="title" href={$url()}>{title}</a>
+        {@html marked(summary)}
       </li>
     {/each}
   </ul>
