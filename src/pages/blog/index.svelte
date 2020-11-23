@@ -1,15 +1,25 @@
 <script>
   import { url, layout } from "@sveltech/routify";
+  import { db } from "../../firebase.js";
   import marked from "marked";
 
-  const posts = $layout.parent.children
-    .filter(c => c.meta["frontmatter"])
-    .sort((a, b) =>
-      b.meta["frontmatter"].published.localeCompare(
-        a.meta["frontmatter"].published
-      )
-    );
+  // const posts = $layout.parent.children
+  //   .filter(c => c.meta["frontmatter"])
+  //   .sort((a, b) =>
+  //     b.meta["frontmatter"].published.localeCompare(
+  //       a.meta["frontmatter"].published
+  //     )
+  //   );
 
+  const bytes = [
+    {
+      title: "Introducing Bytes and Snippets",
+      // make path, title.toLowerCase().hyphenated() with item id on the end
+      path: "introducing_bytes_and_snippets",
+      content: `# Hello World`,
+      summary: "Build using technology"
+    }
+  ];
   // apply random color to blog post tiles
   // save in state?
   // add color attribute to markdowns?
@@ -76,11 +86,12 @@
   <!-- then, add categories menu & search bar, here -->
 
   <ul class="blog-posts">
-    {#each posts as { meta, path }}
+    <li>Hello</li>
+    <!-- {#each posts as { meta, path }}
       <li class="blog-preview">
         <a class="title" href={$url(path)}>{meta.frontmatter.title}</a>
         {@html marked(meta.frontmatter.summary)}
       </li>
-    {/each}
+    {/each} -->
   </ul>
 </section>

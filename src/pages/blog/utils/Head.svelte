@@ -1,6 +1,6 @@
 <script>
   export let title;
-  export let thumbnail;
+  // export let thumbnail;
   export let color;
 </script>
 

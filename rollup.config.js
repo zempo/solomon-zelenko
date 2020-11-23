@@ -2,6 +2,7 @@ import { createRollupConfigs } from "./scripts/base.config.js";
 import slug from "remark-slug";
 import { mdsvex } from "mdsvex";
 import preprocess from "svelte-preprocess";
+import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -28,7 +29,21 @@ export const config = {
     return svelte;
   },
   swWrapper: (cfg) => cfg,
-};
+  plugins: [
+    replace({
+      process: JSON.stringify({
+        env: {
+          API_KEY: process.env.API_KEY,
+          APP_NAME: process.env.APP_NAME,
+          APP_ID: process.env.APP_ID,
+          MSG_ID: process.env.MSG_ID,
+          MEASUREMENT_ID: process.env.MEASUREMENT_ID,
+          ENVS_WORK: process.env.ENVS_WORK
+        }
+      }),
+    })
+  ]
+}; 
 
 const configs = createRollupConfigs(config);
 

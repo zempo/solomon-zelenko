@@ -7,13 +7,13 @@
       title: "Above the Line",
       path: "atl",
       content: `# Hello World`,
-      summary: "Build using technology"
+      summary: "Built using technology"
     },
     {
       title: "Just the Occasion",
       path: "jto",
       content: `# Hello World`,
-      summary: "Build using technology"
+      summary: "Built using technology"
     }
   ];
 </script>
@@ -52,7 +52,7 @@
   <ul class="works">
     {#each works as { title, path, content, summary }}
       <li class="work">
-        <a class="title" href={$url()}>{title}</a>
+        <a class="title" href={$url(path)}>{title}</a>
         {@html marked(summary)}
       </li>
     {/each}

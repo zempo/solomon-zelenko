@@ -4,3 +4,7 @@
 /dist/bundle
 /dist/build
 /.routify
+.env
+.env.example
+.env.local
+.env.staging
