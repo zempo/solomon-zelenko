@@ -60,7 +60,7 @@ const portfolioProjects = [
       "JWT + Bcrypt.js",
     ],
     repo: "https://github.com/zempo/jto-client",
-    live: "https://above-the-line.now.sh/",
+    live: "https://atl-client.vercel.app/",
     tags: ["pern", "solo"],
   },
   {
